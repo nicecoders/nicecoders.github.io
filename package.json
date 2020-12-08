@@ -1,0 +1,35 @@
+{
+  "name": "zx",
+  "private": true,
+  "version": "0.0.2",
+  "scripts": {
+    "create": "lerna create ${name}",
+    "prettier": "prettier --write \"src/**/*.jsx\" \"src/**/*.js\"",
+    "publish-l": "lerna publish --conventional-commits"
+  },
+  "lint-staged": {
+    "packages/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ]
+  },
+  "description": "my own tools!",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:j710328466/zx.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "prettier": "^2.2.1"
+  },
+  "files": [
+    "src",
+    "lib",
+    "packages"
+  ],
+  "main": "src/index.js",
+  "module": "lib/index.esm.js",
+  "typings": "typings/index.d.ts"
+}

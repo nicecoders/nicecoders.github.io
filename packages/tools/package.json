@@ -1,14 +1,14 @@
 {
-  "name": "test",
-  "version": "0.0.2",
-  "description": "test",
+  "name": "zx-tools",
+  "version": "0.0.1",
+  "description": "function tools",
   "keywords": [
-    "测试包"
+    "javascript"
   ],
   "author": "wb-jzx707535 <wb-jzx707535@alibaba-inc.com>",
-  "homepage": "http://index.html",
+  "homepage": "https://github.com/j710328466/zx#readme",
   "license": "MIT",
-  "main": "lib/test.js",
+  "main": "lib/tools.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -18,15 +18,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/j710328466/zx.git"
+    "url": "git+https://github.com/j710328466/zx.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/j710328466/zx/issues"
-  },
-  "dependencies": {
-    "eslint": "^7.15.0"
   }
 }
