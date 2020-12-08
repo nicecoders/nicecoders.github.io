@@ -1,0 +1,26 @@
+{
+  "name": "modulecode",
+  "version": "0.0.2",
+  "description": "> TODO: description",
+  "author": "wb-jzx707535 <wb-jzx707535@alibaba-inc.com>",
+  "homepage": "https://github.com/j710328466/zx#readme",
+  "license": "ISC",
+  "main": "lib/module.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j710328466/zx.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/j710328466/zx/issues"
+  }
+}
