@@ -6,7 +6,8 @@
     "test"
   ],
   "author": "ericJ <710328466@qq.com>",
-  "homepage": "",
+  "homepage": "https://github.com/j710328466/nicecode",
+  "repository": "https://github.com/j710328466/nicecode",
   "license": "ISC",
   "main": "lib/index.js",
   "module": "src/index.js",
@@ -19,5 +20,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "eslint": "^7.25.0"
   }
 }
