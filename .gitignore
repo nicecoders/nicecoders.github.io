@@ -10,6 +10,7 @@
 # production
 /dist
 /docs-dist
+**/__test__/**
 
 # misc
 .DS_Store

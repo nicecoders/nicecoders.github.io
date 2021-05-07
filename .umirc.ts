@@ -4,16 +4,17 @@ const repo = 'pineapple';
 
 export default defineConfig({
   title: repo,
-  favicon:
-    'http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png',
-  logo:
-    'http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png',
+  favicon: 'http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png',
+  logo: 'http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png',
   outputPath: 'docs-dist',
   mode: 'site',
   hash: true,
   // Because of using GitHub Pages
   base: `/`,
   publicPath: `/`,
+  resolve: {
+    includes: ['docs', 'packages/tools/src'],
+  },
   navs: [
     null,
     {
@@ -29,7 +30,7 @@ export default defineConfig({
         libraryDirectory: 'es',
         style: true,
       },
-      'antd'
+      'antd',
     ],
   ],
 });

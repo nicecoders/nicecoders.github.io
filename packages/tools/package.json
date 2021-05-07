@@ -1,0 +1,23 @@
+{
+  "name": "@nicecode/tools",
+  "version": "0.0.1",
+  "description": "test",
+  "keywords": [
+    "test"
+  ],
+  "author": "ericJ <710328466@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
