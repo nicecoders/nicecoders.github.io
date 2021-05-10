@@ -4,5 +4,5 @@ module.exports = changelog;
 
 function changelog() {
     // TODO
-    console.log('test');
+    console.log('fuck');
 }
