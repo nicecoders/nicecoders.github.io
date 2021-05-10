@@ -1,29 +1,18 @@
 {
-  "name": "zx-tools",
-  "version": "0.0.3",
-  "description": "function tools",
-  "keywords": [
-    "javascript"
-  ],
-  "author": "wb-jzx707535 <wb-jzx707535@alibaba-inc.com>",
-  "homepage": "https://github.com/j710328466/zx#readme",
-  "license": "MIT",
-  "main": "lib/tools.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/j710328466/zx.git"
-  },
+  "name": "@nicecode/tools",
+  "version": "0.0.7",
+  "description": "eric 的tools库",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "homepage": "https://github.com/j710328466/nicecode",
+  "repository": "https://github.com/j710328466/nicecode",
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "father-build"
   },
-  "bugs": {
-    "url": "https://github.com/j710328466/zx/issues"
-  }
+  "peerDependencies": {
+    "react": "^16.x"
+  },
+  "author": "ericJ",
+  "license": "ISC"
 }

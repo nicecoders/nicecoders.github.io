@@ -1,11 +1,1 @@
-# `tools`
-
-> TODO: description
-
-## Usage
-
-```
-const tools = require('tools');
-
-// TODO: DEMONSTRATE API
-```
+# @ife/hooks 通用 hooks

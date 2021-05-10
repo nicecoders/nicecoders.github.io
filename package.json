@@ -1,38 +1,51 @@
 {
-  "name": "zx",
-  "private": true,
-  "version": "0.0.2",
+  "name": "nicecode",
+  "version": "1.0.0",
   "scripts": {
-    "create": "lerna create ${name}",
-    "prettier": "prettier --write \"src/**/*.jsx\" \"src/**/*.js\"",
-    "publish-l": "lerna publish --conventional-commits"
+    "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean --yes",
+    "build": "father-build",
+    "publish": "lerna publish",
+    "release": "npm run build && npm publish",
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:update": "umi-test --updateSnapshot",
+    "test:coverage": "umi-test --coverage"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "packages/**/*.{js,jsx}": [
-      "prettier --write",
-      "eslint",
-      "git add"
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
     ]
   },
-  "description": "my own tools!",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:j710328466/zx.git"
-  },
-  "license": "MIT",
   "devDependencies": {
-    "lerna": "^3.22.1",
-    "prettier": "^2.2.1"
-  },
-  "files": [
-    "src",
-    "lib",
-    "packages"
-  ],
-  "main": "src/index.js",
-  "module": "lib/index.esm.js",
-  "typings": "typings/index.d.ts",
-  "dependencies": {
-    "zx-tools": "^0.0.2"
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/react-hooks": "^5.1.2",
+    "@types/jest": "^25.1.2",
+    "@umijs/test": "^3.3.4",
+    "dumi": "^1.0.10",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "father-build": "^1.17.2",
+    "gh-pages": "^3.0.0",
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-test-renderer": "^17.0.2"
   }
 }
