@@ -1,8 +1,6 @@
 import React from 'react'
-import common from '../index';
+import { common } from '@nicecode/tools'
 
 export default () => {
-  const test = common;
-  console.log(test);
-  return <div>123</div>;
+  return <div>生成UUID: {common.generateUUID()}</div>;
 };

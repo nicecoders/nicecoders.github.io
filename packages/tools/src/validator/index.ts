@@ -1,11 +1,14 @@
 export type ValidatorType =
-  | 'string'
   | 'phone'
   | 'email'   // email
   | 'mobile'
-  | 'onlyString'
   | 'url'
   | 'password'
+  | 'noChars'
+  | 'postCode'
+  | 'zh'
+  | 'mac'
+  | 'idCard'
   | 'ip';
 
 

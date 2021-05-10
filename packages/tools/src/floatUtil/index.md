@@ -1,13 +1,21 @@
 ---
-title: floatUtil
-order: 1000
 nav:
   title: tools
   path: /tools
 group:
-  title: 浮点数计算
-  path: /floatUtil
-  order: 4
+  title: floatUtil
+  order: 3
 ---
 
-<code src="./demo/index.tsx" />
+## floatUtil
+<code src="./demo/sub.tsx" />
+
+### API
+
+
+|  方法   | 说明  | 类型 | 默认值 |
+|  ----  | ----  | ----  | ----  |
+| sub  | 减法 | function | - |
+| add  | 加法 | function | - |
+| devide  | 除法 | function | - |
+| multiply  | 乘法 | function | - |

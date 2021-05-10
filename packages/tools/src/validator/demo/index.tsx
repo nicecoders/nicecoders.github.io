@@ -1,8 +1,6 @@
 import React from 'react'
-import Validator from '../index';
+import { validator } from '@nicecode/tools'
 
 export default () => {
-  const test = Validator('email');
-  console.log(test);
-  return <div>123</div>;
+  return <div>手机号正则：{String(validator('mobile'))}</div>;
 };

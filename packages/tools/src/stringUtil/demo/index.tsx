@@ -1,7 +1,6 @@
 import React from 'react'
-import stringUtil from '../index';
+import { stringUtil } from '@nicecode/tools'
 
 export default () => {
-  console.log(stringUtil);
-  return <div>123</div>;
+  return <div>元转分：{stringUtil.toFen(String(222))}</div>;
 };

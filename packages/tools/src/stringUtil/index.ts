@@ -4,8 +4,8 @@
  * isNull - 空校验
  * isNumber - 数字校验
  * filterNull - 空数据过滤
- * convertFenToYuan - 分转化成元
- * convertYuanToFen - 元转化为分
+ * toYuan - 分转化成元
+ * toFen - 元转化为分
  */
  class StringUtil {
   /**
@@ -85,8 +85,8 @@
    * @return {String} 元
    * @example
    */
-  toYuan = (str: string, format = '0.00') => {
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(str)) {
+  toYuan = (str: string | number, format = '0.00') => {
+    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
       return format;
     }
     str = str.toString();
@@ -123,8 +123,8 @@
    * @example
    *
    */
-  toFen = (str: string, format = '0') => {
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(str)) {
+  toFen = (str: string | number, format = '0') => {
+    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
       return format;
     }
     str = str.toString();

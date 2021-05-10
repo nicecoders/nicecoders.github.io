@@ -1,7 +1,11 @@
-import React from 'react'
-import common from '../index';
+import React from 'react';
+import { checkDevice } from '@nicecode/tools'
 
-export default () => {
-  console.log(common);
-  return <div>123</div>;
-};
+
+const Demo: React.FC<any> = () => {
+  return (
+    <div>是否在PC端：{String(checkDevice.isPc())}</div>
+  )
+}
+
+export default Demo;
