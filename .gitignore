@@ -5,8 +5,6 @@ node_modules
 
 # production
 **/dist
-**/es
-**/lib
 /.vscode
 
 # misc
