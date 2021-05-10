@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/tools",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "eric 的tools库",
   "main": "lib/index.js",
   "module": "es/index.js",
