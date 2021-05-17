@@ -1,3 +1,3 @@
-/// <reference types="react" />
-declare const _default: () => JSX.Element;
-export default _default;
+import React from 'react';
+declare const Demo: React.FC<any>;
+export default Demo;

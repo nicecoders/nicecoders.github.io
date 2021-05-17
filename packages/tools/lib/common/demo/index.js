@@ -12,12 +12,10 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _index = _interopRequireDefault(require("../index"));
+var _tools = require("@nicecode/tools");
 
 var _default = function _default() {
-  var test = _index.default;
-  console.log(test);
-  return /*#__PURE__*/_react.default.createElement("div", null, "123");
+  return /*#__PURE__*/_react.default.createElement("div", null, "\u751F\u6210UUID: ", _tools.common.generateUUID());
 };
 
 exports.default = _default;

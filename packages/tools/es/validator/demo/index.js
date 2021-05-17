@@ -1,7 +1,5 @@
 import React from 'react';
-import Validator from '../index';
+import { validator } from '@nicecode/tools';
 export default (function () {
-  var test = Validator('email');
-  console.log(test);
-  return /*#__PURE__*/React.createElement("div", null, "123");
+  return /*#__PURE__*/React.createElement("div", null, "\u624B\u673A\u53F7\u6B63\u5219\uFF1A", String(validator('mobile')));
 });

@@ -4,8 +4,8 @@
  * isNull - 空校验
  * isNumber - 数字校验
  * filterNull - 空数据过滤
- * convertFenToYuan - 分转化成元
- * convertYuanToFen - 元转化为分
+ * toYuan - 分转化成元
+ * toFen - 元转化为分
  */
 declare class StringUtil {
     /**
@@ -64,7 +64,7 @@ declare class StringUtil {
      * @return {String} 元
      * @example
      */
-    toYuan: (str: string, format?: string) => string;
+    toYuan: (str: string | number, format?: string) => string;
     /**
      * 元->分
      * 为防止浮点数及大数运算精度丢失，故采用字符串形式解析
@@ -75,7 +75,7 @@ declare class StringUtil {
      * @example
      *
      */
-    toFen: (str: string, format?: string) => string;
+    toFen: (str: string | number, format?: string) => string;
 }
 declare const _default: StringUtil;
 export default _default;

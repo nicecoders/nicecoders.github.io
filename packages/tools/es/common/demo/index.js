@@ -1,7 +1,5 @@
 import React from 'react';
-import common from '../index';
+import { common } from '@nicecode/tools';
 export default (function () {
-  var test = common;
-  console.log(test);
-  return /*#__PURE__*/React.createElement("div", null, "123");
+  return /*#__PURE__*/React.createElement("div", null, "\u751F\u6210UUID: ", common.generateUUID());
 });

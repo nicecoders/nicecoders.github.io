@@ -8,8 +8,8 @@ import _classCallCheck from "@babel/runtime-corejs3/helpers/classCallCheck";
  * isNull - 空校验
  * isNumber - 数字校验
  * filterNull - 空数据过滤
- * convertFenToYuan - 分转化成元
- * convertYuanToFen - 元转化为分
+ * toYuan - 分转化成元
+ * toFen - 元转化为分
  */
 var StringUtil = function StringUtil() {
   var _this = this;
@@ -99,7 +99,7 @@ var StringUtil = function StringUtil() {
 
     var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0.00';
 
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(str)) {
+    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
       return format;
     }
 
@@ -149,7 +149,7 @@ var StringUtil = function StringUtil() {
 
     var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0';
 
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(str)) {
+    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
       return format;
     }
 

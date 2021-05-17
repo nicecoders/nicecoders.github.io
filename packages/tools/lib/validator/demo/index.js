@@ -12,12 +12,10 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _index = _interopRequireDefault(require("../index"));
+var _tools = require("@nicecode/tools");
 
 var _default = function _default() {
-  var test = (0, _index.default)('email');
-  console.log(test);
-  return /*#__PURE__*/_react.default.createElement("div", null, "123");
+  return /*#__PURE__*/_react.default.createElement("div", null, "\u624B\u673A\u53F7\u6B63\u5219\uFF1A", String((0, _tools.validator)('mobile')));
 };
 
 exports.default = _default;

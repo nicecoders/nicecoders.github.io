@@ -6,6 +6,8 @@ node_modules
 # production
 **/dist
 /.vscode
+**/packages/**/es
+**/packages/**/lib
 
 # misc
 .DS_Store
@@ -29,6 +31,7 @@ yarn.lock
 # umi
 .umi
 .umi-production
+docs-dist
 
 # screenshot
 screenshot
