@@ -12,12 +12,15 @@
     "commitlint"
   ],
   "author": "jasondog",
-  "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.1",
     "longest": "^2.0.1",
     "right-pad": "^1.0.1",
     "word-wrap": "^1.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j710328466/nicecode"
   },
   "gitHead": "80a2ec88a14a40ae0c6cffb6843c91712351cf07"
 }
