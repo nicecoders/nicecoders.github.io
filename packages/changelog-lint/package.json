@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/changelog-lit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "辅助changelog插件的插件",
   "main": "index.js",
   "scripts": {
