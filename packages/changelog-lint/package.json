@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/changelog-lint",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "辅助 changelog 内容提交插件",
   "main": "index.js",
   "scripts": {
