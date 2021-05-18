@@ -1,9 +1,9 @@
 {
   "name": "@nicecode/changelog",
-  "version": "0.1.10",
+  "version": "0.0.1",
   "author": "jasondog",
   "description": "changelog",
-  "main": "src/cz/index.js",
+  "main": "src/index.js",
   "files": [
     "src",
     "demo"
@@ -67,8 +67,5 @@
     "url": "https://github.com/j710328466/nicecode"
   },
   "license": "MIT",
-  "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
-  "publishConfig": {
-    "access": "public"
-  }
+  "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446"
 }

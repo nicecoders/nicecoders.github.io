@@ -1,6 +1,7 @@
 {
   "version": "independent",
   "npmClient": "yarn",
+  "access": "public",
   "command": {
     "publish": {
       "ignoreChanges": ["*.md", "**/test/**"],

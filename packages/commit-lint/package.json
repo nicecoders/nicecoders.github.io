@@ -1,5 +1,5 @@
 {
-  "name": "@nicecode/changelog-lint",
+  "name": "@nicecode/commit-lint",
   "version": "0.0.1",
   "description": "辅助 changelog 内容提交插件",
   "main": "index.js",
@@ -13,8 +13,5 @@
   ],
   "author": "jasondog",
   "license": "ISC",
-  "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
-  "publishConfig": {
-    "access": "public"
-  }
+  "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446"
 }
