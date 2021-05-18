@@ -1,0 +1,70 @@
+{
+  "name": "nicecode-changelog",
+  "version": "0.1.7",
+  "author": "jasondog",
+  "description": "changelog",
+  "main": "src/cz/index.js",
+  "files": [
+    "src",
+    "demo"
+  ],
+  "scripts": {
+    "cz": "git add . && git cz",
+    "log": "conventional-changelog --config src/log -i CHANGELOG.md -s -r 0",
+    "v": "standard-version -r ${v}",
+    "build": "rm -rf dist && cross-env babel lib --out-dir dist"
+  },
+  "keywords": [
+    "changelog",
+    "git"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./src/cz"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "work-wrap": "^1.0.0",
+    "q": "^1.5.1",
+    "right-pad": "^1.0.1",
+    "compare-func": "^1.3.2",
+    "chalk": "^2.4.2",
+    "longest": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "commitizen": "^3.0.5",
+    "commitlint": "^7.3.1",
+    "conventional-changelog-cli": "^2.0.11",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.3",
+    "github-url-from-git": "^1.5.0",
+    "husky": "^1.3.1",
+    "jimi-web-changelog": "^0.0.7",
+    "lint-staged": "^8.1.0",
+    "standard-version": "^4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j710328466/nicecode"
+  },
+  "license": "MIT"
+}

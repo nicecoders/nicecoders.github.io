@@ -1,0 +1,7 @@
+# documents
+node_modules
+test
+demo
+
+#files
+yarn-error.log

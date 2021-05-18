@@ -1,0 +1,16 @@
+{
+  "name": "@nicecode/changelog-lit",
+  "version": "0.1.0",
+  "description": "辅助changelog插件的插件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nicecode",
+    "changelog",
+    "lint"
+  ],
+  "author": "jasondog",
+  "license": "ISC"
+}
