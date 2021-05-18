@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/commit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "git规范提交中文版",
   "main": "src/index.js",
   "scripts": {
