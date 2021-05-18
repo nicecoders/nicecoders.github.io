@@ -17,5 +17,9 @@
   "license": "ISC",
   "devDependencies": {
     "@nicecode/tools": "^0.1.4"
+  },
+  "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
+  "publishConfig": {
+    "access": "public"
   }
 }

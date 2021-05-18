@@ -66,5 +66,9 @@
     "type": "git",
     "url": "https://github.com/j710328466/nicecode"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
+  "publishConfig": {
+    "access": "public"
+  }
 }
