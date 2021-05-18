@@ -22,5 +22,8 @@
     "type": "git",
     "url": "https://github.com/j710328466/nicecode"
   },
-  "gitHead": "80a2ec88a14a40ae0c6cffb6843c91712351cf07"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "16d2b13626a6f0d78cf5110f27e74b39e776c246"
 }
