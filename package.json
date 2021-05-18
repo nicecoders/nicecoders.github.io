@@ -15,13 +15,20 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:update": "umi-test --updateSnapshot",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "cz": "git add . && git cz",
+    "log": "conventional-changelog --config nicecode-changelog/log -i CHANGELOG.md -s -r 0"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "nicecode-changelog"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
@@ -32,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@nicecode/changelog-lint": "^0.0.1",
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.2",
     "@types/jest": "^25.1.2",
@@ -47,6 +55,7 @@
     "husky": "^6.0.0",
     "lerna": "^4.0.0",
     "lint-staged": "^11.0.0",
+    "nicecode-changelog": "^0.1.9",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-test-renderer": "^17.0.2"
