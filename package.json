@@ -2,6 +2,7 @@
   "name": "nicecode",
   "version": "1.0.0",
   "scripts": {
+    "cz": "git add . && git cz",
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
@@ -16,7 +17,6 @@
     "test": "umi-test",
     "test:update": "umi-test --updateSnapshot",
     "test:coverage": "umi-test --coverage",
-    "cz": "git add . && git cz",
     "log": "conventional-changelog --config ./packages/changelog -i CHANGELOG.md -s -r 0"
   },
   "main": "dist/index.js",
@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@nicecode/commit-lint": "^0.0.9",
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.2",
     "@types/jest": "^25.1.2",

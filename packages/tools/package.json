@@ -1,7 +1,7 @@
 {
   "name": "@nicecode/tools",
   "version": "0.1.6",
-  "description": "eric 的tools库",
+  "description": "nicecoders tools",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
@@ -13,7 +13,7 @@
   "peerDependencies": {
     "react": "^16.x"
   },
-  "author": "ericJ",
+  "author": "nicecoders",
   "license": "ISC",
   "devDependencies": {
     "@nicecode/tools": "^0.1.6"

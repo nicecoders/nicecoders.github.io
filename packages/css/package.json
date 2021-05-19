@@ -15,11 +15,10 @@
     "sass",
     "nicecode"
   ],
-  "author": "jasondog",
+  "author": "nicecoders",
   "license": "ISC",
   "gitHead": "6586b5a71b6af55ae6317c8979b177a4725bbc8d",
   "devDependencies": {
-    "bootstrap": "^5.0.1",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
