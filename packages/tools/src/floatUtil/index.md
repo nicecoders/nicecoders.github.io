@@ -1,6 +1,6 @@
 ---
 nav:
-  title: tools
+  title: 函数库
   path: /tools
 group:
   title: floatUtil
@@ -8,6 +8,9 @@ group:
 ---
 
 ## floatUtil
+
+数字运算方法合集
+
 <code src="./demo/sub.tsx" />
 
 ### API

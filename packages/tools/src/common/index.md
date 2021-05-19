@@ -1,6 +1,6 @@
 ---
 nav:
-  title: tools
+  title: 函数库
   path: /tools
 group:
   title: common
@@ -8,6 +8,9 @@ group:
 ---
 
 ## common
+
+通用方法合集
+
 <code src="./demo/index.tsx" />
 
 ## API

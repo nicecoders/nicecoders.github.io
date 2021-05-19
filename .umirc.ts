@@ -21,11 +21,26 @@ export default defineConfig({
     // )
   },
   resolve: {
-    includes: ['docs', 'packages/tools/src'],
+    includes: [
+      'docs',
+      'packages/tools/src',
+      'packages/commit/src',
+      'packages/commit-lint/src',
+      'packages/changelog/src',
+      'packages/css/src'
+    ],
   },
   locales: [['zh-CN', '中文']],
   navs: [
     null,
+    // {
+    //   title: '规范工具',
+    //   children: [
+    //     { title: 'changelog', path: '/changelog' },
+    //     { title: 'commit', path: '/changelog' },
+    //     { title: 'commit-lint', path: '/changelog' },
+    //   ],
+    // },
     {
       title: 'GitHub',
       path: 'https://github.com/j710328466',

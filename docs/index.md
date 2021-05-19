@@ -1,5 +1,5 @@
 ---
-title: nicecode - 埃里克的工具库合集
+title: nicecode 工具合集
 order: 10
 hero:
   title: nicecode
@@ -17,12 +17,14 @@ hero:
 #   - icon: https://gw.alipayobjects.com/zos/bmw-prod/b8570f4d-c1b1-45eb-a1da-abff53159967/kj9t990h_w144_h144.png
 #     title: 主题系统
 #     desc: 渐进式的自定义主题能力，小到扩展自己的 Markdown 标签，大到自定义完整主题包，全由你定
-footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by eric.J
+footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by jasondog
 ---
 
-## 开发工具合集
+## 工具合集
 
-1. @nicecode/changelog: 日志生成工具（done）
-2. @nicecode/tools: 常用函数方法（doing）
-3. @nicecode/icon: 图标（doing）
-4. @nicecode/css: style-in-class 解决方案
+1. @nicecode/changelog: 日志生成工具 <Badge>DONE</Badge>
+2. @nicecode/commit: 定制化 git 提交 <Badge>DONE</Badge>
+3. @nicecode/commit-lint: 定制化 git 提交校验 <Badge>DONE</Badge>
+4. @nicecode/tools: 常用函数方法 <Badge>DONE</Badge>
+5. @nicecode/icon: 通用图标 <Badge>TODO</Badge>
+6. @nicecode/css: style-in-class 解决方案 <Badge>TODO</Badge>

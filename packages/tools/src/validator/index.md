@@ -1,6 +1,6 @@
 ---
 nav:
-  title: tools
+  title: 函数库
   path: /tools
 group:
   title: validator
@@ -8,6 +8,9 @@ group:
 ---
 
 ## validator
+
+常见正则校验合集
+
 <code src="./demo/index.tsx" />
 
 

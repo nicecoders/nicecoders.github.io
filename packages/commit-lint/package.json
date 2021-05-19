@@ -1,8 +1,8 @@
 {
   "name": "@nicecode/commit-lint",
-  "version": "0.0.6-alpha.0",
+  "version": "0.0.6",
   "description": "辅助 changelog 内容提交插件",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +19,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "0af6d2924fbca82840bc8be6106acc5d42385dd2"
+  "gitHead": "c5be33639e081c63d3b2eb30af705495bf30de55"
 }
