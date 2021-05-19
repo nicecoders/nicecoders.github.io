@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/commit-lint",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "辅助 changelog 内容提交插件",
   "main": "src/index.js",
   "scripts": {
