@@ -17,7 +17,7 @@
   ],
   "author": "jasondog",
   "license": "ISC",
-  "gitHead": "c5be33639e081c63d3b2eb30af705495bf30de55",
+  "gitHead": "6586b5a71b6af55ae6317c8979b177a4725bbc8d",
   "devDependencies": {
     "bootstrap": "^5.0.1",
     "del": "^6.0.0",
@@ -30,5 +30,8 @@
     "gulp-sass": "^4.1.0",
     "gulp-uglifycss": "^1.1.0",
     "node-sass": "^6.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
