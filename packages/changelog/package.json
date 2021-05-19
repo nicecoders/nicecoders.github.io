@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/changelog",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "jasondog",
   "description": "changelog",
   "main": "src/index.js",
