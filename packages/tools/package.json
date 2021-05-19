@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
-  "homepage": "https://github.com/j710328466/nicecode",
-  "repository": "https://github.com/j710328466/nicecode",
+  "homepage": "https://github.com/nicecoders/nicecode",
+  "repository": "https://github.com/nicecoders/nicecode",
   "scripts": {
     "build": "father-build"
   },

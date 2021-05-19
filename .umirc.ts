@@ -43,7 +43,7 @@ export default defineConfig({
     // },
     {
       title: 'GitHub',
-      path: 'https://github.com/j710328466',
+      path: 'https://github.com/nicecoders',
     },
   ],
   analyze: {
