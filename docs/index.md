@@ -35,5 +35,5 @@ features:
   - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/boluo.png
     title: slash【敬请期待】
     desc: lodash 二次封装库
-footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by jasondog
+footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by nicecoders
 ---
