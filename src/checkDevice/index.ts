@@ -12,7 +12,7 @@
  * inAlipayminiprogram - 判断是否在支付宝小程序内
  * getSceneType - 获取场景类型
  */
- class App {
+class App {
   /**
    * IOS环境判断
    *
@@ -33,6 +33,27 @@
    * @return {Boolean} true-是，false-否
    */
   isWeChat = () => /MicroMessenger/i.test(navigator.userAgent);
+
+  /**
+   * 判断是否在企业微信客户端内
+   *
+   * @return {Boolean} true-是，false-否
+   */
+  isWxWorker = () => /wxwork/i.test(navigator.userAgent);
+
+  /**
+   * 判断是否在钉钉客户端内
+   *
+   * @return {Boolean} true-是，false-否
+   */
+  isDingTalk = () => /dingtalk/i.test(navigator.userAgent);
+
+  /**
+   * 判断是否在飞书客户端内
+   *
+   * @return {Boolean} true-是，false-否
+   */
+  isFeiShu = () => /lark/i.test(navigator.userAgent);
 
   /**
    * 判断是否在支付宝客户端内
@@ -70,7 +91,10 @@
    *
    * @return {Boolean} true-是，false-否
    */
-  isPc = () => !/iPhone|iPad|iPod|Android|Mobile|SymbianOS|Windows Phone|BlackBerry|webOS/i.test(navigator.userAgent);
+  isPc = () =>
+    !/iPhone|iPad|iPod|Android|Mobile|SymbianOS|Windows Phone|BlackBerry|webOS/i.test(
+      navigator.userAgent,
+    );
 
   /**
    * 判断是否在支付宝小程序内
@@ -95,25 +119,47 @@
    * jdjrAndroid - 京东金融安卓
    * wap - 手机浏览器
    * alipayMiniPrograms - 支付宝小程序
+   * wxwork - 企业微信客户端
+   * dingtalk - 钉钉客户端
+   * lark - 飞书客户端
    *
    * @return {String} 场景类型
    */
   getSceneType = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+
     if (this.inAlipayminiprogram()) {
       return 'alipayMiniPrograms';
     }
+
     if (this.isAliPay()) {
       return 'alipayClient';
     }
+
     if (this.isWeChat()) {
       return 'wxClient';
     }
-    if (navigator.userAgent.toLowerCase().includes('jdapp')) {
+
+    if (this.isWxWorker()) {
+      return 'wxWork';
+    }
+
+    if (this.isDingTalk()) {
+      return 'dingTalk';
+    }
+
+    if (this.isFeiShu()) {
+      return 'lark';
+    }
+
+    if (userAgent.includes('jdapp')) {
       return 'jdJr';
     }
-    if (navigator.userAgent.toLowerCase().includes('jdjr')) {
+
+    if (userAgent.includes('jdjr')) {
       return 'jdJr';
     }
+
     return 'wap';
   };
 }
