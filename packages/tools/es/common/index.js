@@ -1,5 +1,4 @@
-import _concatInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/concat";
-import _classCallCheck from "@babel/runtime-corejs3/helpers/classCallCheck";
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * 通用方法
@@ -85,8 +84,6 @@ var Common = function Common() {
 
 
   this.addURLParameter = function (url, paramName, paramVal) {
-    var _context4, _context5, _context6;
-
     var oriUrls = url.split('#');
     var temp = url;
     var additionalURL = '';
@@ -102,12 +99,10 @@ var Common = function Common() {
     var tempArray = temp.split('?');
 
     if (tempArray.length < 2) {
-      var _context, _context2, _context3;
-
-      return _concatInstanceProperty(_context = _concatInstanceProperty(_context2 = _concatInstanceProperty(_context3 = "".concat(temp, "?")).call(_context3, paramName, "=")).call(_context2, encodeURIComponent(paramVal))).call(_context, additionalURL);
+      return "".concat(temp, "?").concat(paramName, "=").concat(encodeURIComponent(paramVal)).concat(additionalURL);
     }
 
-    return _concatInstanceProperty(_context4 = _concatInstanceProperty(_context5 = _concatInstanceProperty(_context6 = "".concat(temp, "&")).call(_context6, paramName, "=")).call(_context5, encodeURIComponent(paramVal))).call(_context4, additionalURL);
+    return "".concat(temp, "&").concat(paramName, "=").concat(encodeURIComponent(paramVal)).concat(additionalURL);
   };
   /**
    * 更新url中的search参数
@@ -120,8 +115,6 @@ var Common = function Common() {
 
 
   this.updateURLParameter = function (url, paramName, paramVal) {
-    var _context7, _context8, _context9, _context10;
-
     var TheAnchor = null;
     var newAdditionalURL = '';
     var tempArray = url.split('?');
@@ -161,7 +154,7 @@ var Common = function Common() {
       paramVal += "#".concat(TheAnchor);
     }
 
-    return _concatInstanceProperty(_context7 = _concatInstanceProperty(_context8 = _concatInstanceProperty(_context9 = _concatInstanceProperty(_context10 = "".concat(baseURL, "?")).call(_context10, newAdditionalURL)).call(_context9, temp)).call(_context8, paramName, "=")).call(_context7, paramVal);
+    return "".concat(baseURL, "?").concat(newAdditionalURL).concat(temp).concat(paramName, "=").concat(paramVal);
   };
   /**
    * 删除url中的search参数
@@ -206,9 +199,7 @@ var Common = function Common() {
     var newUrl = '';
 
     if (newParams !== '') {
-      var _context11, _context12;
-
-      newUrl = _concatInstanceProperty(_context11 = _concatInstanceProperty(_context12 = "".concat(tempArray[0], "?")).call(_context12, newParams)).call(_context11, additionalURL);
+      newUrl = "".concat(tempArray[0], "?").concat(newParams).concat(additionalURL);
     } else {
       newUrl = tempArray[0] + additionalURL;
     }

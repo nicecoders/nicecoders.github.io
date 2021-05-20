@@ -1,18 +1,11 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime-corejs3/helpers/interopRequireDefault");
-
-var _Object$defineProperty = require("@babel/runtime-corejs3/core-js-stable/object/define-property");
-
-_Object$defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 exports.default = void 0;
 
-var _includes = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/instance/includes"));
-
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime-corejs3/helpers/classCallCheck"));
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * app交互
@@ -31,7 +24,7 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime-corejs3/he
 var App = function App() {
   var _this = this;
 
-  (0, _classCallCheck2.default)(this, App);
+  _classCallCheck(this, App);
 
   /**
    * IOS环境判断
@@ -144,8 +137,6 @@ var App = function App() {
 
 
   this.getSceneType = function () {
-    var _context, _context2;
-
     if (_this.inAlipayminiprogram()) {
       return 'alipayMiniPrograms';
     }
@@ -158,11 +149,11 @@ var App = function App() {
       return 'wxClient';
     }
 
-    if ((0, _includes.default)(_context = navigator.userAgent.toLowerCase()).call(_context, 'jdapp')) {
+    if (navigator.userAgent.toLowerCase().includes('jdapp')) {
       return 'jdJr';
     }
 
-    if ((0, _includes.default)(_context2 = navigator.userAgent.toLowerCase()).call(_context2, 'jdjr')) {
+    if (navigator.userAgent.toLowerCase().includes('jdjr')) {
       return 'jdJr';
     }
 
