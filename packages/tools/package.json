@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/tools",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "nicecoders tools",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -16,7 +16,7 @@
   "author": "nicecoders",
   "license": "ISC",
   "devDependencies": {
-    "@nicecode/tools": "^0.1.7"
+    "@nicecode/tools": "^0.1.8"
   },
   "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
   "publishConfig": {
