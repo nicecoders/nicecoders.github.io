@@ -33,7 +33,7 @@ features:
     title: eslint-config【敬请期待】
     desc: eslint 配置规则
   - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/boluo.png
-    title: lodash【敬请期待】
+    title: slash【敬请期待】
     desc: lodash 二次封装库
 footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by jasondog
 ---
