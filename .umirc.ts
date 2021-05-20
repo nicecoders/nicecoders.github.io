@@ -4,7 +4,7 @@ const NODE_ENV = process.env.NODE_ENV
 
 export default defineConfig({
   title: 'nicecode',
-  favicon: 'http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.ico',
+  favicon: 'https://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.ico',
   logo: 'http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png',
   outputPath: 'docs-dist',
   hash: true,
