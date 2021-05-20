@@ -1,10 +1,8 @@
-var createRound = require('./_createRound');
+import createRound from './.internal/createRound.js'
 
 /**
- * Computes `number` rounded up to `precision`.
+ * Computes `number` rounded up to `precision`. (Round up: the smallest integer greater than or equal to a given number.)
  *
- * @static
- * @memberOf _
  * @since 3.10.0
  * @category Math
  * @param {number} number The number to round up.
@@ -12,15 +10,15 @@ var createRound = require('./_createRound');
  * @returns {number} Returns the rounded up number.
  * @example
  *
- * _.ceil(4.006);
+ * ceil(4.006)
  * // => 5
  *
- * _.ceil(6.004, 2);
+ * ceil(6.004, 2)
  * // => 6.01
  *
- * _.ceil(6040, -2);
+ * ceil(6040, -2)
  * // => 6100
  */
-var ceil = createRound('ceil');
+const ceil = createRound('ceil')
 
-module.exports = ceil;
+export default ceil

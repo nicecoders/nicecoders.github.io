@@ -1,37 +1,32 @@
-var baseSlice = require('./_baseSlice'),
-    toInteger = require('./toInteger');
+import slice from './slice.js'
 
 /**
  * Creates a slice of `array` with `n` elements taken from the beginning.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to query.
  * @param {number} [n=1] The number of elements to take.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
  * @returns {Array} Returns the slice of `array`.
  * @example
  *
- * _.take([1, 2, 3]);
+ * take([1, 2, 3])
  * // => [1]
  *
- * _.take([1, 2, 3], 2);
+ * take([1, 2, 3], 2)
  * // => [1, 2]
  *
- * _.take([1, 2, 3], 5);
+ * take([1, 2, 3], 5)
  * // => [1, 2, 3]
  *
- * _.take([1, 2, 3], 0);
+ * take([1, 2, 3], 0)
  * // => []
  */
-function take(array, n, guard) {
-  if (!(array && array.length)) {
-    return [];
+function take(array, n=1) {
+  if (!(array != null && array.length)) {
+    return []
   }
-  n = (guard || n === undefined) ? 1 : toInteger(n);
-  return baseSlice(array, 0, n < 0 ? 0 : n);
+  return slice(array, 0, n < 0 ? 0 : n)
 }
 
-module.exports = take;
+export default take

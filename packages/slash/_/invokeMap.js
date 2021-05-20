@@ -1,8 +1,6 @@
-var apply = require('./_apply'),
-    baseEach = require('./_baseEach'),
-    baseInvoke = require('./_baseInvoke'),
-    baseRest = require('./_baseRest'),
-    isArrayLike = require('./isArrayLike');
+import baseEach from './.internal/baseEach.js'
+import invoke from './invoke.js'
+import isArrayLike from './isArrayLike.js'
 
 /**
  * Invokes the method at `path` of each element in `collection`, returning
@@ -10,32 +8,30 @@ var apply = require('./_apply'),
  * are provided to each invoked method. If `path` is a function, it's invoked
  * for, and `this` bound to, each element in `collection`.
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Array|Function|string} path The path of the method to invoke or
  *  the function invoked per iteration.
- * @param {...*} [args] The arguments to invoke each method with.
+ * @param {Array} [args] The arguments to invoke each method with.
  * @returns {Array} Returns the array of results.
  * @example
  *
- * _.invokeMap([[5, 1, 7], [3, 2, 1]], 'sort');
+ * invokeMap([[5, 1, 7], [3, 2, 1]], 'sort')
  * // => [[1, 5, 7], [1, 2, 3]]
  *
- * _.invokeMap([123, 456], String.prototype.split, '');
+ * invokeMap([123, 456], String.prototype.split, [''])
  * // => [['1', '2', '3'], ['4', '5', '6']]
  */
-var invokeMap = baseRest(function(collection, path, args) {
-  var index = -1,
-      isFunc = typeof path == 'function',
-      result = isArrayLike(collection) ? Array(collection.length) : [];
+function invokeMap(collection, path, args) {
+  let index = -1
+  const isFunc = typeof path === 'function'
+  const result = isArrayLike(collection) ? new Array(collection.length) : []
 
-  baseEach(collection, function(value) {
-    result[++index] = isFunc ? apply(path, value, args) : baseInvoke(value, path, args);
-  });
-  return result;
-});
+  baseEach(collection, (value) => {
+    result[++index] = isFunc ? path.apply(value, args) : invoke(value, path, args)
+  })
+  return result
+}
 
-module.exports = invokeMap;
+export default invokeMap

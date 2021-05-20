@@ -1,28 +1,23 @@
-var getTag = require('./_getTag'),
-    isObjectLike = require('./isObjectLike');
-
-/** `Object#toString` result references. */
-var weakMapTag = '[object WeakMap]';
+import getTag from './.internal/getTag.js'
+import isObjectLike from './isObjectLike.js'
 
 /**
  * Checks if `value` is classified as a `WeakMap` object.
  *
- * @static
- * @memberOf _
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a weak map, else `false`.
  * @example
  *
- * _.isWeakMap(new WeakMap);
+ * isWeakMap(new WeakMap)
  * // => true
  *
- * _.isWeakMap(new Map);
+ * isWeakMap(new Map)
  * // => false
  */
 function isWeakMap(value) {
-  return isObjectLike(value) && getTag(value) == weakMapTag;
+  return isObjectLike(value) && getTag(value) == '[object WeakMap]'
 }
 
-module.exports = isWeakMap;
+export default isWeakMap

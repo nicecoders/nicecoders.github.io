@@ -1,6 +1,5 @@
-var arrayLikeKeys = require('./_arrayLikeKeys'),
-    baseKeys = require('./_baseKeys'),
-    isArrayLike = require('./isArrayLike');
+import arrayLikeKeys from './.internal/arrayLikeKeys.js'
+import isArrayLike from './isArrayLike.js'
 
 /**
  * Creates an array of the own enumerable property names of `object`.
@@ -9,29 +8,30 @@ var arrayLikeKeys = require('./_arrayLikeKeys'),
  * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
  * for more details.
  *
- * @static
  * @since 0.1.0
- * @memberOf _
  * @category Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property names.
+ * @see values, valuesIn
  * @example
  *
  * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
+ *   this.a = 1
+ *   this.b = 2
  * }
  *
- * Foo.prototype.c = 3;
+ * Foo.prototype.c = 3
  *
- * _.keys(new Foo);
+ * keys(new Foo)
  * // => ['a', 'b'] (iteration order is not guaranteed)
  *
- * _.keys('hi');
+ * keys('hi')
  * // => ['0', '1']
  */
 function keys(object) {
-  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+  return isArrayLike(object)
+    ? arrayLikeKeys(object)
+    : Object.keys(Object(object))
 }
 
-module.exports = keys;
+export default keys

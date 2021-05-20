@@ -1,7 +1,3 @@
-var baseSlice = require('./_baseSlice'),
-    isIterateeCall = require('./_isIterateeCall'),
-    toInteger = require('./toInteger');
-
 /**
  * Creates a slice of `array` from `start` up to, but not including, `end`.
  *
@@ -9,29 +5,43 @@ var baseSlice = require('./_baseSlice'),
  * [`Array#slice`](https://mdn.io/Array/slice) to ensure dense arrays are
  * returned.
  *
- * @static
- * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to slice.
- * @param {number} [start=0] The start position.
- * @param {number} [end=array.length] The end position.
+ * @param {number} [start=0] The start position. A negative index will be treated as an offset from the end.
+ * @param {number} [end=array.length] The end position. A negative index will be treated as an offset from the end.
  * @returns {Array} Returns the slice of `array`.
+ * @example
+ *
+ * var array = [1, 2, 3, 4]
+ *
+ * _.slice(array, 2)
+ * // => [3, 4]
  */
 function slice(array, start, end) {
-  var length = array == null ? 0 : array.length;
+  let length = array == null ? 0 : array.length
   if (!length) {
-    return [];
+    return []
   }
-  if (end && typeof end != 'number' && isIterateeCall(array, start, end)) {
-    start = 0;
-    end = length;
+  start = start == null ? 0 : start
+  end = end === undefined ? length : end
+
+  if (start < 0) {
+    start = -start > length ? 0 : (length + start)
   }
-  else {
-    start = start == null ? 0 : toInteger(start);
-    end = end === undefined ? length : toInteger(end);
+  end = end > length ? length : end
+  if (end < 0) {
+    end += length
   }
-  return baseSlice(array, start, end);
+  length = start > end ? 0 : ((end - start) >>> 0)
+  start >>>= 0
+
+  let index = -1
+  const result = new Array(length)
+  while (++index < length) {
+    result[index] = array[index + start]
+  }
+  return result
 }
 
-module.exports = slice;
+export default slice

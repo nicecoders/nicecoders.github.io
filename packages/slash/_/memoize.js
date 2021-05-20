@@ -1,8 +1,3 @@
-var MapCache = require('./_MapCache');
-
-/** Error message constants. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
 /**
  * Creates a function that memoizes the result of `func`. If `resolver` is
  * provided, it determines the cache key for storing the result based on the
@@ -11,13 +6,11 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * is invoked with the `this` binding of the memoized function.
  *
  * **Note:** The cache is exposed as the `cache` property on the memoized
- * function. Its creation may be customized by replacing the `_.memoize.Cache`
+ * function. Its creation may be customized by replacing the `memoize.Cache`
  * constructor with one whose instances implement the
  * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
  * method interface of `clear`, `delete`, `get`, `has`, and `set`.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Function
  * @param {Function} func The function to have its output memoized.
@@ -25,49 +18,47 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @returns {Function} Returns the new memoized function.
  * @example
  *
- * var object = { 'a': 1, 'b': 2 };
- * var other = { 'c': 3, 'd': 4 };
+ * const object = { 'a': 1, 'b': 2 }
+ * const other = { 'c': 3, 'd': 4 }
  *
- * var values = _.memoize(_.values);
- * values(object);
+ * const values = memoize(values)
+ * values(object)
  * // => [1, 2]
  *
- * values(other);
+ * values(other)
  * // => [3, 4]
  *
- * object.a = 2;
- * values(object);
+ * object.a = 2
+ * values(object)
  * // => [1, 2]
  *
  * // Modify the result cache.
- * values.cache.set(object, ['a', 'b']);
- * values(object);
+ * values.cache.set(object, ['a', 'b'])
+ * values(object)
  * // => ['a', 'b']
  *
- * // Replace `_.memoize.Cache`.
- * _.memoize.Cache = WeakMap;
+ * // Replace `memoize.Cache`.
+ * memoize.Cache = WeakMap
  */
 function memoize(func, resolver) {
-  if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
-    throw new TypeError(FUNC_ERROR_TEXT);
+  if (typeof func !== 'function' || (resolver != null && typeof resolver !== 'function')) {
+    throw new TypeError('Expected a function')
   }
-  var memoized = function() {
-    var args = arguments,
-        key = resolver ? resolver.apply(this, args) : args[0],
-        cache = memoized.cache;
+  const memoized = function(...args) {
+    const key = resolver ? resolver.apply(this, args) : args[0]
+    const cache = memoized.cache
 
     if (cache.has(key)) {
-      return cache.get(key);
+      return cache.get(key)
     }
-    var result = func.apply(this, args);
-    memoized.cache = cache.set(key, result) || cache;
-    return result;
-  };
-  memoized.cache = new (memoize.Cache || MapCache);
-  return memoized;
+    const result = func.apply(this, args)
+    memoized.cache = cache.set(key, result) || cache
+    return result
+  }
+  memoized.cache = new (memoize.Cache || Map)
+  return memoized
 }
 
-// Expose `MapCache`.
-memoize.Cache = MapCache;
+memoize.Cache = Map
 
-module.exports = memoize;
+export default memoize

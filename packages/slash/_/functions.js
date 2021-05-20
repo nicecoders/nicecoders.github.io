@@ -1,31 +1,29 @@
-var baseFunctions = require('./_baseFunctions'),
-    keys = require('./keys');
-
 /**
  * Creates an array of function property names from own enumerable properties
  * of `object`.
  *
- * @static
  * @since 0.1.0
- * @memberOf _
  * @category Object
  * @param {Object} object The object to inspect.
  * @returns {Array} Returns the function names.
- * @see _.functionsIn
+ * @see functionsIn
  * @example
  *
  * function Foo() {
- *   this.a = _.constant('a');
- *   this.b = _.constant('b');
+ *   this.a = () => 'a'
+ *   this.b = () => 'b'
  * }
  *
- * Foo.prototype.c = _.constant('c');
+ * Foo.prototype.c = () => 'c'
  *
- * _.functions(new Foo);
+ * functions(new Foo)
  * // => ['a', 'b']
  */
 function functions(object) {
-  return object == null ? [] : baseFunctions(object, keys(object));
+  if (object == null) {
+    return []
+  }
+  return Object.keys(object).filter((key) => typeof object[key] === 'function')
 }
 
-module.exports = functions;
+export default functions

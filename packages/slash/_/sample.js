@@ -1,24 +1,18 @@
-var arraySample = require('./_arraySample'),
-    baseSample = require('./_baseSample'),
-    isArray = require('./isArray');
-
 /**
- * Gets a random element from `collection`.
+ * Gets a random element from `array`.
  *
- * @static
- * @memberOf _
  * @since 2.0.0
- * @category Collection
- * @param {Array|Object} collection The collection to sample.
+ * @category Array
+ * @param {Array} array The array to sample.
  * @returns {*} Returns the random element.
  * @example
  *
- * _.sample([1, 2, 3, 4]);
+ * sample([1, 2, 3, 4])
  * // => 2
  */
-function sample(collection) {
-  var func = isArray(collection) ? arraySample : baseSample;
-  return func(collection);
+function sample(array) {
+  const length = array == null ? 0 : array.length
+  return length ? array[Math.floor(Math.random() * length)] : undefined
 }
 
-module.exports = sample;
+export default sample

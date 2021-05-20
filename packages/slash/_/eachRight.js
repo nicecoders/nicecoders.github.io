@@ -1,1 +1,1 @@
-module.exports = require('./forEachRight');
+export { default } from './forEachRight.js'

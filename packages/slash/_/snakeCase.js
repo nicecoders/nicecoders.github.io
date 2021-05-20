@@ -1,28 +1,33 @@
-var createCompounder = require('./_createCompounder');
+import words from './words.js'
+import toString from './toString.js'
 
 /**
  * Converts `string` to
  * [snake case](https://en.wikipedia.org/wiki/Snake_case).
  *
- * @static
- * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the snake cased string.
+ * @see camelCase, lowerCase, kebabCase, startCase, upperCase, upperFirst
  * @example
  *
- * _.snakeCase('Foo Bar');
+ * snakeCase('Foo Bar')
  * // => 'foo_bar'
  *
- * _.snakeCase('fooBar');
+ * snakeCase('fooBar')
  * // => 'foo_bar'
  *
- * _.snakeCase('--FOO-BAR--');
+ * snakeCase('--FOO-BAR--')
  * // => 'foo_bar'
+ *
+ * snakeCase('foo2bar')
+ * // => 'foo_2_bar'
  */
-var snakeCase = createCompounder(function(result, word, index) {
-  return result + (index ? '_' : '') + word.toLowerCase();
-});
+const snakeCase = (string) => (
+  words(toString(string).replace(/['\u2019]/g, '')).reduce((result, word, index) => (
+    result + (index ? '_' : '') + word.toLowerCase()
+  ), '')
+)
 
-module.exports = snakeCase;
+export default snakeCase

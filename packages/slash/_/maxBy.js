@@ -1,34 +1,40 @@
-var baseExtremum = require('./_baseExtremum'),
-    baseGt = require('./_baseGt'),
-    baseIteratee = require('./_baseIteratee');
+import isSymbol from './isSymbol.js'
 
 /**
- * This method is like `_.max` except that it accepts `iteratee` which is
+ * This method is like `max` except that it accepts `iteratee` which is
  * invoked for each element in `array` to generate the criterion by which
  * the value is ranked. The iteratee is invoked with one argument: (value).
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category Math
  * @param {Array} array The array to iterate over.
- * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
+ * @param {Function} iteratee The iteratee invoked per element.
  * @returns {*} Returns the maximum value.
  * @example
  *
- * var objects = [{ 'n': 1 }, { 'n': 2 }];
+ * const objects = [{ 'n': 1 }, { 'n': 2 }]
  *
- * _.maxBy(objects, function(o) { return o.n; });
- * // => { 'n': 2 }
- *
- * // The `_.property` iteratee shorthand.
- * _.maxBy(objects, 'n');
+ * maxBy(objects, ({ n }) => n)
  * // => { 'n': 2 }
  */
 function maxBy(array, iteratee) {
-  return (array && array.length)
-    ? baseExtremum(array, baseIteratee(iteratee, 2), baseGt)
-    : undefined;
+  let result
+  if (array == null) {
+    return result
+  }
+  let computed
+  for (const value of array) {
+    const current = iteratee(value)
+
+    if (current != null && (computed === undefined
+      ? (current === current && !isSymbol(current))
+      : (current > computed)
+    )) {
+      computed = current
+      result = value
+    }
+  }
+  return result
 }
 
-module.exports = maxBy;
+export default maxBy

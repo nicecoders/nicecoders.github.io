@@ -1,47 +1,51 @@
-var baseOrderBy = require('./_baseOrderBy'),
-    isArray = require('./isArray');
+import baseOrderBy from './.internal/baseOrderBy.js'
 
 /**
- * This method is like `_.sortBy` except that it allows specifying the sort
+ * This method is like `sortBy` except that it allows specifying the sort
  * orders of the iteratees to sort by. If `orders` is unspecified, all values
  * are sorted in ascending order. Otherwise, specify an order of "desc" for
  * descending or "asc" for ascending sort order of corresponding values.
+ * You may also specify a compare function for an order.
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Array[]|Function[]|Object[]|string[]} [iteratees=[_.identity]]
+ * @param {Array[]|Function[]|Object[]|string[]} [iteratees=[identity]]
  *  The iteratees to sort by.
- * @param {string[]} [orders] The sort orders of `iteratees`.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.reduce`.
+ * @param {(string|function)[]} [orders] The sort orders of `iteratees`.
  * @returns {Array} Returns the new sorted array.
+ * @see reverse
  * @example
  *
- * var users = [
+ * const users = [
  *   { 'user': 'fred',   'age': 48 },
  *   { 'user': 'barney', 'age': 34 },
  *   { 'user': 'fred',   'age': 40 },
  *   { 'user': 'barney', 'age': 36 }
- * ];
+ * ]
  *
  * // Sort by `user` in ascending order and by `age` in descending order.
- * _.orderBy(users, ['user', 'age'], ['asc', 'desc']);
+ * orderBy(users, ['user', 'age'], ['asc', 'desc'])
  * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+ *
+ * // Sort by `user` then by `age` using custom compare functions for each
+ * orderBy(users, ['user', 'age'], [
+ *   (a, b) => a.localeCompare(b, 'de', { sensitivity: 'base' }),
+ *   (a, b) => a - b,
+ * ])
+ *
  */
-function orderBy(collection, iteratees, orders, guard) {
+function orderBy(collection, iteratees, orders) {
   if (collection == null) {
-    return [];
+    return []
   }
-  if (!isArray(iteratees)) {
-    iteratees = iteratees == null ? [] : [iteratees];
+  if (!Array.isArray(iteratees)) {
+    iteratees = iteratees == null ? [] : [iteratees]
   }
-  orders = guard ? undefined : orders;
-  if (!isArray(orders)) {
-    orders = orders == null ? [] : [orders];
+  if (!Array.isArray(orders)) {
+    orders = orders == null ? [] : [orders]
   }
-  return baseOrderBy(collection, iteratees, orders);
+  return baseOrderBy(collection, iteratees, orders)
 }
 
-module.exports = orderBy;
+export default orderBy

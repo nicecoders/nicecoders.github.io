@@ -1,44 +1,41 @@
-var isArray = require('./isArray');
 
 /**
  * Casts `value` as an array if it's not one.
  *
- * @static
- * @memberOf _
  * @since 4.4.0
  * @category Lang
  * @param {*} value The value to inspect.
  * @returns {Array} Returns the cast array.
  * @example
  *
- * _.castArray(1);
+ * castArray(1)
  * // => [1]
  *
- * _.castArray({ 'a': 1 });
+ * castArray({ 'a': 1 })
  * // => [{ 'a': 1 }]
  *
- * _.castArray('abc');
+ * castArray('abc')
  * // => ['abc']
  *
- * _.castArray(null);
+ * castArray(null)
  * // => [null]
  *
- * _.castArray(undefined);
+ * castArray(undefined)
  * // => [undefined]
  *
- * _.castArray();
+ * castArray()
  * // => []
  *
- * var array = [1, 2, 3];
- * console.log(_.castArray(array) === array);
+ * const array = [1, 2, 3]
+ * console.log(castArray(array) === array)
  * // => true
  */
-function castArray() {
-  if (!arguments.length) {
-    return [];
+function castArray(...args) {
+  if (!args.length) {
+    return []
   }
-  var value = arguments[0];
-  return isArray(value) ? value : [value];
+  const value = args[0]
+  return Array.isArray(value) ? value : [value]
 }
 
-module.exports = castArray;
+export default castArray

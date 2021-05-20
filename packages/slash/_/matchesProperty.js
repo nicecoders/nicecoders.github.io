@@ -1,8 +1,8 @@
-var baseClone = require('./_baseClone'),
-    baseMatchesProperty = require('./_baseMatchesProperty');
+import baseClone from './.internal/baseClone.js'
+import baseMatchesProperty from './.internal/baseMatchesProperty.js'
 
 /** Used to compose bitmasks for cloning. */
-var CLONE_DEEP_FLAG = 1;
+const CLONE_DEEP_FLAG = 1
 
 /**
  * Creates a function that performs a partial deep comparison between the
@@ -11,13 +11,8 @@ var CLONE_DEEP_FLAG = 1;
  *
  * **Note:** Partial comparisons will match empty array and empty object
  * `srcValue` values against any array or object value, respectively. See
- * `_.isEqual` for a list of supported value comparisons.
+ * `isEqual` for a list of supported value comparisons.
  *
- * **Note:** Multiple values can be checked by combining several matchers
- * using `_.overSome`
- *
- * @static
- * @memberOf _
  * @since 3.2.0
  * @category Util
  * @param {Array|string} path The path of the property to get.
@@ -25,20 +20,16 @@ var CLONE_DEEP_FLAG = 1;
  * @returns {Function} Returns the new spec function.
  * @example
  *
- * var objects = [
+ * const objects = [
  *   { 'a': 1, 'b': 2, 'c': 3 },
  *   { 'a': 4, 'b': 5, 'c': 6 }
- * ];
+ * ]
  *
- * _.find(objects, _.matchesProperty('a', 4));
+ * find(objects, matchesProperty('a', 4))
  * // => { 'a': 4, 'b': 5, 'c': 6 }
- *
- * // Checking for several possible values
- * _.filter(objects, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
- * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
  */
 function matchesProperty(path, srcValue) {
-  return baseMatchesProperty(path, baseClone(srcValue, CLONE_DEEP_FLAG));
+  return baseMatchesProperty(path, baseClone(srcValue, CLONE_DEEP_FLAG))
 }
 
-module.exports = matchesProperty;
+export default matchesProperty

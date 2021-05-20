@@ -1,46 +1,30 @@
-var arrayFilter = require('./_arrayFilter'),
-    baseFilter = require('./_baseFilter'),
-    baseIteratee = require('./_baseIteratee'),
-    isArray = require('./isArray'),
-    negate = require('./negate');
+import filter from './filter.js'
+import filterObject from './filterObject.js'
+import negate from './negate.js'
 
 /**
- * The opposite of `_.filter`; this method returns the elements of `collection`
+ * The opposite of `filter` this method returns the elements of `collection`
  * that `predicate` does **not** return truthy for.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param {Function} predicate The function invoked per iteration.
  * @returns {Array} Returns the new filtered array.
- * @see _.filter
+ * @see pull, pullAll, pullAllBy, pullAllWith, pullAt, remove, filter
  * @example
  *
- * var users = [
- *   { 'user': 'barney', 'age': 36, 'active': false },
- *   { 'user': 'fred',   'age': 40, 'active': true }
- * ];
+ * const users = [
+ *   { 'user': 'barney', 'active': true },
+ *   { 'user': 'fred',   'active': false }
+ * ]
  *
- * _.reject(users, function(o) { return !o.active; });
+ * reject(users, ({ active }) => active)
  * // => objects for ['fred']
- *
- * // The `_.matches` iteratee shorthand.
- * _.reject(users, { 'age': 40, 'active': true });
- * // => objects for ['barney']
- *
- * // The `_.matchesProperty` iteratee shorthand.
- * _.reject(users, ['active', false]);
- * // => objects for ['fred']
- *
- * // The `_.property` iteratee shorthand.
- * _.reject(users, 'active');
- * // => objects for ['barney']
  */
 function reject(collection, predicate) {
-  var func = isArray(collection) ? arrayFilter : baseFilter;
-  return func(collection, negate(baseIteratee(predicate, 3)));
+  const func = Array.isArray(collection) ? filter : filterObject
+  return func(collection, negate(predicate))
 }
 
-module.exports = reject;
+export default reject

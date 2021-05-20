@@ -1,24 +1,23 @@
-var assignValue = require('./_assignValue'),
-    baseZipObject = require('./_baseZipObject');
+import assignValue from './.internal/assignValue.js'
+import baseZipObject from './.internal/baseZipObject.js'
 
 /**
- * This method is like `_.fromPairs` except that it accepts two arrays,
+ * This method is like `fromPairs` except that it accepts two arrays,
  * one of property identifiers and one of corresponding values.
  *
- * @static
- * @memberOf _
  * @since 0.4.0
  * @category Array
  * @param {Array} [props=[]] The property identifiers.
  * @param {Array} [values=[]] The property values.
  * @returns {Object} Returns the new object.
+ * @see unzip, unzipWith, zip, zipObjectDeep, zipWith
  * @example
  *
- * _.zipObject(['a', 'b'], [1, 2]);
+ * zipObject(['a', 'b'], [1, 2])
  * // => { 'a': 1, 'b': 2 }
  */
 function zipObject(props, values) {
-  return baseZipObject(props || [], values || [], assignValue);
+  return baseZipObject(props || [], values || [], assignValue)
 }
 
-module.exports = zipObject;
+export default zipObject

@@ -1,13 +1,9 @@
-var apply = require('./_apply'),
-    baseRest = require('./_baseRest'),
-    isError = require('./isError');
+import isError from './isError.js'
 
 /**
  * Attempts to invoke `func`, returning either the result or the caught error
  * object. Any additional arguments are provided to `func` when it's invoked.
  *
- * @static
- * @memberOf _
  * @since 3.0.0
  * @category Util
  * @param {Function} func The function to attempt.
@@ -16,20 +12,19 @@ var apply = require('./_apply'),
  * @example
  *
  * // Avoid throwing errors for invalid selectors.
- * var elements = _.attempt(function(selector) {
- *   return document.querySelectorAll(selector);
- * }, '>_>');
+ * const elements = attempt(selector =>
+ *   document.querySelectorAll(selector), '>_>')
  *
- * if (_.isError(elements)) {
- *   elements = [];
+ * if (isError(elements)) {
+ *   elements = []
  * }
  */
-var attempt = baseRest(function(func, args) {
+function attempt(func, ...args) {
   try {
-    return apply(func, undefined, args);
+    return func(...args)
   } catch (e) {
-    return isError(e) ? e : new Error(e);
+    return isError(e) ? e : new Error(e)
   }
-});
+}
 
-module.exports = attempt;
+export default attempt

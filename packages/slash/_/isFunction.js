@@ -1,37 +1,32 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObject = require('./isObject');
-
-/** `Object#toString` result references. */
-var asyncTag = '[object AsyncFunction]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    proxyTag = '[object Proxy]';
-
 /**
  * Checks if `value` is classified as a `Function` object.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a function, else `false`.
  * @example
  *
- * _.isFunction(_);
+ * isFunction(class Any{})
  * // => true
  *
- * _.isFunction(/abc/);
+ * isFunction(() => {})
+ * // => true
+ *
+ * isFunction(async () => {})
+ * // => true
+ *
+ * isFunction(function * Any() {})
+ * // => true
+ *
+ * isFunction(Math.round)
+ * // => true
+ *
+ * isFunction(/abc/)
  * // => false
  */
 function isFunction(value) {
-  if (!isObject(value)) {
-    return false;
-  }
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 9 which returns 'object' for typed arrays and other constructors.
-  var tag = baseGetTag(value);
-  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+  return typeof value === 'function'
 }
 
-module.exports = isFunction;
+export default isFunction

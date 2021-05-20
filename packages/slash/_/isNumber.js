@@ -1,38 +1,34 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
-
-/** `Object#toString` result references. */
-var numberTag = '[object Number]';
+import getTag from './.internal/getTag.js'
+import isObjectLike from './isObjectLike.js'
 
 /**
  * Checks if `value` is classified as a `Number` primitive or object.
  *
  * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
- * classified as numbers, use the `_.isFinite` method.
+ * classified as numbers, use the `Number.isFinite` method.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a number, else `false`.
+ * @see isInteger, toInteger, toNumber
  * @example
  *
- * _.isNumber(3);
+ * isNumber(3)
  * // => true
  *
- * _.isNumber(Number.MIN_VALUE);
+ * isNumber(Number.MIN_VALUE)
  * // => true
  *
- * _.isNumber(Infinity);
+ * isNumber(Infinity)
  * // => true
  *
- * _.isNumber('3');
+ * isNumber('3')
  * // => false
  */
 function isNumber(value) {
-  return typeof value == 'number' ||
-    (isObjectLike(value) && baseGetTag(value) == numberTag);
+  return typeof value === 'number' ||
+    (isObjectLike(value) && getTag(value) == '[object Number]')
 }
 
-module.exports = isNumber;
+export default isNumber

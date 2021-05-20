@@ -1,14 +1,10 @@
-var createPadding = require('./_createPadding'),
-    stringSize = require('./_stringSize'),
-    toInteger = require('./toInteger'),
-    toString = require('./toString');
+import createPadding from './.internal/createPadding.js'
+import stringSize from './.internal/stringSize.js'
 
 /**
  * Pads `string` on the left side if it's shorter than `length`. Padding
  * characters are truncated if they exceed `length`.
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to pad.
@@ -17,23 +13,20 @@ var createPadding = require('./_createPadding'),
  * @returns {string} Returns the padded string.
  * @example
  *
- * _.padStart('abc', 6);
+ * padStart('abc', 6)
  * // => '   abc'
  *
- * _.padStart('abc', 6, '_-');
+ * padStart('abc', 6, '_-')
  * // => '_-_abc'
  *
- * _.padStart('abc', 3);
+ * padStart('abc', 2)
  * // => 'abc'
  */
 function padStart(string, length, chars) {
-  string = toString(string);
-  length = toInteger(length);
-
-  var strLength = length ? stringSize(string) : 0;
+  const strLength = length ? stringSize(string) : 0
   return (length && strLength < length)
     ? (createPadding(length - strLength, chars) + string)
-    : string;
+    : (string || '')
 }
 
-module.exports = padStart;
+export default padStart

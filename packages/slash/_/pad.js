@@ -1,18 +1,10 @@
-var createPadding = require('./_createPadding'),
-    stringSize = require('./_stringSize'),
-    toInteger = require('./toInteger'),
-    toString = require('./toString');
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeCeil = Math.ceil,
-    nativeFloor = Math.floor;
+import createPadding from './.internal/createPadding.js'
+import stringSize from './.internal/stringSize.js'
 
 /**
  * Pads `string` on the left and right sides if it's shorter than `length`.
  * Padding characters are truncated if they can't be evenly divided by `length`.
  *
- * @static
- * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to pad.
@@ -21,29 +13,26 @@ var nativeCeil = Math.ceil,
  * @returns {string} Returns the padded string.
  * @example
  *
- * _.pad('abc', 8);
+ * pad('abc', 8)
  * // => '  abc   '
  *
- * _.pad('abc', 8, '_-');
+ * pad('abc', 8, '_-')
  * // => '_-abc_-_'
  *
- * _.pad('abc', 3);
+ * pad('abc', 2)
  * // => 'abc'
  */
 function pad(string, length, chars) {
-  string = toString(string);
-  length = toInteger(length);
-
-  var strLength = length ? stringSize(string) : 0;
+  const strLength = length ? stringSize(string) : 0
   if (!length || strLength >= length) {
-    return string;
+    return (string || '')
   }
-  var mid = (length - strLength) / 2;
+  const mid = (length - strLength) / 2
   return (
-    createPadding(nativeFloor(mid), chars) +
+    createPadding(Math.floor(mid), chars) +
     string +
-    createPadding(nativeCeil(mid), chars)
-  );
+    createPadding(Math.ceil(mid), chars)
+  )
 }
 
-module.exports = pad;
+export default pad

@@ -1,27 +1,27 @@
-var baseIsMap = require('./_baseIsMap'),
-    baseUnary = require('./_baseUnary'),
-    nodeUtil = require('./_nodeUtil');
+import getTag from './.internal/getTag.js'
+import isObjectLike from './isObjectLike.js'
+import nodeTypes from './.internal/nodeTypes.js'
 
 /* Node.js helper references. */
-var nodeIsMap = nodeUtil && nodeUtil.isMap;
+const nodeIsMap = nodeTypes && nodeTypes.isMap
 
 /**
  * Checks if `value` is classified as a `Map` object.
  *
- * @static
- * @memberOf _
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a map, else `false`.
  * @example
  *
- * _.isMap(new Map);
+ * isMap(new Map)
  * // => true
  *
- * _.isMap(new WeakMap);
+ * isMap(new WeakMap)
  * // => false
  */
-var isMap = nodeIsMap ? baseUnary(nodeIsMap) : baseIsMap;
+const isMap = nodeIsMap
+  ? (value) => nodeIsMap(value)
+  : (value) => isObjectLike(value) && getTag(value) == '[object Map]'
 
-module.exports = isMap;
+export default isMap

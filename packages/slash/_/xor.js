@@ -1,7 +1,5 @@
-var arrayFilter = require('./_arrayFilter'),
-    baseRest = require('./_baseRest'),
-    baseXor = require('./_baseXor'),
-    isArrayLikeObject = require('./isArrayLikeObject');
+import baseXor from './.internal/baseXor.js'
+import isArrayLikeObject from './isArrayLikeObject.js'
 
 /**
  * Creates an array of unique values that is the
@@ -9,20 +7,18 @@ var arrayFilter = require('./_arrayFilter'),
  * of the given arrays. The order of result values is determined by the order
  * they occur in the arrays.
  *
- * @static
- * @memberOf _
  * @since 2.4.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @returns {Array} Returns the new array of filtered values.
- * @see _.difference, _.without
+ * @see difference, union, unionBy, unionWith, without, xorBy, xorWith
  * @example
  *
- * _.xor([2, 1], [2, 3]);
+ * xor([2, 1], [2, 3])
  * // => [1, 3]
  */
-var xor = baseRest(function(arrays) {
-  return baseXor(arrayFilter(arrays, isArrayLikeObject));
-});
+function xor(...arrays) {
+  return baseXor(arrays.filter(isArrayLikeObject))
+}
 
-module.exports = xor;
+export default xor

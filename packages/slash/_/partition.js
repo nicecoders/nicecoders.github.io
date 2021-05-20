@@ -1,4 +1,4 @@
-var createAggregator = require('./_createAggregator');
+import reduce from './reduce.js'
 
 /**
  * Creates an array of elements split into two groups, the first of which
@@ -6,38 +6,27 @@ var createAggregator = require('./_createAggregator');
  * contains elements `predicate` returns falsey for. The predicate is
  * invoked with one argument: (value).
  *
- * @static
- * @memberOf _
  * @since 3.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param {Function} predicate The function invoked per iteration.
  * @returns {Array} Returns the array of grouped elements.
+ * @see groupBy, keyBy
  * @example
  *
- * var users = [
+ * const users = [
  *   { 'user': 'barney',  'age': 36, 'active': false },
  *   { 'user': 'fred',    'age': 40, 'active': true },
  *   { 'user': 'pebbles', 'age': 1,  'active': false }
- * ];
+ * ]
  *
- * _.partition(users, function(o) { return o.active; });
- * // => objects for [['fred'], ['barney', 'pebbles']]
- *
- * // The `_.matches` iteratee shorthand.
- * _.partition(users, { 'age': 1, 'active': false });
- * // => objects for [['pebbles'], ['barney', 'fred']]
- *
- * // The `_.matchesProperty` iteratee shorthand.
- * _.partition(users, ['active', false]);
- * // => objects for [['barney', 'pebbles'], ['fred']]
- *
- * // The `_.property` iteratee shorthand.
- * _.partition(users, 'active');
+ * partition(users, ({ active }) => active)
  * // => objects for [['fred'], ['barney', 'pebbles']]
  */
-var partition = createAggregator(function(result, value, key) {
-  result[key ? 0 : 1].push(value);
-}, function() { return [[], []]; });
+function partition(collection, predicate) {
+  return reduce(collection, (result, value, key) => (
+    result[predicate(value) ? 0 : 1].push(value), result
+  ), [[], []])
+}
 
-module.exports = partition;
+export default partition

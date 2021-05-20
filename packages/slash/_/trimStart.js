@@ -1,43 +1,36 @@
-var baseToString = require('./_baseToString'),
-    castSlice = require('./_castSlice'),
-    charsStartIndex = require('./_charsStartIndex'),
-    stringToArray = require('./_stringToArray'),
-    toString = require('./toString');
+import castSlice from './.internal/castSlice.js'
+import charsStartIndex from './.internal/charsStartIndex.js'
+import stringToArray from './.internal/stringToArray.js'
 
-/** Used to match leading whitespace. */
-var reTrimStart = /^\s+/;
+const methodName =  ''.trimLeft ? 'trimLeft' : 'trimStart'
 
 /**
  * Removes leading whitespace or specified characters from `string`.
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
  * @returns {string} Returns the trimmed string.
+ * @see trim, trimEnd
  * @example
  *
- * _.trimStart('  abc  ');
+ * trimStart('  abc  ')
  * // => 'abc  '
  *
- * _.trimStart('-_-abc-_-', '_-');
+ * trimStart('-_-abc-_-', '_-')
  * // => 'abc-_-'
  */
-function trimStart(string, chars, guard) {
-  string = toString(string);
-  if (string && (guard || chars === undefined)) {
-    return string.replace(reTrimStart, '');
+function trimStart(string, chars) {
+  if (string && chars === undefined) {
+    return string[methodName]()
   }
-  if (!string || !(chars = baseToString(chars))) {
-    return string;
+  if (!string || !chars) {
+    return (string || '')
   }
-  var strSymbols = stringToArray(string),
-      start = charsStartIndex(strSymbols, stringToArray(chars));
-
-  return castSlice(strSymbols, start).join('');
+  const strSymbols = stringToArray(string)
+  const start = charsStartIndex(strSymbols, stringToArray(chars))
+  return castSlice(strSymbols, start).join('')
 }
 
-module.exports = trimStart;
+export default trimStart

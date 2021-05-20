@@ -1,14 +1,7 @@
-var toInteger = require('./toInteger');
-
-/** Error message constants. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
 /**
- * The opposite of `_.before`; this method creates a function that invokes
+ * The opposite of `before`. This method creates a function that invokes
  * `func` once it's called `n` or more times.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Function
  * @param {number} n The number of calls before `func` is invoked.
@@ -16,27 +9,22 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @returns {Function} Returns the new restricted function.
  * @example
  *
- * var saves = ['profile', 'settings'];
+ * const saves = ['profile', 'settings']
+ * const done = after(saves.length, () => console.log('done saving!'))
  *
- * var done = _.after(saves.length, function() {
- *   console.log('done saving!');
- * });
- *
- * _.forEach(saves, function(type) {
- *   asyncSave({ 'type': type, 'complete': done });
- * });
+ * forEach(saves, type => asyncSave({ 'type': type, 'complete': done }))
  * // => Logs 'done saving!' after the two async saves have completed.
  */
 function after(n, func) {
-  if (typeof func != 'function') {
-    throw new TypeError(FUNC_ERROR_TEXT);
+  if (typeof func !== 'function') {
+    throw new TypeError('Expected a function')
   }
-  n = toInteger(n);
-  return function() {
+  n = n || 0
+  return function(...args) {
     if (--n < 1) {
-      return func.apply(this, arguments);
+      return func.apply(this, args)
     }
-  };
+  }
 }
 
-module.exports = after;
+export default after

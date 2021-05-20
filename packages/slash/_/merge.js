@@ -1,8 +1,8 @@
-var baseMerge = require('./_baseMerge'),
-    createAssigner = require('./_createAssigner');
+import baseMerge from './.internal/baseMerge.js'
+import createAssigner from './.internal/createAssigner.js'
 
 /**
- * This method is like `_.assign` except that it recursively merges own and
+ * This method is like `assign` except that it recursively merges own and
  * inherited enumerable string keyed properties of source objects into the
  * destination object. Source properties that resolve to `undefined` are
  * skipped if a destination value exists. Array and plain object properties
@@ -12,8 +12,6 @@ var baseMerge = require('./_baseMerge'),
  *
  * **Note:** This method mutates `object`.
  *
- * @static
- * @memberOf _
  * @since 0.5.0
  * @category Object
  * @param {Object} object The destination object.
@@ -21,19 +19,19 @@ var baseMerge = require('./_baseMerge'),
  * @returns {Object} Returns `object`.
  * @example
  *
- * var object = {
+ * const object = {
  *   'a': [{ 'b': 2 }, { 'd': 4 }]
- * };
+ * }
  *
- * var other = {
+ * const other = {
  *   'a': [{ 'c': 3 }, { 'e': 5 }]
- * };
+ * }
  *
- * _.merge(object, other);
+ * merge(object, other)
  * // => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
  */
-var merge = createAssigner(function(object, source, srcIndex) {
-  baseMerge(object, source, srcIndex);
-});
+const merge = createAssigner((object, source, srcIndex) => {
+  baseMerge(object, source, srcIndex)
+})
 
-module.exports = merge;
+export default merge

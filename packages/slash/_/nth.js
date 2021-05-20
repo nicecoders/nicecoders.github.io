@@ -1,12 +1,9 @@
-var baseNth = require('./_baseNth'),
-    toInteger = require('./toInteger');
+import isIndex from './.internal/isIndex.js'
 
 /**
  * Gets the element at index `n` of `array`. If `n` is negative, the nth
  * element from the end is returned.
  *
- * @static
- * @memberOf _
  * @since 4.11.0
  * @category Array
  * @param {Array} array The array to query.
@@ -14,16 +11,21 @@ var baseNth = require('./_baseNth'),
  * @returns {*} Returns the nth element of `array`.
  * @example
  *
- * var array = ['a', 'b', 'c', 'd'];
+ * const array = ['a', 'b', 'c', 'd']
  *
- * _.nth(array, 1);
+ * nth(array, 1)
  * // => 'b'
  *
- * _.nth(array, -2);
- * // => 'c';
+ * nth(array, -2)
+ * // => 'c'
  */
 function nth(array, n) {
-  return (array && array.length) ? baseNth(array, toInteger(n)) : undefined;
+  const length = array == null ? 0 : array.length
+  if (!length) {
+    return
+  }
+  n += n < 0 ? length : 0
+  return isIndex(n, length) ? array[n] : undefined
 }
 
-module.exports = nth;
+export default nth

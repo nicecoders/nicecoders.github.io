@@ -1,12 +1,10 @@
-var baseSortedIndex = require('./_baseSortedIndex'),
-    eq = require('./eq');
+import baseSortedIndex from './.internal/baseSortedIndex.js'
+import eq from './eq.js'
 
 /**
- * This method is like `_.lastIndexOf` except that it performs a binary
+ * This method is like `lastIndexOf` except that it performs a binary
  * search on a sorted `array`.
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -14,18 +12,18 @@ var baseSortedIndex = require('./_baseSortedIndex'),
  * @returns {number} Returns the index of the matched value, else `-1`.
  * @example
  *
- * _.sortedLastIndexOf([4, 5, 5, 5, 6], 5);
+ * sortedLastIndexOf([4, 5, 5, 5, 6], 5)
  * // => 3
  */
 function sortedLastIndexOf(array, value) {
-  var length = array == null ? 0 : array.length;
+  const length = array == null ? 0 : array.length
   if (length) {
-    var index = baseSortedIndex(array, value, true) - 1;
+    const index = baseSortedIndex(array, value, true) - 1
     if (eq(array[index], value)) {
-      return index;
+      return index
     }
   }
-  return -1;
+  return -1
 }
 
-module.exports = sortedLastIndexOf;
+export default sortedLastIndexOf

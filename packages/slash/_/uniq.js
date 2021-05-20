@@ -1,4 +1,4 @@
-var baseUniq = require('./_baseUniq');
+import baseUniq from './.internal/baseUniq.js'
 
 /**
  * Creates a duplicate-free version of an array, using
@@ -7,19 +7,20 @@ var baseUniq = require('./_baseUniq');
  * is kept. The order of result values is determined by the order they occur
  * in the array.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to inspect.
  * @returns {Array} Returns the new duplicate free array.
+ * @see uniqBy, uniqWith
  * @example
  *
- * _.uniq([2, 1, 2]);
+ * uniq([2, 1, 2])
  * // => [2, 1]
  */
 function uniq(array) {
-  return (array && array.length) ? baseUniq(array) : [];
+  return (array != null && array.length)
+    ? baseUniq(array)
+    : []
 }
 
-module.exports = uniq;
+export default uniq

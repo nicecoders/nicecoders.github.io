@@ -1,7 +1,6 @@
-var baseDifference = require('./_baseDifference'),
-    baseFlatten = require('./_baseFlatten'),
-    baseRest = require('./_baseRest'),
-    isArrayLikeObject = require('./isArrayLikeObject');
+import baseDifference from './.internal/baseDifference.js'
+import baseFlatten from './.internal/baseFlatten.js'
+import isArrayLikeObject from './isArrayLikeObject.js'
 
 /**
  * Creates an array of `array` values not included in the other given arrays
@@ -9,25 +8,23 @@ var baseDifference = require('./_baseDifference'),
  * for equality comparisons. The order and references of result values are
  * determined by the first array.
  *
- * **Note:** Unlike `_.pullAll`, this method returns a new array.
+ * **Note:** Unlike `pullAll`, this method returns a new array.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to inspect.
  * @param {...Array} [values] The values to exclude.
  * @returns {Array} Returns the new array of filtered values.
- * @see _.without, _.xor
+ * @see union, unionBy, unionWith, without, xor, xorBy, xorWith,
  * @example
  *
- * _.difference([2, 1], [2, 3]);
+ * difference([2, 1], [2, 3])
  * // => [1]
  */
-var difference = baseRest(function(array, values) {
+function difference(array, ...values) {
   return isArrayLikeObject(array)
     ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true))
-    : [];
-});
+    : []
+}
 
-module.exports = difference;
+export default difference

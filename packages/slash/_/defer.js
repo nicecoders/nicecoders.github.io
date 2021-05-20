@@ -1,12 +1,7 @@
-var baseDelay = require('./_baseDelay'),
-    baseRest = require('./_baseRest');
-
 /**
  * Defers invoking the `func` until the current call stack has cleared. Any
  * additional arguments are provided to `func` when it's invoked.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Function
  * @param {Function} func The function to defer.
@@ -14,13 +9,14 @@ var baseDelay = require('./_baseDelay'),
  * @returns {number} Returns the timer id.
  * @example
  *
- * _.defer(function(text) {
- *   console.log(text);
- * }, 'deferred');
+ * defer(text => console.log(text), 'deferred')
  * // => Logs 'deferred' after one millisecond.
  */
-var defer = baseRest(function(func, args) {
-  return baseDelay(func, 1, args);
-});
+function defer(func, ...args) {
+  if (typeof func !== 'function') {
+    throw new TypeError('Expected a function')
+  }
+  return setTimeout(func, 1, ...args)
+}
 
-module.exports = defer;
+export default defer

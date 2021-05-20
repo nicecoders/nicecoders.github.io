@@ -1,29 +1,10 @@
-var baseGetTag = require('./_baseGetTag'),
-    getPrototype = require('./_getPrototype'),
-    isObjectLike = require('./isObjectLike');
-
-/** `Object#toString` result references. */
-var objectTag = '[object Object]';
-
-/** Used for built-in method references. */
-var funcProto = Function.prototype,
-    objectProto = Object.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Used to infer the `Object` constructor. */
-var objectCtorString = funcToString.call(Object);
+import getTag from './.internal/getTag.js'
+import isObjectLike from './isObjectLike.js'
 
 /**
  * Checks if `value` is a plain object, that is, an object created by the
  * `Object` constructor or one with a `[[Prototype]]` of `null`.
  *
- * @static
- * @memberOf _
  * @since 0.8.0
  * @category Lang
  * @param {*} value The value to check.
@@ -31,32 +12,33 @@ var objectCtorString = funcToString.call(Object);
  * @example
  *
  * function Foo() {
- *   this.a = 1;
+ *   this.a = 1
  * }
  *
- * _.isPlainObject(new Foo);
+ * isPlainObject(new Foo)
  * // => false
  *
- * _.isPlainObject([1, 2, 3]);
+ * isPlainObject([1, 2, 3])
  * // => false
  *
- * _.isPlainObject({ 'x': 0, 'y': 0 });
+ * isPlainObject({ 'x': 0, 'y': 0 })
  * // => true
  *
- * _.isPlainObject(Object.create(null));
+ * isPlainObject(Object.create(null))
  * // => true
  */
 function isPlainObject(value) {
-  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
-    return false;
+  if (!isObjectLike(value) || getTag(value) != '[object Object]') {
+    return false
   }
-  var proto = getPrototype(value);
-  if (proto === null) {
-    return true;
+  if (Object.getPrototypeOf(value) === null) {
+    return true
   }
-  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-  return typeof Ctor == 'function' && Ctor instanceof Ctor &&
-    funcToString.call(Ctor) == objectCtorString;
+  let proto = value
+  while (Object.getPrototypeOf(proto) !== null) {
+    proto = Object.getPrototypeOf(proto)
+  }
+  return Object.getPrototypeOf(value) === proto
 }
 
-module.exports = isPlainObject;
+export default isPlainObject

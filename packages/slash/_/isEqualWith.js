@@ -1,13 +1,11 @@
-var baseIsEqual = require('./_baseIsEqual');
+import baseIsEqual from './.internal/baseIsEqual.js'
 
 /**
- * This method is like `_.isEqual` except that it accepts `customizer` which
+ * This method is like `isEqual` except that it accepts `customizer` which
  * is invoked to compare values. If `customizer` returns `undefined`, comparisons
  * are handled by the method instead. The `customizer` is invoked with up to
  * six arguments: (objValue, othValue [, index|key, object, other, stack]).
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to compare.
@@ -17,25 +15,25 @@ var baseIsEqual = require('./_baseIsEqual');
  * @example
  *
  * function isGreeting(value) {
- *   return /^h(?:i|ello)$/.test(value);
+ *   return /^h(?:i|ello)$/.test(value)
  * }
  *
  * function customizer(objValue, othValue) {
  *   if (isGreeting(objValue) && isGreeting(othValue)) {
- *     return true;
+ *     return true
  *   }
  * }
  *
- * var array = ['hello', 'goodbye'];
- * var other = ['hi', 'goodbye'];
+ * const array = ['hello', 'goodbye']
+ * const other = ['hi', 'goodbye']
  *
- * _.isEqualWith(array, other, customizer);
+ * isEqualWith(array, other, customizer)
  * // => true
  */
 function isEqualWith(value, other, customizer) {
-  customizer = typeof customizer == 'function' ? customizer : undefined;
-  var result = customizer ? customizer(value, other) : undefined;
-  return result === undefined ? baseIsEqual(value, other, undefined, customizer) : !!result;
+  customizer = typeof customizer === 'function' ? customizer : undefined
+  const result = customizer ? customizer(value, other) : undefined
+  return result === undefined ? baseIsEqual(value, other, undefined, customizer) : !!result
 }
 
-module.exports = isEqualWith;
+export default isEqualWith

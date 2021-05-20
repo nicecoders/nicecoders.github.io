@@ -1,35 +1,38 @@
-var asciiWords = require('./_asciiWords'),
-    hasUnicodeWord = require('./_hasUnicodeWord'),
-    toString = require('./toString'),
-    unicodeWords = require('./_unicodeWords');
+import unicodeWords from './.internal/unicodeWords.js'
+
+const hasUnicodeWord = RegExp.prototype.test.bind(
+  /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/
+)
+
+/** Used to match words composed of alphanumeric characters. */
+const reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g
+
+function asciiWords(string) {
+  return string.match(reAsciiWord)
+}
 
 /**
  * Splits `string` into an array of its words.
  *
- * @static
- * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to inspect.
  * @param {RegExp|string} [pattern] The pattern to match words.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
  * @returns {Array} Returns the words of `string`.
  * @example
  *
- * _.words('fred, barney, & pebbles');
+ * words('fred, barney, & pebbles')
  * // => ['fred', 'barney', 'pebbles']
  *
- * _.words('fred, barney, & pebbles', /[^, ]+/g);
+ * words('fred, barney, & pebbles', /[^, ]+/g)
  * // => ['fred', 'barney', '&', 'pebbles']
  */
-function words(string, pattern, guard) {
-  string = toString(string);
-  pattern = guard ? undefined : pattern;
-
+function words(string, pattern) {
   if (pattern === undefined) {
-    return hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
+    const result = hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string)
+    return result || []
   }
-  return string.match(pattern) || [];
+  return string.match(pattern) || []
 }
 
-module.exports = words;
+export default words

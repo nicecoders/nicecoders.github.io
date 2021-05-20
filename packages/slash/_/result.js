@@ -1,15 +1,12 @@
-var castPath = require('./_castPath'),
-    isFunction = require('./isFunction'),
-    toKey = require('./_toKey');
+import castPath from './.internal/castPath.js'
+import toKey from './.internal/toKey.js'
 
 /**
- * This method is like `_.get` except that if the resolved value is a
+ * This method is like `get` except that if the resolved value is a
  * function it's invoked with the `this` binding of its parent object and
  * its result is returned.
  *
- * @static
  * @since 0.1.0
- * @memberOf _
  * @category Object
  * @param {Object} object The object to query.
  * @param {Array|string} path The path of the property to resolve.
@@ -17,40 +14,40 @@ var castPath = require('./_castPath'),
  * @returns {*} Returns the resolved value.
  * @example
  *
- * var object = { 'a': [{ 'b': { 'c1': 3, 'c2': _.constant(4) } }] };
+ * const object = { 'a': [{ 'b': { 'c1': 3, 'c2': () => 4 } }] }
  *
- * _.result(object, 'a[0].b.c1');
+ * result(object, 'a[0].b.c1')
  * // => 3
  *
- * _.result(object, 'a[0].b.c2');
+ * result(object, 'a[0].b.c2')
  * // => 4
  *
- * _.result(object, 'a[0].b.c3', 'default');
+ * result(object, 'a[0].b.c3', 'default')
  * // => 'default'
  *
- * _.result(object, 'a[0].b.c3', _.constant('default'));
+ * result(object, 'a[0].b.c3', () => 'default')
  * // => 'default'
  */
 function result(object, path, defaultValue) {
-  path = castPath(path, object);
+  path = castPath(path, object)
 
-  var index = -1,
-      length = path.length;
+  let index = -1
+  let length = path.length
 
   // Ensure the loop is entered when path is empty.
   if (!length) {
-    length = 1;
-    object = undefined;
+    length = 1
+    object = undefined
   }
   while (++index < length) {
-    var value = object == null ? undefined : object[toKey(path[index])];
+    let value = object == null ? undefined : object[toKey(path[index])]
     if (value === undefined) {
-      index = length;
-      value = defaultValue;
+      index = length
+      value = defaultValue
     }
-    object = isFunction(value) ? value.call(object) : value;
+    object = typeof value === 'function' ? value.call(object) : value
   }
-  return object;
+  return object
 }
 
-module.exports = result;
+export default result

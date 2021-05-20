@@ -1,24 +1,25 @@
-var arrayMap = require('./_arrayMap'),
-    createOver = require('./_createOver');
+import map from './map.js'
 
 /**
  * Creates a function that invokes `iteratees` with the arguments it receives
  * and returns their results.
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category Util
- * @param {...(Function|Function[])} [iteratees=[_.identity]]
+ * @param {Function[]} [iteratees=[identity]]
  *  The iteratees to invoke.
  * @returns {Function} Returns the new function.
  * @example
  *
- * var func = _.over([Math.max, Math.min]);
+ * const func = over([Math.max, Math.min])
  *
- * func(1, 2, 3, 4);
+ * func(1, 2, 3, 4)
  * // => [4, 1]
  */
-var over = createOver(arrayMap);
+function over(iteratees) {
+  return function(...args) {
+    return map(iteratees, (iteratee) => iteratee.apply(this, args))
+  }
+}
 
-module.exports = over;
+export default over

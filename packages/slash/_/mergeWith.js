@@ -1,8 +1,8 @@
-var baseMerge = require('./_baseMerge'),
-    createAssigner = require('./_createAssigner');
+import baseMerge from './.internal/baseMerge.js'
+import createAssigner from './.internal/createAssigner.js'
 
 /**
- * This method is like `_.merge` except that it accepts `customizer` which
+ * This method is like `merge` except that it accepts `customizer` which
  * is invoked to produce the merged values of the destination and source
  * properties. If `customizer` returns `undefined`, merging is handled by the
  * method instead. The `customizer` is invoked with six arguments:
@@ -10,8 +10,6 @@ var baseMerge = require('./_baseMerge'),
  *
  * **Note:** This method mutates `object`.
  *
- * @static
- * @memberOf _
  * @since 4.0.0
  * @category Object
  * @param {Object} object The destination object.
@@ -21,19 +19,19 @@ var baseMerge = require('./_baseMerge'),
  * @example
  *
  * function customizer(objValue, srcValue) {
- *   if (_.isArray(objValue)) {
- *     return objValue.concat(srcValue);
+ *   if (Array.isArray(objValue)) {
+ *     return objValue.concat(srcValue)
  *   }
  * }
  *
- * var object = { 'a': [1], 'b': [2] };
- * var other = { 'a': [3], 'b': [4] };
+ * const object = { 'a': [1], 'b': [2] }
+ * const other = { 'a': [3], 'b': [4] }
  *
- * _.mergeWith(object, other, customizer);
+ * mergeWith(object, other, customizer)
  * // => { 'a': [1, 3], 'b': [2, 4] }
  */
-var mergeWith = createAssigner(function(object, source, srcIndex, customizer) {
-  baseMerge(object, source, srcIndex, customizer);
-});
+const mergeWith = createAssigner((object, source, srcIndex, customizer) => {
+  baseMerge(object, source, srcIndex, customizer)
+})
 
-module.exports = mergeWith;
+export default mergeWith

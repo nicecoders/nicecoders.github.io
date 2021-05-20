@@ -1,27 +1,27 @@
-var baseIsSet = require('./_baseIsSet'),
-    baseUnary = require('./_baseUnary'),
-    nodeUtil = require('./_nodeUtil');
+import getTag from './.internal/getTag.js'
+import nodeTypes from './.internal/nodeTypes.js'
+import isObjectLike from './isObjectLike.js'
 
 /* Node.js helper references. */
-var nodeIsSet = nodeUtil && nodeUtil.isSet;
+const nodeIsSet = nodeTypes && nodeTypes.isSet
 
 /**
  * Checks if `value` is classified as a `Set` object.
  *
- * @static
- * @memberOf _
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a set, else `false`.
  * @example
  *
- * _.isSet(new Set);
+ * isSet(new Set)
  * // => true
  *
- * _.isSet(new WeakSet);
+ * isSet(new WeakSet)
  * // => false
  */
-var isSet = nodeIsSet ? baseUnary(nodeIsSet) : baseIsSet;
+const isSet = nodeIsSet
+  ? (value) => nodeIsSet(value)
+  : (value) => isObjectLike(value) && getTag(value) == '[object Set]'
 
-module.exports = isSet;
+export default isSet

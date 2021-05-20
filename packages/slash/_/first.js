@@ -1,1 +1,1 @@
-module.exports = require('./head');
+export { default } from './head.js'

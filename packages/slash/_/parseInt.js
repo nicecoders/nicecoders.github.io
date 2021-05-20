@@ -1,43 +1,36 @@
-var root = require('./_root'),
-    toString = require('./toString');
+import root from './.internal/root.js'
 
-/** Used to match leading whitespace. */
-var reTrimStart = /^\s+/;
+/** Used to match leading and trailing whitespace. */
+const reTrimStart = /^\s+/
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeParseInt = root.parseInt;
+const nativeParseInt = root.parseInt
 
 /**
  * Converts `string` to an integer of the specified radix. If `radix` is
- * `undefined` or `0`, a `radix` of `10` is used unless `value` is a
+ * `undefined` or `0`, a `radix` of `10` is used unless `string` is a
  * hexadecimal, in which case a `radix` of `16` is used.
  *
  * **Note:** This method aligns with the
  * [ES5 implementation](https://es5.github.io/#x15.1.2.2) of `parseInt`.
  *
- * @static
- * @memberOf _
  * @since 1.1.0
  * @category String
  * @param {string} string The string to convert.
- * @param {number} [radix=10] The radix to interpret `value` by.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {number} [radix=10] The radix to interpret `string` by.
  * @returns {number} Returns the converted integer.
  * @example
  *
- * _.parseInt('08');
+ * parseInt('08')
  * // => 8
- *
- * _.map(['6', '08', '10'], _.parseInt);
- * // => [6, 8, 10]
  */
-function parseInt(string, radix, guard) {
-  if (guard || radix == null) {
-    radix = 0;
+function parseInt(string, radix) {
+  if (radix == null) {
+    radix = 0
   } else if (radix) {
-    radix = +radix;
+    radix = +radix
   }
-  return nativeParseInt(toString(string).replace(reTrimStart, ''), radix || 0);
+  return nativeParseInt(`${string}`.replace(reTrimStart, ''), radix || 0)
 }
 
-module.exports = parseInt;
+export default parseInt

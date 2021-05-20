@@ -1,11 +1,9 @@
-var baseAt = require('./_baseAt'),
-    flatRest = require('./_flatRest');
+import baseAt from './.internal/baseAt.js'
+import baseFlatten from './.internal/baseFlatten.js'
 
 /**
  * Creates an array of values corresponding to `paths` of `object`.
  *
- * @static
- * @memberOf _
  * @since 1.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -13,11 +11,11 @@ var baseAt = require('./_baseAt'),
  * @returns {Array} Returns the picked values.
  * @example
  *
- * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
+ * const object = { 'a': [{ 'b': { 'c': 3 } }, 4] }
  *
- * _.at(object, ['a[0].b.c', 'a[1]']);
+ * at(object, ['a[0].b.c', 'a[1]'])
  * // => [3, 4]
  */
-var at = flatRest(baseAt);
+const at = (object, ...paths) => baseAt(object, baseFlatten(paths, 1))
 
-module.exports = at;
+export default at

@@ -1,12 +1,7 @@
-var copyObject = require('./_copyObject'),
-    keysIn = require('./keysIn');
-
 /**
  * Converts `value` to a plain object flattening inherited enumerable string
  * keyed properties of `value` to own properties of the plain object.
  *
- * @static
- * @memberOf _
  * @since 3.0.0
  * @category Lang
  * @param {*} value The value to convert.
@@ -14,19 +9,24 @@ var copyObject = require('./_copyObject'),
  * @example
  *
  * function Foo() {
- *   this.b = 2;
+ *   this.b = 2
  * }
  *
- * Foo.prototype.c = 3;
+ * Foo.prototype.c = 3
  *
- * _.assign({ 'a': 1 }, new Foo);
+ * assign({ 'a': 1 }, new Foo)
  * // => { 'a': 1, 'b': 2 }
  *
- * _.assign({ 'a': 1 }, _.toPlainObject(new Foo));
+ * assign({ 'a': 1 }, toPlainObject(new Foo))
  * // => { 'a': 1, 'b': 2, 'c': 3 }
  */
 function toPlainObject(value) {
-  return copyObject(value, keysIn(value));
+  value = Object(value)
+  const result = {}
+  for (const key in value) {
+    result[key] = value[key]
+  }
+  return result
 }
 
-module.exports = toPlainObject;
+export default toPlainObject

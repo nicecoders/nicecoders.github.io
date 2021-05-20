@@ -1,45 +1,43 @@
-var arrayFilter = require('./_arrayFilter'),
-    arrayMap = require('./_arrayMap'),
-    baseProperty = require('./_baseProperty'),
-    baseTimes = require('./_baseTimes'),
-    isArrayLikeObject = require('./isArrayLikeObject');
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMax = Math.max;
+import filter from './filter.js'
+import map from './map.js'
+import baseProperty from './.internal/baseProperty.js'
+import isArrayLikeObject from './isArrayLikeObject.js'
 
 /**
- * This method is like `_.zip` except that it accepts an array of grouped
+ * This method is like `zip` except that it accepts an array of grouped
  * elements and creates an array regrouping the elements to their pre-zip
  * configuration.
  *
- * @static
- * @memberOf _
  * @since 1.2.0
  * @category Array
  * @param {Array} array The array of grouped elements to process.
  * @returns {Array} Returns the new array of regrouped elements.
+ * @see unzipWith, zip, zipObject, zipObjectDeep, zipWith
  * @example
  *
- * var zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
+ * const zipped = zip(['a', 'b'], [1, 2], [true, false])
  * // => [['a', 1, true], ['b', 2, false]]
  *
- * _.unzip(zipped);
+ * unzip(zipped)
  * // => [['a', 'b'], [1, 2], [true, false]]
  */
 function unzip(array) {
-  if (!(array && array.length)) {
-    return [];
+  if (!(array != null && array.length)) {
+    return []
   }
-  var length = 0;
-  array = arrayFilter(array, function(group) {
+  let length = 0
+  array = filter(array, (group) => {
     if (isArrayLikeObject(group)) {
-      length = nativeMax(group.length, length);
-      return true;
+      length = Math.max(group.length, length)
+      return true
     }
-  });
-  return baseTimes(length, function(index) {
-    return arrayMap(array, baseProperty(index));
-  });
+  })
+  let index = -1
+  const result = new Array(length)
+  while (++index < length) {
+    result[index] = map(array, baseProperty(index))
+  }
+  return result
 }
 
-module.exports = unzip;
+export default unzip

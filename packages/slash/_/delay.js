@@ -1,13 +1,7 @@
-var baseDelay = require('./_baseDelay'),
-    baseRest = require('./_baseRest'),
-    toNumber = require('./toNumber');
-
 /**
  * Invokes `func` after `wait` milliseconds. Any additional arguments are
  * provided to `func` when it's invoked.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Function
  * @param {Function} func The function to delay.
@@ -16,13 +10,14 @@ var baseDelay = require('./_baseDelay'),
  * @returns {number} Returns the timer id.
  * @example
  *
- * _.delay(function(text) {
- *   console.log(text);
- * }, 1000, 'later');
+ * delay(text => console.log(text), 1000, 'later')
  * // => Logs 'later' after one second.
  */
-var delay = baseRest(function(func, wait, args) {
-  return baseDelay(func, toNumber(wait) || 0, args);
-});
+function delay(func, wait, ...args) {
+  if (typeof func !== 'function') {
+    throw new TypeError('Expected a function')
+  }
+  return setTimeout(func, +wait || 0, ...args)
+}
 
-module.exports = delay;
+export default delay

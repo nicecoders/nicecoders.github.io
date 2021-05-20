@@ -1,41 +1,37 @@
-var isObject = require('./isObject'),
-    now = require('./now'),
-    toNumber = require('./toNumber');
-
-/** Error message constants. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMax = Math.max,
-    nativeMin = Math.min;
+import isObject from './isObject.js'
+import root from './.internal/root.js'
 
 /**
  * Creates a debounced function that delays invoking `func` until after `wait`
  * milliseconds have elapsed since the last time the debounced function was
- * invoked. The debounced function comes with a `cancel` method to cancel
- * delayed `func` invocations and a `flush` method to immediately invoke them.
- * Provide `options` to indicate whether `func` should be invoked on the
- * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
- * with the last arguments provided to the debounced function. Subsequent
- * calls to the debounced function return the result of the last `func`
- * invocation.
+ * invoked, or until the next browser frame is drawn. The debounced function
+ * comes with a `cancel` method to cancel delayed `func` invocations and a
+ * `flush` method to immediately invoke them. Provide `options` to indicate
+ * whether `func` should be invoked on the leading and/or trailing edge of the
+ * `wait` timeout. The `func` is invoked with the last arguments provided to the
+ * debounced function. Subsequent calls to the debounced function return the
+ * result of the last `func` invocation.
  *
  * **Note:** If `leading` and `trailing` options are `true`, `func` is
  * invoked on the trailing edge of the timeout only if the debounced function
  * is invoked more than once during the `wait` timeout.
  *
  * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
- * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ * until the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * If `wait` is omitted in an environment with `requestAnimationFrame`, `func`
+ * invocation will be deferred until the next frame is drawn (typically about
+ * 16ms).
  *
  * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
- * for details over the differences between `_.debounce` and `_.throttle`.
+ * for details over the differences between `debounce` and `throttle`.
  *
- * @static
- * @memberOf _
  * @since 0.1.0
  * @category Function
  * @param {Function} func The function to debounce.
- * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {number} [wait=0]
+ *  The number of milliseconds to delay; if omitted, `requestAnimationFrame` is
+ *  used (if available).
  * @param {Object} [options={}] The options object.
  * @param {boolean} [options.leading=false]
  *  Specify invoking on the leading edge of the timeout.
@@ -47,145 +43,171 @@ var nativeMax = Math.max,
  * @example
  *
  * // Avoid costly calculations while the window size is in flux.
- * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ * jQuery(window).on('resize', debounce(calculateLayout, 150))
  *
  * // Invoke `sendMail` when clicked, debouncing subsequent calls.
- * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ * jQuery(element).on('click', debounce(sendMail, 300, {
  *   'leading': true,
  *   'trailing': false
- * }));
+ * }))
  *
  * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
- * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
- * var source = new EventSource('/stream');
- * jQuery(source).on('message', debounced);
+ * const debounced = debounce(batchLog, 250, { 'maxWait': 1000 })
+ * const source = new EventSource('/stream')
+ * jQuery(source).on('message', debounced)
  *
  * // Cancel the trailing debounced invocation.
- * jQuery(window).on('popstate', debounced.cancel);
+ * jQuery(window).on('popstate', debounced.cancel)
+ *
+ * // Check for pending invocations.
+ * const status = debounced.pending() ? "Pending..." : "Ready"
  */
 function debounce(func, wait, options) {
-  var lastArgs,
-      lastThis,
-      maxWait,
-      result,
-      timerId,
-      lastCallTime,
-      lastInvokeTime = 0,
-      leading = false,
-      maxing = false,
-      trailing = true;
+  let lastArgs,
+    lastThis,
+    maxWait,
+    result,
+    timerId,
+    lastCallTime
 
-  if (typeof func != 'function') {
-    throw new TypeError(FUNC_ERROR_TEXT);
+  let lastInvokeTime = 0
+  let leading = false
+  let maxing = false
+  let trailing = true
+
+  // Bypass `requestAnimationFrame` by explicitly setting `wait=0`.
+  const useRAF = (!wait && wait !== 0 && typeof root.requestAnimationFrame === 'function')
+
+  if (typeof func !== 'function') {
+    throw new TypeError('Expected a function')
   }
-  wait = toNumber(wait) || 0;
+  wait = +wait || 0
   if (isObject(options)) {
-    leading = !!options.leading;
-    maxing = 'maxWait' in options;
-    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
-    trailing = 'trailing' in options ? !!options.trailing : trailing;
+    leading = !!options.leading
+    maxing = 'maxWait' in options
+    maxWait = maxing ? Math.max(+options.maxWait || 0, wait) : maxWait
+    trailing = 'trailing' in options ? !!options.trailing : trailing
   }
 
   function invokeFunc(time) {
-    var args = lastArgs,
-        thisArg = lastThis;
+    const args = lastArgs
+    const thisArg = lastThis
 
-    lastArgs = lastThis = undefined;
-    lastInvokeTime = time;
-    result = func.apply(thisArg, args);
-    return result;
+    lastArgs = lastThis = undefined
+    lastInvokeTime = time
+    result = func.apply(thisArg, args)
+    return result
+  }
+
+  function startTimer(pendingFunc, wait) {
+    if (useRAF) {
+      root.cancelAnimationFrame(timerId)
+      return root.requestAnimationFrame(pendingFunc)
+    }
+    return setTimeout(pendingFunc, wait)
+  }
+
+  function cancelTimer(id) {
+    if (useRAF) {
+      return root.cancelAnimationFrame(id)
+    }
+    clearTimeout(id)
   }
 
   function leadingEdge(time) {
     // Reset any `maxWait` timer.
-    lastInvokeTime = time;
+    lastInvokeTime = time
     // Start the timer for the trailing edge.
-    timerId = setTimeout(timerExpired, wait);
+    timerId = startTimer(timerExpired, wait)
     // Invoke the leading edge.
-    return leading ? invokeFunc(time) : result;
+    return leading ? invokeFunc(time) : result
   }
 
   function remainingWait(time) {
-    var timeSinceLastCall = time - lastCallTime,
-        timeSinceLastInvoke = time - lastInvokeTime,
-        timeWaiting = wait - timeSinceLastCall;
+    const timeSinceLastCall = time - lastCallTime
+    const timeSinceLastInvoke = time - lastInvokeTime
+    const timeWaiting = wait - timeSinceLastCall
 
     return maxing
-      ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke)
-      : timeWaiting;
+      ? Math.min(timeWaiting, maxWait - timeSinceLastInvoke)
+      : timeWaiting
   }
 
   function shouldInvoke(time) {
-    var timeSinceLastCall = time - lastCallTime,
-        timeSinceLastInvoke = time - lastInvokeTime;
+    const timeSinceLastCall = time - lastCallTime
+    const timeSinceLastInvoke = time - lastInvokeTime
 
     // Either this is the first call, activity has stopped and we're at the
     // trailing edge, the system time has gone backwards and we're treating
     // it as the trailing edge, or we've hit the `maxWait` limit.
     return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
-      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait))
   }
 
   function timerExpired() {
-    var time = now();
+    const time = Date.now()
     if (shouldInvoke(time)) {
-      return trailingEdge(time);
+      return trailingEdge(time)
     }
     // Restart the timer.
-    timerId = setTimeout(timerExpired, remainingWait(time));
+    timerId = startTimer(timerExpired, remainingWait(time))
   }
 
   function trailingEdge(time) {
-    timerId = undefined;
+    timerId = undefined
 
     // Only invoke if we have `lastArgs` which means `func` has been
     // debounced at least once.
     if (trailing && lastArgs) {
-      return invokeFunc(time);
+      return invokeFunc(time)
     }
-    lastArgs = lastThis = undefined;
-    return result;
+    lastArgs = lastThis = undefined
+    return result
   }
 
   function cancel() {
     if (timerId !== undefined) {
-      clearTimeout(timerId);
+      cancelTimer(timerId)
     }
-    lastInvokeTime = 0;
-    lastArgs = lastCallTime = lastThis = timerId = undefined;
+    lastInvokeTime = 0
+    lastArgs = lastCallTime = lastThis = timerId = undefined
   }
 
   function flush() {
-    return timerId === undefined ? result : trailingEdge(now());
+    return timerId === undefined ? result : trailingEdge(Date.now())
   }
 
-  function debounced() {
-    var time = now(),
-        isInvoking = shouldInvoke(time);
+  function pending() {
+    return timerId !== undefined
+  }
 
-    lastArgs = arguments;
-    lastThis = this;
-    lastCallTime = time;
+  function debounced(...args) {
+    const time = Date.now()
+    const isInvoking = shouldInvoke(time)
+
+    lastArgs = args
+    lastThis = this
+    lastCallTime = time
 
     if (isInvoking) {
       if (timerId === undefined) {
-        return leadingEdge(lastCallTime);
+        return leadingEdge(lastCallTime)
       }
       if (maxing) {
         // Handle invocations in a tight loop.
-        clearTimeout(timerId);
-        timerId = setTimeout(timerExpired, wait);
-        return invokeFunc(lastCallTime);
+        timerId = startTimer(timerExpired, wait)
+        return invokeFunc(lastCallTime)
       }
     }
     if (timerId === undefined) {
-      timerId = setTimeout(timerExpired, wait);
+      timerId = startTimer(timerExpired, wait)
     }
-    return result;
+    return result
   }
-  debounced.cancel = cancel;
-  debounced.flush = flush;
-  return debounced;
+  debounced.cancel = cancel
+  debounced.flush = flush
+  debounced.pending = pending
+  return debounced
 }
 
-module.exports = debounce;
+export default debounce

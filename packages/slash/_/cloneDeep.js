@@ -1,29 +1,28 @@
-var baseClone = require('./_baseClone');
+import baseClone from './.internal/baseClone.js'
 
 /** Used to compose bitmasks for cloning. */
-var CLONE_DEEP_FLAG = 1,
-    CLONE_SYMBOLS_FLAG = 4;
+const CLONE_DEEP_FLAG = 1
+const CLONE_SYMBOLS_FLAG = 4
 
 /**
- * This method is like `_.clone` except that it recursively clones `value`.
+ * This method is like `clone` except that it recursively clones `value`.
+ * Object inheritance is preserved.
  *
- * @static
- * @memberOf _
  * @since 1.0.0
  * @category Lang
  * @param {*} value The value to recursively clone.
  * @returns {*} Returns the deep cloned value.
- * @see _.clone
+ * @see clone
  * @example
  *
- * var objects = [{ 'a': 1 }, { 'b': 2 }];
+ * const objects = [{ 'a': 1 }, { 'b': 2 }]
  *
- * var deep = _.cloneDeep(objects);
- * console.log(deep[0] === objects[0]);
+ * const deep = cloneDeep(objects)
+ * console.log(deep[0] === objects[0])
  * // => false
  */
 function cloneDeep(value) {
-  return baseClone(value, CLONE_DEEP_FLAG | CLONE_SYMBOLS_FLAG);
+  return baseClone(value, CLONE_DEEP_FLAG | CLONE_SYMBOLS_FLAG)
 }
 
-module.exports = cloneDeep;
+export default cloneDeep
