@@ -17,7 +17,7 @@
     "test": "umi-test",
     "test:update": "umi-test --updateSnapshot",
     "test:coverage": "umi-test --coverage",
-    "log": "conventional-changelog --config ./packages/changelog -i CHANGELOG.md -s -r 0"
+    "log": "conventional-changelog --config ./packages/changelog -i README.md -s -r 0"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
