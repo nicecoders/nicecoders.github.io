@@ -16,7 +16,8 @@
   "author": "nicecoders",
   "license": "ISC",
   "devDependencies": {
-    "@nicecode/tools": "^0.1.8"
+    "@nicecode/tools": "^0.1.6",
+    "father-build": "^1.19.5"
   },
   "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
   "publishConfig": {

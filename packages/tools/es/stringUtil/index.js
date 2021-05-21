@@ -1,6 +1,4 @@
-import _concatInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/concat";
-import _indexOfInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/index-of";
-import _classCallCheck from "@babel/runtime-corejs3/helpers/classCallCheck";
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * 字符串操作
@@ -95,8 +93,6 @@ var StringUtil = function StringUtil() {
 
 
   this.toYuan = function (str) {
-    var _context;
-
     var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0.00';
 
     if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
@@ -111,7 +107,7 @@ var StringUtil = function StringUtil() {
       str = str.substr(1);
     }
 
-    if (_indexOfInstanceProperty(str).call(str, '.') > -1) {
+    if (str.indexOf('.') > -1) {
       str = str.replace(/\.\d+$/, ''); // Trim decimal at the ending.
     }
 
@@ -127,7 +123,7 @@ var StringUtil = function StringUtil() {
         break;
 
       default:
-        result += _concatInstanceProperty(_context = "".concat(str.substr(0, len - 2), ".")).call(_context, str.substr(len - 2));
+        result += "".concat(str.substr(0, len - 2), ".").concat(str.substr(len - 2));
     }
 
     return result;
@@ -145,8 +141,6 @@ var StringUtil = function StringUtil() {
 
 
   this.toFen = function (str) {
-    var _context2, _context3;
-
     var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0';
 
     if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
@@ -156,14 +150,14 @@ var StringUtil = function StringUtil() {
     str = str.toString();
     var result = '0';
 
-    if (_indexOfInstanceProperty(str).call(str, '.') > -1) {
+    if (str.indexOf('.') > -1) {
       var strArr = str.split('.');
       var len = strArr[1].length;
 
       switch (len) {
         case 1:
           // 特殊数据：0.0 => 000、 0.1 => 010
-          result = _concatInstanceProperty(_context2 = "".concat(strArr[0])).call(_context2, strArr[1], "0");
+          result = "".concat(strArr[0]).concat(strArr[1], "0");
           break;
 
         case 2:
@@ -174,7 +168,7 @@ var StringUtil = function StringUtil() {
         default:
           // 只保留两位小数
           // 特殊数据：0.000 => 000、 0.001 => 000、 0.010 => 001、 0.101 => 010
-          result = _concatInstanceProperty(_context3 = "".concat(strArr[0])).call(_context3, strArr[1].substr(0, 2));
+          result = "".concat(strArr[0]).concat(strArr[1].substr(0, 2));
       }
     } else {
       result = "".concat(str, "00");
