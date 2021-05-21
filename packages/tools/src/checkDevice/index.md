@@ -21,6 +21,9 @@ group:
 | isIos  | 判断是否在IOS设备内 | function | - |
 | isAndroid  | 判断是否在Android设备内 | function | - |
 | isWeChat  | 判断是否在微信客户端内 | function | - |
+| isWxWorker  | 判断是否在企业微信客户端内 | function | - |
+| isDingTalk  | 判断是否在钉钉客户端内 | function | - |
+| isFeiShu  | 判断是否在飞书客户端内 | function | - |
 | isAliPay  | 判断是否在支付宝客户端内 | function | - |
 | isJRApp  | 判断是否在京东金融客户端内 | function | - |
 | isThirdApp  | 判断是否在第三方合作App内 | function | - |

@@ -3,28 +3,37 @@ title: nicecode 工具合集
 order: 10
 hero:
   title: nicecode
-  desc: 📖 我暂时还不想开源的一套自用垃圾工具库
+  desc: 致力提高工作效率和代码规范的工具库
   actions:
     - text: 快速上手
-      link: /docs/getting-started
-# features:
-#   - icon: https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png
-#     title: 开箱即用
-#     desc: 考究的默认配置和约定式的目录结构，帮助开发者零成本上手，让所有注意力都能放在文档编写和组件开发上
-#   - icon: https://gw.alipayobjects.com/zos/bmw-prod/d1ee0c6f-5aed-4a45-a507-339a4bfe076c/k7bjsocq_w144_h144.png
-#     title: 为组件开发而生
-#     desc: 丰富的 Markdown 扩展，不止于渲染组件 demo，使得组件的文档不仅易于编写、管理，还好看、好用
-#   - icon: https://gw.alipayobjects.com/zos/bmw-prod/b8570f4d-c1b1-45eb-a1da-abff53159967/kj9t990h_w144_h144.png
-#     title: 主题系统
-#     desc: 渐进式的自定义主题能力，小到扩展自己的 Markdown 标签，大到自定义完整主题包，全由你定
-footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by jasondog
+      link: /tools
+features:
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
+    title: changelog
+    desc: 日志生成工具
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
+    title: commit
+    desc: 定制化 git 提交
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
+    title: commit-lint
+    desc: 定制化 git 提交校验
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
+    title: tools
+    desc: 常用函数库
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
+    title: icon
+    desc: 通用图标
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/boluo.png
+    title: css【敬请期待】
+    desc: style-in-class 解决方案
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/boluo.png
+    title: prettier-config【敬请期待】
+    desc: prettier 配置规则
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/boluo.png
+    title: eslint-config【敬请期待】
+    desc: eslint 配置规则
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/boluo.png
+    title: slash【敬请期待】
+    desc: lodash 二次封装库
+footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by nicecoders
 ---
-
-## 工具合集
-
-1. @nicecode/changelog: 日志生成工具 <Badge>DONE</Badge>
-2. @nicecode/commit: 定制化 git 提交 <Badge>DONE</Badge>
-3. @nicecode/commit-lint: 定制化 git 提交校验 <Badge>DONE</Badge>
-4. @nicecode/tools: 常用函数方法 <Badge>DONE</Badge>
-5. @nicecode/icon: 通用图标 <Badge>TODO</Badge>
-6. @nicecode/css: style-in-class 解决方案 <Badge>TODO</Badge>
