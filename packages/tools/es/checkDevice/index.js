@@ -1,5 +1,4 @@
-import _includesInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/includes";
-import _classCallCheck from "@babel/runtime-corejs3/helpers/classCallCheck";
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * app交互
@@ -131,8 +130,6 @@ var App = function App() {
 
 
   this.getSceneType = function () {
-    var _context, _context2;
-
     if (_this.inAlipayminiprogram()) {
       return 'alipayMiniPrograms';
     }
@@ -145,11 +142,11 @@ var App = function App() {
       return 'wxClient';
     }
 
-    if (_includesInstanceProperty(_context = navigator.userAgent.toLowerCase()).call(_context, 'jdapp')) {
+    if (navigator.userAgent.toLowerCase().includes('jdapp')) {
       return 'jdJr';
     }
 
-    if (_includesInstanceProperty(_context2 = navigator.userAgent.toLowerCase()).call(_context2, 'jdjr')) {
+    if (navigator.userAgent.toLowerCase().includes('jdjr')) {
       return 'jdJr';
     }
 

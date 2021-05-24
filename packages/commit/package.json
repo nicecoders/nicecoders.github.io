@@ -11,7 +11,7 @@
     "changelog",
     "commitlint"
   ],
-  "author": "jasondog",
+  "author": "nicecoders",
   "dependencies": {
     "chalk": "^4.1.1",
     "longest": "^2.0.1",
