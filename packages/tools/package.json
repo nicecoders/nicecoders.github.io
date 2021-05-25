@@ -8,7 +8,8 @@
   "homepage": "https://github.com/nicecoders/nicecode",
   "repository": "https://github.com/nicecoders/nicecode",
   "scripts": {
-    "build": "father-build"
+    "build": "father-build",
+    "log": "conventional-changelog --config @nicecode/changelog -i README.md -s -r 0"
   },
   "peerDependencies": {
     "react": "^16.x"
@@ -16,7 +17,8 @@
   "author": "nicecoders",
   "license": "ISC",
   "devDependencies": {
-    "@nicecode/tools": "^0.1.6",
+    "@nicecode/changelog": "^0.1.6",
+    "conventional-changelog-cli": "^2.1.1",
     "father-build": "^1.19.5"
   },
   "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
