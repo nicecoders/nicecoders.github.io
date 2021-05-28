@@ -15,7 +15,35 @@
       window.routerBase = "/";
     </script>
     <script>
-      //! umi version: 3.4.20
+      //! umi version: 3.4.22
+    </script>
+    <script>
+      <!-- GrowingIO Analytics code version 2.1 -->
+      <!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
+
+      !(function (e, t, n, g, i) {
+        (e[i] =
+          e[i] ||
+          function () {
+            (e[i].q = e[i].q || []).push(arguments);
+          }),
+          (n = t.createElement("script")),
+          (tag = t.getElementsByTagName("script")[0]),
+          (n.async = 1),
+          (n.src =
+            ("https:" == document.location.protocol ? "https://" : "http://") +
+            g),
+          tag.parentNode.insertBefore(n, tag);
+      })(window, document, "script", "assets.giocdn.com/2.1/gio.js", "gio");
+      gio("init", "8018ec4a95a9f64b", {});
+
+      //custom page code begin here
+
+      //custom page code end here
+
+      gio("send");
+
+      <!-- End GrowingIO Analytics code version: 2.1 -->
     </script>
     <script>
       !(function () {
@@ -32,6 +60,6 @@
   <body>
     <div id="root"></div>
 
-    <script src="/nicecode/umi.1ec5f45e.js"></script>
+    <script src="/nicecode/umi.24d5028c.js"></script>
   </body>
 </html>
