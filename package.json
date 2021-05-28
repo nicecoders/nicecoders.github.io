@@ -1,6 +1,6 @@
 {
   "name": "nicecode",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "cz": "git add . && git cz",
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
@@ -17,7 +17,7 @@
     "test": "umi-test",
     "test:update": "umi-test --updateSnapshot",
     "test:coverage": "umi-test --coverage",
-    "log": "conventional-changelog --config ./packages/changelog -i README.md -s -r 0"
+    "log": "conventional-changelog -p ./packages/changelog -i changelog.md -s -r 0"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -41,6 +41,11 @@
     "*.ts?(x)": [
       "prettier --parser=typescript --write",
       "git add"
+    ]
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
     ]
   },
   "devDependencies": {

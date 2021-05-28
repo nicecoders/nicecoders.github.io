@@ -18,5 +18,6 @@
     },
     "cacheDir": ".changelog"
   },
-  "packages": ["packages/*"]
+  "packages": ["packages/*"],
+  "useWorkspaces": true
 }
