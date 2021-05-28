@@ -21,7 +21,13 @@ cnpm i conventional-changelog-cli @nicecode/changelog --save-dev
 {
   ...
   "script": {
-    "log": "conventional-changelog --config @nicecode/changelog -i CHANGELOG.md -s -r 0",
+    "log": "conventional-changelog -p @nicecode/changelog -i CHANGELOG.md -s -r 0",
   }
 }
+/*配置项说明：
+-p custom-config 指定风格
+-i CHANGELOG.md 指定输出的文件名称
+-s -r 0 指定增量更新，不会覆盖以前的更新日志
+-n ./changelog-option.js 指定自定义配置
+*/
 ```
