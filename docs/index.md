@@ -37,3 +37,7 @@ features:
     desc: lodash 二次封装库
 footer: Open-source MIT Licensed | Copyright © 2021-present<br />Powered by nicecoders
 ---
+
+## 更新日志
+
+<embed src="../changelog.md"></embed>
