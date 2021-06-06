@@ -31,3 +31,7 @@
 ```
 npm run cz
 ```
+
+## join us
+
+[Nicecoders Team](https://github.com/nicecoders/nicecode)

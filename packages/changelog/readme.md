@@ -12,7 +12,13 @@ cnpm i conventional-changelog-cli @nicecode/changelog --save-dev
 {
   ...
   "script": {
-    "log": "conventional-changelog --config node_modules/@nicecode/changelog -i CHANGELOG.md -s -r 0",
+    "log": "conventional-changelog --n node_modules/@nicecode/changelog -i CHANGELOG.md -s -r 0",
   }
+  ...
 }
 ```
+
+
+## join us
+
+[Nicecoders Team](https://github.com/nicecoders/nicecode)

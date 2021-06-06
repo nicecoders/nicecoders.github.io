@@ -33,3 +33,8 @@ module.exports = {
 ## 建议
 
 可以搭配 husky 和 lint-stage 效果更佳。它能在你每次提交代码前校验你的代码格式并修复错误的代码格式，具体配置可以参考当前根目录下的 package.json 和 .eslintrc.
+
+
+## join us
+
+[Nicecoders Team](https://github.com/nicecoders/nicecode)
