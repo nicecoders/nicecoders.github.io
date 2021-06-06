@@ -8,6 +8,9 @@ hero:
     - text: 快速上手
       link: /tools
 features:
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/boluo.png
+    title: nicecode-IDE
+    desc: 可定制化 IDE
   - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
     title: changelog
     desc: 日志生成工具
