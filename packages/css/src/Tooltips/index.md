@@ -15,7 +15,7 @@ group:
 
 ```jsx
 import React from 'react';
-import '../../dist/nicecode.css';
+import '@nicecode/css';
 
 export default () => {
   const style = {
@@ -65,7 +65,6 @@ export default () => {
 
 ```jsx
 import React from 'react';
-import '../../dist/nicecode.css';
 
 export default () => {
   const style = {
@@ -131,7 +130,7 @@ export default () => {
 
 ```jsx
 import React from 'react';
-import '../../dist/nicecode.css';
+import '@nicecode/css';
 
 export default () => {
   const style = {
@@ -165,7 +164,7 @@ export default () => {
 
 ```jsx
 import React from 'react';
-import '../../dist/nicecode.css';
+import '@nicecode/css';
 
 export default () => {
   const style = {
@@ -212,7 +211,7 @@ export default () => {
 
 ```jsx
 import React from 'react';
-import '../../dist/nicecode.css';
+import '@nicecode/css';
 
 export default () => {
   const style = {
