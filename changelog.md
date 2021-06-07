@@ -1,3 +1,11 @@
+## [0.0.6](https://github.com/nicecoders/nicecode/compare/v0.0.5...v0.0.6) (2021-06-07)
+
+### 🌟 新功能
+
+* **css 模块：** 新增ToolTip 模块 ([6f28f23](https://github.com/nicecoders/nicecode/commit/6f28f23))
+
+
+
 ## [0.0.5](https://github.com/nicecoders/nicecode/compare/0.0.3...v0.0.5) (2021-06-04)
 
 ### 🌟 新功能

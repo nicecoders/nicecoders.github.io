@@ -8,9 +8,9 @@ hero:
     - text: 快速上手
       link: /tools
 features:
-  - icon: https://i.niupic.com/images/2021/06/07/9krN.png
-    title: nicecode-IDE
-    desc: 可定制化 IDE
+  # - icon: https://i.niupic.com/images/2021/06/07/9krN.png
+  #   title: nicecode-IDE
+  #   desc: 可定制化 IDE
   - icon: https://i.niupic.com/images/2021/06/07/9krP.png
     title: Ide【敬请期待】
     desc: 编辑器
@@ -26,7 +26,7 @@ features:
   - icon: https://i.niupic.com/images/2021/06/07/9krT.png
     title: commit-lint
     desc: 定制化 git 提交校验
-  - icon: https://i.niupic.com/images/2021/06/07/9krU.png
+  - icon: https://i.niupic.com/images/2021/06/07/9krN.png
     title: tools
     desc: 常用函数库
   - icon: https://i.niupic.com/images/2021/06/07/9krV.png
