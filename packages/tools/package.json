@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
-  "homepage": "https://github.com/nicecoders/nicecode",
+  "homepage": "https://nicecoders.github.io/nicecode/#/tools",
   "repository": "https://github.com/nicecoders/nicecode",
   "scripts": {
     "build": "father-build",

@@ -69,5 +69,6 @@
   "publishConfig": {
     "access": "public"
   },
+  "homepage": "https://nicecoders.github.io/nicecode/#/changelog",
   "gitHead": "6586b5a71b6af55ae6317c8979b177a4725bbc8d"
 }
