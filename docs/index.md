@@ -12,6 +12,12 @@ features:
     title: nicecode-IDE
     desc: 可定制化 IDE
   - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
+    title: Ide【敬请期待】
+    desc: 编辑器
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
+    title: anima【敬请期待】
+    desc: 动画库合集
+  - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
     title: changelog
     desc: 日志生成工具
   - icon: http://jzx-h5.oss-cn-hangzhou.aliyuncs.com/logo.png
