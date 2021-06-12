@@ -1,11 +1,11 @@
 {
   "name": "@nicecode/tools",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "nicecoders tools",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
-  "homepage": "https://github.com/nicecoders/nicecode",
+  "homepage": "https://nicecoders.github.io/nicecode/#/tools",
   "repository": "https://github.com/nicecoders/nicecode",
   "scripts": {
     "build": "father-build",
@@ -17,7 +17,7 @@
   "author": "nicecoders",
   "license": "ISC",
   "devDependencies": {
-    "@nicecode/changelog": "^0.1.7",
+    "@nicecode/changelog": "^0.1.8",
     "conventional-changelog-cli": "^2.1.1",
     "father-build": "^1.19.5"
   },

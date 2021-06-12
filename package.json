@@ -5,6 +5,7 @@
     "cz": "git add . && git cz",
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
     "bootstrap": "lerna bootstrap",
+    "link": "lerna link",
     "clean": "lerna clean --yes",
     "publish": "lerna publish",
     "build": "lerna run build",

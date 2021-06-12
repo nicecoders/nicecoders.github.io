@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/changelog",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "nicecoders",
   "description": "changelog",
   "main": "src/index.js",
@@ -69,5 +69,6 @@
   "publishConfig": {
     "access": "public"
   },
+  "homepage": "https://nicecoders.github.io/nicecode/#/changelog",
   "gitHead": "6586b5a71b6af55ae6317c8979b177a4725bbc8d"
 }
