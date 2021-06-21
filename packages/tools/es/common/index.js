@@ -15,15 +15,6 @@ var Common = function Common() {
 
   _classCallCheck(this, Common);
 
-  /**
-   * 生成uuid
-   *
-   * @return uuid
-   * @example
-   *
-   * generateUUID();
-   * // => cd2f4b1f-daf2-451c-a9a6-db716c1d82bb
-   */
   this.generateUUID = function () {
     /* eslint-disable no-bitwise */
 
@@ -36,12 +27,6 @@ var Common = function Common() {
     });
     return uuid;
   };
-  /**
-   * 获取deviceId
-   *
-   * @param {String} [key='deviceId'] - 存储标识
-   */
-
 
   this.getDeviceId = function () {
     var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'deviceId';
@@ -54,18 +39,6 @@ var Common = function Common() {
 
     return deviceId;
   };
-  /**
-   * 获取url中的参数
-   *
-   * @param {String} name - 参数名
-   * @param {String} [url=window.location.search] - 链接
-   * @return {String} 参数值
-   * @example
-   *
-   * getParameter('name', 'http://www.w3school.com?name=xxx');
-   * // => xxx
-   */
-
 
   this.getParameter = function (name) {
     var url = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : window.location.search;
@@ -73,15 +46,6 @@ var Common = function Common() {
     var result = regexp.exec(url);
     return result === null ? '' : decodeURIComponent(result[1]);
   };
-  /**
-   * 向url中添加search参数
-   *
-   * @param {String} url - 链接
-   * @param {String} paramName - 参数名称
-   * @param {String} paramVal - 参数值
-   * @return {String} 拼接好的url
-   */
-
 
   this.addURLParameter = function (url, paramName, paramVal) {
     var oriUrls = url.split('#');
@@ -104,15 +68,6 @@ var Common = function Common() {
 
     return "".concat(temp, "&").concat(paramName, "=").concat(encodeURIComponent(paramVal)).concat(additionalURL);
   };
-  /**
-   * 更新url中的search参数
-   *
-   * @param {String} url - 链接
-   * @param {String} paramName - 参数名称
-   * @param {String} paramVal - 参数值
-   * @return {String} 更新参数后的url
-   */
-
 
   this.updateURLParameter = function (url, paramName, paramVal) {
     var TheAnchor = null;
@@ -156,14 +111,6 @@ var Common = function Common() {
 
     return "".concat(baseURL, "?").concat(newAdditionalURL).concat(temp).concat(paramName, "=").concat(paramVal);
   };
-  /**
-   * 删除url中的search参数
-   *
-   * @param {String} url - 链接
-   * @param {String} paramName - 参数名称
-   * @return {String} 删除参数后的url
-   */
-
 
   this.removeURLParameter = function (url, paramName) {
     var oriUrls = url.split('#');

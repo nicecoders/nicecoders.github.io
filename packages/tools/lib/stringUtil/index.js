@@ -21,20 +21,6 @@ var StringUtil = function StringUtil() {
 
   _classCallCheck(this, StringUtil);
 
-  /**
-   * 空校验
-   * 空数据集合：undefined,'undefined',null,'null','(null)','NaN',''
-   *
-   * @param {String} str - 字符串
-   * @return {Boolean} true-空，false-非空
-   * @example
-   *
-   * isNull();
-   * // => true
-   *
-   * isNull('undefined');
-   * // => true
-   */
   this.isNull = function (str) {
     if (typeof str === 'undefined' || str === 'undefined' || str === null || str === 'null' || str === '(null)' || str === 'NaN' || str === '') {
       return true;
@@ -42,42 +28,10 @@ var StringUtil = function StringUtil() {
 
     return false;
   };
-  /**
-   * 数字校验
-   *
-   * @param {String} str - 字符串
-   * @return {Boolean} true-数字，false-非数字
-   * @example
-   *
-   * isNumber('20');
-   * // => true
-   *
-   * isNumber('.2');
-   * // => false
-   */
-
 
   this.isNumber = function (str) {
     return /^-?\d+(\.\d+)?$/.test(str);
   };
-  /**
-   * 空数据过滤
-   *
-   * @param {String} str - 字符串
-   * @param {String} [format=''] - 格式化
-   * @return {String} 过滤后的数据
-   * @example
-   *
-   * filterNull('xxx');
-   * // => xxx
-   *
-   * filterNull();
-   * // =>
-   *
-   * filterNull(null, '--');
-   * // => --
-   */
-
 
   this.filterNull = function (str) {
     var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
@@ -88,16 +42,6 @@ var StringUtil = function StringUtil() {
 
     return str;
   };
-  /**
-   * 分->元
-   * 为防止浮点数及大数运算精度丢失，故采用字符串形式解析
-   *
-   * @param {String} str - 分
-   * @param {String} [format='0.00'] - 格式化
-   * @return {String} 元
-   * @example
-   */
-
 
   this.toYuan = function (str) {
     var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0.00';
@@ -135,17 +79,6 @@ var StringUtil = function StringUtil() {
 
     return result;
   };
-  /**
-   * 元->分
-   * 为防止浮点数及大数运算精度丢失，故采用字符串形式解析
-   *
-   * @param {String} str - 元
-   * @param {String} [format='0'] - 格式化
-   * @return {String} 分
-   * @example
-   *
-   */
-
 
   this.toFen = function (str) {
     var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0';

@@ -4,6 +4,9 @@
  * isIos - 判断是否在IOS设备内
  * isAndroid - 判断是否在Android设备内
  * isWeChat - 判断是否在微信客户端内
+ * isWxWorker - 判断是否在企业微信客户端内
+ * isDingTalk - 判断是否在钉钉客户端内
+ * isFeiShu - 判断是否在飞书客户端内
  * isAliPay - 判断是否在支付宝客户端内
  * isJRApp - 判断是否在京东金融客户端内
  * isThirdApp - 判断是否在第三方合作App内
@@ -31,6 +34,24 @@ declare class App {
      * @return {Boolean} true-是，false-否
      */
     isWeChat: () => boolean;
+    /**
+     * 判断是否在企业微信客户端内
+     *
+     * @return {Boolean} true-是，false-否
+     */
+    isWxWorker: () => boolean;
+    /**
+     * 判断是否在钉钉客户端内
+     *
+     * @return {Boolean} true-是，false-否
+     */
+    isDingTalk: () => boolean;
+    /**
+     * 判断是否在飞书客户端内
+     *
+     * @return {Boolean} true-是，false-否
+     */
+    isFeiShu: () => boolean;
     /**
      * 判断是否在支付宝客户端内
      *
@@ -71,6 +92,9 @@ declare class App {
      *
      * alipayClient - 支付宝客户端
      * wxClient - 微信客户端
+     * wxWorkClient - 企业微信客户端
+     * dingTalkClient - 钉钉客户端
+     * larkClient - 飞书客户端
      * jdIos - 京东iOS
      * jdAndroid - 京东安卓
      * jdjrIos - 京东金融iOS
@@ -80,7 +104,7 @@ declare class App {
      *
      * @return {String} 场景类型
      */
-    getSceneType: () => "alipayMiniPrograms" | "alipayClient" | "wxClient" | "jdJr" | "wap";
+    getSceneType: () => "alipayMiniPrograms" | "alipayClient" | "wxClient" | "wxWorkClient" | "dingTalkClient" | "larkClient" | "jdJr" | "wap";
 }
 declare const _default: App;
 export default _default;

@@ -9,6 +9,10 @@ group:
 
 # Tooltip 提示
 
+<Alert type="info">
+  项目案例用 react 作为演示，实际使用中不依赖任何框架，<Badge>开箱即用</Badge>
+</Alert>
+
 ## 位置控制
 
 通过设置 data-nc-pos 属性实现
@@ -29,7 +33,7 @@ export default () => {
   };
 
   return (
-    <div>
+    <div className="mt-10">
       <p style={style} aria-label="嗨，宝贝!" data-nc-pos="up">
         正上方!
       </p>
