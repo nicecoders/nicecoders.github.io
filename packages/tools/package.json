@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/tools",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "nicecoders tools",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -17,7 +17,7 @@
   "author": "nicecoders",
   "license": "ISC",
   "devDependencies": {
-    "@nicecode/changelog": "^0.1.8",
+    "@nicecode/changelog": "^0.1.9",
     "conventional-changelog-cli": "^2.1.1",
     "father-build": "^1.19.5"
   },
