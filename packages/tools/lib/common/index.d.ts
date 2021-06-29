@@ -7,6 +7,8 @@
  * addURLParameter - 向url中添加search参数
  * updateURLParameter - 更新url中的search参数
  * removeURLParameter - 删除url中的search参数
+ * getValueByKey - 通过key值获取value
+ * getKeyByValue - 通过value获取key
  */
 declare class Common {
     /**
@@ -63,6 +65,16 @@ declare class Common {
      * @return {String} 删除参数后的url
      */
     removeURLParameter: (url: string, paramName: string) => string;
+    /**
+   * 通过 key 获取 value
+   * @param key 需要转换的值
+   * @param map array | map
+   */
+    getValueByKey: (key: any, map: string[] | Map<any, any> | {
+        key: any;
+        value: any;
+    }[]) => any;
+    getKeyByValue: (map: Map<any, any>, value: any) => any;
 }
 declare const _default: Common;
 export default _default;

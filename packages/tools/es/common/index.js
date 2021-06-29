@@ -1,3 +1,15 @@
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
@@ -9,6 +21,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * addURLParameter - 向url中添加search参数
  * updateURLParameter - 更新url中的search参数
  * removeURLParameter - 删除url中的search参数
+ * getValueByKey - 通过key值获取value
+ * getKeyByValue - 通过value获取key
  */
 var Common = function Common() {
   var _this = this;
@@ -152,6 +166,48 @@ var Common = function Common() {
     }
 
     return newUrl;
+  };
+
+  this.getValueByKey = function (key, map) {
+    var ret = null; // @ts-ignore
+
+    if (map.size) {
+      var tempRet = _toConsumableArray(map.entries()).find(function (item) {
+        return item[0] === key;
+      });
+
+      ret = tempRet && tempRet[1];
+    } else {
+      map.forEach(function (item) {
+        if (typeof item === 'string') {
+          if (item === key) {
+            ret = item;
+          }
+        } else if (item.key === key) {
+          ret = item.value;
+        }
+      });
+    }
+
+    return ret;
+  };
+
+  this.getKeyByValue = function (map, value) {
+    var ret = null;
+
+    if (map.size) {
+      ret = _toConsumableArray(map.entries()).find(function (item) {
+        return item[1] === value;
+      });
+    } else {
+      map.forEach(function (item) {
+        if (item.value === value) {
+          ret = item.key;
+        }
+      });
+    }
+
+    return ret;
   };
 };
 

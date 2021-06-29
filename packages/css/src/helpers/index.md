@@ -11,6 +11,9 @@ group:
 
 ## 清除浮动
 
+使用方式：clearfix
+
+
 ```js
 import '@nicecode/css';
 
@@ -25,6 +28,8 @@ export default () => {
 ```
 
 ## 关闭按钮
+
+使用方式：btn-close
 
 按钮大小会根据当前元素的宽高来决定
 
@@ -48,6 +53,19 @@ export default () => {
 ## 边框：border
 
 ### 基础
+
+使用方式：**{type}**
+
+type 枚举列表,如下：
+
+1. border
+2. bt
+3. br
+4. bb
+5. bl
+6. bt-0
+7. br-0
+...
 
 ```jsx
 import React from 'react';
@@ -91,6 +109,19 @@ export default () => {
 ```
 
 ### 拓展
+
+使用方式：**border-{type}**
+
+type 枚举列表,如下：
+
+1. primary
+2. info
+3. success
+4. warning
+5. danger
+6. light
+7. dark
+8. white
 
 ```jsx
 import React from 'react';
@@ -140,6 +171,18 @@ export default () => {
 
 ### 文字
 
+使用方式：**text-{type}**
+
+type 枚举列表,如下：
+
+1. primary
+2. info
+3. success
+4. warning
+5. danger
+6. light
+7. dark
+
 ```jsx
 import React from 'react';
 import '@nicecode/css';
@@ -187,6 +230,18 @@ export default () => {
 
 ### 背景：background
 
+使用方式：**bg-{type}**
+
+type 枚举列表,如下：
+
+1. primary
+2. info
+3. success
+4. warning
+5. danger
+6. light
+7. dark
+
 ```jsx
 import React from 'react';
 import '@nicecode/css';
@@ -228,6 +283,18 @@ export default () => {
 ```
 
 ## 圆角：border-radius
+
+使用方式：**rounded-{type}**
+
+type 枚举列表,如下：
+
+1. rounded-pill
+2. rounded-top
+3. rounded-right
+4. rounded-bottom
+5. rounded-left
+6. rounded-0
+7. rounded-circle
 
 ```jsx
 import React from 'react';
