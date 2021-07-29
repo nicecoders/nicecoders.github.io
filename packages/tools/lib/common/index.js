@@ -5,6 +5,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
@@ -16,21 +28,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * addURLParameter - 向url中添加search参数
  * updateURLParameter - 更新url中的search参数
  * removeURLParameter - 删除url中的search参数
+ * getValueByKey - 通过key值获取value
+ * getKeyByValue - 通过value获取key
  */
 var Common = function Common() {
   var _this = this;
 
   _classCallCheck(this, Common);
 
-  /**
-   * 生成uuid
-   *
-   * @return uuid
-   * @example
-   *
-   * generateUUID();
-   * // => cd2f4b1f-daf2-451c-a9a6-db716c1d82bb
-   */
   this.generateUUID = function () {
     /* eslint-disable no-bitwise */
 
@@ -43,12 +48,6 @@ var Common = function Common() {
     });
     return uuid;
   };
-  /**
-   * 获取deviceId
-   *
-   * @param {String} [key='deviceId'] - 存储标识
-   */
-
 
   this.getDeviceId = function () {
     var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'deviceId';
@@ -61,18 +60,6 @@ var Common = function Common() {
 
     return deviceId;
   };
-  /**
-   * 获取url中的参数
-   *
-   * @param {String} name - 参数名
-   * @param {String} [url=window.location.search] - 链接
-   * @return {String} 参数值
-   * @example
-   *
-   * getParameter('name', 'http://www.w3school.com?name=xxx');
-   * // => xxx
-   */
-
 
   this.getParameter = function (name) {
     var url = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : window.location.search;
@@ -80,15 +67,6 @@ var Common = function Common() {
     var result = regexp.exec(url);
     return result === null ? '' : decodeURIComponent(result[1]);
   };
-  /**
-   * 向url中添加search参数
-   *
-   * @param {String} url - 链接
-   * @param {String} paramName - 参数名称
-   * @param {String} paramVal - 参数值
-   * @return {String} 拼接好的url
-   */
-
 
   this.addURLParameter = function (url, paramName, paramVal) {
     var oriUrls = url.split('#');
@@ -111,15 +89,6 @@ var Common = function Common() {
 
     return "".concat(temp, "&").concat(paramName, "=").concat(encodeURIComponent(paramVal)).concat(additionalURL);
   };
-  /**
-   * 更新url中的search参数
-   *
-   * @param {String} url - 链接
-   * @param {String} paramName - 参数名称
-   * @param {String} paramVal - 参数值
-   * @return {String} 更新参数后的url
-   */
-
 
   this.updateURLParameter = function (url, paramName, paramVal) {
     var TheAnchor = null;
@@ -163,14 +132,6 @@ var Common = function Common() {
 
     return "".concat(baseURL, "?").concat(newAdditionalURL).concat(temp).concat(paramName, "=").concat(paramVal);
   };
-  /**
-   * 删除url中的search参数
-   *
-   * @param {String} url - 链接
-   * @param {String} paramName - 参数名称
-   * @return {String} 删除参数后的url
-   */
-
 
   this.removeURLParameter = function (url, paramName) {
     var oriUrls = url.split('#');
@@ -212,6 +173,48 @@ var Common = function Common() {
     }
 
     return newUrl;
+  };
+
+  this.getValueByKey = function (key, map) {
+    var ret = null; // @ts-ignore
+
+    if (map.size) {
+      var tempRet = _toConsumableArray(map.entries()).find(function (item) {
+        return item[0] === key;
+      });
+
+      ret = tempRet && tempRet[1];
+    } else {
+      map.forEach(function (item) {
+        if (typeof item === 'string') {
+          if (item === key) {
+            ret = item;
+          }
+        } else if (item.key === key) {
+          ret = item.value;
+        }
+      });
+    }
+
+    return ret;
+  };
+
+  this.getKeyByValue = function (map, value) {
+    var ret = null;
+
+    if (map.size) {
+      ret = _toConsumableArray(map.entries()).find(function (item) {
+        return item[1] === value;
+      });
+    } else {
+      map.forEach(function (item) {
+        if (item.value === value) {
+          ret = item.key;
+        }
+      });
+    }
+
+    return ret;
   };
 };
 

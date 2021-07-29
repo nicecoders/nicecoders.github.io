@@ -1,10 +1,11 @@
 {
   "name": "nicecode",
-  "version": "0.2.0",
+  "version": "0.0.7",
   "scripts": {
     "cz": "git add . && git cz",
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
     "bootstrap": "lerna bootstrap",
+    "link": "lerna link",
     "clean": "lerna clean --yes",
     "publish": "lerna publish",
     "build": "lerna run build",
@@ -17,7 +18,10 @@
     "test": "umi-test",
     "test:update": "umi-test --updateSnapshot",
     "test:coverage": "umi-test --coverage",
-    "log": "conventional-changelog --config ./packages/changelog -i README.md -s -r 0"
+    "buildmajor": "npm version major",
+    "buildminor": "npm version minor",
+    "buildpatch": "npm version patch",
+    "log": "conventional-changelog -n ./packages/changelog/src -i changelog.md -s -r 1"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -41,6 +45,11 @@
     "*.ts?(x)": [
       "prettier --parser=typescript --write",
       "git add"
+    ]
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
     ]
   },
   "devDependencies": {

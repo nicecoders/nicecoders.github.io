@@ -40,7 +40,7 @@ gulp.task("sass-module", gulp.series(() => {
 
 gulp.task("watch", (done) =>　{
   //   log("Watching scss files for modifications");
-    gulp.watch('src/*.scss', gulp.series("sass-all"));
+    gulp.watch('src/**/*.scss', gulp.series("sass-all"));
     done()
   });
 

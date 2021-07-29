@@ -7,6 +7,8 @@
  * addURLParameter - 向url中添加search参数
  * updateURLParameter - 更新url中的search参数
  * removeURLParameter - 删除url中的search参数
+ * getValueByKey - 通过key值获取value
+ * getKeyByValue - 通过value获取key
  */
 class Common {
   /**
@@ -171,6 +173,51 @@ class Common {
       newUrl = tempArray[0] + additionalURL;
     }
     return newUrl;
+  }
+
+  /**
+ * 通过 key 获取 value
+ * @param key 需要转换的值
+ * @param map array | map
+ */
+  getValueByKey = (
+    key: any,
+    map: Map<any, any> | Array<{ key: any; value: any }> | string[],
+  ) => {
+    let ret: any = null;
+
+    // @ts-ignore
+    if (map.size) {
+      const tempRet = [...map.entries()].find(item => item[0] === key);
+      ret = tempRet && tempRet[1];
+    } else {
+      map.forEach((item: { key: any; value: string | null } | string) => {
+        if (typeof item === 'string') {
+          if (item === key) {
+            ret = item;
+          }
+        } else if (item.key === key) {
+          ret = item.value;
+        }
+      });
+    }
+
+    return ret;
+  };
+
+  // 通过 value 获取 key
+  getKeyByValue = (map: Map<any, any>, value: any) => {
+    let ret = null
+    if (map.size) {
+      ret = [...map.entries()].find((item: any[]) => item[1] === value);
+    } else {
+      map.forEach((item: { key: string | number, value: string | number }) => {
+        if (item.value === value) {
+          ret = item.key
+        }
+      });
+    }
+    return ret
   }
 }
 

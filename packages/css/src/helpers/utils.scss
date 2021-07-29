@@ -1,0 +1,201 @@
+$border: (
+  'border': (
+    property: border,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    ),
+  ),
+  'border-top': (
+    property: border-top,
+    class: bt,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    ),
+  ),
+  'border-right': (
+    property: border-right,
+    class: br,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    ),
+  ),
+  'border-bottom': (
+    property: border-bottom,
+    class: bb,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    ),
+  ),
+  'border-left': (
+    property: border-left,
+    class: bl,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    ),
+  ),
+  'border-color': (
+    property: border-color,
+    class: border,
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'white': $white,
+        )
+      ),
+  ),
+  'border-width': (
+    property: border-width,
+    class: border,
+    values: $border-widths,
+  ),
+  'color': (
+    property: color,
+    class: text,
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'white': $white,
+          'black-50': rgba($black, 0.5),
+          'white-50': rgba($white, 0.5),
+          'reset': inherit,
+        )
+      ),
+  ),
+  'background-color': (
+    property: background-color,
+    class: bg,
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'white': $white,
+          'transparent': transparent,
+        )
+      ),
+  ),
+  'user-select': (
+    property: user-select,
+    values: all auto none,
+  ),
+  'pointer-events': (
+    property: pointer-events,
+    class: pe,
+    values: none auto,
+  ),
+  // 圆角
+  'rounded': (
+    property: border-radius,
+    class: rounded,
+    values: (
+      null: $border-radius,
+      0: 0,
+      1: $border-radius-sm,
+      2: $border-radius,
+      3: $border-radius-lg,
+      circle: 50%,
+      pill: $border-radius-pill,
+    ),
+  ),
+  'rounded-top': (
+    property: border-top-left-radius border-top-right-radius,
+    class: rounded-top,
+    values: (
+      null: $border-radius,
+    ),
+  ),
+  'rounded-end': (
+    property: border-top-right-radius border-bottom-right-radius,
+    class: rounded-right,
+    values: (
+      null: $border-radius,
+    ),
+  ),
+  'rounded-bottom': (
+    property: border-bottom-right-radius border-bottom-left-radius,
+    class: rounded-bottom,
+    values: (
+      null: $border-radius,
+    ),
+  ),
+  'rounded-start': (
+    property: border-bottom-left-radius border-top-left-radius,
+    class: rounded-left,
+    values: (
+      null: $border-radius,
+    ),
+  ),
+
+  "overflow": (
+    property: overflow,
+    values: auto hidden visible scroll,
+  ),
+  "display": (
+    responsive: true,
+    print: true,
+    property: display,
+    class: d,
+    values: inline inline-block block grid table table-row table-cell flex inline-flex none
+  ),
+  // 对其方式
+  "align": (
+      property: vertical-align,
+      class: align,
+      values: baseline top middle bottom text-bottom text-top
+    ),
+  // 浮动 float
+  "float": (
+    responsive: true,
+    property: float,
+    values: left right none
+  ),
+);
+
+@each $type, $utility in $border {
+  $values: map-get($utility, values);
+
+  @if type-of($values) == 'string' or type-of(nth($values, 1)) != 'list' {
+    $values: zip($values, $values);
+  }
+
+  @each $key, $value in $values {
+    // 样式 key 值
+    $properties: map-get($utility, property);
+
+    // Multiple properties are possible, for example with vertical or horizontal margins or paddings
+    @if type-of($properties) == "string" {
+      $properties: append((), $properties);
+    }
+
+    // 设置获取根 class
+    $property-class: if(
+      map-has-key($utility, class),
+      map-get($utility, class),
+      nth($properties, 1)
+    );
+    $property-class: if($property-class == null, '', $property-class);
+
+    // Don't prefix if value key is null (eg. with shadow class)
+    $property-class-modifier: if(
+      $key,
+      if($property-class == '' and $infix == '', '', '-') + $key,
+      ''
+    );
+
+    $_prefix: if($nc-prefix, '#{$nc-prefix}-', '');
+
+    @if $value != null {
+      .#{$_prefix + $property-class + $property-class-modifier} {
+        @each $property in $properties {
+          #{$property}: $value if(false, !important, null);
+        }
+      }
+    }
+  }
+}

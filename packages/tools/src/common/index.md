@@ -11,15 +11,23 @@ group:
 
 通用方法合集
 
-<code src="./demo/index.tsx" />
+### 生成 UUID
+
+```js
+import { common } from '@nicecode/tools';
+
+let uuid = common.generateUUID();
+```
 
 ## API
 
-|  方法   | 说明  | 类型 | 默认值 |
-|  ----  | ----  | ----  | ----  |
-| generateUUID  | 生成uuid | function | - |
-| getDeviceId  | 获取deviceId | function | - |
-| getParameter  | 获取url中的参数 | function | - |
-| addURLParameter  | 向url中添加search参数 | function | - |
-| updateURLParameter  | 更新url中的search参数 | function | - |
-| removeURLParameter  | 删除url中的search参数 | function | - |
+| 方法               | 说明                      | 类型     | 默认值 |
+| ------------------ | ------------------------- | -------- | ------ |
+| generateUUID       | 生成 uuid                 | function | -      |
+| getDeviceId        | 获取 deviceId             | function | -      |
+| getParameter       | 获取 url 中的参数         | function | -      |
+| addURLParameter    | 向 url 中添加 search 参数 | function | -      |
+| updateURLParameter | 更新 url 中的 search 参数 | function | -      |
+| removeURLParameter | 删除 url 中的 search 参数 | function | -      |
+| getValueByKey | 通过 Key 获取 Value | function | -      |
+| getKeyByValue | 通过 Value 获取 Key | function | -      |

@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/changelog",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "author": "nicecoders",
   "description": "changelog",
   "main": "src/index.js",
@@ -11,8 +11,7 @@
   "scripts": {
     "cz": "git add . && git cz",
     "log": "conventional-changelog --config src/log -i CHANGELOG.md -s -r 0",
-    "v": "standard-version -r ${v}",
-    "build": "rm -rf dist && cross-env babel lib --out-dir dist"
+    "v": "standard-version -r ${v}"
   },
   "keywords": [
     "changelog",
@@ -44,23 +43,13 @@
     "work-wrap": "^1.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "commitizen": "^3.0.5",
-    "commitlint": "^7.3.1",
-    "conventional-changelog-cli": "^2.0.11",
     "cross-env": "^5.2.0",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
-    "github-url-from-git": "^1.5.0",
-    "husky": "^1.3.1",
-    "jimi-web-changelog": "^0.0.7",
-    "lint-staged": "^8.1.0",
-    "standard-version": "^4.4.0"
+    "github-url-from-git": "^1.5.0"
   },
   "repository": {
     "type": "git",
@@ -69,5 +58,6 @@
   "publishConfig": {
     "access": "public"
   },
+  "homepage": "https://nicecoders.github.io/nicecode/#/changelog",
   "gitHead": "6586b5a71b6af55ae6317c8979b177a4725bbc8d"
 }
