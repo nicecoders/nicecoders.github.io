@@ -1,15 +1,16 @@
 export type ValidatorType =
-  | 'phone'
+  | 'phone'   // 电话号码
   | 'email'   // email
-  | 'mobile'
-  | 'url'
-  | 'password'
-  | 'noChars'
+  | 'mobile'  // 手机号码
+  | 'url'     // 链接
+  | 'password'  // 密码
+  | 'noChars'   // 
   | 'postCode'
   | 'zh'
   | 'mac'
   | 'idCard'
-  | 'ip';
+  | 'ip'
+  | 'specStr'   // 特殊字符
 
 
 /**
@@ -45,6 +46,7 @@ const Validator = (type: ValidatorType) =>  {
       '\uFE30-\uFE4F', // CJK 兼容形式
       '\uFF00-\uFFEF', // 半型及全型形式【针对部分中文标点符号】
     ].join('')}]`),
+    specStr: new RegExp(/[(\ )(\~)(\~)(\!)(\！)(\@)(\#)(\$)(\￥)(\%)(\^)(\……)(\&)(\*)(\()(\（)(\))(\）)(\-)(\_))(\——)(\+)(\=)(\[)(\【)(\])(\】)(\{)(\})(\|))(\、))(\)(\\)(\;)(\；)(\:)(\：)(\')(\‘)(\’)(\")(\“)(\”)(\,)(\，)(\.)(\。)(\/)(\《)(\<)(\>)(\》)(\?)(\？)(\)]+/)
   }
 
   return type && validatorList[type]

@@ -3,7 +3,6 @@
   "version": "0.0.3",
   "description": "基于 lodash 的函数库",
   "keywords": [
-    "lodash",
     "slash",
     "guns",
     "and",

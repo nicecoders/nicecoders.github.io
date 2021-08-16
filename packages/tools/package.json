@@ -5,6 +5,10 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
+  "files": [
+    "es",
+    "lib"
+  ],
   "homepage": "https://nicecoders.github.io/nicecode/#/tools",
   "repository": "https://github.com/nicecoders/nicecode",
   "scripts": {
@@ -24,5 +28,8 @@
   "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

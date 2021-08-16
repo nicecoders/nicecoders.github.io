@@ -1,159 +1,103 @@
-/**
- * 字符串操作
- *
- * isNull - 空校验
- * isNumber - 数字校验
- * filterNull - 空数据过滤
- * toYuan - 分转化成元
- * toFen - 元转化为分
- */
- class StringUtil {
+import camelCase from 'lodash/camelCase'
+import capitalize from 'lodash/capitalize'
+import endsWith from 'lodash/endsWith'
+import escape from 'lodash/escape'
+import escapeRegExp from 'lodash/escapeRegExp'
+import kebabCase from 'lodash/kebabCase'
+import lowerCase from 'lodash/lowerCase'
+import lowerFirst from 'lodash/lowerFirst'
+import pad from 'lodash/pad'
+import padEnd from 'lodash/padEnd'
+import padStart from 'lodash/padStart'
+import repeat from 'lodash/repeat'
+import replace from 'lodash/replace'
+import split from 'lodash/split'
+import startCase from 'lodash/startCase'
+import startsWith from 'lodash/startsWith'
+import trim from 'lodash/trim'
+import trimEnd from 'lodash/trimEnd'
+import trimStart from 'lodash/trimStart'
+import truncate from 'lodash/truncate'
+
+export default {
   /**
-   * 空校验
-   * 空数据集合：undefined,'undefined',null,'null','(null)','NaN',''
-   *
-   * @param {String} str - 字符串
-   * @return {Boolean} true-空，false-非空
-   * @example
-   *
-   * isNull();
-   * // => true
-   *
-   * isNull('undefined');
-   * // => true
+   * 驼峰字符串
    */
-  isNull = (str: string) => {
-    if (
-      typeof str === 'undefined'
-      || str === 'undefined'
-      || str === null
-      || str === 'null'
-      || str === '(null)'
-      || str === 'NaN'
-      || str === ''
-    ) {
-      return true;
-    }
-    return false;
-  };
-
+  camelCase,
   /**
-   * 数字校验
-   *
-   * @param {String} str - 字符串
-   * @return {Boolean} true-数字，false-非数字
-   * @example
-   *
-   * isNumber('20');
-   * // => true
-   *
-   * isNumber('.2');
-   * // => false
+   * 首字母大写
    */
-  isNumber = (str: string) => /^-?\d+(\.\d+)?$/.test(str);
-
+  capitalize,
   /**
-   * 空数据过滤
-   *
-   * @param {String} str - 字符串
-   * @param {String} [format=''] - 格式化
-   * @return {String} 过滤后的数据
-   * @example
-   *
-   * filterNull('xxx');
-   * // => xxx
-   *
-   * filterNull();
-   * // =>
-   *
-   * filterNull(null, '--');
-   * // => --
+   * 检查字符串string是否以给定的target字符串结尾。
    */
-  filterNull = (str: string, format = '') => {
-    if (this.isNull(str)) {
-      return format;
-    }
-    return str;
-  };
-
+  endsWith,
   /**
-   * 分->元
-   * 为防止浮点数及大数运算精度丢失，故采用字符串形式解析
-   *
-   * @param {String} str - 分
-   * @param {String} [format='0.00'] - 格式化
-   * @return {String} 元
-   * @example
+   * 转义string中的 "&", "<", ">", '"', "'", 和 "`" 字符为HTML实体字符。
    */
-  toYuan = (str: string | number, format = '0.00') => {
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
-      return format;
-    }
-    str = str.toString();
-    let result = '';
-    if (str[0] === '-') {
-      result = '-';
-      str = str.substr(1);
-    }
-    if (str.indexOf('.') > -1) {
-      str = str.replace(/\.\d+$/, ''); // Trim decimal at the ending.
-    }
-    const len = str.length;
-    switch (len) {
-    case 1:
-      result += `0.0${str}`;
-      break;
-    case 2:
-      result += `0.${str}`;
-      break;
-    default:
-      result += `${str.substr(0, len - 2)}.${str.substr(len - 2)}`;
-    }
-
-    return result;
-  };
-
+  escape,
   /**
-   * 元->分
-   * 为防止浮点数及大数运算精度丢失，故采用字符串形式解析
-   *
-   * @param {String} str - 元
-   * @param {String} [format='0'] - 格式化
-   * @return {String} 分
-   * @example
-   *
+   * 转义 RegExp 字符串中特殊的字符 "^", "$", "", ".", "*", "+", "?", "(", ")", "[", "]", "{", "}", 和 "|" in .
    */
-  toFen = (str: string | number, format = '0') => {
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
-      return format;
-    }
-    str = str.toString();
-    let result = '0';
-    if (str.indexOf('.') > -1) {
-      const strArr = str.split('.');
-      const len = strArr[1].length;
-      switch (len) {
-      case 1:
-        // 特殊数据：0.0 => 000、 0.1 => 010
-        result = `${strArr[0]}${strArr[1]}0`;
-        break;
-      case 2:
-        // 特殊数据：0.00 => 000、 0.01 => 001、 0.10 => 010
-        result = str.replace('.', '');
-        break;
-      default:
-        // 只保留两位小数
-        // 特殊数据：0.000 => 000、 0.001 => 000、 0.010 => 001、 0.101 => 010
-        result = `${strArr[0]}${strArr[1].substr(0, 2)}`;
-      }
-    } else {
-      result = `${str}00`;
-    }
-    // 特殊数据处理：000 => 0、 001 => 1、 010 => 10
-    result = result.replace(/^(-?)(0{1,2})/, '$1'); // Trim zeros at the beginning.
-
-    return result;
-  };
-}
-
-export default new StringUtil();
+  escapeRegExp,
+  /**
+   * 转换字符串string为用 - 连接
+   */
+  kebabCase,
+  /**
+   * 转换字符串string以空格分开单词，并转换为小写
+   */
+  lowerCase,
+  /**
+   * 转换字符串string的首字母为小写
+   */
+  lowerFirst,
+  /**
+   * 如果string字符串长度小于 length 则从左侧和右侧填充字符。 如果没法平均分配，则截断超出的长度
+   */
+  pad,
+  /**
+   * 如果string字符串长度小于 length 则在右侧填充字符。 如果超出length长度则截断超出的部分
+   */
+  padEnd,
+  /**
+   * 如果string字符串长度小于 length 则在左侧填充字符。 如果超出length长度则截断超出的部分
+   */
+  padStart,
+  /**
+   * 重复 N 次给定字符串。
+   */
+  repeat,
+  /**
+   * 替换string字符串中匹配的pattern为给定的replacement 
+   */
+  replace,
+  /**
+   * 根据separator 拆分字符串string
+   */
+  split,
+  /**
+   * 转换 string 字符串为 start case.
+   */
+  startCase,
+  /**
+   * 检查字符串string是否以 target 开头
+   */
+  startsWith,
+  /**
+   * 移除指定字符，默认移除空格
+   */
+  trim,
+  /**
+   * 移除后面字符，默认移除空格
+   */
+  trimEnd,
+  /**
+   * 移除前面字符，默认移除空格
+   */
+  trimStart,
+  /**
+   * 截断string字符串，如果字符串超出了限定的最大值。 被截断的字符串后面会以 omission 代替，omission 默认是 "..."
+   */
+  truncate
+};
