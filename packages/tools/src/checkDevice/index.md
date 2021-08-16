@@ -4,7 +4,7 @@ nav:
   path: /tools
 group:
   title: checkDevice
-  order: 1
+  order: 7
 ---
 
 ## checkDevice

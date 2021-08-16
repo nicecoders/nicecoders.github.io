@@ -5,8 +5,7 @@
   "description": "changelog",
   "main": "src/index.js",
   "files": [
-    "src",
-    "demo"
+    "src"
   ],
   "scripts": {
     "cz": "git add . && git cz",

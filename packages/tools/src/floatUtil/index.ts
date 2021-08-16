@@ -1,84 +1,40 @@
-/**
- * 乘法
- * @param a number
- * @param b number
- * @returns number
- */
-function multiply(a: number, b: number) {
-  var c = 0,
-      d = a.toString(),
-      e = b.toString();
-  try {
-      c += d.split(".")[1].length;
-  } catch (f) {}
-  try {
-      c += e.split(".")[1].length;
-  } catch (f) {}
-  return Number(d.replace(".", "")) * Number(e.replace(".", "")) / Math.pow(10, c);
-}
-
+import add from 'lodash/add';
+import subtract from 'lodash/subtract';
+import ceil from 'lodash/ceil';
+import floor from 'lodash/floor';
+import max from  'lodash/max';
+import maxBy from  'lodash/maxBy';
+import divide from 'lodash/divide';
+import multiply from 'lodash/multiply';
+import mean from 'lodash/mean';
+import meanBy from 'lodash/meanBy';
+import min from 'lodash/min';
+import minBy from 'lodash/minBy';
+import round from 'lodash/round';
+import sum from 'lodash/sum';
+import sumBy from 'lodash/sumBy';
+import clamp from 'lodash/clamp';
+import inRange from 'lodash/inRange';
+import random from 'lodash/random';
 
 export default {
-  /**
-   * 加法
-   * @param a number
-   * @param b number
-   * @returns number
-   */
-  add(a: number, b: number) {
-      var c: number, d: number, e: number;
-      try {
-          c = a.toString().split(".")[1].length;
-      } catch (f) {
-          c = 0;
-      }
-      try {
-          d = b.toString().split(".")[1].length;
-      } catch (f) {
-          d = 0;
-      }
-      return e = Math.pow(10, Math.max(c, d)), (multiply(a, e) + multiply(b, e)) / e;
-  },
-
-  /**
-   * 减法
-   * @param a number
-   * @param b number
-   * @returns number
-   */
-  sub(a: number, b: number) {
-      var c: number, d: number, e: number;
-      try {
-          c = a.toString().split(".")[1].length;
-      } catch (f) {
-          c = 0;
-      }
-      try {
-          d = b.toString().split(".")[1].length;
-      } catch (f) {
-          d = 0;
-      }
-      return e = Math.pow(10, Math.max(c, d)), (multiply(a, e) - multiply(b, e)) / e;
-  },
-
-  multiply,
-
-  /**
-   * 除法
-   * @param a number
-   * @param b number
-   * @returns number
-   */
-  divide(a: number, b: number) {
-      var c: number, d: number, e = 0,
-          f = 0;
-      try {
-          e = a.toString().split(".")[1].length;
-      } catch (g) {}
-      try {
-          f = b.toString().split(".")[1].length;
-      } catch (g) {}
-      return c = Number(a.toString().replace(".", "")), d = Number(b.toString().replace(".", "")), multiply(c / d, Math.pow(10, f - e));
-  }
+  add,            // 加法
+  subtract,       // 减法
+  multiply,       // 乘法
+  divide,         // 除法
+  ceil,           // 向上取舍
+  floor,          // 向下取舍
+  max,            // 计算最大值
+  maxBy,           //  计算最大值，并可通过一个迭代函数计算
+  mean,           //  计算平均值
+  meanBy,         //  计算平均值, 可传入一个迭代器
+  min,            // 最小值
+  minBy,          //  计算最小值, 可传入一个迭代器
+  round,          // 四舍五入
+  sum,             // 总和
+  sumBy,            //  返回总和，可传入一个迭代器
+  clamp,            // 设置一个数字区间
+  inRange,          // 判断是否在区间
+  random            // 返回随机数
 }
 

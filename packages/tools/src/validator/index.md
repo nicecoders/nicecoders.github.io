@@ -16,7 +16,8 @@ group:
 ```js
 import { validator } from '@nicecode/tools';
 
-let telReg = validator('mobile');
+let specStrReg = validator('specStr')
+
 ```
 
 ## API
@@ -34,3 +35,4 @@ let telReg = validator('mobile');
 | postCode | 邮政编码                           | RegExp | -      |
 | zh       | 中文                               | RegExp | -      |
 | ip       | ip 地址                            | RegExp | -      |
+| specStr  | 特殊字符校验                         | RegExp | -      |

@@ -3,6 +3,9 @@
   "version": "0.0.7",
   "description": "style in class 解决方案",
   "main": "dist/nicecode.min.css",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "watch": "gulp watch",
     "build": "gulp"

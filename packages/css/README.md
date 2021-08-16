@@ -25,9 +25,8 @@ import '@nicecode/css'
 ## 项目参考
 
 1. bootstrap
-2. http://kazzkiq.github.io/balloon.css
-3. https://tailwindcss.com
-4. https://cssnext.github.io/features
+2. tailwindcss
+3. cssnext
 
 ## join us
 
