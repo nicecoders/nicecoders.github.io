@@ -1,3 +1,13 @@
+## [0.0.8](https://github.com/nicecoders/nicecode/compare/0.0.7...0.0.8) (2021-08-16)
+
+### 🌟 新功能
+
+* **nicecode/tools：** 新增部分方法 ([c17f45e](https://github.com/nicecoders/nicecode/commit/c17f45e))
+* **nicecode/tools：** 新增arrayUtil方法,floatUtil方法,stringUtil方法 ([453e71e](https://github.com/nicecoders/nicecode/commit/453e71e))
+* **nicecode/tools：** 新增getValueByKey,getKeyByValue方法 ([90e9953](https://github.com/nicecoders/nicecode/commit/90e9953))
+
+
+
 ## [0.0.6](https://github.com/nicecoders/nicecode/compare/v0.0.5...v0.0.6) (2021-06-07)
 
 ### 🌟 新功能
