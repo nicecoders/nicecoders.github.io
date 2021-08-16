@@ -5,122 +5,147 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _camelCase = _interopRequireDefault(require("lodash/camelCase"));
 
-/**
- * 字符串操作
- *
- * isNull - 空校验
- * isNumber - 数字校验
- * filterNull - 空数据过滤
- * toYuan - 分转化成元
- * toFen - 元转化为分
- */
-var StringUtil = function StringUtil() {
-  var _this = this;
+var _capitalize = _interopRequireDefault(require("lodash/capitalize"));
 
-  _classCallCheck(this, StringUtil);
+var _endsWith = _interopRequireDefault(require("lodash/endsWith"));
 
-  this.isNull = function (str) {
-    if (typeof str === 'undefined' || str === 'undefined' || str === null || str === 'null' || str === '(null)' || str === 'NaN' || str === '') {
-      return true;
-    }
+var _escape = _interopRequireDefault(require("lodash/escape"));
 
-    return false;
-  };
+var _escapeRegExp = _interopRequireDefault(require("lodash/escapeRegExp"));
 
-  this.isNumber = function (str) {
-    return /^-?\d+(\.\d+)?$/.test(str);
-  };
+var _kebabCase = _interopRequireDefault(require("lodash/kebabCase"));
 
-  this.filterNull = function (str) {
-    var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+var _lowerCase = _interopRequireDefault(require("lodash/lowerCase"));
 
-    if (_this.isNull(str)) {
-      return format;
-    }
+var _lowerFirst = _interopRequireDefault(require("lodash/lowerFirst"));
 
-    return str;
-  };
+var _pad = _interopRequireDefault(require("lodash/pad"));
 
-  this.toYuan = function (str) {
-    var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0.00';
+var _padEnd = _interopRequireDefault(require("lodash/padEnd"));
 
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
-      return format;
-    }
+var _padStart = _interopRequireDefault(require("lodash/padStart"));
 
-    str = str.toString();
-    var result = '';
+var _repeat = _interopRequireDefault(require("lodash/repeat"));
 
-    if (str[0] === '-') {
-      result = '-';
-      str = str.substr(1);
-    }
+var _replace = _interopRequireDefault(require("lodash/replace"));
 
-    if (str.indexOf('.') > -1) {
-      str = str.replace(/\.\d+$/, ''); // Trim decimal at the ending.
-    }
+var _split = _interopRequireDefault(require("lodash/split"));
 
-    var len = str.length;
+var _startCase = _interopRequireDefault(require("lodash/startCase"));
 
-    switch (len) {
-      case 1:
-        result += "0.0".concat(str);
-        break;
+var _startsWith = _interopRequireDefault(require("lodash/startsWith"));
 
-      case 2:
-        result += "0.".concat(str);
-        break;
+var _trim = _interopRequireDefault(require("lodash/trim"));
 
-      default:
-        result += "".concat(str.substr(0, len - 2), ".").concat(str.substr(len - 2));
-    }
+var _trimEnd = _interopRequireDefault(require("lodash/trimEnd"));
 
-    return result;
-  };
+var _trimStart = _interopRequireDefault(require("lodash/trimStart"));
 
-  this.toFen = function (str) {
-    var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0';
+var _truncate = _interopRequireDefault(require("lodash/truncate"));
 
-    if (!/^-?(\d|[1-9]\d+)(\.\d+)?$/.test(String(str))) {
-      return format;
-    }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    str = str.toString();
-    var result = '0';
+var _default = {
+  /**
+   * 驼峰字符串
+   */
+  camelCase: _camelCase.default,
 
-    if (str.indexOf('.') > -1) {
-      var strArr = str.split('.');
-      var len = strArr[1].length;
+  /**
+   * 首字母大写
+   */
+  capitalize: _capitalize.default,
 
-      switch (len) {
-        case 1:
-          // 特殊数据：0.0 => 000、 0.1 => 010
-          result = "".concat(strArr[0]).concat(strArr[1], "0");
-          break;
+  /**
+   * 检查字符串string是否以给定的target字符串结尾。
+   */
+  endsWith: _endsWith.default,
 
-        case 2:
-          // 特殊数据：0.00 => 000、 0.01 => 001、 0.10 => 010
-          result = str.replace('.', '');
-          break;
+  /**
+   * 转义string中的 "&", "<", ">", '"', "'", 和 "`" 字符为HTML实体字符。
+   */
+  escape: _escape.default,
 
-        default:
-          // 只保留两位小数
-          // 特殊数据：0.000 => 000、 0.001 => 000、 0.010 => 001、 0.101 => 010
-          result = "".concat(strArr[0]).concat(strArr[1].substr(0, 2));
-      }
-    } else {
-      result = "".concat(str, "00");
-    } // 特殊数据处理：000 => 0、 001 => 1、 010 => 10
+  /**
+   * 转义 RegExp 字符串中特殊的字符 "^", "$", "", ".", "*", "+", "?", "(", ")", "[", "]", "{", "}", 和 "|" in .
+   */
+  escapeRegExp: _escapeRegExp.default,
 
+  /**
+   * 转换字符串string为用 - 连接
+   */
+  kebabCase: _kebabCase.default,
 
-    result = result.replace(/^(-?)(0{1,2})/, '$1'); // Trim zeros at the beginning.
+  /**
+   * 转换字符串string以空格分开单词，并转换为小写
+   */
+  lowerCase: _lowerCase.default,
 
-    return result;
-  };
+  /**
+   * 转换字符串string的首字母为小写
+   */
+  lowerFirst: _lowerFirst.default,
+
+  /**
+   * 如果string字符串长度小于 length 则从左侧和右侧填充字符。 如果没法平均分配，则截断超出的长度
+   */
+  pad: _pad.default,
+
+  /**
+   * 如果string字符串长度小于 length 则在右侧填充字符。 如果超出length长度则截断超出的部分
+   */
+  padEnd: _padEnd.default,
+
+  /**
+   * 如果string字符串长度小于 length 则在左侧填充字符。 如果超出length长度则截断超出的部分
+   */
+  padStart: _padStart.default,
+
+  /**
+   * 重复 N 次给定字符串。
+   */
+  repeat: _repeat.default,
+
+  /**
+   * 替换string字符串中匹配的pattern为给定的replacement
+   */
+  replace: _replace.default,
+
+  /**
+   * 根据separator 拆分字符串string
+   */
+  split: _split.default,
+
+  /**
+   * 转换 string 字符串为 start case.
+   */
+  startCase: _startCase.default,
+
+  /**
+   * 检查字符串string是否以 target 开头
+   */
+  startsWith: _startsWith.default,
+
+  /**
+   * 移除指定字符，默认移除空格
+   */
+  trim: _trim.default,
+
+  /**
+   * 移除后面字符，默认移除空格
+   */
+  trimEnd: _trimEnd.default,
+
+  /**
+   * 移除前面字符，默认移除空格
+   */
+  trimStart: _trimStart.default,
+
+  /**
+   * 截断string字符串，如果字符串超出了限定的最大值。 被截断的字符串后面会以 omission 代替，omission 默认是 "..."
+   */
+  truncate: _truncate.default
 };
-
-var _default = new StringUtil();
-
 exports.default = _default;

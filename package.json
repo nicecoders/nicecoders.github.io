@@ -1,6 +1,6 @@
 {
   "name": "nicecode",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "cz": "git add . && git cz",
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",

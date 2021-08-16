@@ -1,81 +1,83 @@
-/**
- * 字符串操作
- *
- * isNull - 空校验
- * isNumber - 数字校验
- * filterNull - 空数据过滤
- * toYuan - 分转化成元
- * toFen - 元转化为分
- */
-declare class StringUtil {
+declare const _default: {
     /**
-     * 空校验
-     * 空数据集合：undefined,'undefined',null,'null','(null)','NaN',''
-     *
-     * @param {String} str - 字符串
-     * @return {Boolean} true-空，false-非空
-     * @example
-     *
-     * isNull();
-     * // => true
-     *
-     * isNull('undefined');
-     * // => true
+     * 驼峰字符串
      */
-    isNull: (str: string) => boolean;
+    camelCase: any;
     /**
-     * 数字校验
-     *
-     * @param {String} str - 字符串
-     * @return {Boolean} true-数字，false-非数字
-     * @example
-     *
-     * isNumber('20');
-     * // => true
-     *
-     * isNumber('.2');
-     * // => false
+     * 首字母大写
      */
-    isNumber: (str: string) => boolean;
+    capitalize: any;
     /**
-     * 空数据过滤
-     *
-     * @param {String} str - 字符串
-     * @param {String} [format=''] - 格式化
-     * @return {String} 过滤后的数据
-     * @example
-     *
-     * filterNull('xxx');
-     * // => xxx
-     *
-     * filterNull();
-     * // =>
-     *
-     * filterNull(null, '--');
-     * // => --
+     * 检查字符串string是否以给定的target字符串结尾。
      */
-    filterNull: (str: string, format?: string) => string;
+    endsWith: any;
     /**
-     * 分->元
-     * 为防止浮点数及大数运算精度丢失，故采用字符串形式解析
-     *
-     * @param {String} str - 分
-     * @param {String} [format='0.00'] - 格式化
-     * @return {String} 元
-     * @example
+     * 转义string中的 "&", "<", ">", '"', "'", 和 "`" 字符为HTML实体字符。
      */
-    toYuan: (str: string | number, format?: string) => string;
+    escape: any;
     /**
-     * 元->分
-     * 为防止浮点数及大数运算精度丢失，故采用字符串形式解析
-     *
-     * @param {String} str - 元
-     * @param {String} [format='0'] - 格式化
-     * @return {String} 分
-     * @example
-     *
+     * 转义 RegExp 字符串中特殊的字符 "^", "$", "", ".", "*", "+", "?", "(", ")", "[", "]", "{", "}", 和 "|" in .
      */
-    toFen: (str: string | number, format?: string) => string;
-}
-declare const _default: StringUtil;
+    escapeRegExp: any;
+    /**
+     * 转换字符串string为用 - 连接
+     */
+    kebabCase: any;
+    /**
+     * 转换字符串string以空格分开单词，并转换为小写
+     */
+    lowerCase: any;
+    /**
+     * 转换字符串string的首字母为小写
+     */
+    lowerFirst: any;
+    /**
+     * 如果string字符串长度小于 length 则从左侧和右侧填充字符。 如果没法平均分配，则截断超出的长度
+     */
+    pad: any;
+    /**
+     * 如果string字符串长度小于 length 则在右侧填充字符。 如果超出length长度则截断超出的部分
+     */
+    padEnd: any;
+    /**
+     * 如果string字符串长度小于 length 则在左侧填充字符。 如果超出length长度则截断超出的部分
+     */
+    padStart: any;
+    /**
+     * 重复 N 次给定字符串。
+     */
+    repeat: any;
+    /**
+     * 替换string字符串中匹配的pattern为给定的replacement
+     */
+    replace: any;
+    /**
+     * 根据separator 拆分字符串string
+     */
+    split: any;
+    /**
+     * 转换 string 字符串为 start case.
+     */
+    startCase: any;
+    /**
+     * 检查字符串string是否以 target 开头
+     */
+    startsWith: any;
+    /**
+     * 移除指定字符，默认移除空格
+     */
+    trim: any;
+    /**
+     * 移除后面字符，默认移除空格
+     */
+    trimEnd: any;
+    /**
+     * 移除前面字符，默认移除空格
+     */
+    trimStart: any;
+    /**
+     * 截断string字符串，如果字符串超出了限定的最大值。 被截断的字符串后面会以 omission 代替，omission 默认是 "..."
+     */
+    truncate: any;
+};
 export default _default;
