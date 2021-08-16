@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/css",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "style in class 解决方案",
   "main": "dist/nicecode.min.css",
   "files": [

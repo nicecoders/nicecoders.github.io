@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/slash",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "基于 lodash 的函数库",
   "keywords": [
     "slash",
