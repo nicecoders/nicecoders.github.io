@@ -1,3 +1,15 @@
+## [0.0.9](https://github.com/nicecoders/nicecode/compare/0.0.7...0.0.9) (2021-08-17)
+
+### 🌟 新功能
+
+* **nicecode/sensitiveWords：** 新增1w+敏感词汇字典包 ([9723340](https://github.com/nicecoders/nicecode/commit/9723340))
+* **nicecode/tools：** 新增部分方法 ([c17f45e](https://github.com/nicecoders/nicecode/commit/c17f45e))
+* **nicecode/tools：** 新增arrayUtil方法,floatUtil方法,stringUtil方法 ([453e71e](https://github.com/nicecoders/nicecode/commit/453e71e))
+* **nicecode/tools：** 新增collectUtil,objUtil,arrayUtil,funcUtil,移除common模块到funcUtil模块 ([69881e1](https://github.com/nicecoders/nicecode/commit/69881e1))
+* **nicecode/tools：** 新增getValueByKey,getKeyByValue方法 ([90e9953](https://github.com/nicecoders/nicecode/commit/90e9953))
+
+
+
 ## [0.0.8](https://github.com/nicecoders/nicecode/compare/0.0.7...0.0.8) (2021-08-16)
 
 ### 🌟 新功能
