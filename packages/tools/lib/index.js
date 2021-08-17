@@ -15,16 +15,10 @@ Object.defineProperty(exports, "checkDevice", {
     return _checkDevice.default;
   }
 });
-Object.defineProperty(exports, "common", {
+Object.defineProperty(exports, "mathUtil", {
   enumerable: true,
   get: function get() {
-    return _common.default;
-  }
-});
-Object.defineProperty(exports, "floatUtil", {
-  enumerable: true,
-  get: function get() {
-    return _floatUtil.default;
+    return _mathUtil.default;
   }
 });
 Object.defineProperty(exports, "stringUtil", {
@@ -39,17 +33,39 @@ Object.defineProperty(exports, "arrayUtil", {
     return _arrayUtil.default;
   }
 });
+Object.defineProperty(exports, "funcUtil", {
+  enumerable: true,
+  get: function get() {
+    return _funcUtil.default;
+  }
+});
+Object.defineProperty(exports, "collectUtil", {
+  enumerable: true,
+  get: function get() {
+    return _collectUtil.default;
+  }
+});
+Object.defineProperty(exports, "objUtil", {
+  enumerable: true,
+  get: function get() {
+    return _objUtil.default;
+  }
+});
 
 var _validator = _interopRequireDefault(require("./validator"));
 
 var _checkDevice = _interopRequireDefault(require("./checkDevice"));
 
-var _common = _interopRequireDefault(require("./common"));
-
-var _floatUtil = _interopRequireDefault(require("./floatUtil"));
+var _mathUtil = _interopRequireDefault(require("./mathUtil"));
 
 var _stringUtil = _interopRequireDefault(require("./stringUtil"));
 
 var _arrayUtil = _interopRequireDefault(require("./arrayUtil"));
+
+var _funcUtil = _interopRequireDefault(require("./funcUtil"));
+
+var _collectUtil = _interopRequireDefault(require("./collectUtil"));
+
+var _objUtil = _interopRequireDefault(require("./objUtil"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
