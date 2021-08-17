@@ -25,7 +25,7 @@
     "conventional-changelog-cli": "^2.1.1",
     "father-build": "^1.19.5"
   },
-  "gitHead": "5c84fe30168b7b2123910de5cebe8bff28422446",
+  "gitHead": "5e028abe2083c96adf1570afc9c278064cdb3da3",
   "publishConfig": {
     "access": "public"
   },

@@ -25,5 +25,9 @@
   },
   "bugs": {
     "url": "https://github.com/nicecoders/nicecode/issues"
+  },
+  "gitHead": "5e028abe2083c96adf1570afc9c278064cdb3da3",
+  "publishConfig": {
+    "access": "public"
   }
 }
