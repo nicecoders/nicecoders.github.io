@@ -4,12 +4,14 @@ nav:
   path: /tools
 group:
   title: checkDevice
-  order: 7
+  order: 10
 ---
 
 ## checkDevice
 
-判断设备函数合集
+<Alert type="info">
+  <strong>判断环境</strong>
+</Alert>
 
 ### isIos
 

@@ -4,12 +4,14 @@ nav:
   path: /tools
 group:
   title: validator
-  order: 5
+  order: 20
 ---
 
 ## validator
 
-常见正则校验合集
+<Alert type="info">
+  <strong>常见正则</strong>
+</Alert>
 
 ### 手机号正则
 

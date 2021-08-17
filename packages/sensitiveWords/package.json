@@ -1,0 +1,29 @@
+{
+  "name": "@nicecode/sensitivewords",
+  "version": "0.1.0",
+  "description": "1w+敏感词库",
+  "keywords": [
+    "敏感词库",
+    "词库",
+    "敏感词过滤",
+    "nicecode"
+  ],
+  "author": "nicecoder",
+  "homepage": "https://github.com/nicecoders/nicecode#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicecoders/nicecode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nicecoders/nicecode/issues"
+  }
+}
