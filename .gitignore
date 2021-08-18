@@ -6,8 +6,6 @@ node_modules
 # production
 **/dist
 /.vscode
-**/packages/**/es
-**/packages/**/lib
 
 # misc
 .DS_Store
