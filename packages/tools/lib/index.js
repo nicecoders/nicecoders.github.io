@@ -51,6 +51,12 @@ Object.defineProperty(exports, "objUtil", {
     return _objUtil.default;
   }
 });
+Object.defineProperty(exports, "langUtil", {
+  enumerable: true,
+  get: function get() {
+    return _langUtil.default;
+  }
+});
 
 var _validator = _interopRequireDefault(require("./validator"));
 
@@ -67,5 +73,7 @@ var _funcUtil = _interopRequireDefault(require("./funcUtil"));
 var _collectUtil = _interopRequireDefault(require("./collectUtil"));
 
 var _objUtil = _interopRequireDefault(require("./objUtil"));
+
+var _langUtil = _interopRequireDefault(require("./langUtil"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

@@ -6,3 +6,4 @@ export { default as arrayUtil } from './arrayUtil';
 export { default as funcUtil } from './funcUtil';
 export { default as collectUtil } from './collectUtil';
 export { default as objUtil } from './objUtil';
+export { default as langUtil } from './langUtil';
