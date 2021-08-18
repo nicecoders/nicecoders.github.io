@@ -1,4 +1,4 @@
-# [0.1.0](https://github.com/nicecoders/nicecode/compare/0.0.7...0.1.0) (2021-08-18)
+# [0.2.0](https://github.com/nicecoders/nicecode/compare/0.0.7...0.2.0) (2021-08-18)
 
 ### 🌟 新功能
 
@@ -10,6 +10,7 @@
 * **nicecode/tools：** 新增collectUtil,objUtil,arrayUtil,funcUtil,移除common模块到funcUtil模块 ([69881e1](https://github.com/nicecoders/nicecode/commit/69881e1))
 * **nicecode/tools：** 新增getValueByKey,getKeyByValue方法 ([90e9953](https://github.com/nicecoders/nicecode/commit/90e9953))
 * **nicecode/tools：** 新增langUtil,objUtil 方法合集,删除nicecode/slash模块 ([3c40dd1](https://github.com/nicecoders/nicecode/commit/3c40dd1))
+* **player：** 新增视频播放器,音乐播放器 ([e272519](https://github.com/nicecoders/nicecode/commit/e272519))
 
 
 
