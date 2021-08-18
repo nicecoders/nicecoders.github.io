@@ -2,6 +2,12 @@
   "name": "@nicecode/tools",
   "version": "0.2.3",
   "description": "nicecoders tools",
+  "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.less"
+  ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
