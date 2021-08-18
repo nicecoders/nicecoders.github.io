@@ -21,7 +21,7 @@
     "buildmajor": "npm version major",
     "buildminor": "npm version minor",
     "buildpatch": "npm version patch",
-    "log": "conventional-changelog -n ./packages/changelog/src -i changelog.md -s -r 1"
+    "log": "conventional-changelog -n ./packages/changelog/src -i changelog.md -s -r 0"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
