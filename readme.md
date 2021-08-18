@@ -13,4 +13,6 @@
 | icon   | 常用Icon   |
 | sensitivewords   | 1w+敏感词汇合集   |
 | tools   | 常用方法合集   |
+| vPlayer   | 视频播放器   |
 | 更多开发中... |
+

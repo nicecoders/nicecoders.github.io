@@ -44,7 +44,8 @@ export default defineConfig({
       'packages/commit/src',
       'packages/commit-lint/src',
       'packages/changelog/src',
-      'packages/css/src'
+      'packages/css/src',
+      'packages/player/src'
     ],
   },
   locales: [['zh-CN', '中文']],
