@@ -2,7 +2,6 @@
   "name": "nicecode",
   "version": "0.2.1",
   "scripts": {
-    "cz": "git add . && git cz",
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
     "bootstrap": "lerna bootstrap",
     "link": "lerna link",
@@ -21,6 +20,7 @@
     "buildmajor": "npm version major",
     "buildminor": "npm version minor",
     "buildpatch": "npm version patch",
+    "cz": "git add . && git cz",
     "log": "conventional-changelog -n ./packages/changelog/src -i changelog.md -s -r 0"
   },
   "main": "dist/index.js",

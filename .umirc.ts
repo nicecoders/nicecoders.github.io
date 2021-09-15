@@ -13,7 +13,7 @@ export default defineConfig({
     type: 'hash',
   },
   mode: 'site',
-  publicPath: NODE_ENV === 'production' ? '/nicecode/' : '/',
+  publicPath: '/',
   alias: {
     // '@ife/pro-components': resolve(
     //   __dirname,
@@ -45,18 +45,18 @@ export default defineConfig({
       'packages/commit-lint/src',
       'packages/changelog/src',
       'packages/css/src',
-      'packages/player/src'
+      'packages/player/src',
+      'packages/spider/src',
+      'packages/cli/src'
     ],
   },
   locales: [['zh-CN', '中文']],
   navs: [
     null,
     // {
-    //   title: '规范工具',
+    //   title: '其它',
     //   children: [
-    //     { title: 'changelog', path: '/changelog' },
-    //     { title: 'commit', path: '/changelog' },
-    //     { title: 'commit-lint', path: '/changelog' },
+    //     { title: '爬虫', path: '/spider' },
     //   ],
     // },
     {

@@ -50,19 +50,20 @@ export default () => {
         fluid: true,
         url: [
           {
-            src: 'https://jzx-h5.oss-cn-hangzhou.aliyuncs.com/static/This%20Is%20The%20New%20Shit.mp3',
-            name: 'this is a new shit',
-            vid: '000001',
-            poster: 'https://tva1.sinaimg.cn/large/008i3skNly1gtky1tx9q8j605g05ggll02.jpg'
+            src: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/music/audio.mp3', 
+            name: '林宥嘉·脆弱一分钟', 
+            poster: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/music/poster-small.jpeg'
           }
         ],
         volume: 0.8,
-        height: 60,
+        height: 50,
         preloadNext: true,
+        volumeShow: true,
         switchKeepProgress: false,
+        crossOrigin: 'anonymous',
         abCycle: {
-          start: 3,
-          end: 9,
+          // start: 3,
+          // end: 9,
           loop: true
         }
       });
@@ -70,8 +71,11 @@ export default () => {
   }, [])
 
   return (
-    <div ref={playerRef}>
+    <div>
+      <div ref={playerRef}>
+      </div>
     </div>
+    
   );
 };
 ```

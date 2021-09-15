@@ -1,0 +1,45 @@
+{
+  "name": "@nicecode/spider",
+  "version": "0.0.1",
+  "description": "爬虫,nicecode,spider",
+  "keywords": [
+    "爬虫",
+    "nicecode",
+    "spider"
+  ],
+  "author": "haishan <haishan@uni-ubi.com>",
+  "homepage": "https://nicecoders.github.io/",
+  "license": "MIT",
+  "main": "lib/spider.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicecoders/nicecode.git"
+  },
+  "scripts": {
+    "build": "father-build"
+  },
+  "bugs": {
+    "url": "https://github.com/nicecoders/nicecode/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "father-build": "^1.19.8"
+  },
+  "dependencies": {
+    "apify-client": "^1.3.0",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10",
+    "puppeteer": "^10.2.0",
+    "request": "^2.88.2"
+  }
+}
