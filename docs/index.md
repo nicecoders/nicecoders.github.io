@@ -12,8 +12,8 @@ features:
   #   title: nicecode-IDE
   #   desc: 可定制化 IDE
   - icon: https://i.niupic.com/images/2021/06/07/9krP.png
-    title: Ide【敬请期待】
-    desc: 编辑器
+    title: Cli
+    desc: 脚手架
   - icon: https://i.niupic.com/images/2021/06/07/9krQ.png
     title: anima【敬请期待】
     desc: 动画库合集

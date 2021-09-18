@@ -53,12 +53,16 @@ export default defineConfig({
   locales: [['zh-CN', '中文']],
   navs: [
     null,
-    // {
-    //   title: '其它',
-    //   children: [
-    //     { title: '爬虫', path: '/spider' },
-    //   ],
-    // },
+    {
+      title: '其它',
+      children: [
+        { title: '爬虫', path: '/spider' },
+      ],
+    },
+    {
+      title: '脚手架',
+      path: 'https://github.com/nicecoders/cli',
+    },
     {
       title: 'GitHub',
       path: 'https://github.com/nicecoders',
