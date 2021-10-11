@@ -24,16 +24,16 @@ export default defineConfig({
     `
     <!-- GrowingIO Analytics code version 2.1 -->
     <!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
-    
+
     !function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio");
       gio('init','8018ec4a95a9f64b', {});
-    
+
     //custom page code begin here
-    
+
     //custom page code end here
-    
+
     gio('send');
-    
+
     <!-- End GrowingIO Analytics code version: 2.1 -->
     `
   ],
@@ -46,8 +46,7 @@ export default defineConfig({
       'packages/changelog/src',
       'packages/css/src',
       'packages/player/src',
-      'packages/spider/src',
-      'packages/cli/src'
+      'packages/spider/src'
     ],
   },
   locales: [['zh-CN', '中文']],
