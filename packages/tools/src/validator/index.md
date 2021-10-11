@@ -38,3 +38,11 @@ let specStrReg = validator('specStr')
 | zh       | 中文                               | RegExp | -      |
 | ip       | ip 地址                            | RegExp | -      |
 | specStr  | 特殊字符校验                         | RegExp | -      |
+| ipv4  | ipv4网络校验                         | RegExp | -      |
+| int  | 整数校验                         | RegExp | -      |
+| float  | 小数校验                         | RegExp | -      |
+| wechat  | 微信号校验                         | RegExp | -      |
+| carNum  | 车牌号校验                         | RegExp | -      |
+| alphabet  | 字母校验                         | RegExp | -      |
+| fileName  | 文件名校验                         | function(type) => void | -      |
+| color16  | 16进制颜色符                         | RegExp | -      |

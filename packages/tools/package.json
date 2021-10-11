@@ -15,7 +15,7 @@
     "es",
     "lib"
   ],
-  "homepage": "https://nicecoders.github.io/nicecode/#/tools",
+  "homepage": "https://nicecoders.github.io/#/tools",
   "repository": "https://github.com/nicecoders/nicecode",
   "scripts": {
     "build": "father-build",
