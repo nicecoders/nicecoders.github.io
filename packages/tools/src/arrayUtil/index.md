@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: arrayUtil
+  title: 数组：arrayUtil
   order: 5
 ---
 
-## arrayUtil
+## 数组：arrayUtil
 
 <Alert type="info">
   <strong>数组方法合集</strong>

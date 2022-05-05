@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: objUtil
+  title: 对象方法：objUtil
   order: 7
 ---
 
-## objUtil
+## 对象方法：objUtil
 
 <Alert type="info">
   <strong>对象类方法</strong>

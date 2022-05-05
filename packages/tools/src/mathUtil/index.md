@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: mathUtil
+  title: 数学方法：mathUtil
   order: 3
 ---
 
-## mathUtil
+## 数学方法：mathUtil
 
 <Alert type="info">
   <strong>数字方法合集</strong>

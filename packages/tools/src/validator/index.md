@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: validator
+  title: 常见正则：validator
   order: 20
 ---
 
-## validator
+## 常见正则：validator
 
 <Alert type="info">
   <strong>常见正则</strong>

@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: checkDevice
+  title: 环境判断：checkDevice
   order: 10
 ---
 
-## checkDevice
+## 环境判断：checkDevice
 
 <Alert type="info">
   <strong>判断环境</strong>

@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: stringUtil
+  title: 字符串：stringUtil
   order: 4
 ---
 
-## stringUtil
+## 字符串：stringUtil
 
 <Alert type="info">
   <strong>字符串方法合集</strong>

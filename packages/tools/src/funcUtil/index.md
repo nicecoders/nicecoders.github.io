@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: funcUtil
+  title: 常用函数：funcUtil
   order: 5
 ---
 
-## funcUtil
+## 常用函数：funcUtil
 
 <Alert type="info">
   <strong>常用函数方法合集</strong>

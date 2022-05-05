@@ -1,4 +1,4 @@
----
+<!-- ---
 nav:
   title: css
   path: /css
@@ -253,4 +253,4 @@ export default () => {
 | aria-label      | 弹出文案 | string  | -      |
 | data-nc-visible | 即时展示 | boolean | false  |
 | data-nc-blunt   | 关闭动效 | boolean | false  |
-| data-nc-length  | 宽度     | string  | Xlarge |
+| data-nc-length  | 宽度     | string  | Xlarge | -->
