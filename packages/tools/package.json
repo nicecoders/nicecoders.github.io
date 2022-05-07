@@ -1,8 +1,13 @@
 {
   "name": "@nicecode/tools",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "nicecoders tools",
-  "keywords": ["nicecode", "tools", "slash", "validate"],
+  "keywords": [
+    "nicecode",
+    "tools",
+    "slash",
+    "validate"
+  ],
   "sideEffects": [
     "dist/*",
     "es/**/style/*",
