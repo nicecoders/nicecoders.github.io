@@ -2,6 +2,7 @@
   "name": "@nicecode/tools",
   "version": "0.2.8",
   "description": "nicecoders tools",
+  "keywords": ["nicecode", "tools", "slash", "validate"],
   "sideEffects": [
     "dist/*",
     "es/**/style/*",
@@ -18,17 +19,14 @@
   "homepage": "https://nicecoders.github.io/#/tools",
   "repository": "https://github.com/nicecoders/nicecode",
   "scripts": {
-    "build": "father-build",
-    "log": "conventional-changelog --config @nicecode/changelog -i README.md -s -r 0"
+    "build": "father-build"
   },
   "peerDependencies": {
     "react": "^16.x"
   },
   "author": "nicecoders",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@nicecode/changelog": "^0.2.0",
-    "conventional-changelog-cli": "^2.1.1",
     "father-build": "^1.19.5"
   },
   "gitHead": "5e028abe2083c96adf1570afc9c278064cdb3da3",

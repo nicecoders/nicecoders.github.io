@@ -1,23 +1,23 @@
 {
-  "name": "@nicecode/player",
-  "version": "0.1.2",
-  "description": "nicecode视频播放器",
+  "name": "@nicecode/chart",
+  "version": "0.0.1",
+  "description": "元组件",
   "keywords": [
-    "视频播放器",
+    "nicecode元组件",
     "nicecode",
-    "player"
+    "chart"
   ],
-  "author": "nicecoder",
+  "author": "dev <710328466@qq.com>",
   "homepage": "https://github.com/nicecoders/nicecode",
-  "license": "MIT",
+  "license": "ISC",
   "main": "lib/index.js",
-  "files": [
-    "lib",
-    "es"
-  ],
-  "publishConfig": {
-    "access": "public"
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicecoders/nicecode.git"
@@ -27,10 +27,6 @@
   },
   "bugs": {
     "url": "https://github.com/nicecoders/nicecode/issues"
-  },
-  "dependencies": {
-    "xgplayer": "^2.31.6",
-    "xgplayer-music": "^2.3.2"
   },
   "devDependencies": {
     "father-build": "^1.19.8"

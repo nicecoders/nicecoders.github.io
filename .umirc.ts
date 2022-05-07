@@ -45,7 +45,7 @@ export default defineConfig({
       'packages/commit-lint/src',
       'packages/changelog/src',
       'packages/sensitiveWords/src',
-      // 'packages/css/src',
+      'packages/chart/src',
       'packages/player/src',
       'packages/spider/src'
     ],

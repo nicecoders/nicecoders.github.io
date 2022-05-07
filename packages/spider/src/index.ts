@@ -16,7 +16,7 @@ function getPage() {
 
   axios.get(url, { proxy })
     .then(function (response) {
-        let html_string = response.data.toString(); 
+        let html_string = response.data.toString();
         console.log(html_string)
         const $ = cheerio.load(html_string); // 传递页面到模块
     })
