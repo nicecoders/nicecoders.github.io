@@ -10,13 +10,16 @@
   "author": "haishan <haishan@uni-ubi.com>",
   "homepage": "https://nicecoders.github.io/",
   "license": "MIT",
-  "main": "lib/spider.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "main": "es/index.js",
+  "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "*.less"
+  ],
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
   "files": [
-    "lib"
+    "es"
   ],
   "repository": {
     "type": "git",

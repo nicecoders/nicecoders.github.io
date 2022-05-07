@@ -6,29 +6,18 @@
   "sideEffects": [
     "dist/*",
     "es/**/style/*",
-    "lib/**/style/*",
     "*.less"
   ],
-  "main": "lib/index.js",
+  "main": "es/index.js",
   "module": "es/index.js",
-  "typings": "lib/index.d.ts",
+  "typings": "es/index.d.ts",
   "files": [
-    "es",
-    "lib"
+    "es"
   ],
   "homepage": "https://nicecoders.github.io/#/tools",
   "repository": "https://github.com/nicecoders/nicecode",
-  "scripts": {
-    "build": "father-build"
-  },
-  "peerDependencies": {
-    "react": "^16.x"
-  },
   "author": "nicecoders",
   "license": "MIT",
-  "devDependencies": {
-    "father-build": "^1.19.5"
-  },
   "gitHead": "5e028abe2083c96adf1570afc9c278064cdb3da3",
   "publishConfig": {
     "access": "public"

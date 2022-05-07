@@ -10,9 +10,14 @@
   "author": "nicecoder",
   "homepage": "https://github.com/nicecoders/nicecode",
   "license": "MIT",
-  "main": "lib/index.js",
+  "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "*.less"
+  ],
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
   "files": [
-    "lib",
     "es"
   ],
   "publishConfig": {
@@ -22,17 +27,11 @@
     "type": "git",
     "url": "git+https://github.com/nicecoders/nicecode.git"
   },
-  "scripts": {
-    "build": "father-build"
-  },
   "bugs": {
     "url": "https://github.com/nicecoders/nicecode/issues"
   },
   "dependencies": {
     "xgplayer": "^2.31.6",
     "xgplayer-music": "^2.3.2"
-  },
-  "devDependencies": {
-    "father-build": "^1.19.8"
   }
 }

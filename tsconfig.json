@@ -14,7 +14,8 @@
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"],
       "@packages": ["packages/*"]
-    }
+    },
+    "typeRoots": ["./typings"]
   },
   "include": ["./typings.d.ts", "packages/**/*.tsx", "packages/**/*.ts"],
   "exclude": ["node_modules", "lib", "es", "dist", "typings"]

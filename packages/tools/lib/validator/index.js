@@ -1,3 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 /**
  * 正则匹配校验规则
  * @param type 类型
@@ -36,4 +43,5 @@ var Validator = function Validator(type) {
   return validatorList[type];
 };
 
-export default Validator;
+var _default = Validator;
+exports.default = _default;

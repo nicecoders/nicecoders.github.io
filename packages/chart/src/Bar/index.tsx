@@ -9,6 +9,7 @@ const Bar: FC<Ibar> = ({
   className
 }) => {
 
+  // @ts-ignore
   return <div className={className}>123</div>
 }
 
