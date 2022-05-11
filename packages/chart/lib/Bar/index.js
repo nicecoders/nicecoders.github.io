@@ -114,7 +114,7 @@ var Bar = function Bar(_ref) {
         ctx.textBaseline = 'middle';
         ctx.fillStyle = 'white';
         ctx.font = '25px PingFangSC-Regular';
-        ctx.fillText(value, x + barWidth / 2, y - barHeight / 2);
+        ctx.fillText(String(value), x + barWidth / 2, y - barHeight / 2);
       }
     } catch (err) {
       _iterator.e(err);
@@ -129,7 +129,8 @@ var Bar = function Bar(_ref) {
     svg.style.height = chartHeight + 'px'; // 设置 svg 的坐标原点和大小
 
     svg.setAttribute('width', String(containerWidth));
-    svg.setAttribute('height', String(containerHeight));
+    svg.setAttribute('height', String(containerHeight)); // @ts-ignore
+
     svg.setAttribute('viewBox', [0, 0, chartWidth, chartHeight]); // 创建一个 g 元素用于平移
 
     var g = _createSVGElement('g');
@@ -151,11 +152,11 @@ var Bar = function Bar(_ref) {
 
         var rect = _createSVGElement('rect');
 
-        rect.setAttribute('x', x);
-        rect.setAttribute('y', y - barHeight);
-        rect.setAttribute('fill', color);
-        rect.setAttribute('width', barWidth);
-        rect.setAttribute('height', barHeight);
+        rect.setAttribute('x', String(x));
+        rect.setAttribute('y', String(y - barHeight));
+        rect.setAttribute('fill', String(color));
+        rect.setAttribute('width', String(barWidth));
+        rect.setAttribute('height', String(barHeight));
         g.appendChild(rect); // 绘制文字
 
         var text = _createSVGElement('text');
@@ -164,10 +165,10 @@ var Bar = function Bar(_ref) {
         text.setAttribute('text-anchor', 'middle');
         text.setAttribute('fill', 'white');
         text.setAttribute('font-family', 'PingFangSC-Regular');
-        text.setAttribute('font-size', 25);
+        text.setAttribute('font-size', '25');
         text.setAttribute('alignment-baseline', 'middle');
-        text.setAttribute('x', x + barWidth / 2);
-        text.setAttribute('y', y - barHeight / 2);
+        text.setAttribute('x', String(x + barWidth / 2));
+        text.setAttribute('y', String(y - barHeight / 2));
         g.appendChild(text);
       }
     } catch (err) {
