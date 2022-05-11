@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[4],{YxFk:function(n,o,r){"use strict";r.r(o),r.d(o,"Vplayer",(function(){return a})),r.d(o,"Aplayer",(function(){return t}));var c=r("TZF1"),e=r.n(c),a=e.a,p=r("scPd"),s=r.n(p),t=s.a;console.log(123)}}]);
