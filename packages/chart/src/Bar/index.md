@@ -10,13 +10,27 @@ group:
 
 # 柱状图
 
+## 简单示范
+
 ```jsx
 import React from 'react';
-import Bar from '@nicecode/chart';
+import { Bar } from '@nicecode/chart';
 
 export default ({}) => {
-  console.log(Bar);
-  return <div>123</div>;
+  const data = [
+    { name: 'questions', value: 17 },
+    { name: 'schools', value: 25 },
+    { name: 'philosophers', value: 38 },
+  ];
+
+  return (
+    <div>
+      <h2>canvas 版</h2>
+      <Bar data={data} />
+      <h2>svg 版</h2>
+      <Bar data={data} type="svg" />
+    </div>
+  );
 };
 ```
 
