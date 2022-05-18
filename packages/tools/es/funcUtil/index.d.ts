@@ -96,5 +96,12 @@ declare const _default: {
         value: any;
     }[]) => any;
     getKeyByValue: (value: any, map: Map<any, any>) => any;
+    /**
+     *
+     * @param value 想复制的文案
+     * @param cb 复制后回调
+     * @returns
+     */
+    copy: (value: string | number, cb: any) => Promise<unknown>;
 };
 export default _default;

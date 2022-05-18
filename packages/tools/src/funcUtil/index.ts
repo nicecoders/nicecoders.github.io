@@ -242,5 +242,35 @@ export default {
       });
     }
     return ret
+  },
+
+  /**
+   *
+   * @param value 想复制的文案
+   * @param cb 复制后回调
+   * @returns
+   */
+  copy:  (value: string | number, cb: any) => {
+    return new Promise((resolve) => {
+      let copyTextArea = null;
+      try {
+        copyTextArea = document.createElement('textarea');
+        copyTextArea.style.height = '0px';
+        copyTextArea.style.opacity = '0';
+        copyTextArea.style.width = '0px';
+        document.body.appendChild(copyTextArea);
+        copyTextArea.value = value;
+        copyTextArea.select();
+        document.execCommand('copy');
+        cb && cb()
+        resolve(value);
+      } catch (e) {
+        throw new Error(e)
+      } finally {
+        if (copyTextArea && copyTextArea.parentNode) {
+          copyTextArea.parentNode.removeChild(copyTextArea);
+        }
+      }
+    });
   }
 }

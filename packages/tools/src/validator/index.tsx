@@ -1,24 +1,29 @@
-export type ValidatorType =
-  | 'phone'   // 电话号码
+export interface ValidatorType {
+  /**
+   * @description       类型
+   * @default           -
+   */
+  type: | 'phone'   // 电话号码
   | 'email'   // email
   | 'mobile'  // 手机号码
   | 'url'     // 链接
   | 'password'  // 密码
   | 'noChars'   //
-  | 'postCode'
-  | 'zh'
-  | 'mac'
-  | 'idCard'
-  | 'ip'
+  | 'postCode'  // 邮编
+  | 'zh'  // 中文
+  | 'mac' // mac 码
+  | 'idCard'  // 身份证号码
+  | 'ip'  // ip地址
   | 'ipv4'
-  | 'int'
-  | 'float'
-  | 'wechat'
-  | 'carNum'
+  | 'int' // 整数
+  | 'float'   // 浮点数
+  | 'wechat'  // 微信号
+  | 'carNum'  // 车牌号
   | 'alphabet'
-  | 'fileName'
+  | 'fileName'  // 文件名称
   | 'color16' // 16进制颜色
-  | 'specStr'   // 特殊字符
+  | 'specStr'   // 特殊字符串
+}
 
 
 /**
@@ -26,7 +31,7 @@ export type ValidatorType =
  * @param type 类型
  * @returns RGX
  */
-const Validator = (type: ValidatorType) =>  {
+const Validator = (type: ValidatorType['type']) =>  {
   if (!type) throw Error('请先输入校验类型！')
 
   const validatorList = {
