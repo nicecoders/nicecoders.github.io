@@ -10,8 +10,9 @@ npm install @nicecode/sensitiveWords --save
 
 ```js
 // you can import this module like that.
+// 你可以在项目中这样使用
 
-import sensitivewords from 'sensitiveWords';
+import words from '@nicecode/sensitiveWords';
 ```
 
 ## join us

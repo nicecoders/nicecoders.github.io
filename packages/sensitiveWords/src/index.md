@@ -23,6 +23,17 @@ import words from '@nicecode/sensitivewords';
 export default () => {
   return (
     <div>
+      <p
+        style={{
+          padding: '5px 10px',
+          color: '#aaa',
+          fontSize: '16px',
+          fontWeight: 'bold',
+          background: '#eee',
+        }}
+      >
+        目前共收纳了<em>{words.length}</em>个单词
+      </p>
       {words.map((word) => (
         <span
           style={{
