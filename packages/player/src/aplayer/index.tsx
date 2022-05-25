@@ -1,9 +1,13 @@
 import "xgplayer";
+import type { IPlayerOptions } from 'xgplayer';
 import Music from 'xgplayer-music';
-import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
+import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle, FC } from 'react'
 
+interface IAplayer {
+  config: IPlayerOptions
+}
 
-export default forwardRef((props, ref) => {
+const Aplayer: FC<IAplayer> = forwardRef((props, ref) => {
   const { config = {} } = props
   const vRef = useRef()
   const [player, setPlayer] = useState(null)
@@ -36,3 +40,5 @@ export default forwardRef((props, ref) => {
     <div ref={vRef} ></div>
   )
 })
+
+export default Aplayer
