@@ -47,7 +47,8 @@ export default defineConfig({
       'packages/sensitiveWords/src',
       'packages/chart/src',
       'packages/player/src',
-      'packages/spider/src'
+      'packages/spider/src',
+      'packages/cli/src'
     ],
   },
   locales: [['zh-CN', '中文']],
@@ -58,16 +59,6 @@ export default defineConfig({
       children: [
         { title: '爬虫', path: '/spider' },
         { title: '敏感词库', path: '/sensitivewords' },
-      ],
-    },
-    {
-      title: '脚手架合集',
-      children: [
-        { title: 'cli', path: 'https://github.com/nicecoders/cli' },
-        { title: 'react-ssr', path: 'https://github.com/nicecoders/nextjs-template' },
-        { title: 'react-pc', path: 'https://github.com/nicecoders/taro-template' },
-        { title: 'vue', path: 'https://github.com/nicecoders/vue-template' },
-        { title: 'gulp', path: 'https://github.com/nicecoders/gulp-templete' },
       ],
     },
     {

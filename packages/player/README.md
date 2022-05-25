@@ -9,27 +9,23 @@ npm install @nicecode/vplayer --save
 #### 视频播放器
 
 ```jsx
-import React, { useEffect, useRef } from 'react'
-import { Vplayer } from '@nicecode/player'
+import React, { useEffect, useRef } from 'react';
+import { Vplayer } from '@nicecode/player';
 
 export default () => {
-  const playerRef = useRef()
+  const vRef = useRef(null);
 
-  useEffect(() => {
-    if (playerRef && playerRef.current) {
-      let player = new Vplayer({
-        el: playerRef.current,
-        fluid: true,
-        url: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4',
-        playbackRate: [0.5, 0.75, 1, 1.5, 2],      //传入倍速可选数组
-        volume: 0.6       // 默认音量
-      });
-    }
-  }, [])
+  useEffect(() => {}, []);
 
   return (
-    <div ref={playerRef}>
-    </div>
+    <Vplayer
+      ref={vRef}
+      config={{
+        poster:
+          '//lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/byted-player-videos/1.0.0/poster.jpg',
+        url: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4',
+      }}
+    />
   );
 };
 ```
@@ -37,45 +33,27 @@ export default () => {
 #### 音乐播放器
 
 ```jsx
-import React, { useEffect, useRef } from 'react'
-import { Aplayer } from '@nicecode/player'
+import React, { useEffect, useRef } from 'react';
+import { Aplayer } from '@nicecode/player';
 
 export default () => {
-  const playerRef = useRef()
-
-  useEffect(() => {
-    if (playerRef && playerRef.current) {
-      let player = new Aplayer({
-        el: playerRef.current,
-        fluid: true,
-        url: [
-          {
-            src: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/music/audio.mp3', 
-            name: '林宥嘉·脆弱一分钟', 
-            poster: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/music/poster-small.jpeg'
-          }
-        ],
-        volume: 0.8,
-        height: 50,
-        preloadNext: true,
-        volumeShow: true,
-        switchKeepProgress: false,
-        crossOrigin: 'anonymous',
-        abCycle: {
-          // start: 3,
-          // end: 9,
-          loop: true
-        }
-      });
-    }
-  }, [])
+  const playerRef = useRef();
 
   return (
     <div>
-      <div ref={playerRef}>
-      </div>
+      <Aplayer
+        config={{
+          url: [
+            {
+              src: '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/music/audio.mp3',
+              name: '林宥嘉·脆弱一分钟',
+              poster:
+                '//sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/music/poster-small.jpeg',
+            },
+          ],
+        }}
+      />
     </div>
-    
   );
 };
 ```
