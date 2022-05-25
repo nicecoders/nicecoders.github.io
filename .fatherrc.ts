@@ -10,6 +10,7 @@ export default {
       "@nicecode/commit-lint",
       "@nicecode/commit",
       "@nicecode/changelog",
+      "@nicecode/cli",
     ]
   }
 };

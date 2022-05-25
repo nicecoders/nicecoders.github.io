@@ -1,0 +1,11 @@
+#! /usr/bin/env node
+const program = require('commander')
+const create = require('../build/create').default
+
+program
+  .option('-n, --name [name]', '项目名称')
+  .option('-d, --description [description]', '项目介绍')
+  .option('-t, --type [type]', '项目类型')
+  .parse(process.argv)
+
+create(program)

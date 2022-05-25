@@ -1,0 +1,64 @@
+{
+  "name": "@nicecode/cli",
+  "version": "0.1.0",
+  "description": "nicecode-cli 各种框架脚手架合集",
+  "keywords": [
+    "cli",
+    "nicecode",
+    "autoplay",
+    "脚手架",
+    "nicecode-cli",
+    "nice",
+    "cli"
+  ],
+  "bin": {
+    "nice": "./bin/nice"
+  },
+  "author": "dev <710328466@qq.com>",
+  "homepage": "https://github.com/nicecoders/nicecoders.github.io",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "bin",
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicecoders/nicecode.git"
+  },
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "w": "babel src --watch --out-dir build"
+  },
+  "bugs": {
+    "url": "https://github.com/nicecoders/nicecode/issues"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.0.0",
+    "cross-spawn": "^7.0.2",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^9.0.0",
+    "inquirer": "^7.1.0",
+    "ora": "^4.0.4",
+    "shelljs": "^0.8.3",
+    "which": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-arrow-functions": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "@nicecode/commit": "^0.0.12",
+    "@nicecode/commit-lint": "^0.1.2",
+    "commitizen": "^4.2.4",
+    "commitlint": "^13.1.0",
+    "husky": "^7.0.2"
+  }
+}
