@@ -18,13 +18,14 @@ nice create ${项目名称}
 
 ## 目前已有脚手架列表
 
-| 名称    | 说明                  |
-| ------- | --------------------- |
-| nextJs  | nextJs + axios + antd |
-| ReactJs | umiJs + axios + antd  |
-| TaroJs  | TaroJs 全家桶         |
-| Vue     | vue3 + ts             |
-| Gulp    | Gulp                  |
+| 名称         | 说明                       |
+| ------------ | -------------------------- |
+| nextJs       | nextJs + axios + antd      |
+| React-PC     | umiJs + axios + antd       |
+| React-Mobile | umiJs + axios + ant-mobile |
+| TaroJs       | TaroJs 全家桶              |
+| Vue          | vue3 + ts                  |
+| Gulp         | Gulp                       |
 
 ## join us
 

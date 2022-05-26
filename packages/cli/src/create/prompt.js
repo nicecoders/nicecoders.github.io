@@ -23,11 +23,15 @@ const askTemplate = (config, prompts = []) => {
         },
         {
           name: 'React - Mobile',
-          value: 'taro'
+          value: 'react/mobile'
         },
         {
           name: 'React - PC',
           value: 'react/pc'
+        },
+        {
+          name: 'Taro',
+          value: 'taro'
         },
         {
           name: 'Next.js - SSR',
