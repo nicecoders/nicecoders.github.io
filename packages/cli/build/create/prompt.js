@@ -9,6 +9,8 @@ var _inquirer = _interopRequireDefault(require("inquirer"));
 
 var _tools = require("@nicecode/tools");
 
+var _utils = require("../utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = function _default(config) {
@@ -18,32 +20,30 @@ var _default = function _default(config) {
     prompts.push({
       type: 'input',
       name: 'projectName',
-      message: '请输入项目名称'
+      message: '请输入项目名称(demo)',
+      default: "demo"
     });
   }
 
   return _inquirer.default.prompt([...prompts, {
     type: 'input',
     name: 'haveTemp',
-    message: '是否使用自有模板（yes/no）?'
+    message: '是否使用自有模板（yes/no）?',
+    default: 'no'
   }, {
     type: 'input',
     name: 'tempUrl',
     message: '请输入模板地址: ',
     validate: function (input) {
-      // Declare function as asynchronous, and save the done callback
-      var done = this.async(); // Do async stuff
-
+      var done = this.async();
       setTimeout(function () {
-        if (!input.test((0, _tools.validator)('url'))) {
-          // Pass the return value in the done callback
-          done('You need to provide a number');
+        if (!(0, _tools.validator)('url').test(input)) {
+          done('链接不正确，需要以Http(s):、或以ssh:开头');
           return;
-        } // Pass the return value in the done callback
-
+        }
 
         done(null, true);
-      }, 1000);
+      }, 3000);
     },
     when: function (answer) {
       return answer.haveTemp === 'y' || answer.haveTemp === 'yes';

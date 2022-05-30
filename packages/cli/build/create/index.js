@@ -34,7 +34,8 @@ const create = async function (program) {
   const answers = await (0, _prompt.default)(config);
   config = Object.assign(config, answers);
 
-  const dest = _path.default.join(process.cwd(), config.projectName);
+  const dest = _path.default.join(process.cwd(), config.projectName); // is exists ?
+
 
   if (_fsExtra.default.existsSync(dest)) {
     (0, _utils.error)(`${_chalk.default.yellow(dest)} 目录已存在，请重新指定项目名称`);
@@ -42,7 +43,8 @@ const create = async function (program) {
 
   (0, _utils.info)(`[1/3] 创建新项目到 ${_chalk.default.yellow(dest)}`);
   await _fsExtra.default.mkdir(dest);
-  (0, _downloadGitRepo.default)(`github:nicecoders/templates#${answers.type}`, dest, {
+  const downloadUrl = answers.tempUrl || `github:nicecoders/templates#${answers.type}`;
+  (0, _downloadGitRepo.default)(downloadUrl, dest, {
     clone: true
   }, async function (error) {
     if (error) {

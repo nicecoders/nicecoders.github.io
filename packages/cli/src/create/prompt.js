@@ -1,5 +1,6 @@
 import inquirer from 'inquirer'
 import { validator } from '@nicecode/tools'
+import { error } from '../utils'
 
 export default (config) => {
   let prompts = []
@@ -8,7 +9,8 @@ export default (config) => {
     prompts.push({
       type: 'input',
       name: 'projectName',
-      message: '请输入项目名称'
+      message: '请输入项目名称(demo)',
+      default: "demo"
     })
   }
 
@@ -17,26 +19,23 @@ export default (config) => {
     {
       type: 'input',
       name: 'haveTemp',
-      message: '是否使用自有模板（yes/no）?'
+      message: '是否使用自有模板（yes/no）?',
+      default: 'no',
     },
     {
       type: 'input',
       name: 'tempUrl',
       message: '请输入模板地址: ',
       validate: function (input) {
-        // Declare function as asynchronous, and save the done callback
         var done = this.async();
     
-        // Do async stuff
         setTimeout(function() {
-          if (!input.test(validator('url'))) {
-            // Pass the return value in the done callback
-            done('You need to provide a number');
+          if (!validator('url').test(input)) {
+            done('链接不正确，需要以Http(s):、或以ssh:开头');
             return;
           }
-          // Pass the return value in the done callback
           done(null, true);
-        }, 1000);
+        }, 3000);
       },
       when: answer => answer.haveTemp === 'y' || answer.haveTemp === 'yes' 
     },

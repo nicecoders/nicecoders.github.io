@@ -17,8 +17,7 @@ const create = async (program) => {
 
   const dest = path.join(process.cwd(), config.projectName)
 
-
-
+  // is exists ?
   if (fs.existsSync(dest)) {
     error(`${chalk.yellow(dest)} 目录已存在，请重新指定项目名称`)
   }
@@ -27,7 +26,9 @@ const create = async (program) => {
 
   await fs.mkdir(dest)
 
-  download(`github:nicecoders/templates#${answers.type}`, dest, { clone: true }, async (error) => {
+  const downloadUrl = answers.tempUrl || `github:nicecoders/templates#${answers.type}`
+
+  download(downloadUrl, dest, { clone: true }, async (error) => {
     if (error) {
       await fs.remove(dest)
       warn('项目初始化失败，请检查仓库地址是否正确')
