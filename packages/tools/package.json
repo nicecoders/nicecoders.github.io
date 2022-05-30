@@ -10,13 +10,15 @@
   "sideEffects": [
     "dist/*",
     "es/**/style/*",
+    "lib/**/style/*",
     "*.less"
   ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
   "files": [
-    "es"
+    "es",
+    "lib"
   ],
   "homepage": "https://nicecoders.github.io/#/tools",
   "repository": "https://github.com/nicecoders/nicecode",

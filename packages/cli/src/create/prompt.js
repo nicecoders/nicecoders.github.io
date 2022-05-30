@@ -1,6 +1,9 @@
 import inquirer from 'inquirer'
+import { validator } from '@nicecode/tools'
 
-const askProjectName = (config, prompts = []) => {
+export default (config) => {
+  let prompts = []
+
   if (!config.projectName) {
     prompts.push({
       type: 'input',
@@ -8,14 +11,40 @@ const askProjectName = (config, prompts = []) => {
       message: '请输入项目名称'
     })
   }
-}
 
-const askTemplate = (config, prompts = []) => {
-  if (!config.type) {
-    prompts.push({
+  return inquirer.prompt([
+    ...prompts,
+    {
+      type: 'input',
+      name: 'haveTemp',
+      message: '是否使用自有模板（yes/no）?'
+    },
+    {
+      type: 'input',
+      name: 'tempUrl',
+      message: '请输入模板地址: ',
+      validate: function (input) {
+        // Declare function as asynchronous, and save the done callback
+        var done = this.async();
+    
+        // Do async stuff
+        setTimeout(function() {
+          if (!input.test(validator('url'))) {
+            // Pass the return value in the done callback
+            done('You need to provide a number');
+            return;
+          }
+          // Pass the return value in the done callback
+          done(null, true);
+        }, 1000);
+      },
+      when: answer => answer.haveTemp === 'y' || answer.haveTemp === 'yes' 
+    },
+    {
       type: 'list',
       name: 'type',
       message: '请选择模板类型',
+      when: answer => answer.haveTemp !== 'y' && answer.haveTemp !== 'yes',
       choices: [
         {
           name: 'Vue - 通用',
@@ -42,14 +71,6 @@ const askTemplate = (config, prompts = []) => {
           value: 'gulp'
         }
       ]
-    })
-  }
-}
-
-export default (config) => {
-  let prompts = []
-  askProjectName(config, prompts)
-  askTemplate(config, prompts)
-
-  return inquirer.prompt(prompts)
+    }
+  ])
 }
