@@ -1,7 +1,5 @@
 'use strict';
 
-const spider = require('..');
-
 describe('@nicecode/spider', () => {
-    it('needs tests');
+    expect('1' + '1').toBe(2)
 });

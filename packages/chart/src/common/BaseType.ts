@@ -12,4 +12,10 @@ export interface IBase {
    * @default           -
    */
   style?: CSSProperties;
+
+  /**
+   * @description       渲染模式
+   * @default           canvas
+   */
+   type?: 'svg' | 'canvas'
 }
