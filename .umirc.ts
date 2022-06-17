@@ -48,7 +48,8 @@ export default defineConfig({
       'packages/chart/src',
       'packages/player/src',
       'packages/spider/src',
-      'packages/cli/src'
+      'packages/cli/src',
+      "packages/snippets/src"
     ],
   },
   locales: [['zh-CN', '中文']],

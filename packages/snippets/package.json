@@ -1,0 +1,32 @@
+{
+  "name": "@nicecode/snippets",
+  "version": "0.1.0",
+  "description": "常用的代码片段",
+  "keywords": [
+    "snippets",
+    "flow",
+    "work",
+    "nicecode"
+  ],
+  "author": "dev <710328466@qq.com>",
+  "homepage": "https://nicecoders.github.io/nicecode/#/snippets",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicecoders/nicecoders.github.io.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/nicecoders/nicecoders.github.io/issues"
+  }
+}
