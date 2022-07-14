@@ -9,11 +9,6 @@ export interface Ibar extends IBase {
         name: string;
         value: number;
     }>;
-    /**
-     * @description       类型
-     * @default           canvas
-     */
-    type?: 'svg' | 'canvas';
 }
 declare const Bar: FC<Ibar>;
 export default Bar;

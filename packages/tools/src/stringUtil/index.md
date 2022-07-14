@@ -426,10 +426,10 @@ fs.writeFileSync(path.join(cwd, 'jst.js'), '\
 ```js
 import { stringUtil } from '@nicecode/tools';
 
-_.trim('  Fuck-You  ');
+stringUtil.trim('  Fuck-You  ');
 // => 'fuck-you'
  
-_.trim('-_fuckYou_-', '_-);
+stringUtil.trim('-_fuckYou_-', '_-);
 // => 'fuckyou'
 ```
 
@@ -442,10 +442,10 @@ _.trim('-_fuckYou_-', '_-);
 ```js
 import { stringUtil } from '@nicecode/tools';
 
-_.trim('  Fuck-You  ');
+stringUtil.trim('  Fuck-You  ');
 // => '  fuck-you'
  
-_.trim('-_fuckYou_-', '_-);
+stringUtil.trim('-_fuckYou_-', '_-);
 // => '-_fuckyou'
 ```
 
@@ -458,10 +458,10 @@ _.trim('-_fuckYou_-', '_-);
 ```js
 import { stringUtil } from '@nicecode/tools';
 
-_.trimStart('  Fuck-You  ');
+stringUtil.trimStart('  Fuck-You  ');
 // => 'fuck-you  '
  
-_.trimStart('-_fuckYou_-', '_-);
+stringUtil.trimStart('-_fuckYou_-', '_-);
 // => 'fuckyou_-'
 ```
 
@@ -484,22 +484,22 @@ _.trimStart('-_fuckYou_-', '_-);
 ```js
 import { stringUtil } from '@nicecode/tools';
 
-_.truncate('hi-json-ho there, neighborino');
+stringUtil.truncate('hi-json-ho there, neighborino');
 // => 'hi-json-ho there, neighbo...'
  
-_.truncate('hi-json-ho there, neighborino', {
+stringUtil.truncate('hi-json-ho there, neighborino', {
   'length': 24,
   'separator': ' '
 });
 // => 'hi-json-ho there,...'
  
-_.truncate('hi-json-ho there, neighborino', {
+stringUtil.truncate('hi-json-ho there, neighborino', {
   'length': 24,
   'separator': /,? +/
 });
 // => 'hi-json-ho there...'
  
-_.truncate('hi-json-ho there, neighborino', {
+stringUtil.truncate('hi-json-ho there, neighborino', {
   'omission': ' [...]'
 });
 // => 'hi-json-ho there, neig [...]'
@@ -514,10 +514,10 @@ _.truncate('hi-json-ho there, neighborino', {
 ```js
 import { stringUtil } from '@nicecode/tools';
 
-_.words('fred, barney, & pebbles');
+stringUtil.words('fred, barney, & pebbles');
 // => ['fred', 'barney', 'pebbles']
  
-_.words('fred, barney, & pebbles', /[^, ]+/g);
+stringUtil.words('fred, barney, & pebbles', /[^, ]+/g);
 // => ['fred', 'barney', '&', 'pebbles']
 ```
 

@@ -3,11 +3,11 @@ nav:
   title: 函数库
   path: /tools
 group:
-  title: collectUtil
+  title: 集合类方法：collectUtil
   order: 6
 ---
 
-## collectUtil
+## 集合类方法：collectUtil
 
 <Alert type="info">
   <strong>集合类方法合集</strong>
@@ -18,23 +18,23 @@ group:
 创建一个组成对象，key（键）是经过 iteratee（迭代函数） 执行处理collection中每个元素后返回的结果，每个key（键）对应的值是 iteratee（迭代函数）返回该key（键）的次数。 iteratee 调用一个参数：(value)。
 
 <Alert type="info">
-  countBy(collection, [iteratee=_.identity])
+  countBy(collection, [iteratee=collectUtil.identity])
 </Alert>
 
 #### 参数
 
 * collection (Array|Object): 一个用来迭代的集合。
-* [iteratee=_.identity] (Array|Function|Object|string): 一个迭代函数，用来转换key（键）。
+* [iteratee=collectUtil.identity] (Array|Function|Object|string): 一个迭代函数，用来转换key（键）。
 
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
-_.countBy([6.1, 4.2, 6.3], Math.floor);
+collectUtil.countBy([6.1, 4.2, 6.3], Math.floor);
 // => { '4': 1, '6': 2 }
  
-_.countBy(['one', 'two', 'three'], 'length');
+collectUtil.countBy(['one', 'two', 'three'], 'length');
 // => { '3': 2, '5': 1 }
 ```
 
@@ -43,18 +43,18 @@ _.countBy(['one', 'two', 'three'], 'length');
 创建一个元素数组。 以 iteratee 处理的结果升序排序。 这个方法执行稳定排序，也就是说相同元素会保持原始排序。 iteratees 调用1个参数： (value)。
 
 <Alert type="info">
-  sortBy(collection, [iteratees=[_.identity]])
+  sortBy(collection, [iteratees=[collectUtil.identity]])
 </Alert>
 
 #### 参数
 
 * collection (Array|Object): 一个用来迭代的集合。
-* [iteratees=[_.identity]] (...(Array|Array[]|Function|Function[]|Object|Object[]|string|string[])): 这个函数决定排序。
+* [iteratees=[collectUtil.identity]] (...(Array|Array[]|Function|Function[]|Object|Object[]|string|string[])): 这个函数决定排序。
 
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
 var users = [
   { 'user': 'fred',   'age': 48 },
@@ -63,13 +63,13 @@ var users = [
   { 'user': 'barney', 'age': 34 }
 ];
  
-_.sortBy(users, function(o) { return o.user; });
+collectUtil.sortBy(users, function(o) { return o.user; });
 // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
  
-_.sortBy(users, ['user', 'age']);
+collectUtil.sortBy(users, ['user', 'age']);
 // => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
  
-_.sortBy(users, 'user', function(o) {
+collectUtil.sortBy(users, 'user', function(o) {
   return Math.floor(o.age / 10);
 });
 // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
@@ -88,9 +88,9 @@ _.sortBy(users, 'user', function(o) {
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
-_.sample([1, 2, 3, 4]);
+collectUtil.sample([1, 2, 3, 4]);
 // => 2
 ```
 
@@ -108,12 +108,12 @@ _.sample([1, 2, 3, 4]);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
-_.sampleSize([1, 2, 3], 2);
+collectUtil.sampleSize([1, 2, 3], 2);
 // => [3, 1]
  
-_.sampleSize([1, 2, 3], 4);
+collectUtil.sampleSize([1, 2, 3], 4);
 // => [2, 3, 1]
 ```
 
@@ -130,9 +130,9 @@ _.sampleSize([1, 2, 3], 4);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
-_.shuffle([1, 2, 3, 4]);
+collectUtil.shuffle([1, 2, 3, 4]);
 // => [4, 1, 3, 2]
 ```
 
@@ -151,15 +151,15 @@ _.shuffle([1, 2, 3, 4]);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
-_.size([1, 2, 3]);
+collectUtil.size([1, 2, 3]);
 // => 3
  
-_.size({ 'a': 1, 'b': 2 });
+collectUtil.size({ 'a': 1, 'b': 2 });
 // => 2
  
-_.size('pebbles');
+collectUtil.size('pebbles');
 // => 7
 ```
 
@@ -168,18 +168,18 @@ _.size('pebbles');
 创建一个分成两组的元素数组，第一组包含predicate（断言函数）返回为 truthy（真值）的元素，第二组包含predicate（断言函数）返回为 falsey（假值）的元素。predicate 调用1个参数：(value)。
 
 <Alert type="info">
-  partition(collection, [predicate=_.identity])
+  partition(collection, [predicate=collectUtil.identity])
 </Alert>
 
 #### 参数
 
 * collection (Array|Object): 要检查的集合
-* [predicate=_.identity] (Array|Function|Object|string): 每次迭代调用的函数。
+* [predicate=collectUtil.identity] (Array|Function|Object|string): 每次迭代调用的函数。
 
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
 var users = [
   { 'user': 'barney',  'age': 36, 'active': false },
@@ -187,16 +187,16 @@ var users = [
   { 'user': 'pebbles', 'age': 1,  'active': false }
 ];
  
-_.partition(users, function(o) { return o.active; });
+collectUtil.partition(users, function(o) { return o.active; });
 // => objects for [['fred'], ['barney', 'pebbles']]
  
-_.partition(users, { 'age': 1, 'active': false });
+collectUtil.partition(users, { 'age': 1, 'active': false });
 // => objects for [['pebbles'], ['barney', 'fred']]
  
-_.partition(users, ['active', false]);
+collectUtil.partition(users, ['active', false]);
 // => objects for [['barney', 'pebbles'], ['fred']]
  
-_.partition(users, 'active');
+collectUtil.partition(users, 'active');
 // => objects for [['fred'], ['barney', 'pebbles']]
 ```
 
@@ -205,19 +205,19 @@ _.partition(users, 'active');
 此方法类似于 sortBy，除了它允许指定 iteratee（迭代函数）结果如何排序。 如果没指定 orders（排序），所有值以升序排序。 否则，指定为"desc" 降序，或者指定为 "asc" 升序，排序对应值。
 
 <Alert type="info">
-  orderBy(collection, [iteratees=[_.identity]], [orders])
+  orderBy(collection, [iteratees=[collectUtil.identity]], [orders])
 </Alert>
 
 #### 参数
 
 * collection (Array|Object): 要检查的集合
-* [iteratees=[_.identity]] (Array[]|Function[]|Object[]|string[]): 排序的迭代函数。
+* [iteratees=[collectUtil.identity]] (Array[]|Function[]|Object[]|string[]): 排序的迭代函数。
 * [orders] (string[]): iteratees迭代函数的排序顺序。
 
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
 var users = [
   { 'user': 'fred',   'age': 48 },
@@ -227,7 +227,7 @@ var users = [
 ];
  
 // 以 `user` 升序排序 再  `age` 以降序排序。
-_.orderBy(users, ['user', 'age'], ['asc', 'desc']);
+collectUtil.orderBy(users, ['user', 'age'], ['asc', 'desc']);
 // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
 ```
 
@@ -236,27 +236,27 @@ _.orderBy(users, ['user', 'age'], ['asc', 'desc']);
 创建一个数组， value（值） 是 iteratee（迭代函数）遍历 collection（集合）中的每个元素后返回的结果。 iteratee（迭代函数）调用3个参数：(value, index|key, collection).
 
 <Alert type="info">
-  orderBy(collection, [iteratees=[_.identity]], [orders])
+  orderBy(collection, [iteratees=[collectUtil.identity]], [orders])
 </Alert>
 
 #### 参数
 
 * collection (Array|Object): 要检查的集合
-* [iteratees=[_.identity]] (Array[]|Function[]|Object[]|string[]): 排序的迭代函数。
+* [iteratees=[collectUtil.identity]] (Array[]|Function[]|Object[]|string[]): 排序的迭代函数。
 
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/tools';
 
 function square(n) {
   return n * n;
 }
  
-_.map([4, 8], square);
+collectUtil.map([4, 8], square);
 // => [16, 64]
  
-_.map({ 'a': 4, 'b': 8 }, square);
+collectUtil.map({ 'a': 4, 'b': 8 }, square);
 // => [16, 64] 
  
 var users = [
@@ -264,6 +264,6 @@ var users = [
   { 'user': 'fred' }
 ];
  
-_.map(users, 'user');
+collectUtil.map(users, 'user');
 // => ['barney', 'fred']
 ```

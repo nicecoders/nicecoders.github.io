@@ -26,28 +26,28 @@ group:
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.castArray(1);
+langUtil.castArray(1);
 // => [1]
  
-_.castArray({ 'a': 1 });
+langUtil.castArray({ 'a': 1 });
 // => [{ 'a': 1 }]
  
-_.castArray('abc');
+langUtil.castArray('abc');
 // => ['abc']
  
-_.castArray(null);
+langUtil.castArray(null);
 // => [null]
  
-_.castArray(undefined);
+langUtil.castArray(undefined);
 // => [undefined]
  
-_.castArray();
+langUtil.castArray();
 // => []
  
 var array = [1, 2, 3];
-console.log(_.castArray(array) === array);
+console.log(langUtil.castArray(array) === array);
 // => true
 ```
 
@@ -64,11 +64,11 @@ console.log(_.castArray(array) === array);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 var objects = [{ 'a': 1 }, { 'b': 2 }];
  
-var shallow = _.clone(objects);
+var shallow = langUtil.clone(objects);
 console.log(shallow[0] === objects[0]);
 // => true
 ```
@@ -86,11 +86,11 @@ console.log(shallow[0] === objects[0]);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 var objects = [{ 'a': 1 }, { 'b': 2 }];
  
-var deep = _.cloneDeep(objects);
+var deep = langUtil.cloneDeep(objects);
 console.log(deep[0] === objects[0]);
 // => false
 ```
@@ -111,14 +111,14 @@ console.log(deep[0] === objects[0]);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 var object = { 'a': 1, 'b': 2 };
  
-_.conformsTo(object, { 'b': function(n) { return n > 1; } });
+langUtil.conformsTo(object, { 'b': function(n) { return n > 1; } });
 // => true
  
-_.conformsTo(object, { 'b': function(n) { return n > 2; } });
+langUtil.conformsTo(object, { 'b': function(n) { return n > 2; } });
 // => false
 ```
 
@@ -136,24 +136,24 @@ _.conformsTo(object, { 'b': function(n) { return n > 2; } });
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 var object = { 'a': 1 };
 var other = { 'a': 1 };
  
-_.eq(object, object);
+langUtil.eq(object, object);
 // => true
  
-_.eq(object, other);
+langUtil.eq(object, other);
 // => false
  
-_.eq('a', 'a');
+langUtil.eq('a', 'a');
 // => true
  
-_.eq('a', Object('a'));
+langUtil.eq('a', Object('a'));
 // => false
  
-_.eq(NaN, NaN);
+langUtil.eq(NaN, NaN);
 // => true
 ```
 
@@ -170,18 +170,18 @@ _.eq(NaN, NaN);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isArray([1, 2, 3]);
+langUtil.isArray([1, 2, 3]);
 // => true
  
-_.isArray(document.body.children);
+langUtil.isArray(document.body.children);
 // => false
  
-_.isArray('abc');
+langUtil.isArray('abc');
 // => false
  
-_.isArray(_.noop);
+langUtil.isArray(langUtil.noop);
 // => false
 ```
 
@@ -198,18 +198,18 @@ _.isArray(_.noop);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isArrayLike([1, 2, 3]);
+langUtil.isArrayLike([1, 2, 3]);
 // => true
  
-_.isArrayLike(document.body.children);
+langUtil.isArrayLike(document.body.children);
 // => true
  
-_.isArrayLike('abc');
+langUtil.isArrayLike('abc');
 // => true
  
-_.isArrayLike(_.noop);
+langUtil.isArrayLike(langUtil.noop);
 // => false
 ```
 
@@ -226,18 +226,18 @@ _.isArrayLike(_.noop);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isArrayLikeObject([1, 2, 3]);
+langUtil.isArrayLikeObject([1, 2, 3]);
 // => true
  
-_.isArrayLikeObject(document.body.children);
+langUtil.isArrayLikeObject(document.body.children);
 // => true
  
-_.isArrayLikeObject('abc');
+langUtil.isArrayLikeObject('abc');
 // => false
  
-_.isArrayLikeObject(_.noop);
+langUtil.isArrayLikeObject(langUtil.noop);
 // => false
 ```
 
@@ -254,12 +254,12 @@ _.isArrayLikeObject(_.noop);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isBoolean(false);
+langUtil.isBoolean(false);
 // => true
  
-_.isBoolean(null);
+langUtil.isBoolean(null);
 // => false
 ```
 
@@ -276,12 +276,12 @@ _.isBoolean(null);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isDate(new Date); 
+langUtil.isDate(new Date); 
 // => true
  
-_.isDate('Mon April 23 2012');
+langUtil.isDate('Mon April 23 2012');
 // => false
 ```
 
@@ -298,12 +298,12 @@ _.isDate('Mon April 23 2012');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isBuffer(new Buffer(2));
+langUtil.isBuffer(new Buffer(2));
 // => true
  
-_.isBuffer(new Uint8Array(2));
+langUtil.isBuffer(new Uint8Array(2));
 // => false
 ```
 
@@ -320,12 +320,12 @@ _.isBuffer(new Uint8Array(2));
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isElement(document.body);
+langUtil.isElement(document.body);
 // => true
  
-_.isElement('<body>');
+langUtil.isElement('<body>');
 // => false
 ```
 
@@ -344,21 +344,21 @@ _.isElement('<body>');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isEmpty(null);
+langUtil.isEmpty(null);
 // => true
  
-_.isEmpty(true);
+langUtil.isEmpty(true);
 // => true
  
-_.isEmpty(1);
+langUtil.isEmpty(1);
 // => true
  
-_.isEmpty([1, 2, 3]);
+langUtil.isEmpty([1, 2, 3]);
 // => false
  
-_.isEmpty({ 'a': 1 });
+langUtil.isEmpty({ 'a': 1 });
 // => false
 ```
 
@@ -381,7 +381,7 @@ _.isEmpty({ 'a': 1 });
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 function isGreeting(value) {
   return /^h(?:i|ello)$/.test(value);
@@ -396,7 +396,7 @@ function customizer(objValue, othValue) {
 var array = ['hello', 'goodbye'];
 var other = ['hi', 'goodbye'];
  
-_.isEqualWith(array, other, customizer);
+langUtil.isEqualWith(array, other, customizer);
 // => true
 ```
 
@@ -415,12 +415,12 @@ _.isEqualWith(array, other, customizer);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isError(new Error);
+langUtil.isError(new Error);
 // => true
  
-_.isError(Error);
+langUtil.isError(Error);
 // => false
 ```
 
@@ -437,18 +437,18 @@ _.isError(Error);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isFinite(3);
+langUtil.isFinite(3);
 // => true
  
-_.isFinite(Number.MIN_VALUE);
+langUtil.isFinite(Number.MIN_VALUE);
 // => true
  
-_.isFinite(Infinity);
+langUtil.isFinite(Infinity);
 // => false
  
-_.isFinite('3');
+langUtil.isFinite('3');
 // => false
 ```
 
@@ -465,12 +465,12 @@ _.isFinite('3');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isFunction(_);
+langUtil.isFunction(_);
 // => true
  
-_.isFunction(/abc/);
+langUtil.isFunction(/abc/);
 // => false
 ```
 
@@ -487,18 +487,18 @@ _.isFunction(/abc/);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isInteger(3);
+langUtil.isInteger(3);
 // => true
  
-_.isInteger(Number.MIN_VALUE);
+langUtil.isInteger(Number.MIN_VALUE);
 // => false
  
-_.isInteger(Infinity);
+langUtil.isInteger(Infinity);
 // => false
  
-_.isInteger('3');
+langUtil.isInteger('3');
 // => false
 ```
 
@@ -515,12 +515,12 @@ _.isInteger('3');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isMap(new Map);
+langUtil.isMap(new Map);
 // => true
  
-_.isMap(new WeakMap);
+langUtil.isMap(new WeakMap);
 // => false
 ```
 
@@ -540,14 +540,14 @@ _.isMap(new WeakMap);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 var object = { 'a': 1, 'b': 2 };
  
-_.isMatch(object, { 'b': 2 });
+langUtil.isMatch(object, { 'b': 2 });
 // => true
  
-_.isMatch(object, { 'b': 1 });
+langUtil.isMatch(object, { 'b': 1 });
 // => false
 ```
 
@@ -566,24 +566,24 @@ _.isMatch(object, { 'b': 1 });
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isNaN(NaN);
+langUtil.isNaN(NaN);
 // => true
  
-_.isNaN(new Number(NaN));
+langUtil.isNaN(new Number(NaN));
 // => true
  
 isNaN(undefined);
 // => true
  
-_.isNaN(undefined);
+langUtil.isNaN(undefined);
 // => false
 ```
 
 ### 判断是否是 undefined、null
 
-> 另外还有：_.isNull、_.isUndefined 方法单独判断
+> 另外还有：langUtil.isNull、langUtil.isUndefined 方法单独判断
 
 <Alert type="info">
   isNil(value)
@@ -596,21 +596,21 @@ _.isNaN(undefined);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isNil(null);
+langUtil.isNil(null);
 // => true
  
-_.isNil(void 0);
+langUtil.isNil(void 0);
 // => true
  
-_.isNil(NaN);
+langUtil.isNil(NaN);
 // => false
 ```
 
 ### 判断是否是数字
 
-> 注意: 要排除 Infinity, -Infinity, 以及 NaN 数值类型，用 _.isFinite 方法。
+> 注意: 要排除 Infinity, -Infinity, 以及 NaN 数值类型，用 langUtil.isFinite 方法。
 
 <Alert type="info">
   isNumber(value)
@@ -623,18 +623,18 @@ _.isNil(NaN);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isNumber(3);
+langUtil.isNumber(3);
 // => true
  
-_.isNumber(Number.MIN_VALUE);
+langUtil.isNumber(Number.MIN_VALUE);
 // => true
  
-_.isNumber(Infinity);
+langUtil.isNumber(Infinity);
 // => true
  
-_.isNumber('3');
+langUtil.isNumber('3');
 // => false
 ```
 
@@ -651,18 +651,18 @@ _.isNumber('3');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isObject({});
+langUtil.isObject({});
 // => true
  
-_.isObject([1, 2, 3]);
+langUtil.isObject([1, 2, 3]);
 // => true
  
-_.isObject(_.noop);
+langUtil.isObject(langUtil.noop);
 // => true
  
-_.isObject(null);
+langUtil.isObject(null);
 // => false
 ```
 
@@ -681,18 +681,18 @@ _.isObject(null);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isObjectLike({});
+langUtil.isObjectLike({});
 // => true
  
-_.isObjectLike([1, 2, 3]);
+langUtil.isObjectLike([1, 2, 3]);
 // => true
  
-_.isObjectLike(_.noop);
+langUtil.isObjectLike(langUtil.noop);
 // => false
  
-_.isObjectLike(null);
+langUtil.isObjectLike(null);
 // => false
 ```
 
@@ -711,22 +711,22 @@ _.isObjectLike(null);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 function Foo() {
   this.a = 1;
 }
  
-_.isPlainObject(new Foo);
+langUtil.isPlainObject(new Foo);
 // => false
  
-_.isPlainObject([1, 2, 3]);
+langUtil.isPlainObject([1, 2, 3]);
 // => false
  
-_.isPlainObject({ 'x': 0, 'y': 0 });
+langUtil.isPlainObject({ 'x': 0, 'y': 0 });
 // => true
  
-_.isPlainObject(Object.create(null));
+langUtil.isPlainObject(Object.create(null));
 // => true
 ```
 
@@ -745,12 +745,12 @@ _.isPlainObject(Object.create(null));
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isRegExp(/abc/);
+langUtil.isRegExp(/abc/);
 // => true
  
-_.isRegExp('/abc/');
+langUtil.isRegExp('/abc/');
 // => false
 ```
 
@@ -769,18 +769,18 @@ _.isRegExp('/abc/');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isSafeInteger(3);
+langUtil.isSafeInteger(3);
 // => true
  
-_.isSafeInteger(Number.MIN_VALUE);
+langUtil.isSafeInteger(Number.MIN_VALUE);
 // => false
  
-_.isSafeInteger(Infinity);
+langUtil.isSafeInteger(Infinity);
 // => false
  
-_.isSafeInteger('3');
+langUtil.isSafeInteger('3');
 // => false
 ```
 
@@ -797,12 +797,12 @@ _.isSafeInteger('3');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isSet(new Set);
+langUtil.isSet(new Set);
 // => true
  
-_.isSet(new WeakSet);
+langUtil.isSet(new WeakSet);
 // => false
 ```
 
@@ -819,12 +819,12 @@ _.isSet(new WeakSet);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.isString('abc');
+langUtil.isString('abc');
 // => true
  
-_.isString(1);
+langUtil.isString(1);
 // => false
 ```
 
@@ -841,18 +841,18 @@ _.isString(1);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.toArray({ 'a': 1, 'b': 2 });
+langUtil.toArray({ 'a': 1, 'b': 2 });
 // => [1, 2]
  
-_.toArray('abc');
+langUtil.toArray('abc');
 // => ['a', 'b', 'c']
  
-_.toArray(1);
+langUtil.toArray(1);
 // => []
  
-_.toArray(null);
+langUtil.toArray(null);
 // => []
 ```
 
@@ -870,18 +870,18 @@ _.toArray(null);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.toFinite(3.2);
+langUtil.toFinite(3.2);
 // => 3.2
  
-_.toFinite(Number.MIN_VALUE);
+langUtil.toFinite(Number.MIN_VALUE);
 // => 5e-324
  
-_.toFinite(Infinity);
+langUtil.toFinite(Infinity);
 // => 1.7976931348623157e+308
  
-_.toFinite('3.2');
+langUtil.toFinite('3.2');
 // => 3.2
 ```
 
@@ -898,7 +898,7 @@ _.toFinite('3.2');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
 function Foo() {
   this.b = 2;
@@ -906,10 +906,10 @@ function Foo() {
  
 Foo.prototype.c = 3;
  
-_.assign({ 'a': 1 }, new Foo);
+langUtil.assign({ 'a': 1 }, new Foo);
 // => { 'a': 1, 'b': 2 }
  
-_.assign({ 'a': 1 }, _.toPlainObject(new Foo));
+langUtil.assign({ 'a': 1 }, langUtil.toPlainObject(new Foo));
 // => { 'a': 1, 'b': 2, 'c': 3 }
 ```
 
@@ -926,14 +926,14 @@ _.assign({ 'a': 1 }, _.toPlainObject(new Foo));
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/tools';
 
-_.toString(null);
+langUtil.toString(null);
 // => ''
  
-_.toString(-0);
+langUtil.toString(-0);
 // => '-0'
  
-_.toString([1, 2, 3]);
+langUtil.toString([1, 2, 3]);
 // => '1,2,3'
 ```
