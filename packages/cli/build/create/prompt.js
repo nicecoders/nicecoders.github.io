@@ -9,7 +9,7 @@ var _inquirer = _interopRequireDefault(require("inquirer"));
 
 var _tools = require("@nicecode/tools");
 
-var _utils = require("../utils");
+var _constants = require("../constants");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55,25 +55,7 @@ var _default = function _default(config) {
     when: function (answer) {
       return answer.haveTemp !== 'y' && answer.haveTemp !== 'yes';
     },
-    choices: [{
-      name: 'Vue - 通用',
-      value: 'vue'
-    }, {
-      name: 'React - Mobile',
-      value: 'react/mobile'
-    }, {
-      name: 'React - PC',
-      value: 'react/pc'
-    }, {
-      name: 'Taro',
-      value: 'taro'
-    }, {
-      name: 'Next.js - SSR',
-      value: 'next'
-    }, {
-      name: 'Gulp - 通用',
-      value: 'gulp'
-    }]
+    choices: _constants.TEMPLIST
   }]);
 };
 

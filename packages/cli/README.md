@@ -22,10 +22,10 @@ nice create ${项目名称}
 | ------------ | -------------------------- |
 | nextJs       | nextJs + axios + antd      |
 | React-PC     | umiJs + axios + antd       |
+| wxMini     | vant 微信小程序       |
 | React-Mobile | umiJs + axios + ant-mobile |
 | TaroJs       | TaroJs 全家桶              |
 | Vue          | vue3 + ts                  |
-| Gulp         | Gulp                       |
 
 ## join us
 

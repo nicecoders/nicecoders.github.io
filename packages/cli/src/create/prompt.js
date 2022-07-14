@@ -1,6 +1,6 @@
 import inquirer from 'inquirer'
 import { validator } from '@nicecode/tools'
-import { error } from '../utils'
+import { TEMPLIST } from '../constants'
 
 export default (config) => {
   let prompts = []
@@ -44,32 +44,7 @@ export default (config) => {
       name: 'type',
       message: '请选择模板类型',
       when: answer => answer.haveTemp !== 'y' && answer.haveTemp !== 'yes',
-      choices: [
-        {
-          name: 'Vue - 通用',
-          value: 'vue'
-        },
-        {
-          name: 'React - Mobile',
-          value: 'react/mobile'
-        },
-        {
-          name: 'React - PC',
-          value: 'react/pc'
-        },
-        {
-          name: 'Taro',
-          value: 'taro'
-        },
-        {
-          name: 'Next.js - SSR',
-          value: 'next'
-        },
-        {
-          name: 'Gulp - 通用',
-          value: 'gulp'
-        }
-      ]
+      choices: TEMPLIST
     }
   ])
 }
