@@ -14,6 +14,7 @@ export default defineConfig({
   },
   mode: 'site',
   publicPath: '/',
+  mfsu: {},
   alias: {
     // '@ife/pro-components': resolve(
     //   __dirname,
