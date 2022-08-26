@@ -1,7 +1,10 @@
 {
-  "name": "@nicecode/snippets",
-  "version": "0.1.2",
+  "name": "nicecode-snippets",
+  "displayName": "nicecode-react-js-ts-snippets",
+  "version": "0.1.4",
   "description": "常用的代码片段",
+  "publisher": "devlifestyle",
+  "icon": "images/logo.png",
   "keywords": [
     "snippets",
     "flow",
@@ -10,15 +13,37 @@
   ],
   "author": "dev <710328466@qq.com>",
   "homepage": "https://nicecoders.github.io/nicecode/#/snippets",
-  "license": "MIT",
-  "main": "lib/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+  "scripts": {
+    "build": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies"
   },
-  "files": [
-    "lib"
+  "engines": {
+    "vscode": "^1.64.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Snippets"
   ],
+  "contributes": {
+    "snippets": [
+        {
+            "language": "javascript",
+            "path": "./snippets/snippets.code-snippets"
+        },
+        {
+            "language": "javascriptreact",
+            "path": "./snippets/snippets.code-snippets"
+        },
+        {
+            "language": "typescript",
+            "path": "./snippets/snippets.code-snippets"
+        },
+        {
+            "language": "typescriptreact",
+            "path": "./snippets/snippets.code-snippets"
+        }
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicecoders/nicecoders.github.io.git"
@@ -28,6 +53,5 @@
   },
   "bugs": {
     "url": "https://github.com/nicecoders/nicecoders.github.io/issues"
-  },
-  "gitHead": "343f807869e88b9e6ef78be3bcc2b9992bb14aaf"
+  }
 }

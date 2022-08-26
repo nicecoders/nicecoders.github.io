@@ -1,0 +1,5 @@
+**/*.ts
+**/tsconfig.json
+node_modules
+!file.ts
+src

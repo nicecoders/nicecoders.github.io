@@ -1,0 +1,153 @@
+{
+    // import
+    "import": {
+        "prefix": "imp",
+        "body": ["import ${2:moduleName} from '${1:module}'"],
+        "description": "normal import"
+    },
+    "import module": {
+        "prefix": "imd",
+        "body": ["import { $2 } from '${1:module}'"],
+        "description": "importDestructing"
+    },
+    "import everything": {
+        "prefix": "ime",
+        "body": ["import * as ${2:alias} from '${1:module}'"],
+        "description": "importEverything"
+    },
+    // export
+    "exportDefault": {
+        "prefix": "exp",
+        "body": ["export default $1"],
+        "description": "export default"
+    },
+    // console
+    "consoleLog": {
+        "prefix": "clg",
+        "body": ["console.log(${1:data})"],
+        "description": "console log"
+    },
+    // object
+    "destructuringAssignment": {
+        "prefix": "deas",
+        "body": ["const { ${2:prop} } = ${1:object}"],
+        "description": "destructuring assignment"
+    },
+
+    // react
+    "import React": {
+        "prefix": "imr",
+        "body": ["import React, {} from 'react'"],
+        "description": "import React"
+    },
+    // basic hooks
+    "useState": {
+        "prefix": "useState",
+        "body": [
+            "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
+        ],
+        "description": "useState"
+    },
+    "useEffect": {
+        "prefix": "useEffect",
+        "body": ["useEffect(() => {\n\t${1:effect}\n}, [${2:dep}])"],
+        "description": "useEffect"
+    },
+    "useContext": {
+        "prefix": "useContext",
+        "body": ["const ${1:context} = useContext(${2:ContextValue})"],
+        "description": "useContext"
+    },
+    // redux
+    "reduxActionCreator": {
+        "prefix": "rxaction",
+        "body": ["export const ${1:actionName} = (payload) => ({\n\ttype: ${2:type},\n\tpayload\n})"],
+        "description": "reduxActionCreator"
+    },
+    // redux hooks
+    "useDispatch": {
+        "prefix": "useDispatch",
+        "body": ["const dispatch = useDispatch()"],
+        "description": "useDispatch"
+    },
+    "useSelector": {
+        "prefix": "useSelector",
+        "body": ["const ${1:state} = useSelector(state => state.$1)"],
+        "description": "useSelector"
+    },
+    // umi
+    "functionComponentWithUmi": {
+		"prefix": "tsx",
+		"body": [
+			"// $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE - by dev",
+			"\n",
+			"import { } from 'react'",
+			"import { connect, ConnectProps } from 'umi'",
+			"import {} from 'antd'",
+			"import styles from './index.less'",
+            "\n",
+            "interface I$1 extends ConnectProps {",
+            "}",
+            "\n",
+            "export default connect(({}: {}) => ({",
+			"}))((props: I$1) => {",
+            "  return (",
+            "    <div className={styles.$1}>$1</div>",
+            "  )",
+            "})",
+		],
+		"description": "umi 函数组件模板"
+	},
+    "umiModel": {
+		"prefix": "mts",
+		"body": [
+      "// $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE - by dev",
+			"import { ImmerReducer, Effect } from 'umi';",
+			"import { SubscriptionsMapObject } from 'dva';",
+			"\n",
+			"export interface $1ModelState {",
+			"}",
+			"\n",
+			"export interface $1ModelType {",
+			"    namespace: '$1';",
+			"    state: $1ModelState;",
+			"    effects: {",
+			"    };",
+			"    reducers: {",
+			"        save: ImmerReducer<$1ModelState>;",
+			"        reset: ImmerReducer<$1ModelState>;",
+  			"    };",
+			"    subscriptions: SubscriptionsMapObject;",
+			"}",
+			"\n",
+			"const initialState: $1ModelState = {",
+			"}",
+			"\n",
+			"const $1Model: $1ModelType = {",
+			"    namespace: '$1',",
+			"    state: initialState,",
+			"    effects: {",
+			"        // *demo({ payload }, { call, put }) {",
+			"        //    const response = yield call(getCaseForm, payload);",
+			"        //    yield put({",
+			"        //        type: 'save',",
+			"        //        payload: response,",
+			"        //    });",
+			"        //},",
+			"    },",
+			"    reducers: {",
+			"        save(state, { payload }: any) {",
+			"            return { ...state, ...payload }",
+			"        },",
+			"        reset(state, { payload }: any) {",
+			"            return {  ...initialState }",
+			"        }",
+			"    },",
+			"    subscriptions: {}",
+			"};",
+			"\n",
+
+			"export default $1Model;"
+		]
+	}
+}
