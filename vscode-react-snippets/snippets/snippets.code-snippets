@@ -1,0 +1,112 @@
+{
+    // import
+    "import": {
+        "prefix": "imp",
+        "body": ["import ${2:moduleName} from '${1:module}'"],
+        "description": "importFrom"
+    },
+    "importDestructing": {
+        "prefix": "imd",
+        "body": ["import { $2 } from '${1:module}'"],
+        "description": "importDestructing"
+    },
+    "importEverything": {
+        "prefix": "ime",
+        "body": ["import * as ${2:alias} from '${1:module}'"],
+        "description": "importEverything"
+    },
+    // export
+    "exportDefault": {
+        "prefix": "exp",
+        "body": ["export default $1"],
+        "description": "exportDefault"
+    },
+    // function
+    "anonymousFunction": {
+        "prefix": "anfn",
+        "body": ["(${1:params}) => {\n\t$2\n}"],
+        "description": "anonymousFunction"
+    },
+    // console
+    "consoleLog": {
+        "prefix": "clg",
+        "body": ["console.log(${1:data})"],
+        "description": "consoleLog"
+    },
+    "consoleTable": {
+        "prefix": "clt",
+        "body": ["console.table(${1:data})"],
+        "description": "consoleTable"
+    },
+    // object
+    "destructuringAssignment": {
+        "prefix": "dea",
+        "body": ["const { ${2:prop} } = ${1:object}"],
+        "description": "destructuringAssignment"
+    },
+
+    // react
+    "import React": {
+        "prefix": "imr",
+        "body": ["import React from 'react'"],
+        "description": "import React"
+    },
+    "import ReactDOM ": {
+        "prefix": "imrd",
+        "body": ["import ReactDOM from 'react-dom'"],
+        "description": "import ReactDOM "
+    },
+    // basic hooks
+    "useState": {
+        "prefix": "useState",
+        "body": [
+            "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
+        ],
+        "description": "useState"
+    },
+    "useEffect": {
+        "prefix": "useEffect",
+        "body": ["useEffect(() => {\n\t${1:effect}\n}, [${2:dep}])"],
+        "description": "useEffect"
+    },
+    "useContext": {
+        "prefix": "useContext",
+        "body": ["const ${1:context} = useContext(${2:ContextValue})"],
+        "description": "useContext"
+    },
+    // additional hooks
+    "useReducer": {
+        "prefix": "useReducer",
+        "body": [
+            "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})"
+        ],
+        "description": "useReducer"
+    },
+    "useRef": {
+        "prefix": "useRef",
+        "body": ["const ${1:ref} = useRef(${2:initialValue})"],
+        "description": "useRef"
+    },
+    "useLayoutEffect": {
+        "prefix": "useLayoutEffect",
+        "body": ["useLayoutEffect(() => {\n\t${1:effect}\n}, [${2:dep}])"],
+        "description": "useLayoutEffect"
+    },
+    // redux
+    "reduxActionCreator": {
+        "prefix": "rxaction",
+        "body": ["export const ${1:actionName} = (payload) => ({\n\ttype: ${2:type},\n\tpayload\n})"],
+        "description": "reduxActionCreator"
+    },
+    // redux hooks
+    "useDispatch": {
+        "prefix": "useDispatch",
+        "body": ["const dispatch = useDispatch()"],
+        "description": "useDispatch"
+    },
+    "useSelector": {
+        "prefix": "useSelector",
+        "body": ["const ${1:state} = useSelector(state => state.$1)"],
+        "description": "useSelector"
+    }
+}
