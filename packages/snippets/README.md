@@ -101,3 +101,7 @@ const XXModel: XXModelType = {
 
 export default XXModel;
 ```
+
+## join us
+
+[Nicecoders Team](https://github.com/nicecoders/nicecode)
