@@ -16,7 +16,6 @@
   "homepage": "https://nicecoders.github.io/nicecode/#/snippets",
   "scripts": {
     "build": "vsce package --no-dependencies",
-    "publish": "vsce publish --no-dependencies",
     "vscode:prepublish": "yarn compile",
     "compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
     "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
@@ -124,5 +123,5 @@
     "useTabs": false,
     "endOfLine": "auto"
   },
-  "gitHead": "86f1984bef03b33d3b1aa61a14c0f3f14e459017"
+  "gitHead": "143fba48314ad1f175de7fed5b83325215ff7380"
 }
