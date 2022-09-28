@@ -24,5 +24,9 @@ export const TEMPLIST = [
     {
       name: 'wxMini - 微信小程序',
       value: 'wxmini'
+    },
+    {
+      name: 'midway - 后端应用',
+      value: 'midway'
     }
   ]

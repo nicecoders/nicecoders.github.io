@@ -36,21 +36,21 @@
 `tsx -> 生成`
 
 ```jsx | pure
-import { } from 'react'
+import { FC } from 'react'
 import { connect, ConnectProps } from 'umi'
 import styles from './index.less'
 
-
-interface IXX extends ConnectProps {
+interface I${1:component} extends ConnectProps {
 }
 
+const $1: FC<I${1:component}> = (props) => {",
+  return (
+    <div className={styles.${1:component}}>${1:component}</div>
+  )
+}
 
 export default connect(({}: {}) => ({
-}))((props: IXX) => {
-  return (
-    <div className={styles.XX}></div>
-  )
-})
+}))(${1:component})
 ```
 
 `mts -> 生成`

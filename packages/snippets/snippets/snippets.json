@@ -1,5 +1,4 @@
 {
-    // import
     "import": {
         "prefix": "imp",
         "body": ["import ${2:moduleName} from '${1:module}'"],
@@ -15,32 +14,27 @@
         "body": ["import * as ${2:alias} from '${1:module}'"],
         "description": "importEverything"
     },
-    // export
     "exportDefault": {
         "prefix": "exp",
         "body": ["export default $1"],
         "description": "export default"
     },
-    // console
     "consoleLog": {
         "prefix": "clg",
         "body": ["console.log(${1:data})"],
         "description": "console log"
     },
-    // object
     "destructuringAssignment": {
         "prefix": "deas",
         "body": ["const { ${2:prop} } = ${1:object}"],
         "description": "destructuring assignment"
     },
 
-    // react
     "import React": {
         "prefix": "imr",
         "body": ["import React, {} from 'react'"],
         "description": "import React"
     },
-    // basic hooks
     "useState": {
         "prefix": "useState",
         "body": [
@@ -58,13 +52,11 @@
         "body": ["const ${1:context} = useContext(${2:ContextValue})"],
         "description": "useContext"
     },
-    // redux
     "reduxActionCreator": {
         "prefix": "rxaction",
         "body": ["export const ${1:actionName} = (payload) => ({\n\ttype: ${2:type},\n\tpayload\n})"],
         "description": "reduxActionCreator"
     },
-    // redux hooks
     "useDispatch": {
         "prefix": "useDispatch",
         "body": ["const dispatch = useDispatch()"],
@@ -75,7 +67,6 @@
         "body": ["const ${1:state} = useSelector(state => state.$1)"],
         "description": "useSelector"
     },
-    // ahooks 
     "useMount": {
         "prefix": "useMount",
         "body": ["useMount(() => {\n\t${1:fn}\n})"],
@@ -156,7 +147,6 @@
         ],
         "description": "useThrottleFn"
     },
-    // umi
     "functionComponentWithUmi": {
 		"prefix": "tsx",
 		"body": [
@@ -166,17 +156,17 @@
 			"import { connect, ConnectProps } from 'umi'",
 			"import styles from './index.less'",
             "\n",
-            "interface I$1 extends ConnectProps {",
+            "interface I${1:component} extends ConnectProps {",
             "}",
             "\n",
-            "const $1: FC<I$1> = (props) => {",
+            "const ${1:component}: FC<I${1:component}> = (props) => {",
             "    return (",
-            "      <div className={styles.$1}>$1</div>",
+            "      <div className={styles.${1:component}}>${1:component}</div>",
             "    )",
             "  }",
             "\n",
             "export default connect(({}: {}) => ({",
-            "}))($1)"
+            "}))(${1:component})"
 		],
 		"description": "umi 函数组件模板"
 	},
@@ -187,26 +177,26 @@
 			"import { ImmerReducer, Effect } from 'umi';",
 			"import { SubscriptionsMapObject } from 'dva';",
 			"\n",
-			"export interface $1ModelState {",
+			"export interface ${1:component}ModelState {",
 			"}",
 			"\n",
-			"export interface $1ModelType {",
-			"    namespace: '$1';",
-			"    state: $1ModelState;",
+			"export interface ${1:component}ModelType {",
+			"    namespace: '${1:component}';",
+			"    state: ${1:component}ModelState;",
 			"    effects: {",
 			"    };",
 			"    reducers: {",
-			"        save: ImmerReducer<$1ModelState>;",
-			"        reset: ImmerReducer<$1ModelState>;",
+			"        save: ImmerReducer<${1:component}ModelState>;",
+			"        reset: ImmerReducer<${1:component}ModelState>;",
   			"    };",
 			"    subscriptions: SubscriptionsMapObject;",
 			"}",
 			"\n",
-			"const initialState: $1ModelState = {",
+			"const initialState: ${1:component}ModelState = {",
 			"}",
 			"\n",
-			"const $1Model: $1ModelType = {",
-			"    namespace: '$1',",
+			"const ${1:component}Model: ${1:component}ModelType = {",
+			"    namespace: '${1:component}',",
 			"    state: initialState,",
 			"    effects: {",
 			"        // *demo({ payload }, { call, put }) {",
@@ -229,7 +219,7 @@
 			"};",
 			"\n",
 
-			"export default $1Model;"
+			"export default ${1:component}Model;"
 		]
 	}
 }

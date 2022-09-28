@@ -3,3 +3,10 @@
 node_modules
 !file.ts
 src
+**/tsconfig.json
+*.ts
+.github/**
+.gitignore
+.vscode/**
+docs/**
+src/**
