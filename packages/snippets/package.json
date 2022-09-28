@@ -1,7 +1,7 @@
 {
   "name": "nicecode-snippets",
   "displayName": "nicecode-react-js-ts-snippets",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax",
   "publisher": "devlifestyle",
   "icon": "images/logo.png",
