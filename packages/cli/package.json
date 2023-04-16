@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/cli",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "nicecode-cli 各种框架脚手架合集",
   "keywords": [
     "cli",
