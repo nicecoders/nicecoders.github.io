@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/cli",
-  "version": "0.1.12",
+  "version": "0.1.14",
   "description": "nicecode-cli 各种框架脚手架合集",
   "keywords": [
     "cli",
@@ -57,5 +57,5 @@
     "@babel/plugin-transform-arrow-functions": "^7.8.3",
     "@babel/preset-env": "^7.9.5"
   },
-  "gitHead": "143fba48314ad1f175de7fed5b83325215ff7380"
+  "gitHead": "9379b09507b799d53a79a74fd84f1376588b72b7"
 }
