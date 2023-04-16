@@ -2,7 +2,11 @@ export const INVALID_REGEXP = /^<.*>$/
 
 export const TEMPLIST = [
     {
-      name: 'Vue - 通用',
+      name: 'Vue - 普通',
+      value: 'vue'
+    },
+    {
+      name: 'Vue3 - vite版',
       value: 'vue'
     },
     {
