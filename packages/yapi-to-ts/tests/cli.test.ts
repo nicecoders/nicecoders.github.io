@@ -82,7 +82,7 @@ describe('cli', () => {
         .readFileSync(tempPaths.generatedConfigFile)
         .toString()
         .replace(
-          "'yapi-to-typescript'",
+          "'@nicecode/mofish'",
           JSON.stringify(path.join(__dirname, '../src')),
         )
         .replace(`dataKey: 'data',`, '')
@@ -160,7 +160,7 @@ describe('cli', () => {
         .readFileSync(tempPaths.generatedConfigFile)
         .toString()
         .replace(
-          "'yapi-to-typescript'",
+          "'@nicecode/mofish'",
           JSON.stringify(path.join(__dirname, '../src')),
         )
         .replace(`dataKey: 'data',`, '')

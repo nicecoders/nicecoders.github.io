@@ -374,7 +374,7 @@ export class Generator {
             await fs.outputFile(
               requestFunctionFilePath,
               dedent`
-                import type { RequestFunctionParams } from 'yapi-to-typescript'
+                import type { RequestFunctionParams } from '@nicecode/mofish'
 
                 export interface RequestOptions {
                   /**
@@ -421,7 +421,7 @@ export class Generator {
               requestHookMakerFilePath,
               dedent`
                 import { useState, useEffect } from 'react'
-                import type { RequestConfig } from 'yapi-to-typescript'
+                import type { RequestConfig } from '@nicecode/mofish'
                 import type { Request } from ${JSON.stringify(
                   getNormalizedRelativePath(
                     requestHookMakerFilePath,
@@ -468,7 +468,7 @@ export class Generator {
           /* tslint:disable */
           /* eslint-disable */
 
-          /* 该文件由 yapi-to-typescript 自动生成，请勿直接修改！！！ */
+          /* 该文件由 @nicecode/mofish 自动生成，请勿直接修改！！！ */
 
           ${
             syntheticalConfig.typesOnly
@@ -481,10 +481,10 @@ export class Generator {
               : dedent`
                 // @ts-ignore
                 // prettier-ignore
-                import { QueryStringArrayFormat, Method, RequestBodyType, ResponseBodyType, FileData, prepare } from 'yapi-to-typescript'
+                import { QueryStringArrayFormat, Method, RequestBodyType, ResponseBodyType, FileData, prepare } from '@nicecode/mofish'
                 // @ts-ignore
                 // prettier-ignore
-                import type { RequestConfig, RequestFunctionRestArgs } from 'yapi-to-typescript'
+                import type { RequestConfig, RequestFunctionRestArgs } from '@nicecode/mofish'
                 // @ts-ignore
                 import request from ${JSON.stringify(
                   getNormalizedRelativePath(
@@ -528,6 +528,7 @@ export class Generator {
           filepath: outputFilePath,
         })
         const outputContent = `${dedent`
+          /* eslint-disable eslint-comments/no-unlimited-disable */
           /* prettier-ignore-start */
           ${prettyOutputContent}
           /* prettier-ignore-end */

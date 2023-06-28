@@ -103,7 +103,7 @@ export async function run(
     await fs.outputFile(
       outputConfigFile,
       dedent`
-        import { defineConfig } from 'yapi-to-typescript'
+        import { defineConfig } from '@nicecode/mofish'
 
         export default defineConfig([
           {

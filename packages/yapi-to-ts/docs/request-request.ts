@@ -1,5 +1,5 @@
 // import fetch from 'cross-fetch'
-import { RequestBodyType, RequestFunctionParams } from 'yapi-to-typescript'
+import { RequestBodyType, RequestFunctionParams } from '@nicecode/mofish'
 
 declare const wx: any
 declare const qq: any

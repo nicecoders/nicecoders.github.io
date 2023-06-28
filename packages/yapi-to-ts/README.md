@@ -51,7 +51,7 @@ npx mofish init
 
 ```js
 // mofish.config.ts
-import { defineConfig } from 'yapi-to-typescript'
+import { defineConfig } from '@nicecode/mofish'
 
 export default defineConfig([
   {

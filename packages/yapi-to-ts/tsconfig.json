@@ -14,7 +14,7 @@
     "jsx": "preserve",
     "lib": ["ESNext", "DOM"],
     "paths": {
-      "yapi-to-typescript": ["./src/index.ts"]
+      "@nicecode/mofish": ["./src/index.ts"]
     },
     "plugins": [
       {
