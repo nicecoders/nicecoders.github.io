@@ -7,4 +7,4 @@ group:
   order: 6
 ---
 
-<embed src="../readme.md"></embed>
+<embed src="../README.md"></embed>

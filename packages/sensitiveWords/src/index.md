@@ -8,7 +8,7 @@ group:
   path: /sensitivewords
 ---
 
-<embed src="../readme.md"></embed>
+<embed src="../README.md"></embed>
 
 ## 词库
 

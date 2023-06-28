@@ -15,9 +15,6 @@ Object.defineProperty(exports, "Vplayer", {
     return _vplayer.default;
   }
 });
-
 var _vplayer = _interopRequireDefault(require("./vplayer"));
-
 var _aplayer = _interopRequireDefault(require("./aplayer"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

@@ -9,4 +9,4 @@ group:
 
 ## 快速上手
 
-<embed src="../readme.md"></embed>
+<embed src="../README.md"></embed>

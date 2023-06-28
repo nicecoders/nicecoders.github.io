@@ -9,7 +9,5 @@ Object.defineProperty(exports, "Bar", {
     return _Bar.default;
   }
 });
-
 var _Bar = _interopRequireDefault(require("./Bar"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

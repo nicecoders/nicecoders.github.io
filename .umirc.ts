@@ -50,7 +50,8 @@ export default defineConfig({
       'packages/player/src',
       'packages/spider/src',
       'packages/cli/src',
-      "packages/snippets/src"
+      "packages/snippets/src",
+      "packages/yapi-to-ts/src"
     ],
   },
   locales: [['zh-CN', '中文']],

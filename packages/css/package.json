@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "watch": "gulp watch",
-    "build": "gulp"
+    "build": "npm rebuild node-sass && gulp"
   },
   "keywords": [
     "css",
