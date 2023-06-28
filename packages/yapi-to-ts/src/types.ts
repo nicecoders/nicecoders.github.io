@@ -667,6 +667,11 @@ export interface ServerConfig extends SharedConfig {
   serverUrl: string
 
   /**
+   * 可配置基础路由
+   */
+  basePath?: string
+
+  /**
    * 服务类型。
    *
    * @default 'yapi'

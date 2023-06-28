@@ -588,17 +588,17 @@ export class Generator {
   }
 
   fetchProject = memoize(
-    async ({ serverUrl, token }: SyntheticalConfig) => {
+    async ({ serverUrl, token, basePath }: SyntheticalConfig) => {
       const projectInfo = await this.fetchApi<Project>(
         `${serverUrl}/api/project/get`,
         {
           token: token!,
         },
       )
-      const basePath = `/${projectInfo.basepath || '/'}`
+      const _basePath = `/${basePath || projectInfo.basepath || '/'}`
         .replace(/\/+$/, '')
         .replace(/^\/+/, '/')
-      projectInfo.basepath = basePath
+      projectInfo.basepath = _basePath
       // 实现项目在 YApi 上的地址
       projectInfo._url = `${serverUrl}/project/${projectInfo._id}/interface/api`
       return projectInfo

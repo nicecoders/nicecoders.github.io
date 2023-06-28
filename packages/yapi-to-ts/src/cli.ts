@@ -108,6 +108,7 @@ export async function run(
         export default defineConfig([
           {
             serverUrl: 'http://foo.bar',
+            serverType: 'yapi',
             typesOnly: false,
             target: '${
               (outputConfigFileType === 'js'
