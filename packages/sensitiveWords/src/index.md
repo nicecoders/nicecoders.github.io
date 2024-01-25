@@ -12,9 +12,9 @@ group:
 
 ## 词库
 
-<Alert type="info">
+:::info
   <strong>欢迎提交补充: <a>https://github.com/nicecoders/nicecoders.github.io</a></strong>
-</Alert>
+:::
 
 ```jsx
 import React, { useEffect } from 'react';

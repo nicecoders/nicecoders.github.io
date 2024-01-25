@@ -1,0 +1,48 @@
+{
+  "name": "@nicecode/hooks",
+  "version": "0.3.0",
+  "description": "hooks合集",
+  "keywords": [
+    "hooks"
+  ],
+  "license": "ISC",
+  "author": "dev",
+  "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.less"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "@nicecode/func": "workspace:^",
+    "ahooks": "^3.7.8",
+    "antd": "^5.12.5",
+    "events": "^3.3.0",
+    "react": "^18.0.0",
+    "react-activation": "^0.12.4",
+    "react-router-dom": "^6.21.1"
+  }
+}

@@ -55,7 +55,8 @@
     "url": "https://github.com/nicecoders/nicecode"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "homepage": "https://nicecoders.github.io/nicecode/#/changelog",
   "gitHead": "6586b5a71b6af55ae6317c8979b177a4725bbc8d"

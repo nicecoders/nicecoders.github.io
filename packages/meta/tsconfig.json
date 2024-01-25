@@ -1,0 +1,9 @@
+{
+  "references": [{ "path": "../../tsconfig.json" }],
+  "compilerOptions": {
+    "paths": {
+      "@nicecode/meta": ["./src"]
+    }
+  },
+  "exclude": ["src/**/demo"]
+}

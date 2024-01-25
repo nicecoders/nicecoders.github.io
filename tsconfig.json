@@ -14,10 +14,11 @@
     "paths": {
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"],
-      "@packages": ["packages/*"]
+      "@packages": ["packages/*"],
+      "@nicecode/*": ["packages/*", "*"]
     },
     "typeRoots": ["./typings"]
   },
-  "include": ["./typings.d.ts", "packages/**/*.tsx", "packages/**/*.ts"],
+  "include": [".dumirc.ts", "./typings.d.ts", "packages/**/*.tsx", "packages/**/*.ts"],
   "exclude": ["node_modules", "lib", "es", "dist", "typings"]
 }

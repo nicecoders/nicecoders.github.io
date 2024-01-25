@@ -21,7 +21,7 @@
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.ts",
   "bin": {
-    "mofish": "lib/cjs/cli.js"
+    "mofish": "lib/esm/cli.js"
   },
   "files": [
     "lib"
@@ -91,6 +91,7 @@
     "node": ">=10.19.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

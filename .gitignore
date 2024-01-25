@@ -39,3 +39,16 @@ screenshot
 .changelog.md
 
 pnpm-lock.yaml
+node_modules
+/dist
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
+.DS_Store
+/docs-dist
+vueuse
+/temp
+packages/**/es
+packages/**/lib
+/es
+/lib
