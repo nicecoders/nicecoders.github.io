@@ -2,6 +2,12 @@ import { defineConfig } from 'father';
 
 export default defineConfig({
   // more father config: https://github.com/umijs/father/blob/master/docs/config.md
-  esm: { output: 'es' },
-  cjs: { output: 'lib' },
+  esm: {
+    output: 'es',
+    ignores: ['**/demo/*', 'src/**/demo/*']
+  },
+  cjs: {
+    output: 'lib',
+    ignores: ['**/demo/*', 'src/**/demo/*']
+  },
 });

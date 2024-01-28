@@ -1,16 +1,19 @@
 ---
-# nav:
-#   title: 敏感词库
-#   path: /sensitivewords
+nav:
+  title: 其它
+  path: /other
+  second: 
+    title: 敏感词库
+    order: 7
 group:
   title: 敏感词库
   order: 1
   path: /sensitivewords
 ---
 
-<embed src="../README.md"></embed>
+# 敏感词库
 
-## 词库
+<embed src="../readme.md"></embed>
 
 :::info
   <strong>欢迎提交补充: <a>https://github.com/nicecoders/nicecoders.github.io</a></strong>

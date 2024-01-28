@@ -1,12 +1,13 @@
 ---
 nav:
-  title: 播放器
-  path: /vplayer
+  title: 其它
+  path: /other
 group:
-  title: 快速上手
+  title: 视频播放器
   order: 1
+  path: /sensitivewords
 ---
 
-## 快速上手
+# 视频播放器
 
-<embed src="../README.md"></embed>
+<embed src="../readme.md"></embed>

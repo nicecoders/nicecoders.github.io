@@ -2,7 +2,7 @@ import React from 'react';
 import { AlertFilled, CloseSquareFilled } from '@ant-design/icons';
 import { Button, Form, Input, Tooltip } from '@nicecode/meta';
 import { createStyles, css } from 'antd-style';
-import uniqueId from 'lodash/uniqueId';
+import { uniqueId } from '@nicecode/func';
 
 const useStyle = createStyles(() => ({
   'custom-feedback-icons': css`

@@ -1,0 +1,42 @@
+
+.hollowText {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  .bg {
+      height: 300px;
+      width: 100%;
+      background-image: url('https://images4.alphacoders.com/284/284838.jpg');
+      background-size: 100% 100%;
+      background-position: center;
+      transform: rotateY(180deg);
+      transition: all 2.5s ease-in-out;
+  }
+  .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      background-image: url('https://images4.alphacoders.com/284/284838.jpg');
+      background-size: 100% 100%;
+      background-position: center;
+      font-size: 50px;
+      color: transparent;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 200px;
+      transform: translate(-50%, -50%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      transition: all 2.5s ease-in-out;
+  }
+  &:hover {
+      .text {
+          background-size: 80% 80%;
+      }
+      .bg {
+          background-size: 150% 150%;
+      }
+  }
+}

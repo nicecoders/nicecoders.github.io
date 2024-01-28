@@ -2,7 +2,6 @@
 nav:
   title: 元组件
 title: 快速上手
-order: 1
 ---
 
 ## 目录结构

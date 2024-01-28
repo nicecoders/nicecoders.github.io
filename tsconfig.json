@@ -14,7 +14,6 @@
     "paths": {
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"],
-      "@packages": ["packages/*"],
       "@nicecode/*": ["packages/*", "*"]
     },
     "typeRoots": ["./typings"]

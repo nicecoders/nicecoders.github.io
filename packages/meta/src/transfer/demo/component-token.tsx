@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ConfigProvider, Space, Switch, Table, Tag, Transfer } from '@nicecode/meta';
 import type { GetProp, TableColumnsType, TableProps, TransferProps } from '@nicecode/meta';
-import difference from 'lodash/difference';
+import { difference } from '@nicecode/func';
 
 type TableRowSelection<T> = TableProps<T>['rowSelection'];
 

@@ -4,18 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 var _inquirer = _interopRequireDefault(require("inquirer"));
-
 var _tools = require("@nicecode/tools");
-
 var _constants = require("../constants");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = function _default(config) {
+var _default = exports.default = function _default(config) {
   let prompts = [];
-
   if (!config.projectName) {
     prompts.push({
       type: 'input',
@@ -24,7 +18,6 @@ var _default = function _default(config) {
       default: "demo"
     });
   }
-
   return _inquirer.default.prompt([...prompts, {
     type: 'input',
     name: 'haveTemp',
@@ -41,7 +34,6 @@ var _default = function _default(config) {
           done('链接不正确，需要以Http(s):、或以ssh:开头');
           return;
         }
-
         done(null, true);
       }, 3000);
     },
@@ -58,5 +50,3 @@ var _default = function _default(config) {
     choices: _constants.TEMPLIST
   }]);
 };
-
-exports.default = _default;

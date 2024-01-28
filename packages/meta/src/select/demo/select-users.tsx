@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react';
-import debounce from 'lodash/debounce';
+import { debounce } from '@nicecode/func';
 import { Select, Spin } from '@nicecode/meta';
 import type { SelectProps } from 'antd/es/select';
 

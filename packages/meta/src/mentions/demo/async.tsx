@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import debounce from 'lodash/debounce';
+import { debounce } from '@nicecode/func';
 import { Mentions } from 'antd';
 
 const App: React.FC = () => {

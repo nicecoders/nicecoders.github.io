@@ -27,7 +27,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "haoma compile",
+    "builder": "haoma compile",
     "docs": "npm run docs:build && gh-pages --dist docs/dist --dest handbook",
     "docs:build": "dumi build",
     "docs:dev": "dumi dev",

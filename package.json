@@ -8,7 +8,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "father-build",
+    "build": "pnpm --filter=@nicecode/* run build",
     "release": "npm run build && npm publish",
     "start": "dumi dev",
     "docs:build": "NODE_ENV=production dumi build",

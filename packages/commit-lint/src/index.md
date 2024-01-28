@@ -8,6 +8,6 @@ group:
   path: /commit-lint
 ---
 
-## git 定制提交规范
+# git 定制提交规范
 
-<embed src="'../../../packages/commit-lint/readme.md'"></embed>
+<embed src="../readme.md"></embed>

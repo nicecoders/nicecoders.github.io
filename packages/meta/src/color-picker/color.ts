@@ -1,6 +1,7 @@
 /* eslint-disable class-methods-use-this */
-import type { ColorGenInput } from '@rc-component/color-picker';
+import type { ColorGenInput, HSBA } from '@rc-component/color-picker';
 import { Color as RcColor } from '@rc-component/color-picker';
+import { Numberify, RGBA } from '@ctrl/tinycolor'
 
 export const toHexFormat = (value?: string, alpha?: boolean) =>
   value?.replace(/[^\w/]/gi, '').slice(0, alpha ? 8 : 6) || '';
@@ -24,7 +25,7 @@ export class ColorFactory {
     }
   }
 
-  toHsb() {
+  toHsb():  Numberify<HSBA> {
     return this.metaColor.toHsb();
   }
 
@@ -42,7 +43,7 @@ export class ColorFactory {
       : this.metaColor.toHex8String();
   }
 
-  toRgb() {
+  toRgb(): Numberify<RGBA> {
     return this.metaColor.toRgb();
   }
 

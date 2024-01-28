@@ -1,0 +1,50 @@
+
+@keyframes move {
+    0% {
+     background-position: 0 0;
+    }
+    50% {
+     background-position: 100% 0;
+    }
+}
+
+
+.frostedGlass {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    height: 500px;
+    overflow: hidden;
+    &_bg {
+        background-image: url('https://sp-webfront.skypixel.com/skypixel/v2/public/website/assets/1535027674204-f6eca6369ec03e70262b58b0e25cda7b.jpg');
+        background-size: cover;
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        filter: blur(15px);
+        z-index: -1;
+    }
+    &_mask {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 80px;
+        animation: move 88s infinite;
+        background-image: url(https://sp-webfront.skypixel.com/skypixel/v2/public/website/assets/1535027674204-f6eca6369ec03e70262b58b0e25cda7b.jpg);
+        background-size: cover;
+        mask-size: cover;
+        transform: translate(-50%, -50%);
+    }
+    &_slogan {
+        color: white;
+        margin-top: 24px;
+        font-size: 36px;
+        font-weight: 300;
+        text-align: center;
+    }
+}

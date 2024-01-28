@@ -16,8 +16,8 @@
   ],
   "type": "module",
   "main": "lib/index.js",
-  "module": "es/index.ts",
-  "typings": "src/index.ts",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -57,7 +57,6 @@
     "dayjs": "^1.11.10",
     "downloadjs": "^1.4.7",
     "flv.js": "^1.6.2",
-    "lodash": "^4.17.21",
     "qs": "^6.11.2",
     "rc-align": "^4.0.15",
     "rc-cascader": "^3.21.0",

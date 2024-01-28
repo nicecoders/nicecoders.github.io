@@ -1,0 +1,102 @@
+@keyframes ani {
+    from {
+        mask-position: 0 0;
+    }
+    to {
+        mask-position: 100% 0;
+    }
+}
+
+@keyframes ani2 {
+    from {
+        mask-position: 100% 0;
+    }
+    to {
+        mask-position: 0 0;
+    }
+}
+
+.mas {
+    margin-top: 12px;
+    position: absolute;
+    color: #000;
+    text-align: center;
+    width: 101%;
+    font-family: 'Righteous' sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    overflow: hidden;
+}
+.btn {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6vh;
+    overflow: hidden;
+    border: 1px solid ;
+    font-family: 'Righteous' sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    transition: .5s;
+    letter-spacing: 1px;
+    button {
+      width: 101%;
+      height: 100%;
+      font-family: 'Righteous', cursive;
+      font-weight: 300;
+      font-size: 20px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+}
+.button-normal {
+    button {
+        background: #000;
+        mask: url('./img/button1.png');
+        mask-size: 2300% 100%;
+        border: none;
+        color: #fff;
+        -webkit-animation: ani2 .7s steps(22) forwards;
+        animation: ani2 .7s steps(22) forwards;
+
+        &:hover {
+            -webkit-animation: ani .7s steps(22) forwards;
+            animation: ani .7s steps(22) forwards;
+        }
+    }
+}
+.button-ease {
+    button {
+        background: #000;
+        mask: url('./img/button2.png');
+        mask-size: 3000% 100%;
+        border: none;
+        color: #fff;
+        -webkit-animation: ani2 .7s steps(29) forwards;
+        animation: ani2 .7s steps(29) forwards;
+
+        &:hover {
+            -webkit-animation: ani .7s steps(29) forwards;
+            animation: ani .7s steps(29) forwards;
+        }
+    }
+}
+.button-wave {
+    button {
+        background: #000;
+        mask: url('./img/button3.png');
+        mask-size: 7100% 100%;
+        border: none;
+        color: #fff;
+        -webkit-animation: ani2 0.7s steps(70) forwards;
+        animation: ani2 0.7s steps(70) forwards;
+
+        &:hover {
+        -webkit-animation: ani 0.7s steps(70) forwards;
+        animation: ani 0.7s steps(70) forwards;
+        }
+    }
+}
