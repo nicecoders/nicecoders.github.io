@@ -1,6 +1,6 @@
-# @nicecode/func
+# @nicecode/mofish
 
-## 0.4.0
+## 3.38.0
 
 ### Minor Changes
 

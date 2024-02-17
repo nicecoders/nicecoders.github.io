@@ -1,4 +1,3 @@
-export { default as doubleClick } from './doubleClick';
 export { default as Icon } from './iconfont';
 export { default as Tabs } from './tabs'
 export type { TabPaneProps, TabsProps } from './tabs';

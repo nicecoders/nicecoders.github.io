@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/funny",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "funny,一些有趣的代码,funny code",
   "keywords": [
     "funny",
@@ -32,7 +32,8 @@
     "url": "https://github.com/nicecoders/nicecode/issues"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
     "typed.js": "^2.1.0"

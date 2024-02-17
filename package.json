@@ -19,7 +19,7 @@
     "test:update": "umi-test --updateSnapshot",
     "test:coverage": "umi-test --coverage",
     "add": "pnpm changeset add",
-    "pub": "pnpm changeset publish",
+    "pub": "pnpm changeset publish -r",
     "v": "pnpm changeset version",
     "cz": "git add . && git cz",
     "log": "conventional-changelog -n ./packages/changelog/src -i changelog.md -s -r 0"
@@ -83,6 +83,5 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
-  "private": true,
   "license": "MIT"
 }

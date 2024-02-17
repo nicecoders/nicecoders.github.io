@@ -1,6 +1,6 @@
-# @nicecode/hooks
+# @nicecode/sensitivewords
 
-## 0.4.0
+## 0.2.0
 
 ### Minor Changes
 
@@ -9,4 +9,4 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @nicecode/func@0.4.0
+  - @nicecode/sensitivewords@0.2.0
