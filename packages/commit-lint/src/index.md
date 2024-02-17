@@ -1,13 +1,12 @@
 ---
 nav:
-  title: 规范工具
-  path: /changelog
+  title: 工具
+  path: /other
 group:
-  title: git 定制提交规范
+  title: git 规范
   order: 3
   path: /commit-lint
+title: git 提交校验
 ---
-
-# git 定制提交规范
 
 <embed src="../readme.md"></embed>

@@ -1,13 +1,12 @@
 ---
 nav:
-  title: 其它
+  title: 工具
   path: /other
 group:
-  title: 代码片段
+  title: 其它
   order: 1
-  path: /snippets
+  path: /other
+title: 代码片段
 ---
-
-# 代码片段
 
 <embed src="../readme.md"></embed>

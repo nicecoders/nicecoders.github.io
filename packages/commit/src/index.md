@@ -1,13 +1,12 @@
 ---
 nav:
-  title: 规范工具
-  path: /changelog
+  title: 工具
+  path: /other
 group:
-  title: git 提交定制化模板
-  order: 2
+  title: git 规范
+  order: 3
   path: /commit
+title: git 提交模板
 ---
-
-# git 提交定制化模板
 
 <embed src="../readme.md"></embed>

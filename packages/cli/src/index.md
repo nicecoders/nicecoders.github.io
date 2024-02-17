@@ -1,15 +1,12 @@
 ---
 nav:
-  title: 脚手架
-  path: /cli
-  # second: 
-  #   title: 脚手架
-  #   order: 1
+  title: 工具
+  path: /other
 group:
-  title: 脚手架
-  order: 2
+  title: 其它
+  order: 3
+  path: /other
+title: 脚手架
 ---
-
-# 脚手架
 
 <embed src="../README.md"></embed>

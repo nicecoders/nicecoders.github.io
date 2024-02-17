@@ -1,9 +1,6 @@
-/// <reference path="BigImageModal.d.ts" />
-export * from './BigImageModal'
+/// <reference path="./user.d.ts" />
 
 export type CamerasStatusList = [string[], string[], string[]];
-
-export type Rect = { x: number; y: number; w: number; h: number };
 
 export type StatusList = {
   taskOverview: any;
@@ -44,7 +41,7 @@ export enum AlgorithmVersionStr {
   VERSION_MOTOR_VEHICLE = 'VERSION_MOTOR_VEHICLE', // 机动车的算法
 }
 
-类型枚举
+// 类型枚举
 export enum ObjectType {
   OBJECT_TYPE_NULL,
   OBJECT_TYPE_PEDESTRAIN,

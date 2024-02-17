@@ -1,13 +1,12 @@
 ---
 nav:
-  title: 其它
+  title: 工具
   path: /other
 group:
-  title: 视频播放器
+  title: 媒体
   order: 1
-  path: /sensitivewords
+  path: /media
+title: 视频播放器
 ---
-
-# 视频播放器
 
 <embed src="../readme.md"></embed>

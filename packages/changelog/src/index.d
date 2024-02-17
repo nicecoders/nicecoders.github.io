@@ -1,8 +1,8 @@
 ---
 nav:
-  title: 规范工具
-  path: /changelog
-  second: 
+  title: 工具
+  path: /other
+  second:
     title: 规范工具
     order: 1
 group:

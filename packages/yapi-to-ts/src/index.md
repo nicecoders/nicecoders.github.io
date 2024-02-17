@@ -1,7 +1,7 @@
 ---
 nav:
-  title: 规范工具
-  path: /changelog
+  title: 工具
+  path: /other
 group:
   title: 接口代码自动生成
   order: 5

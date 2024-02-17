@@ -1,13 +1,7 @@
 {
-  "name": "@types/nicecode",
-  "version": "0.3.0",
-  "description": "变量定义库",
-  "keywords": [
-    "types",
-    "biz",
-    "nicecode",
-    "变量定义库"
-  ],
+  "name": "@types/meta",
+  "version": "0.1.0",
+  "description": "",
   "license": "ISC",
   "author": "dev",
   "main": "",
@@ -18,8 +12,10 @@
         "default": "./index.d.ts"
       }
     },
-    "./user": "./user.d.ts",
     "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "father build"
   },
   "publishConfig": {
     "access": "public",

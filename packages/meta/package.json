@@ -20,10 +20,13 @@
   "typings": "es/index.d.ts",
   "exports": {
     ".": {
-      "import": "./src/index.ts"
+      "import": "./es/index.js"
     }
   },
-  "files": [],
+  "files": [
+    "es",
+    "lib"
+  ],
   "scripts": {
     "build": "father build"
   },

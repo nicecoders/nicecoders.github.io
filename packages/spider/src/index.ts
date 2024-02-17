@@ -1,5 +1,5 @@
 import axios from 'axios'
-import cheerio from 'cheerio'
+import { load } from 'cheerio'
 
 // 配置代理服务器信息
 var proxy = {
@@ -17,8 +17,8 @@ function getPage() {
   axios.get(url, { proxy })
     .then(function (response) {
         let html_string = response.data.toString();
-        console.log(html_string)
-        const $ = cheerio.load(html_string); // 传递页面到模块
+        const $ = load(html_string); // 传递页面到模块
+        console.log($)
     })
     .catch(function (error) {
         console.log(error);

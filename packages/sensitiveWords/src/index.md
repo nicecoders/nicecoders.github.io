@@ -1,17 +1,13 @@
 ---
 nav:
-  title: 其它
+  title: 工具
   path: /other
-  second: 
-    title: 敏感词库
-    order: 7
 group:
-  title: 敏感词库
+  title: 其它
   order: 1
-  path: /sensitivewords
+  path: /media
+title: 敏感词库
 ---
-
-# 敏感词库
 
 <embed src="../readme.md"></embed>
 
