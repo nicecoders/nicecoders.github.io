@@ -41,7 +41,7 @@
     "url": "https://github.com/nicecoders/nicecode/issues"
   },
   "dependencies": {
-    "@nicecode/tools": "^0.3.0",
+    "@nicecode/tools": "workspace:^",
     "chalk": "^4.0.0",
     "commander": "^5.0.0",
     "cross-spawn": "^7.0.2",

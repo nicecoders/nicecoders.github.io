@@ -84,7 +84,8 @@
     "url": "git+https://github.com/nicecoders/nicecoders.github.io.git"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "bugs": {
     "url": "https://github.com/nicecoders/nicecoders.github.io/issues"

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
     "importHelpers": true,
     "esModuleInterop": true,
     "sourceMap": true,
