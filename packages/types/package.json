@@ -1,0 +1,29 @@
+{
+  "name": "@types/nicecode",
+  "version": "0.3.0",
+  "description": "变量定义库",
+  "keywords": [
+    "types",
+    "biz",
+    "nicecode",
+    "变量定义库"
+  ],
+  "license": "ISC",
+  "author": "dev",
+  "main": "",
+  "typings": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": {
+        "default": "./index.d.ts"
+      }
+    },
+    "./user": "./user.d.ts",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {}
+}

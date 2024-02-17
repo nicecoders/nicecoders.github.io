@@ -1,15 +1,12 @@
 ---
 nav:
-  title: 规范工具
-  path: /changelog
+  title: 工具
+  path: /other
 group:
-  title: snippets 代码片段
-  order: 4
-  path: /snippets
+  title: 其它
+  order: 1
+  path: /other
+title: 代码片段
 ---
 
-## snippets 代码片段
-
-<embed src="../README.md"></embed>
-
-<!-- <code src="./index.tsx" /> -->
+<embed src="../readme.md"></embed>

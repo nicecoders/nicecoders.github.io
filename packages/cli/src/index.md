@@ -1,10 +1,12 @@
 ---
 nav:
-  title: 脚手架
-  path: /cli
+  title: 工具
+  path: /other
 group:
-  title: 快速上手
-  order: 6
+  title: 其它
+  order: 3
+  path: /other
+title: 脚手架
 ---
 
 <embed src="../README.md"></embed>

@@ -1,12 +1,12 @@
 ---
 nav:
-  title: 规范工具
-  path: /changelog
+  title: 工具
+  path: /other
 group:
-  title: changelog 自动化生成
-  order: 1
+  title: git 规范
+  order: 3
+  path: /commit
+title: changelog.md 自动化生成
 ---
-
-## changelog 自动化生成
 
 <embed src="../readme.md"></embed>

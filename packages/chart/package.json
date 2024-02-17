@@ -29,7 +29,8 @@
     "url": "https://github.com/nicecoders/nicecode/issues"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "gitHead": "343f807869e88b9e6ef78be3bcc2b9992bb14aaf"
 }

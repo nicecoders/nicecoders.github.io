@@ -21,7 +21,8 @@
     "es"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "url": "https://github.com/nicecoders/nicecode/issues"
   },
   "dependencies": {
+    "@nicecode/player": "workspace:^",
     "xgplayer": "^2.31.6",
     "xgplayer-music": "^2.3.2"
   },

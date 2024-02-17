@@ -1,15 +1,21 @@
 ---
-# nav:
-#   title: 爬虫
-#   path: /spider
+nav:
+  title: 工具
+  path: /other
 group:
-  title: 爬虫
+  title: Node 相关
   order: 1
-  path: /spider
+  path: /node
+title: 爬虫
 ---
 
-## 爬虫
+```jsx
+import spider from '@nicecode/spider'
 
-```
-攒写中...
+export default () => {
+  const a = spider
+  return (
+    <div>爬虫</div>
+  )
+}
 ```

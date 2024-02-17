@@ -15,7 +15,7 @@
   "main": "./lib/src/index.js",
   "homepage": "https://nicecoders.github.io/nicecode/#/snippets",
   "scripts": {
-    "build": "vsce package --no-dependencies",
+    "builder": "vsce package --no-dependencies",
     "vscode:prepublish": "yarn compile",
     "compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
     "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",

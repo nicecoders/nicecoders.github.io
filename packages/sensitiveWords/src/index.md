@@ -1,20 +1,19 @@
 ---
-# nav:
-#   title: 敏感词库
-#   path: /sensitivewords
+nav:
+  title: 工具
+  path: /other
 group:
-  title: 敏感词库
+  title: 其它
   order: 1
-  path: /sensitivewords
+  path: /media
+title: 敏感词库
 ---
 
-<embed src="../README.md"></embed>
+<embed src="../readme.md"></embed>
 
-## 词库
-
-<Alert type="info">
+:::info
   <strong>欢迎提交补充: <a>https://github.com/nicecoders/nicecoders.github.io</a></strong>
-</Alert>
+:::
 
 ```jsx
 import React, { useEffect } from 'react';

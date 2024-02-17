@@ -1,0 +1,52 @@
+{
+  "name": "@nicecode/func",
+  "version": "0.3.0",
+  "description": "函数合集",
+  "keywords": [
+    "function",
+    "lodash"
+  ],
+  "license": "ISC",
+  "author": "dev",
+  "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.less"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "dayjs": "^1.11.10",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
+    "lodash-es": "^4.17.21",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/base-64": "^1.0.2",
+    "@types/file-saver": "^2.0.7",
+    "@types/lodash-es": "^4.17.12",
+    "@types/uuid": "^9.0.7"
+  }
+}

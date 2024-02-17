@@ -1,12 +1,12 @@
 ---
 nav:
-  title: 播放器
-  path: /vplayer
+  title: 工具
+  path: /other
 group:
-  title: 快速上手
+  title: 媒体
   order: 1
+  path: /media
+title: 视频播放器
 ---
 
-## 快速上手
-
-<embed src="../README.md"></embed>
+<embed src="../readme.md"></embed>
