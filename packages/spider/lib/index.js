@@ -23,7 +23,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 
 // src/index.ts
 var import_axios = __toESM(require("axios"));
-var import_cheerio = __toESM(require("cheerio"));
+var import_cheerio = require("cheerio");
 var proxy = {
   host: "104.227.13.3",
   //代理服务器地址
@@ -39,8 +39,8 @@ function getPage() {
   let url = "https://www.nordstrom.com/s/chanel-le-rouge-duo-ultra-tenue-ultra-wear-lip-colour/5022647";
   import_axios.default.get(url, { proxy }).then(function(response) {
     let html_string = response.data.toString();
-    console.log(html_string);
-    const $ = import_cheerio.default.load(html_string);
+    const $ = (0, import_cheerio.load)(html_string);
+    console.log($);
   }).catch(function(error) {
     console.log(error);
   });

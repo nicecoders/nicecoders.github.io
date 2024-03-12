@@ -1,22 +1,30 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "NodeNext",
-    "moduleResolution": "Bundler",
-    "importHelpers": true,
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
+    "strict": true,
     "declaration": true,
-    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "composite": true,
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-      "@@/*": ["src/.umi/*"],
-      "@nicecode/*": ["packages/*", "*"]
+      "@@/*": [".dumi/tmp/*"],
+      "@nicecode/*": ["packages/*/src/"]
     },
-    "typeRoots": ["./typings"]
+    "strictNullChecks": true,
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "experimentalDecorators": true,
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "isolatedModules": false,
+    "target": "es6",
+    "lib": ["dom", "es2017"],
+    "stripInternal": true,
+    "resolvePackageJsonExports": true
   },
   "include": [".dumirc.ts", "./typings.d.ts", "packages/**/*.tsx", "packages/**/*.ts"],
   "exclude": ["node_modules", "lib", "es", "dist", "typings"]

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 
 // 配置代理服务器信息
 var proxy = {
@@ -19,8 +19,8 @@ function getPage() {
     proxy: proxy
   }).then(function (response) {
     var html_string = response.data.toString();
-    console.log(html_string);
-    var $ = cheerio.load(html_string); // 传递页面到模块
+    var $ = load(html_string); // 传递页面到模块
+    console.log($);
   }).catch(function (error) {
     console.log(error);
   });
