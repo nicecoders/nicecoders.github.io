@@ -1,31 +1,26 @@
-# name: page
+name: build to my github
 
-# on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
 
-# jobs:
-#   build:
-#     runs-on: macOS-latest
-    
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@master
-        
-#       - name: Setup Node.js environment
-#         uses: actions/setup-node@v2.1.5
-#         with:
-#           node-version: "12"
-          
-#       - name: Cache node modules
-#         uses: actions/cache@v2
-#         env:
-#           cache-name: cache-node-modules
-#         with:
-#           path: ./node_modules
-#           key: ${{ runner.os }}-build-cache-node-modules-${{ hashFiles('**/package.json') }}
-#           restore-keys: |
-#             cache-node-modules-
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: yarn install
+      - name: Build
+        run: yarn build
 
-#       - name: Run ci
-#         run: |
-#           npm install
-#           npm run ci
+      # - name: CreateTag
+      #   run git tag -a
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTION_SECRET }}
+          publish_dir: docs/.vitepress/dist
