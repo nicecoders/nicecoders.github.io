@@ -11,7 +11,7 @@
     "build": "pnpm --filter=@nicecode/* run build",
     "release": "npm run build && npm publish",
     "start": "dumi dev",
-    "docs:build": "NODE_ENV=production dumi build",
+    "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
