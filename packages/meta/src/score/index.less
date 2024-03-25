@@ -1,0 +1,48 @@
+.nicecode-image__score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-box {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    border-radius: 50%;
+
+    &-bg {
+      display: flex;
+      overflow: hidden;
+      box-sizing: border-box;
+      align-items: flex-end;
+      justify-content: center;
+      border: 2px solid #fff;
+      background-color: #fff;
+      border-radius: 50%;
+
+      &-inner {
+        width: 100% !important;
+        height: 0;
+      }
+    }
+  }
+
+  &-score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(0 0 0 / 88%);
+    font-size: 28px;
+    transform: translate(-50%, -50%);
+  }
+
+  &-text {
+    width: 54px;
+    height: 24px;
+    color: rgb(0 0 0 / 88%);
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

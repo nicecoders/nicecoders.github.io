@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Radio, Tag } from '@nicecode/meta';
+import { Button, Form, Input, Radio, Tag } from 'antd';
 
 type RequiredMark = boolean | 'optional' | 'customize';
 

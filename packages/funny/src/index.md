@@ -3,6 +3,7 @@ nav:
   title: funny
   order: 4
 title: 快速上手
+toc: content
 ---
 
 funny，就是记录一些有意思的 code，去参考它的实现原理，并尽量能将它工具化

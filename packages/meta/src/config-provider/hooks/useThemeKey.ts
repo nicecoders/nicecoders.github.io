@@ -3,6 +3,7 @@ import * as React from 'react';
 const fullClone = {
   ...React,
 };
+// @ts-ignore
 const { useId } = fullClone;
 
 const useEmptyId = () => '';

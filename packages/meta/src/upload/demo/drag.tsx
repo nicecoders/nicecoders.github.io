@@ -1,7 +1,7 @@
 import React from 'react';
 import { InboxOutlined } from '@ant-design/icons';
-import type { UploadProps } from '@nicecode/meta';
-import { message, Upload } from '@nicecode/meta';
+import type { UploadProps } from 'antd';
+import { message, Upload } from 'antd';
 
 const { Dragger } = Upload;
 

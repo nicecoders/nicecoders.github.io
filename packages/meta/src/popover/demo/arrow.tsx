@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Button, ConfigProvider, Popover, Segmented } from '@nicecode/meta';
+import { Button, ConfigProvider, Popover, Segmented } from 'antd';
 
 const text = <span>Title</span>;
 

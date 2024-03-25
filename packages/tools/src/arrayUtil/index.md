@@ -29,7 +29,7 @@ group:
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.chunk(['a', 'b', 'c', 'd'], 2);
 // => [['a', 'b'], ['c', 'd']]
@@ -53,7 +53,7 @@ arrayUtil.chunk(['a', 'b', 'c', 'd'], 3);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.compact([0, 1, false, 2, '', 3]);
 // => [1, 2, 3]
@@ -74,7 +74,7 @@ arrayUtil.compact([0, 1, false, 2, '', 3]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.difference([3, 2, 1], [4, 2]);
 // => [1, 2, 3]
@@ -97,7 +97,7 @@ arrayUtil.difference([3, 2, 1], [4, 2]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.differenceBy([3.1, 2.2, 1.3], [4.4, 2.5], Math.floor);
 // => [3.1, 1.3]
@@ -124,7 +124,7 @@ arrayUtil.differenceBy([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], 'x');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
  
@@ -150,7 +150,7 @@ arrayUtil.differenceWith(objects, [{ 'x': 1, 'y': 2 }], arrayUtil.isEqual);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.drop([1, 2, 3]);
 // => [2, 3]
@@ -181,7 +181,7 @@ arrayUtil.drop([1, 2, 3], 0);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'barney',  'active': false },
@@ -221,7 +221,7 @@ arrayUtil.dropWhile(users, 'active');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.dropRight([1, 2, 3]);
 // => [1, 2]
@@ -252,7 +252,7 @@ arrayUtil.dropRight([1, 2, 3], 0);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'barney',  'active': true },
@@ -294,7 +294,7 @@ arrayUtil.dropRightWhile(users, 'active');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [1, 2, 3];
  
@@ -325,7 +325,7 @@ arrayUtil.fill([4, 6, 8, 10], '*', 1, 3);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'barney',  'active': false },
@@ -363,7 +363,7 @@ arrayUtil.findIndex(users, 'active');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
  
 var users = [
   { 'user': 'barney',  'active': true },
@@ -399,7 +399,7 @@ arrayUtil.findLastIndex(users, 'active');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.flatten([1, [2, [3, [4]], 5]]);
 // => [1, 2, [3, [4]], 5]
@@ -420,7 +420,7 @@ arrayUtil.flatten([1, [2, [3, [4]], 5]]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.flattenDeep([1, [2, [3, [4]], 5]]);
 // => [1, 2, 3, 4, 5]
@@ -442,7 +442,7 @@ arrayUtil.flattenDeep([1, [2, [3, [4]], 5]]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [1, [2, [3, [4]], 5]];
 
@@ -469,7 +469,7 @@ arrayUtil.flattenDepth(array, 2);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [1, [2, [3, [4]], 5]];
 
@@ -493,7 +493,7 @@ arrayUtil.intersection([2, 1], [4, 2], [1, 2]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.intersectionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
 // => [2.1]
@@ -518,7 +518,7 @@ arrayUtil.intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
@@ -543,7 +543,7 @@ arrayUtil.intersectionWith(objects, others, arrayUtil.isEqual);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.join(['a', 'b', 'c'], '~');
 // => 'a~b~c'
@@ -563,7 +563,7 @@ arrayUtil.join(['a', 'b', 'c'], '~');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.join(['a', 'b', 'c'], '~');
 // => 'a~b~c'
@@ -583,7 +583,7 @@ arrayUtil.join(['a', 'b', 'c'], '~');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [1, 2, 3, 1, 2, 3];
  
@@ -608,7 +608,7 @@ arrayUtil.pullAll(array, [2, 3]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }];
  
@@ -633,7 +633,7 @@ arrayUtil.pullAllBy(array, [{ 'x': 1 }, { 'x': 3 }], 'x');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [{ 'x': 1, 'y': 2 }, { 'x': 3, 'y': 4 }, { 'x': 5, 'y': 6 }];
  
@@ -657,7 +657,7 @@ arrayUtil.pullAllWith(array, [{ 'x': 3, 'y': 4 }], arrayUtil.isEqual);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [5, 10, 15, 20];
 var evens = arrayUtil.pullAt(array, 1, 3);
@@ -685,7 +685,7 @@ console.log(evens);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var array = [1, 2, 3, 4];
 var evens = arrayUtil.remove(array, function(n) {
@@ -715,7 +715,7 @@ console.log(evens);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.sortedIndex([30, 50], 40);
 // => 1
@@ -740,7 +740,7 @@ arrayUtil.sortedIndex([30, 50], 40);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var objects = [{ 'x': 4 }, { 'x': 5 }];
  
@@ -767,7 +767,7 @@ arrayUtil.sortedIndexBy(objects, { 'x': 4 }, 'x');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.sortedUniq([1, 1, 2]);
 // => [1, 2]
@@ -790,7 +790,7 @@ arrayUtil.sortedUniq([1, 1, 2]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
 // => [1.1, 2.3]
@@ -812,7 +812,7 @@ arrayUtil.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.take([1, 2, 3]);
 // => [1]
@@ -844,7 +844,7 @@ arrayUtil.take([1, 2, 3], 0);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'barney',  'active': false },
@@ -885,7 +885,7 @@ arrayUtil.takeWhile(users, 'active');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.takeRight([1, 2, 3]);
 // => [3]
@@ -916,7 +916,7 @@ arrayUtil.takeRight([1, 2, 3], 0);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'barney',  'active': true },
@@ -952,7 +952,7 @@ arrayUtil.takeRightWhile(users, 'active');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.union([2], [1, 2]);
 // => [2, 1]
@@ -975,7 +975,7 @@ arrayUtil.union([2], [1, 2]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.unionBy([2.1], [1.2, 2.3], Math.floor);
 // => [2.1, 1.2]
@@ -1001,7 +1001,7 @@ arrayUtil.unionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
@@ -1023,7 +1023,7 @@ arrayUtil.unionWith(objects, others, arrayUtil.isEqual);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.uniq([2, 1, 2]);
 // => [2, 1]
@@ -1045,7 +1045,7 @@ arrayUtil.uniq([2, 1, 2]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.uniqBy([2.1, 1.2, 2.3], Math.floor);
 // => [2.1, 1.2]
@@ -1070,7 +1070,7 @@ arrayUtil.uniqBy([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }];
  
@@ -1093,7 +1093,7 @@ arrayUtil.uniqWith(objects, arrayUtil.isEqual);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var zipped = arrayUtil.zip(['fred', 'barney'], [30, 40], [true, false]);
 // => [['fred', 30, true], ['barney', 40, false]]
@@ -1117,7 +1117,7 @@ arrayUtil.unzip(zipped);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var zipped = arrayUtil.zip(['fred', 'barney'], [30, 40], [true, false]);
 // => [['fred', 30, true], ['barney', 40, false]]
@@ -1144,7 +1144,7 @@ arrayUtil.unzip(zipped);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var zipped = arrayUtil.zip([1, 2], [10, 20], [100, 200]);
 // => [[1, 10, 100], [2, 20, 200]]
@@ -1169,7 +1169,7 @@ arrayUtil.unzipWith(zipped, arrayUtil.add);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.without([2, 1, 2, 3], 1, 2);
 // => [3]
@@ -1190,7 +1190,7 @@ arrayUtil.without([2, 1, 2, 3], 1, 2);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.xor([2, 1], [2, 3]);
 // => [1, 3]
@@ -1212,7 +1212,7 @@ arrayUtil.xor([2, 1], [2, 3]);
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 arrayUtil.xorBy([2.1, 1.2], [2.3, 3.4], Math.floor);
 // => [1.2, 3.4]
@@ -1237,7 +1237,7 @@ arrayUtil.xorBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
 #### 🌰 例子
 
 ```js
-import { arrayUtil } from '@nicecode/tools';
+import { arrayUtil } from '@nicecode/func';
 
 var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];

@@ -1,8 +1,10 @@
 ---
 nav:
-  title: 元组件
-title: 版本更新日志
-order: 9999
+  title: 组件库
+title: 元组件
+toc: content
 ---
+
+<embed src="../../README.md" ></embed>
 
 <embed src="../../CHANGELOG.md" ></embed>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { InputNumber } from '@nicecode/meta';
+import { InputNumber } from 'antd';
 
 const App: React.FC = () => (
   <>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Space } from 'antd';
+import { Alert, Space } from '@nicecode/meta';
 
 const App: React.FC = () => (
   <Space direction="vertical" style={{ width: '100%' }}>

@@ -1,22 +1,17 @@
 ---
-nav:
-  title: 函数库
-  path: /tools
+title: 常见正则
+toc: content
 group:
-  title: 常见正则：validator
-  order: 20
+  title: RegExp
+  order: 2
 ---
 
 ## 常见正则：validator
 
-<Alert type="info">
-  <strong>常见正则</strong>
-</Alert>
-
 ### 举个 🌰
 
 ```js
-import { validator } from '@nicecode/tools';
+import { validator } from '@nicecode/func';
 
 let specStrReg = validator('specStr');
 ```

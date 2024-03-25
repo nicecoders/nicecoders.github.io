@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DndContext, PointerSensor, useSensor } from '@dnd-kit/core';
@@ -9,8 +8,9 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Button, Upload } from '@nicecode/meta';
-import type { UploadFile, UploadProps } from '@nicecode/meta';
+import React, { useState } from 'react';
+import { Button, Upload } from 'antd';
+import type { UploadFile, UploadProps } from 'antd/es/upload/interface';
 
 interface DraggableUploadListItemProps {
   originNode: React.ReactElement<any, string | React.JSXElementConstructor<any>>;

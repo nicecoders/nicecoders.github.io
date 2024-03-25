@@ -8,7 +8,7 @@ import {
   SmileOutlined,
 } from '@ant-design/icons';
 import React, { useState } from 'react';
-import type { RadioChangeEvent } from '@nicecode/meta';
+import type { RadioChangeEvent } from 'antd';
 import {
   Badge,
   Button,
@@ -29,7 +29,7 @@ import {
   Switch,
   Tree,
   TreeSelect,
-} from '@nicecode/meta';
+} from 'antd';
 import type { DirectionType } from 'antd/es/config-provider';
 
 const InputGroup = Input.Group;

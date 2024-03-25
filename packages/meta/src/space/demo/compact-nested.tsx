@@ -1,6 +1,6 @@
 import React from 'react';
 import { CopyOutlined, SearchOutlined } from '@ant-design/icons';
-import { Button, Cascader, Input, InputNumber, Space, Select, TimePicker } from '@nicecode/meta';
+import { Button, Cascader, Input, InputNumber, Space, Select, TimePicker } from 'antd';
 
 const { Option } = Select;
 

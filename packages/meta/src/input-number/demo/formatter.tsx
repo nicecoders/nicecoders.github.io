@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputNumber, Space } from '@nicecode/meta';
+import { InputNumber, Space } from 'antd';
 
 const onChange = (value: number | string) => {
   console.log('changed', value);

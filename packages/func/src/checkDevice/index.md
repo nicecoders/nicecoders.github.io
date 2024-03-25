@@ -1,22 +1,17 @@
 ---
-nav:
-  title: 函数库
-  path: /tools
+title: 环境判断
+toc: content
 group:
-  title: 环境判断：checkDevice
+  title: Func
   order: 10
 ---
 
 ## 环境判断：checkDevice
 
-<Alert type="info">
-  <strong>判断环境</strong>
-</Alert>
-
 ### isIos
 
 ```js
-import { checkDevice } from '@nicecode/tools';
+import { checkDevice } from '@nicecode/func';
 
 const Demo = () => {
   const isIos = checkDevice.isIos();
@@ -30,7 +25,7 @@ export default Demo;
 ### isAndroid
 
 ```js
-import { checkDevice } from '@nicecode/tools';
+import { checkDevice } from '@nicecode/func';
 
 const Demo = () => {
   const isAndroid = checkDevice.isAndroid();
@@ -44,7 +39,7 @@ export default Demo;
 ### isQQ
 
 ```js
-import { checkDevice } from '@nicecode/tools';
+import { checkDevice } from '@nicecode/func';
 
 const Demo = () => {
   const isQQ = checkDevice.isQQ();

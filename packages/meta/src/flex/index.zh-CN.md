@@ -2,6 +2,7 @@
 category: Components
 subtitle: 弹性布局
 group: 布局
+toc: content
 title: Flex 弹性布局
 tag: New
 ---

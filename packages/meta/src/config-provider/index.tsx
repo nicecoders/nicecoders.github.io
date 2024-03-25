@@ -28,7 +28,7 @@ import type {
   ConfigConsumerProps,
   CSPConfig,
   DirectionType,
-  DrawerConfig,
+  // DrawerConfig,
   FlexConfig,
   ModalConfig,
   PopupOverflow,
@@ -160,7 +160,7 @@ export interface ConfigProviderProps {
   cascader?: ComponentStyleConfig;
   collapse?: ComponentStyleConfig;
   divider?: ComponentStyleConfig;
-  drawer?: DrawerConfig;
+  // drawer?: DrawerConfig;
   typography?: ComponentStyleConfig;
   skeleton?: ComponentStyleConfig;
   spin?: ComponentStyleConfig;
@@ -212,7 +212,7 @@ interface ProviderChildrenProps extends ConfigProviderProps {
   legacyLocale: Locale;
 }
 
-export const defaultPrefixCls = 'nice';
+export const defaultPrefixCls = 'ant';
 let globalPrefixCls: string;
 let globalIconPrefixCls: string;
 let globalTheme: ThemeConfig;
@@ -307,7 +307,7 @@ const ProviderChildren: React.FC<ProviderChildrenProps> = (props) => {
     checkbox,
     descriptions,
     divider,
-    drawer,
+    // drawer,
     skeleton,
     steps,
     image,
@@ -400,7 +400,7 @@ const ProviderChildren: React.FC<ProviderChildrenProps> = (props) => {
     checkbox,
     descriptions,
     divider,
-    drawer,
+    // drawer,
     skeleton,
     steps,
     image,
@@ -445,6 +445,7 @@ const ProviderChildren: React.FC<ProviderChildrenProps> = (props) => {
     ...parentContext,
   };
 
+  // @ts-ignore
   Object.keys(baseConfig).forEach((key: keyof typeof baseConfig) => {
     if (baseConfig[key] !== undefined) {
       (config as any)[key] = baseConfig[key];

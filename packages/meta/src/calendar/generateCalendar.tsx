@@ -4,10 +4,14 @@ import { PickerPanel as RCPickerPanel } from 'rc-picker';
 import type { GenerateConfig } from 'rc-picker/lib/generate';
 import type { CellRenderInfo } from 'rc-picker/lib/interface';
 import type {
-  PickerPanelBaseProps as RCPickerPanelBaseProps,
-  PickerPanelDateProps as RCPickerPanelDateProps,
-  PickerPanelTimeProps as RCPickerPanelTimeProps,
-} from 'rc-picker/lib/PickerPanel';
+  PickerPanelProps as RCPickerPanelBaseProps,
+} from 'rc-picker/lib';
+import type {
+  DatePanelProps as RCPickerPanelDateProps,
+} from 'rc-picker/lib/PickerPanel/DatePanel';
+import type {
+  TimePanelProps as RCPickerPanelTimeProps,
+} from 'rc-picker/lib/PickerPanel/TimePanel';
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
 
 import { devUseWarning } from '../_util/warning';
@@ -26,11 +30,11 @@ type InjectDefaultProps<Props> = Omit<
 };
 
 // Picker Props
-export type PickerPanelBaseProps<DateType> = InjectDefaultProps<RCPickerPanelBaseProps<DateType>>;
-export type PickerPanelDateProps<DateType> = InjectDefaultProps<RCPickerPanelDateProps<DateType>>;
-export type PickerPanelTimeProps<DateType> = InjectDefaultProps<RCPickerPanelTimeProps<DateType>>;
+export type PickerPanelBaseProps<DateType extends object> = InjectDefaultProps<RCPickerPanelBaseProps<DateType>>;
+export type PickerPanelDateProps<DateType extends object> = InjectDefaultProps<RCPickerPanelDateProps<DateType>>;
+export type PickerPanelTimeProps<DateType extends object> = InjectDefaultProps<RCPickerPanelTimeProps<DateType>>;
 
-export type PickerProps<DateType> =
+export type PickerProps<DateType extends object> =
   | PickerPanelBaseProps<DateType>
   | PickerPanelDateProps<DateType>
   | PickerPanelTimeProps<DateType>;
@@ -75,7 +79,7 @@ export interface CalendarProps<DateType> {
   onSelect?: (date: DateType, selectInfo: SelectInfo) => void;
 }
 
-function generateCalendar<DateType>(generateConfig: GenerateConfig<DateType>) {
+function generateCalendar<DateType extends object | object[] | undefined>(generateConfig: GenerateConfig<DateType>) {
   function isSameYear(date1: DateType, date2: DateType) {
     return date1 && date2 && generateConfig.getYear(date1) === generateConfig.getYear(date2);
   }
@@ -324,13 +328,17 @@ function generateCalendar<DateType>(generateConfig: GenerateConfig<DateType>) {
           value={mergedValue}
           prefixCls={prefixCls}
           locale={contextLocale?.lang}
+          // @ts-ignore
           generateConfig={generateConfig}
+          // @ts-ignore
           cellRender={mergedCellRender}
           onSelect={(nextDate) => {
+          // @ts-ignore
             onInternalSelect(nextDate, panelMode);
           }}
           mode={panelMode}
           picker={panelMode}
+          // @ts-ignore
           disabledDate={mergedDisabledDate}
           hideHeader
         />

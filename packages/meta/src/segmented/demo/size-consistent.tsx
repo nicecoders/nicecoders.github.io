@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex, Input, Segmented, Select } from '@nicecode/meta';
+import { Button, Flex, Input, Segmented, Select } from 'antd';
 
 const App: React.FC = () => (
   <Flex gap="small" vertical>

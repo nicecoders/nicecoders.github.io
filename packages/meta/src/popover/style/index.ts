@@ -46,7 +46,7 @@ export interface ComponentToken extends ArrowToken, ArrowOffsetToken {
   /** @internal */
   innerContentPadding: number | string;
 }
-
+// @ts-ignore
 export type PopoverToken = FullToken<'Popover'> & {
   popoverBg: string;
   popoverColor: string;
@@ -56,18 +56,25 @@ const genBaseStyle: GenerateStyle<PopoverToken> = (token) => {
   const {
     componentCls,
     popoverColor,
+  // @ts-ignore
     titleMinWidth,
     fontWeightStrong,
+    // @ts-ignore
     innerPadding,
     boxShadowSecondary,
     colorTextHeading,
     borderRadiusLG,
+    // @ts-ignore
     zIndexPopup,
+    // @ts-ignore
     titleMarginBottom,
     colorBgElevated,
     popoverBg,
+    // @ts-ignore
     titleBorderBottom,
+    // @ts-ignore
     innerContentPadding,
+    // @ts-ignore
     titlePadding,
   } = token;
 
@@ -128,6 +135,7 @@ const genBaseStyle: GenerateStyle<PopoverToken> = (token) => {
     },
 
     // Arrow Style
+    // @ts-ignore
     getArrowStyle(token, 'var(--antd-arrow-background-color)'),
 
     // Pure Render
@@ -166,7 +174,7 @@ const genColorStyle: GenerateStyle<PopoverToken> = (token) => {
     }),
   };
 };
-
+// @ts-ignore
 export const prepareComponentToken: GetDefaultToken<'Popover'> = (token) => {
   const {
     lineWidth,
@@ -206,9 +214,11 @@ export const prepareComponentToken: GetDefaultToken<'Popover'> = (token) => {
     innerContentPadding: wireframe ? `${paddingSM}px ${popoverPaddingHorizontal}px` : 0,
   };
 };
-
+// @ts-ignore
 export default genStyleHooks(
+  // @ts-ignore
   'Popover',
+  // @ts-ignore
   (token) => {
     const { colorBgElevated, colorText } = token;
 

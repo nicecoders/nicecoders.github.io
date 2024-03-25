@@ -2,9 +2,8 @@
 category: Components
 subtitle: 排版
 group: 通用
-title: Typography
-cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*MLt3R6m9huoAAAAAAAAAAAAADrJ8AQ/original
-coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*LT2jR41Uj2EAAAAAAAAAAAAADrJ8AQ/original
+toc: content
+title: Typography 排版
 ---
 
 文本的基本格式。

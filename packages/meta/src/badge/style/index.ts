@@ -3,7 +3,7 @@ import { Keyframes, unit } from '@ant-design/cssinjs';
 import { resetComponent } from '../../style';
 import type { FullToken, GenerateStyle } from '../../theme/internal';
 import { genPresetColor, genStyleHooks, mergeToken } from '../../theme/internal';
-import type { GenStyleFn, GetDefaultToken } from '../../theme/util/genComponentStyleHook';
+import type { GetDefaultToken } from '../../theme/util/genComponentStyleHook';
 
 /** Component only token. Which will handle additional calculation of alias token */
 export interface ComponentToken {
@@ -50,6 +50,7 @@ export interface ComponentToken {
   statusSize: number;
 }
 
+// @ts-ignore
 export interface BadgeToken extends FullToken<'Badge'> {
   badgeFontHeight: number;
   badgeTextColor: string;
@@ -96,7 +97,7 @@ const antBadgeLoadingCircle = new Keyframes('antBadgeLoadingCircle', {
   },
 });
 
-const genSharedBadgeStyle: GenerateStyle<BadgeToken> = (token) => {
+const genSharedBadgeStyle: GenerateStyle<BadgeToken & ComponentToken> = (token) => {
   const {
     componentCls,
     iconCls,
@@ -326,7 +327,7 @@ const genSharedBadgeStyle: GenerateStyle<BadgeToken> = (token) => {
 };
 
 // ============================== Export ==============================
-export const prepareToken: (token: Parameters<GenStyleFn<'Badge'>>[0]) => BadgeToken = (token) => {
+export const prepareToken: (token: BadgeToken & ComponentToken) => BadgeToken = (token) => {
   const { fontHeight, lineWidth, marginXS, colorBorderBg } = token;
 
   const badgeFontHeight = fontHeight;
@@ -353,7 +354,8 @@ export const prepareToken: (token: Parameters<GenStyleFn<'Badge'>>[0]) => BadgeT
   return badgeToken;
 };
 
-export const prepareComponentToken: GetDefaultToken<'Badge'> = (token) => {
+  // @ts-ignore
+export const prepareComponentToken: GetDefaultToken<'Badge'> = (token: BadgeToken & ComponentToken) => {
   const { fontSize, lineHeight, fontSizeSM, lineWidth } = token;
   return {
     indicatorZIndex: 'auto',
@@ -368,9 +370,12 @@ export const prepareComponentToken: GetDefaultToken<'Badge'> = (token) => {
 };
 
 export default genStyleHooks(
+  // @ts-ignore
   'Badge',
   (token) => {
+    // @ts-ignore
     const badgeToken = prepareToken(token);
+    // @ts-ignore
     return genSharedBadgeStyle(badgeToken);
   },
   prepareComponentToken,

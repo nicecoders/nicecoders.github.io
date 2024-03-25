@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress, Space } from '@nicecode/meta';
+import { Progress, Space } from 'antd';
 
 const App: React.FC = () => (
   <>

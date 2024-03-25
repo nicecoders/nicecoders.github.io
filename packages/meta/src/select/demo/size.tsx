@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Radio, Select, Space } from '@nicecode/meta';
+import { Radio, Select, Space } from 'antd';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
-import type { SelectProps, RadioChangeEvent } from '@nicecode/meta';
+import type { SelectProps, RadioChangeEvent } from 'antd';
 
 const options: SelectProps['options'] = [];
 

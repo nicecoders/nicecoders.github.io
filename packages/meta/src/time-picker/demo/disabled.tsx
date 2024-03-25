@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { TimePicker } from '@nicecode/meta';
+import { TimePicker } from 'antd';
 
 dayjs.extend(customParseFormat);
 

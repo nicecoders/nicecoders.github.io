@@ -16,7 +16,7 @@ group:
 ### add：加法
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 const val = mathUtil.add(1, 3)   // --> 4
 ```
@@ -24,7 +24,7 @@ const val = mathUtil.add(1, 3)   // --> 4
 ### subtract：减法
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 const val = mathUtil.subtract(7, 3)   // --> 4
 ```
@@ -32,7 +32,7 @@ const val = mathUtil.subtract(7, 3)   // --> 4
 ### multiply：乘法
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 const val = mathUtil.multiply(7, 3)   // --> 21
 ```
@@ -40,7 +40,7 @@ const val = mathUtil.multiply(7, 3)   // --> 21
 ### devide：除法
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 const val = mathUtil.devide(6, 3)   // --> 2
 ```
@@ -48,7 +48,7 @@ const val = mathUtil.devide(6, 3)   // --> 2
 ### mean：求平均值
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 const val = mathUtil.mean([2,4,6,8])   // --> 5
 ```
@@ -56,7 +56,7 @@ const val = mathUtil.mean([2,4,6,8])   // --> 5
 ### meanBy：迭代器版求平均值
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
  
@@ -72,7 +72,7 @@ mathUtil.meanBy(objects, 'n');
 ### ceil：向上取整
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.ceil(4.006)   // --> 5
 ```
@@ -80,7 +80,7 @@ mathUtil.ceil(4.006)   // --> 5
 ### floor：向下取整
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.floor(4.006)   // --> 4
 ```
@@ -88,7 +88,7 @@ mathUtil.floor(4.006)   // --> 4
 ### round：四舍五入
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.round(4.4)   // --> 4
 
@@ -98,7 +98,7 @@ mathUtil.round(4.6)   // --> 5
 ### sum：求和
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.sum([2,4,6,8])   // --> 20
 ```
@@ -106,7 +106,7 @@ mathUtil.sum([2,4,6,8])   // --> 20
 ### sumBy：迭代器版求和
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
  
@@ -121,7 +121,7 @@ mathUtil.sumBy(objects, 'n');
 ### max：最大值
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.max([2,4,6,8])   // --> 8
 ```
@@ -129,7 +129,7 @@ mathUtil.max([2,4,6,8])   // --> 8
 ### maxBy：迭代器版求最大值
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 var objects = [{ 'n': 1 }, { 'n': 2 }];
  
@@ -145,7 +145,7 @@ mathUtil.maxBy(objects, 'n');
 ### min：最小值
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.min([2,4,6,8])   // --> 2
 ```
@@ -153,7 +153,7 @@ mathUtil.min([2,4,6,8])   // --> 2
 ### minBy：迭代器版求最小值
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 var objects = [{ 'n': 1 }, { 'n': 2 }];
  
@@ -169,7 +169,7 @@ mathUtil.minBy(objects, 'n');
 ### inRange：判断是否在数字区间
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.inRange(3, 2, 4);
 // => true
@@ -196,7 +196,7 @@ mathUtil.inRange(-3, -2, -6);
 ### random：返回一个随机数
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.random(0, 5);
 // => an integer between 0 and 5

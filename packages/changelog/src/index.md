@@ -7,6 +7,7 @@ group:
   order: 3
   path: /commit
 title: changelog.md 自动化生成
+toc: content
 ---
 
 <embed src="../readme.md"></embed>

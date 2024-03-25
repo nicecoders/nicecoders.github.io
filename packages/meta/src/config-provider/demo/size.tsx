@@ -11,7 +11,7 @@ import {
   Space,
   Table,
   Tabs,
-} from '@nicecode/meta';
+} from 'antd';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
 
 const { TabPane } = Tabs;

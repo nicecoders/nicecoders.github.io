@@ -22,7 +22,7 @@ import {
   Switch,
   Typography,
   Dropdown,
-} from '@nicecode/meta';
+} from 'antd';
 
 dayjs.extend(customParseFormat);
 

@@ -1,6 +1,6 @@
 import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Avatar, Space } from 'antd';
+import { Avatar, Space } from '@nicecode/meta';
 
 const url = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, Button, Space } from 'antd';
+import { Avatar, Button, Space } from '@nicecode/meta';
 
 type SizeType = 'large' | 'small' | 'default' | number;
 

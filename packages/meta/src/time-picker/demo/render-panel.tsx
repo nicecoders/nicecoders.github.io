@@ -1,5 +1,5 @@
 import React from 'react';
-import { TimePicker } from '@nicecode/meta';
+import { TimePicker } from 'antd';
 
 const { _InternalPanelDoNotUseOrYouWillBeFired: InternalTimePicker } = TimePicker;
 

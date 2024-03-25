@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _inquirer = _interopRequireDefault(require("inquirer"));
-var _tools = require("@nicecode/tools");
+var _func = require("@nicecode/func");
 var _constants = require("../constants");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var _default = exports.default = function _default(config) {
@@ -30,7 +30,7 @@ var _default = exports.default = function _default(config) {
     validate: function (input) {
       var done = this.async();
       setTimeout(function () {
-        if (!(0, _tools.validator)('url').test(input)) {
+        if (!(0, _func.validator)('url').test(input)) {
           done('链接不正确，需要以Http(s):、或以ssh:开头');
           return;
         }

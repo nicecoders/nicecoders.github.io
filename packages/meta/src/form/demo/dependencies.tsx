@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Form, Input, Typography } from '@nicecode/meta';
+import { Alert, Form, Input, Typography } from 'antd';
 
 const App: React.FC = () => {
   const [form] = Form.useForm();

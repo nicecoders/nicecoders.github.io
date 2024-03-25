@@ -16,6 +16,7 @@ import genFontMapToken from '../shared/genFontMapToken';
 
 export default function derivative(token: SeedToken): MapToken {
   const colorPalettes = Object.keys(defaultPresetColors)
+    // @ts-ignore
     .map((colorKey: keyof PresetColorType) => {
       const colors = generate(token[colorKey]);
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputNumber, Space } from '@nicecode/meta';
+import { Button, InputNumber, Space } from 'antd';
 
 const App: React.FC = () => {
   const [value, setValue] = useState<string | number | null>('99');

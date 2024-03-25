@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/meta",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "原子组件",
   "keywords": [
     "meta",
@@ -43,6 +43,7 @@
     "@nicecode/meta": "workspace:^",
     "@rc-component/color-picker": "^1.5.1",
     "@rc-component/mutate-observer": "^1.1.0",
+    "@rc-component/tour": "^1.14.2",
     "@rc-component/trigger": "^1.18.2",
     "@turf/boolean-point-in-polygon": "^6.5.0",
     "@turf/turf": "^6.5.0",

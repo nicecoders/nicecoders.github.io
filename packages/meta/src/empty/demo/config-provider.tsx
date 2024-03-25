@@ -11,7 +11,7 @@ import {
   Table,
   Transfer,
   TreeSelect,
-} from '@nicecode/meta';
+} from 'antd';
 
 const customizeRenderEmpty = () => (
   <div style={{ textAlign: 'center' }}>

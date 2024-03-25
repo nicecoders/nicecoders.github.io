@@ -6,7 +6,7 @@ import type { WarningContextProps } from '../_util/warning';
 import type { ShowWaveEffect } from '../_util/wave/interface';
 import type { BadgeProps } from '../badge';
 import type { ButtonProps } from '../button';
-import type { DrawerProps } from '../drawer';
+// import type { DrawerProps } from '../drawer';
 import type { FlexProps } from '../flex/interface';
 import type { RequiredMark } from '../form/Form';
 import type { InputProps } from '../input';
@@ -81,10 +81,10 @@ export interface ButtonConfig extends ComponentStyleConfig {
   styles?: ButtonProps['styles'];
 }
 
-export interface DrawerConfig extends ComponentStyleConfig {
-  classNames?: DrawerProps['classNames'];
-  styles?: DrawerProps['styles'];
-}
+// export interface DrawerConfig extends ComponentStyleConfig {
+//   classNames?: DrawerProps['classNames'];
+//   styles?: DrawerProps['styles'];
+// }
 
 export interface FlexConfig extends ComponentStyleConfig {
   vertical?: FlexProps['vertical'];
@@ -141,7 +141,7 @@ export interface ConfigConsumerProps {
   anchor?: ComponentStyleConfig;
   button?: ButtonConfig;
   divider?: ComponentStyleConfig;
-  drawer?: DrawerConfig;
+  // drawer?: DrawerConfig;
   calendar?: ComponentStyleConfig;
   carousel?: ComponentStyleConfig;
   cascader?: ComponentStyleConfig;
@@ -190,17 +190,11 @@ export interface ConfigConsumerProps {
   warning?: WarningContextProps;
 }
 
-/**
- *
- * @param suffixCls
- * @param customizePrefixCls
- * @returns
- */
 const defaultGetPrefixCls = (suffixCls?: string, customizePrefixCls?: string) => {
   if (customizePrefixCls) {
     return customizePrefixCls;
   }
-  return suffixCls ? `nice-${suffixCls}` : 'nice';
+  return suffixCls ? `nicecode-${suffixCls}` : 'nicecode';
 };
 
 // zombieJ: 🚨 Do not pass `defaultRenderEmpty` here since it will cause circular dependency.

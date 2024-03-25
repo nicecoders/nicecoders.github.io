@@ -336,6 +336,7 @@ const InternalUpload: React.ForwardRefRenderFunction<UploadRef, UploadProps> = (
 
   const prefixCls = getPrefixCls('upload', customizePrefixCls);
 
+  // @ts-ignore
   const rcUploadProps = {
     onBatchStart,
     onError,

@@ -8,6 +8,10 @@ import { genStyleHooks, mergeToken } from '../../theme/internal';
 export interface ComponentToken {
   // Component token here
   /**
+   * 表格背景色
+   */
+  viewBg: string;
+  /**
    * @desc 标签背景色
    * @descEN Background color of label
    */
@@ -49,7 +53,8 @@ export interface ComponentToken {
   extraColor: string;
 }
 
-interface DescriptionsToken extends FullToken<'Descriptions'> {}
+interface DescriptionsToken extends FullToken<'Descriptions'> {
+}
 
 const genBorderedStyle = (token: DescriptionsToken): CSSObject => {
   const { componentCls, labelBg } = token;
@@ -57,6 +62,7 @@ const genBorderedStyle = (token: DescriptionsToken): CSSObject => {
     [`&${componentCls}-bordered`]: {
       [`> ${componentCls}-view`]: {
         border: `${unit(token.lineWidth)} ${token.lineType} ${token.colorSplit}`,
+        backgroundColor: `${token.viewBg}`,
         '> table': {
           tableLayout: 'auto',
           borderCollapse: 'collapse',
@@ -113,6 +119,7 @@ const genDescriptionStyles: GenerateStyle<DescriptionsToken> = (token) => {
     [componentCls]: {
       ...resetComponent(token),
       ...genBorderedStyle(token),
+      backgroundColor: token.viewBg,
       [`&-rtl`]: {
         direction: 'rtl',
       },
@@ -137,6 +144,7 @@ const genDescriptionStyles: GenerateStyle<DescriptionsToken> = (token) => {
       [`${componentCls}-view`]: {
         width: '100%',
         borderRadius: token.borderRadiusLG,
+        backgroundColor: token.viewBg,
         table: {
           width: '100%',
           tableLayout: 'fixed',
@@ -216,6 +224,7 @@ const genDescriptionStyles: GenerateStyle<DescriptionsToken> = (token) => {
   };
 };
 
+// @ts-ignore
 export const prepareComponentToken: GetDefaultToken<'Descriptions'> = (token) => ({
   labelBg: token.colorFillAlter,
   titleColor: token.colorText,

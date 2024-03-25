@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DownloadOutlined } from '@ant-design/icons';
-import { Button, Divider, Flex, Radio } from '@nicecode/meta';
+import { Button, Divider, Flex, Radio } from 'antd';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
 
 const App: React.FC = () => {

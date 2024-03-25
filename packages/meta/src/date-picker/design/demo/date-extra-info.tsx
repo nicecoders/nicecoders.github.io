@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React from 'react';
-import { DatePicker } from '@nicecode/meta';
+import { DatePicker } from 'antd';
 import { createStyles, css } from 'antd-style';
 import classNames from 'classnames';
 import type { Dayjs } from 'dayjs';

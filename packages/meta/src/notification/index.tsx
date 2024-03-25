@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import * as React from 'react';
 import { render } from 'rc-util/lib/React/render';
 
-import { AppConfigContext } from '../app/context';
-import ConfigProvider, { ConfigContext, globalConfig, warnContext } from '../config-provider';
+import ConfigProvider, { globalConfig, warnContext } from '../config-provider';
 import type { ArgsProps, GlobalConfigProps, NotificationInstance } from './interface';
 import PurePanel from './PurePanel';
 import useNotification, { useInternalNotification } from './useNotification';
@@ -34,10 +33,25 @@ let taskQueue: Task[] = [];
 let defaultGlobalConfig: GlobalConfigProps = {};
 
 function getGlobalContext() {
-  const { getContainer, rtl, maxCount, top, bottom } = defaultGlobalConfig;
-  const mergedContainer = getContainer?.() || document.body;
+  const {
+    prefixCls: globalPrefixCls,
+    getContainer: globalGetContainer,
+    rtl,
+    maxCount,
+    top,
+    bottom,
+  } = defaultGlobalConfig;
+  const mergedPrefixCls = globalPrefixCls ?? globalConfig().getPrefixCls('notification');
+  const mergedContainer = globalGetContainer?.() || document.body;
 
-  return { getContainer: () => mergedContainer, rtl, maxCount, top, bottom };
+  return {
+    prefixCls: mergedPrefixCls,
+    getContainer: () => mergedContainer!,
+    rtl,
+    maxCount,
+    top,
+    bottom,
+  };
 }
 
 interface GlobalHolderRef {
@@ -45,27 +59,26 @@ interface GlobalHolderRef {
   sync: () => void;
 }
 
-const GlobalHolder = React.forwardRef<
-  GlobalHolderRef,
-  { notificationConfig: GlobalConfigProps; sync: () => void }
->((props, ref) => {
-  const { notificationConfig, sync } = props;
+const GlobalHolder = React.forwardRef<GlobalHolderRef, {}>((_, ref) => {
+  const [notificationConfig, setNotificationConfig] =
+    React.useState<GlobalConfigProps>(getGlobalContext);
 
-  const { getPrefixCls } = useContext(ConfigContext);
-  const prefixCls = defaultGlobalConfig.prefixCls || getPrefixCls('notification');
-  const appConfig = useContext(AppConfigContext);
+  const [api, holder] = useInternalNotification(notificationConfig);
 
-  const [api, holder] = useInternalNotification({
-    ...notificationConfig,
-    prefixCls,
-    ...appConfig.notification,
-  });
+  const global = globalConfig();
+  const rootPrefixCls = global.getRootPrefixCls();
+  const rootIconPrefixCls = global.getIconPrefixCls();
+  const theme = global.getTheme();
+
+  const sync = () => {
+    setNotificationConfig(getGlobalContext);
+  };
 
   React.useEffect(sync, []);
 
   React.useImperativeHandle(ref, () => {
     const instance: NotificationInstance = { ...api };
-
+    // @ts-ignore
     Object.keys(instance).forEach((method: keyof NotificationInstance) => {
       instance[method] = (...args: any[]) => {
         sync();
@@ -79,28 +92,9 @@ const GlobalHolder = React.forwardRef<
     };
   });
 
-  return holder;
-});
-
-const GlobalHolderWrapper = React.forwardRef<GlobalHolderRef, {}>((_, ref) => {
-  const [notificationConfig, setNotificationConfig] =
-    React.useState<GlobalConfigProps>(getGlobalContext);
-
-  const sync = () => {
-    setNotificationConfig(getGlobalContext);
-  };
-
-  React.useEffect(sync, []);
-
-  const global = globalConfig();
-  const rootPrefixCls = global.getRootPrefixCls();
-  const rootIconPrefixCls = global.getIconPrefixCls();
-  const theme = global.getTheme();
-
-  const dom = <GlobalHolder ref={ref} sync={sync} notificationConfig={notificationConfig} />;
   return (
     <ConfigProvider prefixCls={rootPrefixCls} iconPrefixCls={rootIconPrefixCls} theme={theme}>
-      {global.holderRender ? global.holderRender(dom) : dom}
+      {holder}
     </ConfigProvider>
   );
 });
@@ -118,7 +112,7 @@ function flushNotice() {
     // Delay render to avoid sync issue
     act(() => {
       render(
-        <GlobalHolderWrapper
+        <GlobalHolder
           ref={(node) => {
             const { instance, sync } = node || {};
 
@@ -186,9 +180,8 @@ function setNotificationGlobalConfig(config: GlobalConfigProps) {
 }
 
 function open(config: ArgsProps) {
-  const global = globalConfig();
-
-  if (process.env.NODE_ENV !== 'production' && !global.holderRender) {
+  // Warning if exist theme
+  if (process.env.NODE_ENV !== 'production') {
     warnContext('notification');
   }
 
@@ -229,6 +222,7 @@ const methods: (keyof NoticeMethods)[] = ['success', 'info', 'warning', 'error']
 
 const baseStaticMethods: BaseMethods = {
   open,
+    // @ts-ignore
   destroy,
   config: setNotificationGlobalConfig,
   useNotification,
@@ -253,16 +247,6 @@ export let actWrapper: (wrapper: any) => void = noop;
 if (process.env.NODE_ENV === 'test') {
   actWrapper = (wrapper) => {
     act = wrapper;
-  };
-}
-
-/** @internal Only Work in test env */
-// eslint-disable-next-line import/no-mutable-exports
-export let actDestroy = noop;
-
-if (process.env.NODE_ENV === 'test') {
-  actDestroy = () => {
-    notification = null;
   };
 }
 

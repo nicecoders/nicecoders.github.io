@@ -8,12 +8,10 @@ import {
   PictureTwoTone,
   PlusOutlined,
 } from '@ant-design/icons';
-import { Modal, Upload } from '@nicecode/meta';
-import type { GetProp, UploadFile, UploadProps } from '@nicecode/meta';
+import { Modal, Upload } from 'antd';
+import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 
-type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
-
-const getBase64 = (file: FileType): Promise<string> =>
+const getBase64 = (file: RcFile): Promise<string> =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -58,7 +56,7 @@ const App: React.FC = () => {
 
   const handlePreview = async (file: UploadFile) => {
     if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj as FileType);
+      file.preview = await getBase64(file.originFileObj as RcFile);
     }
 
     setPreviewOpen(true);

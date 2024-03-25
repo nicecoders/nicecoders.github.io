@@ -1,6 +1,6 @@
 import { DownloadOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Button, Tooltip } from '@nicecode/meta';
+import { Button, Tooltip } from 'antd';
 import type { ButtonGroupProps } from 'antd/es/button';
 
 const CustomGroup: React.FC<ButtonGroupProps> = (props) => (

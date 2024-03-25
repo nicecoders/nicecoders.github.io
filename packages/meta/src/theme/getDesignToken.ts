@@ -11,6 +11,7 @@ const getDesignToken = (config?: ThemeConfig): AliasToken => {
     ...seedToken,
     ...config?.token,
   };
+            // @ts-ignore
   return getComputedToken(mergedToken, { override: config?.token }, theme, formatToken);
 };
 

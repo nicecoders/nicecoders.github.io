@@ -101,6 +101,7 @@ function useModal(): readonly [instance: HookAPI, contextHolder: React.ReactElem
               setActionQueue((prev) => [...prev, destroyAction]);
             }
           },
+          // @ts-ignore
           update: (newConfig: ModalFuncProps) => {
             function updateAction() {
               modalRef.current?.update(newConfig);

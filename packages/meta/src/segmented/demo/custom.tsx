@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserOutlined } from '@ant-design/icons';
-import { Avatar, Flex, Segmented } from '@nicecode/meta';
+import { Avatar, Flex, Segmented } from 'antd';
 
 const App: React.FC = () => (
   <Flex gap="small" align="flex-start" vertical>
@@ -9,7 +9,7 @@ const App: React.FC = () => (
         {
           label: (
             <div style={{ padding: 4 }}>
-              <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />
+              <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
               <div>User 1</div>
             </div>
           ),

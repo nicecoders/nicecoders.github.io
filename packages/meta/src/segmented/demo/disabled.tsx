@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Segmented } from '@nicecode/meta';
+import { Flex, Segmented } from 'antd';
 
 const App: React.FC = () => (
   <Flex gap="small" align="flex-start" vertical>

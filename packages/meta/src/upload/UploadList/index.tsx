@@ -57,6 +57,7 @@ const InternalUploadList: React.ForwardRefRenderFunction<UploadListRef, UploadLi
     if (listType !== 'picture' && listType !== 'picture-card' && listType !== 'picture-circle') {
       return;
     }
+    // @ts-ignore
     (items || []).forEach((file: InternalUploadFile) => {
       if (
         typeof document === 'undefined' ||

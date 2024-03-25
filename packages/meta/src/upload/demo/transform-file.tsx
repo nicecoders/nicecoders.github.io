@@ -1,7 +1,7 @@
 import React from 'react';
 import { UploadOutlined } from '@ant-design/icons';
-import type { UploadProps } from '@nicecode/meta';
-import { Button, Upload } from '@nicecode/meta';
+import type { UploadProps } from 'antd';
+import { Button, Upload } from 'antd';
 
 const props: UploadProps = {
   action: 'https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188',

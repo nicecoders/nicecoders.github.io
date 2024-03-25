@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, notification, Space } from '@nicecode/meta';
+import { Button, notification, Space } from 'antd';
 
 type NotificationType = 'success' | 'info' | 'warning' | 'error';
 

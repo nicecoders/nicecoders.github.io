@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Input, Select, Space, Tooltip, Typography } from '@nicecode/meta';
+import { Button, Form, Input, Select, Space, Tooltip, Typography } from 'antd';
 
 const { Option } = Select;
 

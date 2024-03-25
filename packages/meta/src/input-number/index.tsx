@@ -142,6 +142,7 @@ const InputNumber = React.forwardRef<HTMLInputElement, InputNumberProps>((props,
       classNames={{
         input: inputNumberClass,
       }}
+      // @ts-ignore
       classes={{
         affixWrapper: classNames(
           getStatusClassNames(`${prefixCls}-affix-wrapper`, mergedStatus, hasFeedback),

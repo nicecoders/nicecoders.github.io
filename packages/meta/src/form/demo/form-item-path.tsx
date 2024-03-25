@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Input, Button } from '@nicecode/meta';
-import type { FormItemProps } from '@nicecode/meta';
+import { Form, Input, Button } from 'antd';
+import type { FormItemProps } from 'antd';
 
 const MyFormItemContext = React.createContext<(string | number)[]>([]);
 

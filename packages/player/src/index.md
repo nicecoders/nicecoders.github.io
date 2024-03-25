@@ -6,6 +6,7 @@ group:
   title: 媒体
   order: 1
   path: /media
+toc: content
 title: 视频播放器
 ---
 

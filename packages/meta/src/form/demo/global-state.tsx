@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input, Typography } from '@nicecode/meta';
+import { Form, Input, Typography } from 'antd';
 
 const { Paragraph } = Typography;
 

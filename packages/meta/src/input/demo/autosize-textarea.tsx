@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input } from '@nicecode/meta';
+import { Input } from 'antd';
 
 const { TextArea } = Input;
 

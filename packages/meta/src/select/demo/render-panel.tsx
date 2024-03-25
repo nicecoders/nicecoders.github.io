@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Switch, Space } from '@nicecode/meta';
+import { Select, Switch, Space } from 'antd';
 
 const { _InternalPanelDoNotUseOrYouWillBeFired: InternalSelect } = Select;
 

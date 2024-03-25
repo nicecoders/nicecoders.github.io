@@ -3,6 +3,7 @@ category: Components
 subtitle: 开关
 group: 数据录入
 title: Switch 开关
+toc: content
 demo:
   cols: 2
 ---
@@ -59,7 +60,7 @@ demo:
 
 Form.Item 默认绑定值属性到 `value` 上，而 Switch 的值属性为 `checked`。你可以通过 `valuePropName` 来修改绑定的值属性。
 
-```ts | pure
+```tsx | pure
 <Form.Item name="fieldA" valuePropName="checked">
   <Switch />
 </Form.Item>

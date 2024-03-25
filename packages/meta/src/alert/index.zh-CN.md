@@ -1,7 +1,7 @@
 ---
 category: Components
 subtitle: 警告提示
-title: Alert
+title: Alert 警告提示
 demo:
   cols: 2
 group:
@@ -25,7 +25,7 @@ group:
 <code src="./demo/description.tsx">含有辅助性文字介绍</code>
 <code src="./demo/icon.tsx">图标</code>
 <code src="./demo/banner.tsx" iframe="250">顶部公告</code>
-<code src="./demo/loop-banner.tsx">轮播的公告</code>
+<!-- <code src="./demo/loop-banner.tsx">轮播的公告</code> -->
 <code src="./demo/smooth-closed.tsx">平滑地卸载</code>
 <code src="./demo/error-boundary.tsx">React 错误处理</code>
 <code src="./demo/custom-icon.tsx" debug>自定义图标</code>

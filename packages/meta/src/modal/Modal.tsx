@@ -135,6 +135,7 @@ const Modal: React.FC<ModalProps> = (props) => {
             footer={dialogFooter}
             visible={open ?? visible}
             mousePosition={restProps.mousePosition ?? mousePosition}
+          // @ts-ignore
             onClose={handleCancel}
             closable={mergedClosable}
             closeIcon={mergedCloseIcon}

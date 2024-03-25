@@ -2,9 +2,8 @@
 category: Components
 subtitle: 气泡卡片
 group: 数据展示
+toc: content
 title: Popover
-cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*XhL3QpRw92kAAAAAAAAAAAAADrJ8AQ/original
-coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*RMP_TrdZ3nsAAAAAAAAAAAAADrJ8AQ/original
 demo:
   cols: 2
 ---

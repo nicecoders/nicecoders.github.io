@@ -7,6 +7,7 @@ group:
   order: 3
   path: /commit
 title: git 提交模板
+toc: content
 ---
 
 <embed src="../readme.md"></embed>

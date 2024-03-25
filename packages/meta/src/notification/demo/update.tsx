@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, notification } from '@nicecode/meta';
+import { Button, notification } from 'antd';
 
 const key = 'updatable';
 

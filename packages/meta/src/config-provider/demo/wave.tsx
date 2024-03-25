@@ -1,6 +1,6 @@
 import { HappyProvider } from '@ant-design/happy-work-theme';
 import React from 'react';
-import { Button, ConfigProvider, Space } from '@nicecode/meta';
+import { Button, ConfigProvider, Space } from 'antd';
 
 type WaveConfig = NonNullable<Parameters<typeof ConfigProvider>[0]['wave']>;
 

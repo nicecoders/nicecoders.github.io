@@ -1,0 +1,44 @@
+$prefix: nicecode;
+
+:global {
+  // .nicecode-cropper-container {
+  //     width: 100px;
+  // }
+  .nicecode-viewer {
+    &-canvas {
+      // cursor: grab;
+      cursor: pointer;
+    }
+
+    //辅助class
+    &-invisible {
+      opacity: 0;
+    }
+
+    &-hide {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+    }
+
+    &-hidden {
+      display: none !important;
+    }
+
+    &-move {
+      cursor: move;
+    }
+
+    &-crop {
+      cursor: crosshair;
+    }
+
+    &-disabled &-drag-box,
+    &-disabled &-face,
+    &-disabled &-line,
+    &-disabled &-point {
+      cursor: not-allowed;
+    }
+  }
+}

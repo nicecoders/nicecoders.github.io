@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Popover, ConfigProvider } from '@nicecode/meta';
+import { Button, Popover, ConfigProvider } from 'antd';
 
 const text = <span>Title</span>;
 

@@ -64,9 +64,9 @@ const Validator = (type: ValidatorType['type']) =>  {
     color16: /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/,
     int: /^[-+]?\d*$/,
     float: /^[-\+]?\d+(\.\d+)?$/,
-    fileName: (arr) => {
-      arr = arr.map(name => `.${name}`).join('|')
-      return new RegExp(`(${arr})$`)
+    fileName: (arr: any) => {
+      let _arr = arr.map((name: any) => `.${name}`).join('|')
+      return new RegExp(`(${_arr})$`)
     },
     carNum: /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/,
     ipv4: /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,

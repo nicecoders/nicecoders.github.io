@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Popover } from '@nicecode/meta';
+import { Button, Popover } from 'antd';
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);

@@ -1,3 +1,4 @@
+// @ts-nocheck
 class Particale {
   warp: any;
   ctx: any;

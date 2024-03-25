@@ -1,6 +1,6 @@
 import type { AlignType } from '@rc-component/trigger';
 import type { PickerMode } from 'rc-picker/lib/interface';
-import type { SharedTimeProps } from 'rc-picker/lib/panels/TimePanel';
+import type { SharedTimeProps } from 'rc-picker/lib';
 import type { SelectCommonPlacement } from '../_util/motion';
 import type { DirectionType } from '../config-provider';
 import type { PickerLocale, PickerProps } from './generatePicker';
@@ -113,7 +113,7 @@ function toArray<T>(list: T | T[]): T[] {
   return Array.isArray(list) ? list : [list];
 }
 
-export function getTimeProps<DateType, DisabledTime>(
+export function getTimeProps<DateType extends object, DisabledTime>(
   props: { format?: string; picker?: PickerMode } & Omit<
     SharedTimeProps<DateType>,
     'disabledTime'

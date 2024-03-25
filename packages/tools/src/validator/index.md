@@ -16,7 +16,7 @@ group:
 ### 举个 🌰
 
 ```js
-import { validator } from '@nicecode/tools';
+import { validator } from '@nicecode/func';
 
 let specStrReg = validator('specStr');
 ```

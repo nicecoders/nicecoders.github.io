@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, FC } from 'react';
+import React, { useEffect, FC } from 'react';
 import './index.less'
 
 interface FrostedGlassProps {

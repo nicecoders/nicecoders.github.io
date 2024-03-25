@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Segmented } from '@nicecode/meta';
+import { ConfigProvider, Segmented } from 'antd';
 
 const Demo: React.FC = () => (
   <ConfigProvider

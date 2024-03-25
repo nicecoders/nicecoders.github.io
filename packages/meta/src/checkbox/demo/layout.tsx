@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox, Col, Row } from '@nicecode/meta';
-import type { CheckboxValueType } from 'antd/es/checkbox/Group';
+import type { CheckboxValueType } from '@nicecode/meta';
 
 const onChange = (checkedValues: CheckboxValueType[]) => {
   console.log('checked = ', checkedValues);

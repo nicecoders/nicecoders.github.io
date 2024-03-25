@@ -116,7 +116,9 @@ export function ConfirmContent(
   // ================= Context Value =================
   const btnCtxValue: ModalContextProps = {
     autoFocusButton,
+    // @ts-ignore
     cancelTextLocale,
+    // @ts-ignore
     okTextLocale,
     mergedOkCancel,
     ...resetProps,

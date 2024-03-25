@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input, Select, Space } from '@nicecode/meta';
+import { Button, Input, Select, Space } from 'antd';
 
 const style: React.CSSProperties = {
   width: 500,

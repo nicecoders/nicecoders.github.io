@@ -4,9 +4,8 @@ nav:
   path: /other
 group:
   title: 其它
-  order: 1
-  path: /media
 title: 敏感词库
+toc: content
 ---
 
 <embed src="../readme.md"></embed>

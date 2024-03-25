@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputNumber } from '@nicecode/meta';
+import { Button, InputNumber } from 'antd';
 
 const App: React.FC = () => {
   const [disabled, setDisabled] = useState(true);

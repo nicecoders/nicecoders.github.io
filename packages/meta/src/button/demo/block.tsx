@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex } from '@nicecode/meta';
+import { Button, Flex } from 'antd';
 
 const App: React.FC = () => (
   <Flex vertical gap="small" style={{ width: '100%' }}>

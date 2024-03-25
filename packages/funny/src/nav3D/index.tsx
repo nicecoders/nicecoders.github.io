@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect, FC } from 'react';
-import { noop } from '@nicecode/func'
+import React, { useState, useEffect, FC } from 'react';
 import './index.less'
 
 interface Nav3dProps {
@@ -9,19 +8,20 @@ interface Nav3dProps {
     link?: string
   }[];
   selectedKey: string;
-  onSelect: (item: Nav3dProps['items']) => void;
+  onSelect?: (item: Nav3dProps['items'][0]) => void;
 }
 
 const nav3D: FC<Nav3dProps> = (props) => {
-  const { items = [], selectedKey, onSelect = noop } = props;
+  const { items = [], selectedKey, onSelect } = props;
   const [selectKey, setSelectedKey] = useState(selectedKey)
 
   useEffect(() => {
   }, [])
 
-  const handleSelect = (e, item: Nav3dProps['items'][0]) => {
+  const handleSelect = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, item: Nav3dProps['items'][0]) => {
     e.preventDefault()
     setSelectedKey(item.value)
+    onSelect?.(item)
   }
 
   return (

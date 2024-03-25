@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Radio } from '@nicecode/meta';
+import { Button, Radio } from 'antd';
 
 const App: React.FC = () => {
   const [disabled, setDisabled] = useState(true);

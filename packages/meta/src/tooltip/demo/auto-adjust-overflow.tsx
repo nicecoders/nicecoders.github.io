@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TooltipProps } from '@nicecode/meta';
+import type { TooltipProps } from 'antd';
 import { Button, Tooltip, Typography } from '@nicecode/meta';
 
 const Block = React.forwardRef<HTMLDivElement, Partial<TooltipProps>>((props, ref) => (

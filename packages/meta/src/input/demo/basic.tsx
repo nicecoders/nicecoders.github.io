@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from '@nicecode/meta';
+import { Input } from 'antd';
 
 const App: React.FC = () => <Input placeholder="Basic usage" />;
 

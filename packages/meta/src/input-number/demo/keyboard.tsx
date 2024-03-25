@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Checkbox, InputNumber, Space } from '@nicecode/meta';
+import { Checkbox, InputNumber, Space } from 'antd';
 
 const App: React.FC = () => {
   const [keyboard, setKeyboard] = useState(true);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio } from '@nicecode/meta';
+import { Radio } from 'antd';
 
 const App: React.FC = () => (
   <>

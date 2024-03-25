@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { SelectProps } from '@nicecode/meta';
-import { Select, Space } from '@nicecode/meta';
+import type { SelectProps } from 'antd';
+import { Select, Space } from 'antd';
 
 interface ItemProps {
   label: string;

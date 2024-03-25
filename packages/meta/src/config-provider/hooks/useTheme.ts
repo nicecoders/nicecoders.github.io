@@ -42,6 +42,7 @@ export default function useTheme(
         ...parentThemeConfig.components,
       };
 
+      // @ts-ignore
       Object.keys(theme.components || {}).forEach((componentName: keyof OverrideToken) => {
         mergedComponents[componentName] = {
           ...mergedComponents[componentName],

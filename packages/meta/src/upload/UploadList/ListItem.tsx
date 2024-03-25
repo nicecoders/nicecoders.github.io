@@ -283,6 +283,7 @@ const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
         {itemRender
           ? itemRender(item, file, items, {
               download: onDownload.bind(null, file),
+              // @ts-ignore
               preview: onPreview.bind(null, file),
               remove: onClose.bind(null, file),
             })

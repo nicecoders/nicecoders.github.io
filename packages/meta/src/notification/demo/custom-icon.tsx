@@ -1,6 +1,6 @@
 import React from 'react';
 import { SmileOutlined } from '@ant-design/icons';
-import { Button, notification } from '@nicecode/meta';
+import { Button, notification } from 'antd';
 
 const App: React.FC = () => {
   const [api, contextHolder] = notification.useNotification();

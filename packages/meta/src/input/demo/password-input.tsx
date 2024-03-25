@@ -1,6 +1,6 @@
 import React from 'react';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { Button, Input, Space } from '@nicecode/meta';
+import { Button, Input, Space } from 'antd';
 
 const App: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = React.useState(false);

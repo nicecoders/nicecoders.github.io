@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PoweroffOutlined } from '@ant-design/icons';
-import { Button, Flex } from '@nicecode/meta';
+import { Button, Flex } from 'antd';
 
 const App: React.FC = () => {
   const [loadings, setLoadings] = useState<boolean[]>([]);

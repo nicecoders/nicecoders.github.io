@@ -1,13 +1,19 @@
 import type {
+  // @ts-ignore
   PickerBaseProps as RCPickerBaseProps,
+  // @ts-ignore
   PickerDateProps as RCPickerDateProps,
+  // @ts-ignore
   PickerTimeProps as RCPickerTimeProps,
-} from 'rc-picker/lib/Picker';
+} from 'rc-picker/lib/index';
 import type {
+  // @ts-ignore
   RangePickerBaseProps as RCRangePickerBaseProps,
+  // @ts-ignore
   RangePickerDateProps as RCRangePickerDateProps,
+  // @ts-ignore
   RangePickerTimeProps as RCRangePickerTimeProps,
-} from 'rc-picker/lib/RangePicker';
+} from 'rc-picker/lib/PickerPanel';
 import type { GenerateConfig } from 'rc-picker/lib/generate/index';
 import type { Locale as RcPickerLocale } from 'rc-picker/lib/interface';
 import type { InputStatus } from '../../_util/statusUtils';
@@ -78,9 +84,11 @@ export type RangePickerProps<DateType> =
 function generatePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
   // =========================== Picker ===========================
   const { DatePicker, WeekPicker, MonthPicker, YearPicker, TimePicker, QuarterPicker } =
+    // @ts-ignore
     generateSinglePicker(generateConfig);
 
   // ======================== Range Picker ========================
+  // @ts-ignore
   const RangePicker = generateRangePicker(generateConfig);
 
   // =========================== Export ===========================

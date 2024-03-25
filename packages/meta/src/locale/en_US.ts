@@ -1,5 +1,5 @@
 /* eslint-disable no-template-curly-in-string */
-import Pagination from 'rc-pagination/lib/locale/en_US';
+// import Pagination from 'rc-pagination/lib/locale/en_US';
 import type { Locale } from '.';
 import Calendar from '../calendar/locale/en_US';
 import DatePicker from '../date-picker/locale/en_US';
@@ -9,46 +9,47 @@ const typeTemplate = '${label} is not a valid ${type}';
 
 const localeValues: Locale = {
   locale: 'en',
-  Pagination,
+  // Pagination,
   DatePicker,
   TimePicker,
   Calendar,
   global: {
     placeholder: 'Please select',
   },
-  Table: {
-    filterTitle: 'Filter menu',
-    filterConfirm: 'OK',
-    filterReset: 'Reset',
-    filterEmptyText: 'No filters',
-    filterCheckall: 'Select all items',
-    filterSearchPlaceholder: 'Search in filters',
-    emptyText: 'No data',
-    selectAll: 'Select current page',
-    selectInvert: 'Invert current page',
-    selectNone: 'Clear all data',
-    selectionAll: 'Select all data',
-    sortTitle: 'Sort',
-    expand: 'Expand row',
-    collapse: 'Collapse row',
-    triggerDesc: 'Click to sort descending',
-    triggerAsc: 'Click to sort ascending',
-    cancelSort: 'Click to cancel sorting',
-  },
-  Tour: {
-    Next: 'Next',
-    Previous: 'Previous',
-    Finish: 'Finish',
-  },
+  // Table: {
+  //   filterTitle: 'Filter menu',
+  //   filterConfirm: 'OK',
+  //   filterReset: 'Reset',
+  //   filterEmptyText: 'No filters',
+  //   filterCheckall: 'Select all items',
+  //   filterSearchPlaceholder: 'Search in filters',
+  //   emptyText: 'No data',
+  //   selectAll: 'Select current page',
+  //   selectInvert: 'Invert current page',
+  //   selectNone: 'Clear all data',
+  //   selectionAll: 'Select all data',
+  //   sortTitle: 'Sort',
+  //   expand: 'Expand row',
+  //   collapse: 'Collapse row',
+  //   triggerDesc: 'Click to sort descending',
+  //   triggerAsc: 'Click to sort ascending',
+  //   cancelSort: 'Click to cancel sorting',
+  // },
+  // Tour: {
+  //   Next: 'Next',
+  //   Previous: 'Previous',
+  //   Finish: 'Finish',
+  // },
   Modal: {
     okText: 'OK',
     cancelText: 'Cancel',
     justOkText: 'OK',
   },
-  Popconfirm: {
-    okText: 'OK',
-    cancelText: 'Cancel',
-  },
+  // Popconfirm: {
+  //   okText: 'OK',
+  //   cancelText: 'Cancel',
+  // },
+  // @ts-ignore
   Transfer: {
     titles: ['', ''],
     searchPlaceholder: 'Search here',

@@ -95,6 +95,7 @@ export default function useResponsiveObserver() {
         if (!subscribers.size) this.unregister();
       },
       unregister() {
+        // @ts-ignore
         Object.keys(responsiveMap).forEach((screen: Breakpoint) => {
           const matchMediaQuery = responsiveMap[screen];
           const handler = this.matchHandlers[matchMediaQuery];
@@ -103,6 +104,7 @@ export default function useResponsiveObserver() {
         subscribers.clear();
       },
       register() {
+        // @ts-ignore
         Object.keys(responsiveMap).forEach((screen: Breakpoint) => {
           const matchMediaQuery = responsiveMap[screen];
           const listener = ({ matches }: { matches: boolean }) => {

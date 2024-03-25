@@ -1,6 +1,7 @@
 ---
 category: Components
 subtitle: 选择器
+toc: content
 group: 数据录入
 title: Select 选择器
 demo:

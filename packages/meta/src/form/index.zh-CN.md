@@ -1,8 +1,9 @@
 ---
 category: Components
 subtitle: 表单
-group: 数据录入
-title: Form
+toc: content
+group: 数据录入 
+title: Form 表单
 ---
 
 高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。
@@ -19,7 +20,6 @@ title: Form
 <code src="./demo/control-hooks.tsx">表单方法调用</code>
 <code src="./demo/layout.tsx">表单布局</code>
 <code src="./demo/disabled.tsx">表单禁用</code>
-<code src="./demo/variant.tsx" version="5.13.0">表单变体</code>
 <code src="./demo/required-mark.tsx">必选样式</code>
 <code src="./demo/size.tsx">表单尺寸</code>
 <code src="./demo/layout-can-wrap.tsx">表单标签可换行</code>
@@ -44,7 +44,7 @@ title: Form
 <code src="./demo/form-in-modal.tsx">弹出层中的新建表单</code>
 <code src="./demo/time-related-controls.tsx">时间类控件</code>
 <code src="./demo/without-form-create.tsx">自行处理表单数据</code>
-<code src="./demo/validate-static.tsx">自定义校验</code>
+<!-- <code src="./demo/validate-static.tsx">自定义校验</code> -->
 <code src="./demo/dynamic-rule.tsx">动态校验规则</code>
 <code src="./demo/dependencies.tsx">校验与更新依赖</code>
 <code src="./demo/validate-other.tsx">校验其他组件</code>
@@ -81,7 +81,6 @@ title: Form
 | size | 设置字段组件的尺寸（仅限 antd 组件） | `small` \| `middle` \| `large` | - |  |
 | validateMessages | 验证提示模板，说明[见下](#validatemessages) | [ValidateMessages](https://github.com/ant-design/ant-design/blob/6234509d18bac1ac60fbb3f92a5b2c6a6361295a/components/locale/en_US.ts#L88-L134) | - |  |
 | validateTrigger | 统一设置字段触发验证的时机 | string \| string\[] | `onChange` | 4.3.0 |
-| variant | 表单内控件变体 | `outlined` \| `borderless` \| `filled` | `outlined` | 5.13.0 |
 | wrapperCol | 需要为输入控件设置布局样式时，使用该属性，用法同 labelCol | [object](/components/grid-cn#col) | - |  |
 | onFieldsChange | 字段更新时触发回调事件 | function(changedFields, allFields) | - |  |
 | onFinish | 提交表单且数据验证成功后回调事件 | function(values) | - |  |
@@ -234,7 +233,7 @@ Form 通过增量更新方式，只更新被修改的字段相关组件以达到
 | name | 字段名，支持数组。List 本身也是字段，因而 `getFieldsValue()` 默认会返回 List 下所有值，你可以通过[参数](#getfieldsvalue)改变这一行为 | [NamePath](#namepath) | - |  |
 | rules | 校验规则，仅支持自定义规则。需要配合 [ErrorList](#formerrorlist) 一同使用。 | { validator, message }\[] | - | 4.7.0 |
 
-```js
+```ts
 <Form.List>
   {(fields) =>
     fields.map((field) => (
@@ -310,7 +309,7 @@ Form.List 渲染表单相关操作函数。
 
 #### validateFields
 
-```js
+```ts
 export interface ValidateConfig {
   // 5.5.0 新增。仅校验内容而不会将错误信息展示到 UI 上。
   validateOnly?: boolean;
@@ -366,7 +365,7 @@ validateFields()
 
 `4.20.0` 新增，获取当前上下文正在使用的 Form 实例，常见于封装子组件消费无需透传 Form 实例：
 
-```js
+```ts
 const Sub = () => {
   const form = Form.useFormInstance();
 
@@ -392,7 +391,7 @@ export default () => {
 
 用于直接获取 form 中字段对应的值。通过该 Hooks 可以与诸如 `useSWR` 进行联动从而降低维护成本：
 
-```js
+```ts
 const Demo = () => {
   const [form] = Form.useForm();
   const userName = Form.useWatch('username', form);
@@ -413,7 +412,7 @@ const Demo = () => {
 
 `useWatch` 默认只监听在 Form 中注册的字段，如果需要监听非注册字段，可以通过配置 `preserve` 进行监听：
 
-```js
+```ts
 const Demo = () => {
   const [form] = Form.useForm();
 
@@ -439,7 +438,7 @@ const Demo = () => {
 
 `4.22.0` 新增，可用于获取当前 Form.Item 的校验状态，如果上层没有 Form.Item，`status` 将会返回 `undefined`。`5.4.0` 新增 `errors` 和 `warnings`，可用于获取当前 Form.Item 的错误信息和警告信息：
 
-```js
+```ts
 const CustomInput = ({ value, onChange }) => {
   const { status, errors } = Form.Item.useStatus();
   return (
@@ -483,7 +482,7 @@ Form 仅会对变更的 Field 进行刷新，从而避免完整的组件刷新�
 
 当 `nameList` 为数组时，返回规定路径的值。需要注意的是，`nameList` 为嵌套数组。例如你需要某路径值应该如下：
 
-```js
+```ts
 // 单个路径
 form.getFieldsValue([['user', 'age']]);
 
@@ -502,7 +501,7 @@ form.getFieldsValue([
 
 用于过滤一些字段值，`meta` 会返回字段相关信息。例如可以用来获取仅被用户修改过的值等等。
 
-```js
+```ts
 type FilterFunc = (meta: { touched: boolean; validating: boolean }) => boolean;
 ```
 
@@ -521,7 +520,7 @@ type FilterFunc = (meta: { touched: boolean; validating: boolean }) => boolean;
 
 Rule 支持接收 object 进行配置，也支持 function 来动态获取 form 的数据：
 
-```js
+```ts
 type Rule = RuleConfig | ((form: FormInstance) => RuleConfig);
 ```
 
@@ -556,7 +555,7 @@ type Rule = RuleConfig | ((form: FormInstance) => RuleConfig);
 
 Form.Item 默认绑定值属性到 `value` 上，而 Switch、Checkbox 等组件的值属性为 `checked`。你可以通过 `valuePropName` 来修改绑定的值属性。
 
-```js | pure
+```ts | pure
 <Form.Item name="fieldA" valuePropName="checked">
   <Switch />
 </Form.Item>
@@ -629,7 +628,7 @@ Form.List 本身是 renderProps，内部样式非常自由。因而默认配置 
 
 Form.List 下的字段需要包裹 Form.List 本身的 `name`，比如：
 
-```js
+```ts
 <Form.List name="users">
   {(fields) =>
     fields.map((field) => (

@@ -120,6 +120,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>((props, ref) => 
       <RcSwitch
         {...restProps}
         checked={checked}
+        // @ts-ignore
         onChange={changeHandler}
         prefixCls={prefixCls}
         className={classes}

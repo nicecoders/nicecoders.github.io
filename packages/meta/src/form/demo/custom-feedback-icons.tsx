@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertFilled, CloseSquareFilled } from '@ant-design/icons';
-import { Button, Form, Input, Tooltip } from '@nicecode/meta';
+import { Button, Form, Input, Tooltip } from 'antd';
 import { createStyles, css } from 'antd-style';
 import { uniqueId } from '@nicecode/func';
 

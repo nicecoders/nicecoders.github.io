@@ -3,6 +3,7 @@ category: Components
 subtitle: 文字提示
 group: 数据展示
 title: Tooltip 文字提示
+toc: content
 demo:
   cols: 2
 ---

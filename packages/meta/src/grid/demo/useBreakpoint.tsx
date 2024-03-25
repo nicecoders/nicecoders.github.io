@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Tag } from '@nicecode/meta';
+import { Grid, Tag } from 'antd';
 
 const { useBreakpoint } = Grid;
 

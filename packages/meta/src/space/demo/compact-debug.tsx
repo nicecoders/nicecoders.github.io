@@ -14,7 +14,7 @@ import {
   DatePicker,
   Popover,
   Divider,
-} from '@nicecode/meta';
+} from 'antd';
 
 const { Option } = Select;
 

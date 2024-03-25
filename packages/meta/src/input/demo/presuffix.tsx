@@ -1,6 +1,6 @@
 import React from 'react';
 import { InfoCircleOutlined, UserOutlined } from '@ant-design/icons';
-import { Input, Tooltip } from '@nicecode/meta';
+import { Input, Tooltip } from 'antd';
 
 const App: React.FC = () => (
   <>

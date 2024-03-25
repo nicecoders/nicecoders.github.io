@@ -30,7 +30,7 @@ group:
 
 ```jsx
 import React from 'react';
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 export default () => (
   <div
@@ -59,7 +59,7 @@ before 的反向函数;此方法创建一个函数，当他被调用 n 或更多
 
 ```jsx
 import React from 'react';
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var saves = ['profile', 'settings'];
 
@@ -91,7 +91,7 @@ export default () => (
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var greet = function (greeting, punctuation) {
   return greeting + ' ' + this.user + punctuation;
@@ -128,7 +128,7 @@ bound('hi');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = {
   user: 'fred',
@@ -178,7 +178,7 @@ bound('hi');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 // 避免窗口在变动时出现昂贵的计算开销。
 jQuery(window).on('resize', funcUtil.debounce(calculateLayout, 150));
@@ -224,7 +224,7 @@ jQuery(window).on('popstate', debounced.cancel);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 // 避免在滚动时过分的更新定位
 jQuery(window).on('scroll', funcUtil.throttle(updatePosition, 100));
@@ -253,7 +253,7 @@ jQuery(window).on('popstate', throttled.cancel);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var abc = function (a, b, c) {
   return [a, b, c];
@@ -291,7 +291,7 @@ curried(1)(_, 3)(2);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var abc = function (a, b, c) {
   return [a, b, c];
@@ -330,7 +330,7 @@ curried(3)(1, _)(2);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 funcUtil.delay(
   function (text) {
@@ -357,7 +357,7 @@ funcUtil.delay(
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var initialize = funcUtil.once(createApplication);
 initialize();
@@ -381,7 +381,7 @@ initialize();
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 function doubled(n) {
   return n * 2;
@@ -421,7 +421,7 @@ func(10, 5);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var say = funcUtil.spread(function (who, what) {
   return who + ' says ' + what;
@@ -455,7 +455,7 @@ numbers.then(
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 funcUtil.getParameter('name', 'http://nicecoders.github.io?name=xxx');
 // => xxx
@@ -476,7 +476,7 @@ funcUtil.getParameter('name', 'http://nicecoders.github.io?name=xxx');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 funcUtil.addURLParameter('http://nicecoders.github.io', 'nicecode', 'nb');
 // => http://nicecoders.github.io?nicecode=nb
@@ -497,7 +497,7 @@ funcUtil.addURLParameter('http://nicecoders.github.io', 'nicecode', 'nb');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 funcUtil.updateURLParameter(
   'http://nicecoders.github.io?nicecode=x',
@@ -521,7 +521,7 @@ funcUtil.updateURLParameter(
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 funcUtil.removeURLParameter(
   'http://nicecoders.github.io?nicecode=nb',
@@ -544,7 +544,7 @@ funcUtil.removeURLParameter(
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 let list = [
   { key: 1, value: '男' },
@@ -569,7 +569,7 @@ funcUtil.getValueByKey(1, list);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 let list = [
   { key: 1, value: '男' },
@@ -595,7 +595,7 @@ funcUtil.getKeyByValue('男', list);
 
 ```jsx
 import React from 'react';
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 export default () => (
   <div onClick={() => funcUtil.copy('nicecode', () => alert('复制成功！'))}>

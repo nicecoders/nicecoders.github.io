@@ -15,7 +15,7 @@ import {
   Space,
   Switch,
   Upload,
-} from '@nicecode/meta';
+} from 'antd';
 
 const { Option } = Select;
 

@@ -12,6 +12,7 @@
  * isThirdApp - 判断是否在第三方合作App内
  * isQQ - 判断是否在QQ客户端内
  * isPc - 判断是否在PC环境
+ * isChrome - 判断是否在Chrome浏览器
  * inAlipayminiprogram - 判断是否在支付宝小程序内
  * getSceneType - 获取场景类型
  */
@@ -103,13 +104,41 @@ class App {
    * 判断是否在支付宝小程序内
    * @returns {Boolean} true-是，false-否
    */
-  inAlipayminiprogram = () => {
+  isAlipayMiniProgram = () => {
     const ua = navigator.userAgent.toLowerCase();
     if (ua.match(/alipayclient/i) && ua.match(/miniprogram/)) {
       return true;
     }
     return false;
   };
+
+  // 判断是否是浏览器环境
+  isBrowser = () => {
+    return !!(
+      typeof window !== 'undefined' &&
+      window.document &&
+      window.document.createElement
+    );
+  }
+
+  // 判断是否是 chrome 浏览器
+  isChrome = () =>{
+    const winNav = this.isBrowser() && window.navigator;
+    const vendorName = winNav && winNav?.vendor;
+    const userAgent = winNav && winNav.userAgent;
+
+    //@ts-ignore
+    const isChromium = isBrowser && typeof chrome !== 'undefined';
+
+    //@ts-ignore
+    const isOpera = isBrowser && typeof opr !== 'undefined';
+    const isIEedge = userAgent && userAgent.indexOf('Edge') > -1;
+
+    const isIOSChrome = !!(userAgent && userAgent.match('CriOS'));
+    const isDesktopChrome = isChromium && vendorName === 'Google Inc.' && !isOpera && !isIEedge;
+
+    return isIOSChrome || isDesktopChrome;
+  }
 
   /**
    * 获取场景类型
@@ -131,39 +160,27 @@ class App {
   getSceneType = () => {
     const userAgent = navigator.userAgent.toLowerCase();
 
-    if (this.inAlipayminiprogram()) {
+    if (this.isAlipayMiniProgram()) {
       return 'alipayMiniPrograms';
-    }
-
-    if (this.isAliPay()) {
+    } else if (this.isAliPay()) {
       return 'alipayClient';
-    }
-
-    if (this.isWeChat()) {
+    } else if (this.isWeChat()) {
       return 'wxClient';
-    }
-
-    if (this.isWxWorker()) {
+    } else if (this.isWxWorker()) {
       return 'wxWorkClient';
-    }
-
-    if (this.isDingTalk()) {
+    } else if (this.isDingTalk()) {
       return 'dingTalkClient';
-    }
-
-    if (this.isFeiShu()) {
+    } else if (this.isFeiShu()) {
       return 'larkClient';
-    }
-
-    if (userAgent.includes('jdapp')) {
+    } else if (userAgent.includes('jdapp')) {
       return 'jdJr';
-    }
-
-    if (userAgent.includes('jdjr')) {
+    } else if (userAgent.includes('jdjr')) {
       return 'jdJr';
+    } else if (this.isChrome()) {
+      return 'chrome'
+    } else {
+      return 'wap';
     }
-
-    return 'wap';
   };
 }
 

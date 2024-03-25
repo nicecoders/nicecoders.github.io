@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input } from '@nicecode/meta';
+import { Button, Input } from 'antd';
 
 const { TextArea } = Input;
 

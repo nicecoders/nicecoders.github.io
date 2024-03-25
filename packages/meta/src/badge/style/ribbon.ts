@@ -76,8 +76,10 @@ const genRibbonStyle: GenerateStyle<BadgeToken> = (token) => {
 
 // ============================== Export ==============================
 export default genStyleHooks(
+  // @ts-ignore
   ['Badge', 'Ribbon'],
   (token) => {
+    // @ts-ignore
     const badgeToken = prepareToken(token);
     return genRibbonStyle(badgeToken);
   },

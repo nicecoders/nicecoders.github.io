@@ -32,7 +32,7 @@ group:
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
  
@@ -57,7 +57,7 @@ objUtil.at(object, ['a[0].b.c', 'a[1]']);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 objUtil.defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
 // => { 'a': 1, 'b': 2 }
@@ -82,7 +82,7 @@ objUtil.defaults({ 'a': { 'b': 2 } }, { 'a': { 'b': 1, 'c': 3 } });
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var users = {
   'barney':  { 'age': 36, 'active': true },
@@ -119,7 +119,7 @@ objUtil.findKey(users, 'active');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var users = {
   'barney':  { 'age': 36, 'active': true },
@@ -156,7 +156,7 @@ objUtil.findLastKey(users, 'active');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 function Foo() {
   this.a = 1;
@@ -187,7 +187,7 @@ objUtil.forIn(new Foo, function(value, key) {
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 function Foo() {
   this.a = 1;
@@ -218,7 +218,7 @@ objUtil.forInRight(new Foo, function(value, key) {
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 function Foo() {
   this.a = 1;
@@ -249,7 +249,7 @@ objUtil.forOwn(new Foo, function(value, key) {
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 function Foo() {
   this.a = 1;
@@ -279,7 +279,7 @@ objUtil.forOwnRight(new Foo, function(value, key) {
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': [{ 'b': { 'c': 3 } }] };
  
@@ -307,7 +307,7 @@ objUtil.get(object, 'a.b.c', 'default');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': { 'b': 2 } };
 var other = objUtil.create({ 'a': objUtil.create({ 'b': 2 }) });
@@ -347,7 +347,7 @@ objUtil.has(other, 'b');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': 1, 'b': 2, 'c': 1 };
  
@@ -370,7 +370,7 @@ objUtil.invert(object);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': [{ 'b': { 'c': [1, 2, 3, 4] } }] };
  
@@ -394,7 +394,7 @@ objUtil.invoke(object, 'a[0].b.c.slice', 1, 3);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 objUtil.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
   return key + value;
@@ -418,7 +418,7 @@ objUtil.mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var users = {
   'fred':    { 'user': 'fred',    'age': 40 },
@@ -450,7 +450,7 @@ objUtil.mapValues(users, 'age');
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = {
   'a': [{ 'b': 2 }, { 'd': 4 }]
@@ -492,7 +492,7 @@ objUtil.merge(object, other, customizer);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': 1, 'b': '2', 'c': 3 };
  
@@ -516,7 +516,7 @@ objUtil.omitBy(object, objUtil.isNumber);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': 1, 'b': '2', 'c': 3 };
  
@@ -542,7 +542,7 @@ objUtil.pickBy(object, objUtil.isNumber);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = {};
  
@@ -564,7 +564,7 @@ objUtil.set(object, '[0][1]', 'a', Object);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': [{ 'b': { 'c': 7 } }] };
 objUtil.unset(object, 'a[0].b.c');
@@ -595,7 +595,7 @@ console.log(object);
 #### 🌰 例子
 
 ```js
-import { funcUtil } from '@nicecode/tools';
+import { funcUtil } from '@nicecode/func';
 
 var object = { 'a': [{ 'b': { 'c': 3 } }] };
  

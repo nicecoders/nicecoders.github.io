@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, message, Upload } from '@nicecode/meta';
-import type { GetProp, UploadFile, UploadProps } from '@nicecode/meta';
-
-type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
+import { Button, message, Upload } from 'antd';
+import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 
 const App: React.FC = () => {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -12,7 +10,7 @@ const App: React.FC = () => {
   const handleUpload = () => {
     const formData = new FormData();
     fileList.forEach((file) => {
-      formData.append('files[]', file as FileType);
+      formData.append('files[]', file as RcFile);
     });
     setUploading(true);
     // You can use any AJAX library you like

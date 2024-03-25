@@ -2,10 +2,10 @@
 category: Components
 subtitle: 包裹组件
 group: 其他
-title: App
+toc: content
+title: App 包裹组件
 demo:
   cols: 2
-tag: New
 ---
 
 新的包裹组件，提供重置样式和提供消费上下文的默认环境。
@@ -29,7 +29,7 @@ App 组件通过 `Context` 提供上下文方法调用，因而 useApp 需要作
 
 ```ts
 import React from 'react';
-import { App } from '@nicecode/meta';
+import { App } from 'antd';
 
 const MyPage: React.FC = () => {
   const { message, notification, modal } = App.useApp();
@@ -79,7 +79,7 @@ App 组件只能在 `ConfigProvider` 之下才能使用 Design Token， 如果�
 
 ```ts
 // Entry component
-import { App } from '@nicecode/meta';
+import { App } from 'antd';
 import type { MessageInstance } from 'antd/es/message/interface';
 import type { ModalStaticFunctions } from 'antd/es/modal/confirm';
 import type { NotificationInstance } from 'antd/es/notification/interface';
@@ -102,7 +102,7 @@ export { message, notification, modal };
 ```ts
 // sub page
 import React from 'react';
-import { Button, Space } from '@nicecode/meta';
+import { Button, Space } from 'antd';
 
 import { message } from './store';
 

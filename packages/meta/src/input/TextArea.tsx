@@ -93,6 +93,7 @@ const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
       disabled={mergedDisabled}
       allowClear={mergedAllowClear}
       className={classNames(cssVarCls, rootCls, className, rootClassName)}
+      // @ts-ignore
       classes={{
         affixWrapper: classNames(
           `${prefixCls}-textarea-affix-wrapper`,

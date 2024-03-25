@@ -5,7 +5,7 @@
 import { EllipsisOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
 import React, { useState } from 'react';
-import type { RadioChangeEvent, TourProps, UploadFile } from '@nicecode/meta';
+import type { RadioChangeEvent, TourProps, UploadFile } from 'antd';
 import {
   Upload,
   Tour,
@@ -29,7 +29,7 @@ import {
   Image,
   InputNumber,
   Divider,
-} from '@nicecode/meta';
+} from 'antd';
 import type { Locale } from 'antd/es/locale';
 import enUS from 'antd/locale/en_US';
 import zhCN from 'antd/locale/zh_CN';

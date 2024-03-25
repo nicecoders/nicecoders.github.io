@@ -1,7 +1,8 @@
 ---
 category: Components
 group: 数据展示
-title: Card
+title: Card 卡片
+toc: content
 subtitle: 卡片
 ---
 

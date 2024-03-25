@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Dayjs } from 'dayjs';
-import { Space, TimePicker } from '@nicecode/meta';
+import { Space, TimePicker } from 'antd';
 
 const onChange = (time: Dayjs, timeString: string) => {
   console.log(time, timeString);

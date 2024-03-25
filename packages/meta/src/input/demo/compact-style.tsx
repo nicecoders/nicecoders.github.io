@@ -1,6 +1,6 @@
 import { SearchOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Button, Input, Select, Space } from '@nicecode/meta';
+import { Button, Input, Select, Space } from 'antd';
 
 const { Search } = Input;
 

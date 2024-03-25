@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ConfigProvider, Flex } from '@nicecode/meta';
+import { Button, ConfigProvider, Flex } from 'antd';
 
 const App: React.FC = () => (
   <ConfigProvider

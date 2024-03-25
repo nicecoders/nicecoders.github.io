@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { RadioChangeEvent } from '@nicecode/meta';
-import { Radio, Select } from '@nicecode/meta';
+import type { RadioChangeEvent } from 'antd';
+import { Radio, Select } from 'antd';
 import type { SelectCommonPlacement } from 'antd/es/_util/motion';
 
 const App: React.FC = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Skeleton, Space } from '@nicecode/meta';
+import { Button, Skeleton, Space } from 'antd';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);

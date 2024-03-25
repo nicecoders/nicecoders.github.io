@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Segmented } from '@nicecode/meta';
+import { Segmented } from 'antd';
 
 const Demo: React.FC = () => {
   const [foo, setFoo] = useState<string | number>('AND');

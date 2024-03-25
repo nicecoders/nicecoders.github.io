@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Space, Switch } from '@nicecode/meta';
+import { Space, Switch } from 'antd';
 
 const style: React.CSSProperties = {
   width: 150,

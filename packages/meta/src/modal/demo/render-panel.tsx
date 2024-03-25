@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, Space, Typography } from '@nicecode/meta';
+import { Button, Modal, Space, Typography } from 'antd';
 import type { ModalFuncProps } from 'antd/es/modal/interface';
 
 /** Test usage. Do not use in your production. */

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress, Tooltip, Space } from '@nicecode/meta';
+import { Progress, Tooltip, Space } from 'antd';
 
 const App: React.FC = () => (
   <>

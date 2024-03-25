@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "nicecode-cli 各种框架脚手架合集",
   "keywords": [
     "cli",
@@ -41,7 +41,7 @@
     "url": "https://github.com/nicecoders/nicecode/issues"
   },
   "dependencies": {
-    "@nicecode/tools": "workspace:^",
+    "@nicecode/func": "workspace:^",
     "chalk": "^4.0.0",
     "commander": "^5.0.0",
     "cross-spawn": "^7.0.2",

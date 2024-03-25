@@ -25,6 +25,7 @@ export interface ComponentToken {
   withDescriptionIconSize: number;
 }
 
+// @ts-ignore
 type AlertToken = FullToken<'Alert'> & {
   // Custom token here
 };
@@ -54,10 +55,13 @@ export const genBaseStyle: GenerateStyle<AlertToken> = (token: AlertToken): CSSO
     lineHeight,
     borderRadiusLG: borderRadius,
     motionEaseInOutCirc,
+    // @ts-ignore
     withDescriptionIconSize,
     colorText,
     colorTextHeading,
+    // @ts-ignore
     withDescriptionPadding,
+    // @ts-ignore
     defaultPadding,
   } = token;
 
@@ -238,7 +242,7 @@ export const genActionStyle: GenerateStyle<AlertToken> = (token: AlertToken): CS
     },
   };
 };
-
+// @ts-ignore
 export const prepareComponentToken: GetDefaultToken<'Alert'> = (token) => {
   const paddingHorizontal = 12; // Fixed value here.
   return {
@@ -249,6 +253,7 @@ export const prepareComponentToken: GetDefaultToken<'Alert'> = (token) => {
 };
 
 export default genStyleHooks(
+  // @ts-ignore
   'Alert',
   (token) => [genBaseStyle(token), genTypeStyle(token), genActionStyle(token)],
   prepareComponentToken,

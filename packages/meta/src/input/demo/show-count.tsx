@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Input } from '@nicecode/meta';
+import { Flex, Input } from 'antd';
 
 const { TextArea } = Input;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import dayjs from 'dayjs';
-import { TimePicker } from '@nicecode/meta';
+import { TimePicker } from 'antd';
 
 const format = 'HH:mm';
 

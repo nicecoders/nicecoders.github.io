@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input } from '@nicecode/meta';
+import { Button, Checkbox, Form, Input } from 'antd';
 
 const onFinish = (values: any) => {
   console.log('Success:', values);

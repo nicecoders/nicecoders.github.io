@@ -29,7 +29,7 @@ group:
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 collectUtil.countBy([6.1, 4.2, 6.3], Math.floor);
 // => { '4': 1, '6': 2 }
@@ -54,7 +54,7 @@ collectUtil.countBy(['one', 'two', 'three'], 'length');
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'fred',   'age': 48 },
@@ -88,7 +88,7 @@ collectUtil.sortBy(users, 'user', function(o) {
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 collectUtil.sample([1, 2, 3, 4]);
 // => 2
@@ -108,7 +108,7 @@ collectUtil.sample([1, 2, 3, 4]);
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 collectUtil.sampleSize([1, 2, 3], 2);
 // => [3, 1]
@@ -130,7 +130,7 @@ collectUtil.sampleSize([1, 2, 3], 4);
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 collectUtil.shuffle([1, 2, 3, 4]);
 // => [4, 1, 3, 2]
@@ -151,7 +151,7 @@ collectUtil.shuffle([1, 2, 3, 4]);
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 collectUtil.size([1, 2, 3]);
 // => 3
@@ -179,7 +179,7 @@ collectUtil.size('pebbles');
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'barney',  'age': 36, 'active': false },
@@ -217,7 +217,7 @@ collectUtil.partition(users, 'active');
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 var users = [
   { 'user': 'fred',   'age': 48 },
@@ -247,7 +247,7 @@ collectUtil.orderBy(users, ['user', 'age'], ['asc', 'desc']);
 #### 🌰 例子
 
 ```js
-import { collectUtil } from '@nicecode/tools';
+import { collectUtil } from '@nicecode/func';
 
 function square(n) {
   return n * n;

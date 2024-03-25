@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TimePicker } from '@nicecode/meta';
+import { Button, TimePicker } from 'antd';
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);

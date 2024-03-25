@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputNumber } from '@nicecode/meta';
+import { InputNumber } from 'antd';
 
 /** Test usage. Do not use in your production. */
 const { _InternalPanelDoNotUseOrYouWillBeFired: InternalInputNumber } = InputNumber;

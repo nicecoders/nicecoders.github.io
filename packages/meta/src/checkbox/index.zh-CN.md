@@ -2,6 +2,7 @@
 category: Components
 subtitle: 多选框
 group: 数据录入
+toc: content
 title: Checkbox 多选框
 demo:
   cols: 2
@@ -80,7 +81,7 @@ interface Option {
 
 Form.Item 默认绑定值属性到 `value` 上，而 Checkbox 的值属性为 `checked`。你可以通过 `valuePropName` 来修改绑定的值属性。
 
-```ts | pure
+```tsx | pure
 <Form.Item name="fieldA" valuePropName="checked">
   <Checkbox />
 </Form.Item>

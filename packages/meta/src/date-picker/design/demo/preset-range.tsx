@@ -1,6 +1,6 @@
 import React from 'react';
-import { DatePicker } from '@nicecode/meta';
-import type { TimeRangePickerProps } from '@nicecode/meta';
+import { DatePicker } from 'antd';
+import type { TimeRangePickerProps } from 'antd';
 import dayjs from 'dayjs';
 
 const { _InternalRangePanelDoNotUseOrYouWillBeFired: PureRangePicker } = DatePicker;

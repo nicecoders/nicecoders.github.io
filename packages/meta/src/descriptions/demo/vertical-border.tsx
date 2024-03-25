@@ -1,6 +1,6 @@
 import React from 'react';
-import { Badge, Descriptions } from '@nicecode/meta';
-import type { DescriptionsProps } from '@nicecode/meta';
+import { Badge, Descriptions } from 'antd';
+import type { DescriptionsProps } from 'antd';
 
 const items: DescriptionsProps['items'] = [
   {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Radio } from '@nicecode/meta';
+import { ConfigProvider, Radio } from 'antd';
 
 const App: React.FC = () => (
   <ConfigProvider theme={{ token: { wireframe: true } }}>

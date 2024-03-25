@@ -51,7 +51,7 @@ export interface ComponentToken {
    */
   groupBorderColor: string;
 }
-
+// @ts-ignore
 type AvatarToken = FullToken<'Avatar'> & {
   avatarBgColor: string;
   avatarBg: string;
@@ -65,11 +65,17 @@ const genBaseStyle: GenerateStyle<AvatarToken> = (token) => {
     iconCls,
     avatarBg,
     avatarColor,
+  // @ts-ignore
     containerSize,
+    // @ts-ignore
     containerSizeLG,
+  // @ts-ignore
     containerSizeSM,
+    // @ts-ignore
     textFontSize,
+  // @ts-ignore
     textFontSizeLG,
+  // @ts-ignore
     textFontSizeSM,
     borderRadius,
     borderRadiusLG,
@@ -149,6 +155,7 @@ const genBaseStyle: GenerateStyle<AvatarToken> = (token) => {
 };
 
 const genGroupStyle: GenerateStyle<AvatarToken> = (token) => {
+  // @ts-ignore
   const { componentCls, groupBorderColor, groupOverlapping, groupSpace } = token;
 
   return {
@@ -170,7 +177,7 @@ const genGroupStyle: GenerateStyle<AvatarToken> = (token) => {
     },
   };
 };
-
+// @ts-ignore
 export const prepareComponentToken: GetDefaultToken<'Avatar'> = (token) => {
   const {
     controlHeight,
@@ -198,6 +205,7 @@ export const prepareComponentToken: GetDefaultToken<'Avatar'> = (token) => {
 };
 
 export default genStyleHooks(
+  // @ts-ignore
   'Avatar',
   (token) => {
     const { colorTextLightSolid, colorTextPlaceholder } = token;

@@ -13,7 +13,7 @@ interface TypingProps {
 
 const Typing: FC<TypingProps> = (props) => {
   const { title = '-', config } = props;
-  const ref = useRef()
+  const ref = useRef(null)
 
   useEffect(() => {
       let dom = new Typed(ref.current, {

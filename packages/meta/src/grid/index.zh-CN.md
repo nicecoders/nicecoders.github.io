@@ -2,7 +2,8 @@
 category: Components
 subtitle: 栅格
 group: 布局
-title: Grid 栅格
+titltoc: content
+: Grid 栅格
 ---
 
 24 栅格系统。

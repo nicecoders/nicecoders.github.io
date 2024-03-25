@@ -49,6 +49,7 @@ const PurePanel: React.FC<PurePanelProps> = (props) => {
       title: '',
       footer: '',
       children: (
+        // @ts-ignore
         <ConfirmContent
           {...props}
           prefixCls={prefixCls}

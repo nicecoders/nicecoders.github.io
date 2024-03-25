@@ -1,6 +1,6 @@
 import React from 'react';
-import type { InputRef } from '@nicecode/meta';
-import { Button, Form, Input } from '@nicecode/meta';
+import type { InputRef } from 'antd';
+import { Button, Form, Input } from 'antd';
 
 const App: React.FC = () => {
   const [form] = Form.useForm();

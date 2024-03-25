@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { RadioChangeEvent } from '@nicecode/meta';
-import { Button, Radio, Select, Space, Switch } from '@nicecode/meta';
+import type { RadioChangeEvent } from 'antd';
+import { Button, Radio, Select, Space, Switch } from 'antd';
 import type { SelectCommonPlacement } from 'antd/es/_util/motion';
 
 const randomOptions = (count?: number) => {

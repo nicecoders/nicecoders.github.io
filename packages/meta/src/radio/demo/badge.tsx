@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge, Radio } from '@nicecode/meta';
+import { Badge, Radio } from 'antd';
 
 const App: React.FC = () => (
   <Radio.Group buttonStyle="solid">

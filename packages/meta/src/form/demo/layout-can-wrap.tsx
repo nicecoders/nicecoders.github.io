@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Input } from '@nicecode/meta';
+import { Button, Form, Input } from 'antd';
 
 const App: React.FC = () => (
   <Form

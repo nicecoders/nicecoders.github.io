@@ -1,6 +1,6 @@
 {
   "name": "@nicecode/player",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "nicecode视频播放器",
   "keywords": [
     "视频播放器",
@@ -32,7 +32,6 @@
     "url": "https://github.com/nicecoders/nicecode/issues"
   },
   "dependencies": {
-    "@nicecode/player": "workspace:^",
     "xgplayer": "^2.31.6",
     "xgplayer-music": "^2.3.2"
   },

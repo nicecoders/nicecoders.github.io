@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Descriptions, Radio } from '@nicecode/meta';
-import type { RadioChangeEvent, DescriptionsProps } from '@nicecode/meta';
+import { Button, Descriptions, Radio } from 'antd';
+import type { RadioChangeEvent, DescriptionsProps } from 'antd';
 
 const borderedItems: DescriptionsProps['items'] = [
   {

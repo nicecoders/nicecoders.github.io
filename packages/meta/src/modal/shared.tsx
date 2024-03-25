@@ -59,7 +59,9 @@ export const Footer: React.FC<
     confirmLoading,
     okButtonProps,
     cancelButtonProps,
+    // @ts-ignore
     okTextLocale,
+    // @ts-ignore
     cancelTextLocale,
     okType,
     onOk,

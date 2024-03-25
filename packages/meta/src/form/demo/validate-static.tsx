@@ -10,7 +10,7 @@ import {
   Select,
   TimePicker,
   TreeSelect,
-} from '@nicecode/meta';
+} from 'antd';
 
 const { Option } = Select;
 

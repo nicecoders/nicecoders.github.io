@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Divider, Row } from '@nicecode/meta';
+import { Col, Divider, Row } from 'antd';
 
 const App: React.FC = () => (
   <>

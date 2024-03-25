@@ -1,5 +1,5 @@
 import React from 'react';
-import { App, Button, Space } from '@nicecode/meta';
+import { App, Button, Space } from 'antd';
 
 // Sub page
 const MyPage = () => {

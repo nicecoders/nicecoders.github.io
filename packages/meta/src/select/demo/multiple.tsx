@@ -1,6 +1,6 @@
 import React from 'react';
-import { Select, Space } from '@nicecode/meta';
-import type { SelectProps } from '@nicecode/meta';
+import { Select, Space } from 'antd';
+import type { SelectProps } from 'antd';
 
 const options: SelectProps['options'] = [];
 

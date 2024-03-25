@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Divider, Row } from '@nicecode/meta';
+import { Col, Divider, Row } from 'antd';
 
 const DemoBox: React.FC<{ children: React.ReactNode; value: number }> = (props) => (
   <p className={`height-${props.value}`}>{props.children}</p>

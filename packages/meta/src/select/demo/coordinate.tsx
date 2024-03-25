@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select, Space } from '@nicecode/meta';
+import { Select, Space } from 'antd';
 
 const provinceData = ['Zhejiang', 'Jiangsu'];
 

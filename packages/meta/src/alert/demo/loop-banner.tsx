@@ -1,6 +1,6 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import { Alert } from 'antd';
+import { Alert } from '@nicecode/meta';
 
 const App: React.FC = () => (
   <Alert

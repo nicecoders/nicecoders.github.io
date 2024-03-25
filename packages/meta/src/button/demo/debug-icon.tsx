@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, ConfigProvider, Divider, Flex, Radio, Tooltip } from '@nicecode/meta';
+import { Button, ConfigProvider, Divider, Flex, Radio, Tooltip } from 'antd';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
 
 const App: React.FC = () => {

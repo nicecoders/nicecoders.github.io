@@ -1,6 +1,6 @@
 import { SettingOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Cascader, InputNumber, Select, Space } from '@nicecode/meta';
+import { Cascader, InputNumber, Select, Space } from 'antd';
 
 const { Option } = Select;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Skeleton } from '@nicecode/meta';
+import { ConfigProvider, Skeleton } from 'antd';
 
 const App: React.FC = () => (
   <ConfigProvider

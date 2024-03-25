@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Space } from 'antd';
+import { Alert, Space } from '@nicecode/meta';
 
 const onClose = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
   console.log(e, 'I was closed.');

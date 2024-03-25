@@ -6,6 +6,7 @@ import CloseCircleFilled from '@ant-design/icons/CloseCircleFilled';
 import SwapRightOutlined from '@ant-design/icons/SwapRightOutlined';
 import classNames from 'classnames';
 import { RangePicker as RCRangePicker } from 'rc-picker';
+import type { RangePickerProps as RCRangePickerProps } from 'rc-picker';
 import type { GenerateConfig } from 'rc-picker/lib/generate/index';
 
 import type { RangePickerProps } from '.';
@@ -15,7 +16,7 @@ import { ConfigContext } from '../../config-provider';
 import DisabledContext from '../../config-provider/DisabledContext';
 import useSize from '../../config-provider/hooks/useSize';
 import { FormItemInputContext } from '../../form/context';
-import { useLocale } from '../../locale';
+import useLocale from '../../locale/useLocale';
 import { useCompactItemContext } from '../../space/Compact';
 import enUS from '../locale/en_US';
 import useStyle from '../style';
@@ -30,7 +31,7 @@ import type { CommonPickerMethods, PickerComponentClass } from './interface';
 import { useZIndex } from '../../_util/hooks/useZIndex';
 import useCSSVarCls from '../../config-provider/hooks/useCSSVarCls';
 
-export default function generateRangePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
+export default function generateRangePicker<DateType extends object>(generateConfig: GenerateConfig<DateType>) {
   type InternalRangePickerProps = RangePickerProps<DateType> & {};
   type DateRangePickerProps = RangePickerProps<DateType> & {
     /**
@@ -65,7 +66,7 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
       ...restProps
     } = props;
 
-    const innerRef = React.useRef<RCRangePicker<DateType>>(null);
+    const innerRef = React.useRef<RCRangePickerProps<DateType>>(null);
     const { getPrefixCls, direction, getPopupContainer, rangePicker } = useContext(ConfigContext);
     const prefixCls = getPrefixCls('picker', customizePrefixCls);
     const { compactSize, compactItemClassnames } = useCompactItemContext(prefixCls, direction);
@@ -77,6 +78,7 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
 
     const additionalOverrideProps: any = {
       ...(showTime ? getTimeProps({ format, picker, ...showTime }) : {}),
+      // @ts-ignore
       ...(picker === 'time' ? getTimeProps({ format, ...props, picker }) : {}),
     };
 
@@ -106,7 +108,9 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
     );
 
     useImperativeHandle(ref, () => ({
+      // @ts-ignore
       focus: () => innerRef.current?.focus(),
+      // @ts-ignore
       blur: () => innerRef.current?.blur(),
     }));
 

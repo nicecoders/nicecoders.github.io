@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React from 'react';
-import { DatePicker } from '@nicecode/meta';
+import { DatePicker } from 'antd';
 
 const { _InternalRangePanelDoNotUseOrYouWillBeFired: PureRangePicker } = DatePicker;
 

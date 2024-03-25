@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Space } from '@nicecode/meta';
+import { Button, Space } from 'antd';
 
 const App: React.FC = () => (
   <Space className="space-align-container" direction='vertical'>

@@ -105,6 +105,7 @@ const FormItemInput: React.FC<FormItemInputProps & FormItemInputMiscProps> = (pr
 
   const dom: React.ReactNode =
     formItemRender && formItemRender.mark === 'pro_table_render' && formItemRender.render ? (
+      // @ts-ignore
       formItemRender.render(props, { input: inputDom, errorList: errorListDom, extra: extraDom })
     ) : (
       <>

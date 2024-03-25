@@ -4,9 +4,8 @@ nav:
   path: /other
 group:
   title: 其它
-  order: 1
-  path: /other
 title: 代码片段
+toc: content
 ---
 
 <embed src="../readme.md"></embed>

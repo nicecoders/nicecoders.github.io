@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Checkbox, Divider } from '@nicecode/meta';
-import type { CheckboxChangeEvent } from 'antd/es/checkbox';
+import type { CheckboxChangeEvent } from '@nicecode/meta';
 import type { CheckboxValueType } from 'antd/es/checkbox/Group';
 
 const CheckboxGroup = Checkbox.Group;

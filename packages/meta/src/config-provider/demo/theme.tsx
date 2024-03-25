@@ -1,16 +1,11 @@
 import React from 'react';
 import {
   Button,
-  ColorPicker,
-  ConfigProvider,
   Divider,
-  Form,
   Input,
-  InputNumber,
   Space,
-  Switch,
+  ConfigProvider,
 } from '@nicecode/meta';
-import type { Color } from 'antd/es/color-picker';
 
 type ThemeData = {
   borderRadius: number;
@@ -30,8 +25,6 @@ const defaultData: ThemeData = {
 };
 
 export default () => {
-  const [form] = Form.useForm();
-
   const [data, setData] = React.useState<ThemeData>(defaultData);
 
   return (
@@ -56,46 +49,6 @@ export default () => {
         </Space>
       </ConfigProvider>
       <Divider />
-      <Form
-        form={form}
-        onValuesChange={(_, allValues) => {
-          setData({
-            ...allValues,
-          });
-        }}
-        name="theme"
-        initialValues={defaultData}
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 20 }}
-      >
-        <Form.Item
-          name="colorPrimary"
-          label="Primary Color"
-          trigger="onChangeComplete"
-          getValueFromEvent={(color: Color) => color.toHexString()}
-        >
-          <ColorPicker />
-        </Form.Item>
-        <Form.Item name="borderRadius" label="Border Radius">
-          <InputNumber />
-        </Form.Item>
-        <Form.Item label="Button">
-          <Form.Item name={['Button', 'algorithm']} valuePropName="checked" label="algorithm">
-            <Switch />
-          </Form.Item>
-          <Form.Item
-            name={['Button', 'colorPrimary']}
-            label="Primary Color"
-            trigger="onChangeComplete"
-            getValueFromEvent={(color: Color) => color.toHexString()}
-          >
-            <ColorPicker />
-          </Form.Item>
-        </Form.Item>
-        <Form.Item name="submit" wrapperCol={{ offset: 4, span: 20 }}>
-          <Button type="primary">Submit</Button>
-        </Form.Item>
-      </Form>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from '@nicecode/meta';
+import { Select } from 'antd';
 
 const App: React.FC = () => (
   <Select

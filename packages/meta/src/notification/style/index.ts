@@ -25,6 +25,7 @@ export interface ComponentToken {
   closeBtnHoverBg: string;
 }
 
+    // @ts-ignore
 export interface NotificationToken extends FullToken<'Notification'> {
   animationMaxHeight: number;
   notificationBg: string;
@@ -56,6 +57,7 @@ export const genNoticeStyle = (token: NotificationToken): CSSObject => {
     notificationMarginEdge,
     fontSize,
     lineHeight,
+    // @ts-ignore
     width,
     notificationIconSize,
     colorText,
@@ -151,6 +153,7 @@ export const genNoticeStyle = (token: NotificationToken): CSSObject => {
 
       '&:hover': {
         color: token.colorIconHover,
+        // @ts-ignore
         backgroundColor: token.closeBtnHoverBg,
       },
     },
@@ -195,6 +198,7 @@ const genNotificationStyle: GenerateStyle<NotificationToken> = (token) => {
         ...resetComponent(token),
 
         position: 'fixed',
+    // @ts-ignore
         zIndex: token.zIndexPopup,
         marginRight: {
           value: notificationMarginEdge,
@@ -266,6 +270,7 @@ export const prepareComponentToken = (token: AliasToken) => ({
 });
 
 export const prepareNotificationToken: (
+    // @ts-ignore
   token: Parameters<GenStyleFn<'Notification'>>[0],
 ) => NotificationToken = (token) => {
   const notificationPaddingVertical = token.paddingMD;
@@ -287,6 +292,7 @@ export const prepareNotificationToken: (
 };
 
 export default genStyleHooks(
+    // @ts-ignore
   'Notification',
   (token) => {
     const notificationToken = prepareNotificationToken(token);

@@ -1,8 +1,9 @@
 ---
-nav:
-  title: func
 title: 其它
+toc: content
 order: 4
+group: 
+  title: Func
 ---
 
 ## 获取谷歌浏览器版本

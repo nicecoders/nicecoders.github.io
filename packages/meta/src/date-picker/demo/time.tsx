@@ -1,6 +1,6 @@
 import React from 'react';
 import { DatePicker, Space } from '@nicecode/meta';
-import type { DatePickerProps, RangePickerProps } from 'antd/es/date-picker';
+import type { DatePickerProps, RangePickerProps } from '@nicecode/meta';
 
 const { RangePicker } = DatePicker;
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, InputNumber } from '@nicecode/meta';
+import { Form, InputNumber } from 'antd';
 
 type ValidateStatus = Parameters<typeof Form.Item>[0]['validateStatus'];
 

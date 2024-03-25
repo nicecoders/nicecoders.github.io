@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Popover } from '@nicecode/meta';
+import { Button, Popover } from 'antd';
 
 const content = (
   <div>

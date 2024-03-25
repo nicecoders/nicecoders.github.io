@@ -3,7 +3,7 @@ import { SmileOutlined } from '@ant-design/icons';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { TimePicker } from '@nicecode/meta';
+import { TimePicker } from 'antd';
 
 dayjs.extend(customParseFormat);
 

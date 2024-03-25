@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Form, Input } from '@nicecode/meta';
+import { Alert, Form, Input } from 'antd';
 
 const App: React.FC = () => (
   <Form name="trigger" style={{ maxWidth: 600 }} layout="vertical" autoComplete="off">

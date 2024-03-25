@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Radio, Space } from '@nicecode/meta';
+import { ConfigProvider, Radio, Space } from 'antd';
 
 const App: React.FC = () => (
   <ConfigProvider

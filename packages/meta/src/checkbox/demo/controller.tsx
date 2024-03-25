@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Checkbox } from '@nicecode/meta';
-import type { CheckboxChangeEvent } from 'antd/es/checkbox';
+import type { CheckboxChangeEvent } from '@nicecode/meta';
 
 const App: React.FC = () => {
   const [checked, setChecked] = useState(true);

@@ -1,5 +1,5 @@
 export const CROP_TYPE = {
-    CUSTOM: 'CSUTOM',
+    CUSTOM: 'CUSTOM',
     AUTO: 'AUTO',
 };
 

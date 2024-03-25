@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Input } from '@nicecode/meta';
+import { ConfigProvider, Input } from 'antd';
 
 const App: React.FC = () => (
   <ConfigProvider theme={{ token: { controlHeight: 28 } }}>

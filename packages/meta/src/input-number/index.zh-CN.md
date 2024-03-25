@@ -3,6 +3,7 @@ category: Components
 subtitle: 数字输入框
 group: 数据录入
 title: InputNumber 数字输入框
+toc: content
 demo:
   cols: 2
 ---

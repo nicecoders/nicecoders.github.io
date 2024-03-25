@@ -1,6 +1,6 @@
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
-import { Button, Modal, Space } from '@nicecode/meta';
+import { Button, Modal, Space } from 'antd';
 
 const LocalizedModal = () => {
   const [open, setOpen] = useState(false);

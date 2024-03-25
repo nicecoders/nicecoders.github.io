@@ -10,7 +10,7 @@ import {
   Select,
   Switch,
   TreeSelect,
-} from '@nicecode/meta';
+} from 'antd';
 
 type SizeType = Parameters<typeof Form>[0]['size'];
 

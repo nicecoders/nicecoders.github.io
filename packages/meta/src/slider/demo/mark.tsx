@@ -1,8 +1,8 @@
 import React from 'react';
 import { Slider } from '@nicecode/meta';
-import type { SliderSingleProps } from '@nicecode/meta';
+import type { SliderMarks } from '@nicecode/meta';
 
-const marks: SliderSingleProps['marks'] = {
+const marks: SliderMarks = {
   0: '0°C',
   26: '26°C',
   37: '37°C',

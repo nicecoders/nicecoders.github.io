@@ -3,6 +3,7 @@ category: Components
 subtitle: 水印
 group: 反馈
 title: Watermark 水印
+toc: content
 demo:
   cols: 1
 tag: New

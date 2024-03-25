@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex, Radio, Slider } from '@nicecode/meta';
+import { Button, Flex, Radio, Slider } from 'antd';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
 
 const App: React.FC = () => {

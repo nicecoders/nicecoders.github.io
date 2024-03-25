@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, message, Modal, notification, Select, Space, Switch } from '@nicecode/meta';
+import { Button, message, Modal, notification, Select, Space, Switch } from 'antd';
 
 const options = [
   {

@@ -2,7 +2,8 @@
 category: Components
 subtitle: 进度条
 group: 反馈
-title: Progress
+title: Progress 进度条
+toc: content
 demo:
   cols: 2
 ---

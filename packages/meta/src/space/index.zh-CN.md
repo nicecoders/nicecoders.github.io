@@ -2,6 +2,7 @@
 category: Components
 group: 布局
 subtitle: 间距
+toc: content
 title: Space 间距
 ---
 

@@ -15,7 +15,7 @@ import {
   Switch,
   TreeSelect,
   Upload,
-} from '@nicecode/meta';
+} from 'antd';
 
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;

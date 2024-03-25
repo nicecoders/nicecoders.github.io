@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from '@nicecode/meta';
+import { Col, Row } from 'antd';
 
 const App: React.FC = () => (
   <Row>

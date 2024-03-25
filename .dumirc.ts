@@ -13,6 +13,7 @@ export default defineConfig({
       github: 'https://github.com/nicecoders',
     },
   },
+  exportStatic: {},
   headScripts: [
     `
     <!-- GrowingIO Analytics code version 2.1 -->
@@ -45,7 +46,7 @@ export default defineConfig({
     docDirs: ['docs'],
     atomDirs: [
       { type: 'hooks', dir: 'packages/hooks/src' },
-      { type: 'utils', dir: 'packages/func/src' },
+      { type: 'func', dir: 'packages/func/src' },
       { type: 'meta', dir: 'packages/meta/src' },
       { type: 'types', dir: 'packages/types/src' },
       { type: 'funny', dir: 'packages/funny/src' },

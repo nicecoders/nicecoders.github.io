@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import type { InputRef } from '@nicecode/meta';
+import type { InputRef } from 'antd';
 
-import { Button, Input, Space, Switch } from '@nicecode/meta';
+import { Button, Input, Space, Switch } from 'antd';
 
 const App: React.FC = () => {
   const inputRef = useRef<InputRef>(null);

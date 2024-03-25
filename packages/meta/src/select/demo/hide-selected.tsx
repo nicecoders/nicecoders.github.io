@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select } from '@nicecode/meta';
+import { Select } from 'antd';
 
 const OPTIONS = ['Apples', 'Nails', 'Bananas', 'Helicopters'];
 

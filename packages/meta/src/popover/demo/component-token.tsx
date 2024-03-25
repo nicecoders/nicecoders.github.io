@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Popover } from '@nicecode/meta';
+import { ConfigProvider, Popover } from 'antd';
 
 const { _InternalPanelDoNotUseOrYouWillBeFired: InternalPopover } = Popover;
 

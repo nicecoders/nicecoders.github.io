@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Flex, Tooltip } from '@nicecode/meta';
+import { Button, Flex, Tooltip } from 'antd';
 
 const App: React.FC = () => (
   <Flex gap="small" vertical>

@@ -1,6 +1,6 @@
 import { AudioOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Input, Space } from '@nicecode/meta';
+import { Input, Space } from 'antd';
 import type { SearchProps } from '../Search';
 
 const { Search } = Input;

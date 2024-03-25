@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import * as React from 'react';
 import { render } from 'rc-util/lib/React/render';
 
-import { AppConfigContext } from '../app/context';
-import ConfigProvider, { ConfigContext, globalConfig, warnContext } from '../config-provider';
+import ConfigProvider, { globalConfig, warnContext } from '../config-provider';
 import type {
   ArgsProps,
   ConfigOptions,
@@ -57,10 +56,25 @@ let taskQueue: Task[] = [];
 let defaultGlobalConfig: ConfigOptions = {};
 
 function getGlobalContext() {
-  const { getContainer, duration, rtl, maxCount, top } = defaultGlobalConfig;
-  const mergedContainer = getContainer?.() || document.body;
+  const {
+    prefixCls: globalPrefixCls,
+    getContainer: globalGetContainer,
+    duration,
+    rtl,
+    maxCount,
+    top,
+  } = defaultGlobalConfig;
+  const mergedPrefixCls = globalPrefixCls ?? globalConfig().getPrefixCls('message');
+  const mergedContainer = globalGetContainer?.() || document.body;
 
-  return { getContainer: () => mergedContainer, duration, rtl, maxCount, top };
+  return {
+    prefixCls: mergedPrefixCls,
+    getContainer: () => mergedContainer!,
+    duration,
+    rtl,
+    maxCount,
+    top,
+  };
 }
 
 interface GlobalHolderRef {
@@ -68,21 +82,25 @@ interface GlobalHolderRef {
   sync: () => void;
 }
 
-const GlobalHolder = React.forwardRef<
-  GlobalHolderRef,
-  { messageConfig: ConfigOptions; sync: () => void }
->((props, ref) => {
-  const { messageConfig, sync } = props;
+const GlobalHolder = React.forwardRef<GlobalHolderRef, {}>((_, ref) => {
+  const [messageConfig, setMessageConfig] = React.useState<ConfigOptions>(getGlobalContext);
 
-  const { getPrefixCls } = useContext(ConfigContext);
-  const prefixCls = defaultGlobalConfig.prefixCls || getPrefixCls('message');
-  const appConfig = useContext(AppConfigContext);
+  const [api, holder] = useInternalMessage(messageConfig);
 
-  const [api, holder] = useInternalMessage({ ...messageConfig, prefixCls, ...appConfig.message });
+  const global = globalConfig();
+  const rootPrefixCls = global.getRootPrefixCls();
+  const rootIconPrefixCls = global.getIconPrefixCls();
+  const theme = global.getTheme();
+
+  const sync = () => {
+    setMessageConfig(getGlobalContext);
+  };
+
+  React.useEffect(sync, []);
 
   React.useImperativeHandle(ref, () => {
     const instance: MessageInstance = { ...api };
-
+    // @ts-ignore
     Object.keys(instance).forEach((method: keyof MessageInstance) => {
       instance[method] = (...args: any[]) => {
         sync();
@@ -95,27 +113,10 @@ const GlobalHolder = React.forwardRef<
       sync,
     };
   });
-  return holder;
-});
 
-const GlobalHolderWrapper = React.forwardRef<GlobalHolderRef, {}>((_, ref) => {
-  const [messageConfig, setMessageConfig] = React.useState<ConfigOptions>(getGlobalContext);
-
-  const sync = () => {
-    setMessageConfig(getGlobalContext);
-  };
-
-  React.useEffect(sync, []);
-
-  const global = globalConfig();
-  const rootPrefixCls = global.getRootPrefixCls();
-  const rootIconPrefixCls = global.getIconPrefixCls();
-  const theme = global.getTheme();
-
-  const dom = <GlobalHolder ref={ref} sync={sync} messageConfig={messageConfig} />;
   return (
     <ConfigProvider prefixCls={rootPrefixCls} iconPrefixCls={rootIconPrefixCls} theme={theme}>
-      {global.holderRender ? global.holderRender(dom) : dom}
+      {holder}
     </ConfigProvider>
   );
 });
@@ -133,7 +134,7 @@ function flushNotice() {
     // Delay render to avoid sync issue
     act(() => {
       render(
-        <GlobalHolderWrapper
+        <GlobalHolder
           ref={(node) => {
             const { instance, sync } = node || {};
 
@@ -250,9 +251,8 @@ function open(config: ArgsProps): MessageType {
 }
 
 function typeOpen(type: NoticeType, args: Parameters<TypeOpen>): MessageType {
-  const global = globalConfig();
-
-  if (process.env.NODE_ENV !== 'production' && !global.holderRender) {
+  // Warning if exist theme
+  if (process.env.NODE_ENV !== 'production') {
     warnContext('message');
   }
 
@@ -315,6 +315,7 @@ const methods: (keyof MessageMethods)[] = ['success', 'info', 'warning', 'error'
 
 const baseStaticMethods: BaseMethods = {
   open,
+// @ts-ignore
   destroy,
   config: setMessageGlobalConfig,
   useMessage,

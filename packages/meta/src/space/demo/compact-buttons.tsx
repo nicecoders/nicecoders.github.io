@@ -11,7 +11,7 @@ import {
   MailOutlined,
   MobileOutlined,
 } from '@ant-design/icons';
-import { Button, Menu, Dropdown, Space, Tooltip } from '@nicecode/meta';
+import { Button, Menu, Dropdown, Space, Tooltip } from 'antd';
 
 const App: React.FC = () => (
   <div>

@@ -1,6 +1,6 @@
 import { Theme } from '@ant-design/cssinjs';
 import * as React from 'react';
-import { Input } from '@nicecode/meta';
+import { Input } from 'antd';
 import theme from '..';
 import { render, renderHook } from '../../../tests/utils';
 import ConfigProvider from '../../config-provider';

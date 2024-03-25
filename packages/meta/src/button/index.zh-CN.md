@@ -4,6 +4,7 @@ title: Button 按钮
 subtitle: 按钮
 demo:
   cols: 2
+toc: content
 group:
   title: 通用
   order: 1

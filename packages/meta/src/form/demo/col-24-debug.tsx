@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Select, Form, Input, Divider } from '@nicecode/meta';
+import { Button, Select, Form, Input, Divider } from 'antd';
 
 const sharedItem = (
   <Form.Item

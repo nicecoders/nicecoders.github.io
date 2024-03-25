@@ -1,6 +1,6 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input } from '@nicecode/meta';
+import { Button, Checkbox, Form, Input } from 'antd';
 
 const App: React.FC = () => {
   const onFinish = (values: any) => {

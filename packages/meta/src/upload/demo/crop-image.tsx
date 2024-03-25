@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { Upload } from '@nicecode/meta';
-import type { GetProp, UploadFile, UploadProps } from '@nicecode/meta';
 import ImgCrop from 'antd-img-crop';
-
-type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
+import React, { useState } from 'react';
+import { Upload } from 'antd';
+import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 
 const App: React.FC = () => {
   const [fileList, setFileList] = useState<UploadFile[]>([
@@ -24,7 +22,7 @@ const App: React.FC = () => {
     if (!src) {
       src = await new Promise((resolve) => {
         const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj as FileType);
+        reader.readAsDataURL(file.originFileObj as RcFile);
         reader.onload = () => resolve(reader.result as string);
       });
     }

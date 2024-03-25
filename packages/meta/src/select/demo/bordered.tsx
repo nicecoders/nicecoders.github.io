@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Space } from '@nicecode/meta';
+import { Select, Space } from 'antd';
 
 const App: React.FC = () => (
   <Space wrap>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, Space } from '@nicecode/meta';
+import { Button, Modal, Space } from 'antd';
 
 const info = () => {
   Modal.info({

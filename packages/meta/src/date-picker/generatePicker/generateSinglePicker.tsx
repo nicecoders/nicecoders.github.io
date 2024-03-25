@@ -4,7 +4,8 @@ import CalendarOutlined from '@ant-design/icons/CalendarOutlined';
 import ClockCircleOutlined from '@ant-design/icons/ClockCircleOutlined';
 import CloseCircleFilled from '@ant-design/icons/CloseCircleFilled';
 import classNames from 'classnames';
-import RCPicker from 'rc-picker';
+import type { PickerProps as BasePickerProps } from 'rc-picker';
+import RCPicker from 'rc-picker'
 import type { GenerateConfig } from 'rc-picker/lib/generate/index';
 import type { PickerMode } from 'rc-picker/lib/interface';
 
@@ -31,7 +32,7 @@ import type { CommonPickerMethods, DatePickRef, PickerComponentClass } from './i
 import { useZIndex } from '../../_util/hooks/useZIndex';
 import useCSSVarCls from '../../config-provider/hooks/useCSSVarCls';
 
-export default function generatePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
+export default function generatePicker<DateType extends object>(generateConfig: GenerateConfig<DateType>) {
   type CustomPickerProps = {
     status?: InputStatus;
     hashId?: string;
@@ -77,14 +78,16 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
 
         const prefixCls = getPrefixCls('picker', customizePrefixCls);
         const { compactSize, compactItemClassnames } = useCompactItemContext(prefixCls, direction);
-        const innerRef = React.useRef<RCPicker<DateType>>(null);
+        const innerRef = React.useRef<BasePickerProps<DateType>>(null);
         const { format, showTime } = props as any;
 
         const rootCls = useCSSVarCls(prefixCls);
         const [wrapCSSVar, hashId, cssVarCls] = useStyle(prefixCls, rootCls);
 
         useImperativeHandle(ref, () => ({
+          // @ts-ignore
           focus: () => innerRef.current?.focus(),
+          // @ts-ignore
           blur: () => innerRef.current?.blur(),
         }));
 

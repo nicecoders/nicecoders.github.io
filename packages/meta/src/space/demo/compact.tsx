@@ -12,7 +12,7 @@ import {
   TimePicker,
   Tooltip,
   TreeSelect,
-} from '@nicecode/meta';
+} from 'antd';
 
 const { Option } = Select;
 const { TreeNode } = TreeSelect;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, Space } from '@nicecode/meta';
+import { Button, Modal, Space } from 'antd';
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);

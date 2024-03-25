@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { Dayjs } from 'dayjs';
 import type { DatePickerProps } from '@nicecode/meta';
 import { DatePicker, Space } from '@nicecode/meta';
-import type { RangePickerProps } from 'antd/es/date-picker';
+import type { RangePickerProps } from '@nicecode/meta';
 
 const { RangePicker } = DatePicker;
 

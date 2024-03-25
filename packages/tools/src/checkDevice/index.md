@@ -16,7 +16,7 @@ group:
 ### isIos
 
 ```js
-import { checkDevice } from '@nicecode/tools';
+import { checkDevice } from '@nicecode/func';
 
 const Demo = () => {
   const isIos = checkDevice.isIos();
@@ -30,7 +30,7 @@ export default Demo;
 ### isAndroid
 
 ```js
-import { checkDevice } from '@nicecode/tools';
+import { checkDevice } from '@nicecode/func';
 
 const Demo = () => {
   const isAndroid = checkDevice.isAndroid();
@@ -44,7 +44,7 @@ export default Demo;
 ### isQQ
 
 ```js
-import { checkDevice } from '@nicecode/tools';
+import { checkDevice } from '@nicecode/func';
 
 const Demo = () => {
   const isQQ = checkDevice.isQQ();
@@ -69,5 +69,6 @@ export default Demo;
 | isJRApp             | 判断是否在京东金融客户端内 | function | -      |
 | isQQ                | 判断是否在 QQ 客户端内     | function | -      |
 | isPc                | 判断是否在 PC 环境         | function | -      |
-| inAlipayminiprogram | 判断是否在支付宝小程序内   | function | -      |
+| isAlipayMiniProgram | 判断是否在支付宝小程序内   | function | -      |
+| isChrome | 判断是否在chrome 浏览器   | function | -      |
 | getSceneType        | 获取场景类型               | function | -      |

@@ -75,6 +75,10 @@ const resetForm = (token: AliasToken): CSSObject => ({
     borderBottom: `${unit(token.lineWidth)} ${token.lineType} ${token.colorBorder}`,
   },
 
+  label: {
+    fontSize: token.fontSize,
+  },
+
   'input[type="search"]': {
     boxSizing: 'border-box',
   },

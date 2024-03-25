@@ -1,6 +1,6 @@
 import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Avatar, Badge, Space } from 'antd';
+import { Avatar, Badge, Space } from '@nicecode/meta';
 
 const App: React.FC = () => (
   <Space size={24}>

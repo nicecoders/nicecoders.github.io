@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input } from '@nicecode/meta';
+import { Form, Input } from 'antd';
 
 const App: React.FC = () => (
   <Form style={{ maxWidth: 600 }}>

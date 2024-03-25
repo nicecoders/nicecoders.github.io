@@ -1,8 +1,8 @@
 ---
-nav:
-  title: func
-  order: 2
 title: 文件处理
+toc: content
+group:
+  title: File
 ---
 
 ## url转Img

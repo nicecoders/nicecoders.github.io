@@ -3,19 +3,19 @@ import { createStyles } from 'antd-style';
 import { Tabs } from '@nicecode/meta';
 
 const useStyle = createStyles(({ token, css }) => {
-  const niceTabsCls = '.nice-tabs';
+  const nicecodeTabsCls = '.nicecode-tabs';
 
   return css`
-    ${niceTabsCls}${niceTabsCls}-card {
-      ${niceTabsCls}-content {
+    ${nicecodeTabsCls}${nicecodeTabsCls}-card {
+      ${nicecodeTabsCls}-content {
         padding: ${token.padding}px;
         background: ${token.colorBgContainer};
       }
 
-      ${niceTabsCls}-nav {
+      ${nicecodeTabsCls}-nav {
         margin: 0;
 
-        ${niceTabsCls}-nav-wrap > ${niceTabsCls}-nav-list > ${niceTabsCls}-tab {
+        ${nicecodeTabsCls}-nav-wrap > ${nicecodeTabsCls}-nav-list > ${nicecodeTabsCls}-tab {
           background: transparent;
           border-color: transparent;
 

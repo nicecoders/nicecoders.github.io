@@ -2,6 +2,7 @@
 group: 数据录入
 category: Components
 subtitle: 标签页
+toc: content
 title: Tabs 标签页
 ---
 

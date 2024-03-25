@@ -16,6 +16,7 @@ const useLocale = <C extends LocaleComponentName = LocaleComponentName>(
     const locale = defaultLocale || defaultLocaleData[componentName];
     const localeFromContext = fullLocale?.[componentName] ?? {};
     return {
+      // @ts-ignore
       ...(typeof locale === 'function' ? locale() : locale),
       ...(localeFromContext || {}),
     };

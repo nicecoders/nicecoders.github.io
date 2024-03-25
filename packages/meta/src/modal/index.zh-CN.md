@@ -2,6 +2,7 @@
 group: 反馈
 category: Components
 subtitle: 对话框
+toc: content
 title: Modal 对话框
 demo:
   cols: 2

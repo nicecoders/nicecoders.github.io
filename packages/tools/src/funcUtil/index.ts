@@ -8,9 +8,18 @@ import delay from 'lodash/delay';
 import once from 'lodash/once';
 import overArgs from 'lodash/overArgs';
 import spread from 'lodash/spread';
+import noop from 'lodash/noop';
+import isFunction from 'lodash/isFunction';
+import uniqueId from 'lodash/uniqueId';
 
 
 export default {
+  // 唯一值
+  uniqueId,
+  // 判断是否为函数
+  isFunction,
+  // 初始化一个空函数
+  noop,
   /**
    * 创建一个调用func的函数，通过this绑定和创建函数的参数调用func，调用次数不超过 n 次。 之后再调用这个函数，将返回一次最后调用func的结果。
    */

@@ -1,5 +1,5 @@
 /* eslint-disable no-template-curly-in-string */
-import Pagination from 'rc-pagination/lib/locale/zh_CN';
+// import Pagination from 'rc-pagination/lib/locale/zh_CN';
 import type { Locale } from '.';
 import Calendar from '../calendar/locale/zh_CN';
 import DatePicker from '../date-picker/locale/zh_CN';
@@ -9,7 +9,7 @@ const typeTemplate = '${label}不是一个有效的${type}';
 
 const localeValues: Locale = {
   locale: 'zh-cn',
-  Pagination,
+  // Pagination,
   DatePicker,
   TimePicker,
   Calendar,
@@ -17,29 +17,30 @@ const localeValues: Locale = {
   global: {
     placeholder: '请选择',
   },
-  Table: {
-    filterTitle: '筛选',
-    filterConfirm: '确定',
-    filterReset: '重置',
-    filterEmptyText: '无筛选项',
-    filterCheckall: '全选',
-    filterSearchPlaceholder: '在筛选项中搜索',
-    selectAll: '全选当页',
-    selectInvert: '反选当页',
-    selectNone: '清空所有',
-    selectionAll: '全选所有',
-    sortTitle: '排序',
-    expand: '展开行',
-    collapse: '关闭行',
-    triggerDesc: '点击降序',
-    triggerAsc: '点击升序',
-    cancelSort: '取消排序',
-  },
+  // Table: {
+  //   filterTitle: '筛选',
+  //   filterConfirm: '确定',
+  //   filterReset: '重置',
+  //   filterEmptyText: '无筛选项',
+  //   filterCheckall: '全选',
+  //   filterSearchPlaceholder: '在筛选项中搜索',
+  //   selectAll: '全选当页',
+  //   selectInvert: '反选当页',
+  //   selectNone: '清空所有',
+  //   selectionAll: '全选所有',
+  //   sortTitle: '排序',
+  //   expand: '展开行',
+  //   collapse: '关闭行',
+  //   triggerDesc: '点击降序',
+  //   triggerAsc: '点击升序',
+  //   cancelSort: '取消排序',
+  // },
   Modal: {
     okText: '确定',
     cancelText: '取消',
     justOkText: '知道了',
   },
+  // @ts-ignore
   Tour: {
     Next: '下一步',
     Previous: '上一步',

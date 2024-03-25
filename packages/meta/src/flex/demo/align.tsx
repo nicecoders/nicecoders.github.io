@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Flex, Segmented } from '@nicecode/meta';
-import type { FlexProps } from '@nicecode/meta';
+import { Button, Flex, Segmented } from 'antd';
+import type { FlexProps } from 'antd';
 import type { SegmentedProps } from 'antd/es/segmented';
 
 const boxStyle: React.CSSProperties = {

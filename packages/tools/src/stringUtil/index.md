@@ -20,7 +20,7 @@ group:
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 let fen = stringUtil.camelCase('fuck_you_asshole');   // ---> fuckYouAsshole
 ```
@@ -32,7 +32,7 @@ let fen = stringUtil.camelCase('fuck_you_asshole');   // ---> fuckYouAsshole
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.capitalize('FUCK');
 // => 'Fuck'
@@ -45,7 +45,7 @@ stringUtil.capitalize('FUCK');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.endsWith('fuck', 'c');
 // => false
@@ -64,7 +64,7 @@ stringUtil.endsWith('fuck', 'c', 3);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.escape('fred, barney, & pebbles');
 // => 'fred, barney, &amp; pebbles'
@@ -77,7 +77,7 @@ stringUtil.escape('fred, barney, & pebbles');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.unescape('json, HM, &amp; nicecode');
 // => 'json, HM, & nicecode'
@@ -90,7 +90,7 @@ stringUtil.unescape('json, HM, &amp; nicecode');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.escapeRegExp('[nicecode](https://nicecoders.github.io)');
 // => '\[nicecode\]\(https://nicecoders\.github.io\)'
@@ -103,7 +103,7 @@ stringUtil.escapeRegExp('[nicecode](https://nicecoders.github.io)');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.kebabCase('fuck you');
 // => 'fuck-you'
@@ -122,7 +122,7 @@ stringUtil.kebabCase('__fuck_you__');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.lowerCase('--Fuck-You--');
 // => 'fuck you'
@@ -143,7 +143,7 @@ stringUtil.lowerCase('__FUCK_YOU__');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.lowerFirst('Fuck');
 // => 'fuck'
@@ -159,7 +159,7 @@ stringUtil.lowerFirst('FUCK');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.upperFirst('fuck');
 // => 'Fuck'
@@ -176,7 +176,7 @@ stringUtil.upperFirst('FUCK');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.upperCase('--Fuck-You--');
 // => 'FUCK YOU'
@@ -195,7 +195,7 @@ stringUtil.upperCase('__fuck_you__');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.pad('fuck', 8);
 // => '  fuck  '
@@ -214,7 +214,7 @@ stringUtil.pad('fuck', 3);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.padEnd('fuck', 8);
 // => 'fuck    '
@@ -233,7 +233,7 @@ stringUtil.padEnd('fuck', 3);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.padStart('fuck', 8);
 // => '    fuck'
@@ -252,7 +252,7 @@ stringUtil.padStart('fuck', 3);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.repeat('**', 2);
 // => '****'
@@ -271,7 +271,7 @@ stringUtil.repeat('fuck', 0);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.replace('Hi bro', 'bro', 'asshole');
 // => 'Hi asshole'
@@ -284,7 +284,7 @@ stringUtil.replace('Hi bro', 'bro', 'asshole');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.snakeCase('Foo Bar');
 // => 'foo_bar'
@@ -303,7 +303,7 @@ stringUtil.snakeCase('--FOO-BAR--');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.split('f-u-c-k', '-', 2);
 // => ['f', 'u']
@@ -316,7 +316,7 @@ stringUtil.split('f-u-c-k', '-', 2);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.startCase('--fuck-you--');
 // => 'fuck you'
@@ -335,7 +335,7 @@ stringUtil.startCase('__FUCK_YOU__');
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.startsWith('fuck', 'f');
 // => true
@@ -356,7 +356,7 @@ stringUtil.startsWith('fuck', 'u', 1);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 // 使用 "interpolate" 分隔符创建编译模板
 var compiled = stringUtil.template('hello <%= user %>!');
@@ -424,7 +424,7 @@ fs.writeFileSync(path.join(cwd, 'jst.js'), '\
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.trim('  Fuck-You  ');
 // => 'fuck-you'
@@ -440,7 +440,7 @@ stringUtil.trim('-_fuckYou_-', '_-);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.trim('  Fuck-You  ');
 // => '  fuck-you'
@@ -456,7 +456,7 @@ stringUtil.trim('-_fuckYou_-', '_-);
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.trimStart('  Fuck-You  ');
 // => 'fuck-you  '
@@ -482,7 +482,7 @@ stringUtil.trimStart('-_fuckYou_-', '_-);
 #### 🌰 例子
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.truncate('hi-json-ho there, neighborino');
 // => 'hi-json-ho there, neighbo...'
@@ -512,7 +512,7 @@ stringUtil.truncate('hi-json-ho there, neighborino', {
 </Alert>
 
 ```js
-import { stringUtil } from '@nicecode/tools';
+import { stringUtil } from '@nicecode/func';
 
 stringUtil.words('fred, barney, & pebbles');
 // => ['fred', 'barney', 'pebbles']

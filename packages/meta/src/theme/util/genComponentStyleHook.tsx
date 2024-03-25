@@ -76,6 +76,7 @@ const getDefaultComponentToken = <C extends OverrideComponent>(
   getDefaultToken: GetDefaultToken<C>,
 ) => {
   if (typeof getDefaultToken === 'function') {
+    // @ts-ignore
     return getDefaultToken(mergeToken<GlobalToken>(token, token[component] ?? {}));
   }
   return getDefaultToken ?? {};
@@ -237,7 +238,9 @@ export default function genComponentStyleHook<C extends OverrideComponent>(
             iconCls: `.${iconPrefixCls}`,
             antCls: `.${rootPrefixCls}`,
             calc,
+            // @ts-ignore
             max,
+            // @ts-ignore
             min,
           },
           cssVar ? defaultComponentToken : componentToken,
@@ -256,7 +259,7 @@ export default function genComponentStyleHook<C extends OverrideComponent>(
         ];
       },
     );
-
+    // @ts-ignore
     return [wrapSSR, hashId];
   };
 }
@@ -325,6 +328,7 @@ const genCSSVarRegister = <C extends OverrideComponent>(
   const compUnitless: any = {
     [prefixToken('zIndexPopup')]: true,
   };
+  // @ts-ignore
   Object.keys(originUnitless).forEach((key: keyof ComponentTokenKey<C>) => {
     compUnitless[prefixToken(key)] = originUnitless[key];
   });

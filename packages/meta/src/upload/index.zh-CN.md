@@ -3,6 +3,7 @@ category: Components
 subtitle: 上传
 group: 数据录入
 title: Upload
+toc: content
 demo:
   cols: 2
 ---
@@ -37,11 +38,12 @@ demo:
 <code src="./demo/upload-with-aliyun-oss.tsx">阿里云 OSS</code>
 <code src="./demo/file-type.tsx" debug>自定义显示 icon</code>
 <code src="./demo/upload-custom-action-icon.tsx">自定义交互图标</code>
-<code src="./demo/drag-sorting.tsx">上传列表拖拽排序</code>
+<!-- <code src="./demo/drag-sorting.tsx">上传列表拖拽排序</code> -->
 <code src="./demo/crop-image.tsx">上传前裁切图片</code>
 <code src="./demo/customize-progress-bar.tsx">自定义进度条样式</code>
 <code src="./demo/component-token.tsx" debug>组件 Token</code>
 <code src="./demo/debug-disabled.tsx" debug>Debug Disabled Styles</code>
+<code src="./demo/testMax.tsx">测试批量上传视频</code>
 
 ## API
 
@@ -158,3 +160,7 @@ demo:
 ### 文件夹上传在 Safari 仍然可以选中文件?
 
 组件内部是以 `directory`、`webkitdirectory` 属性控制 input 来实现文件夹选择的, 但似乎在 Safari 的实现中，[并不会阻止用户选择文件](https://stackoverflow.com/q/55649945/3040605)，请尝试额外传递无法匹配文件的 `accept` 属性来规避此问题 例如:
+
+```js
+accept: `.${'n'.repeat(100)}`;
+```

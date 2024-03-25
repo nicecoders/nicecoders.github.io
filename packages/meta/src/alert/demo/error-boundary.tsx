@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Button } from 'antd';
+import { Alert, Button } from '@nicecode/meta';
 
 const { ErrorBoundary } = Alert;
 const ThrowError: React.FC = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
-import { Divider, Input, Select, Space, Button } from '@nicecode/meta';
-import type { InputRef } from '@nicecode/meta';
+import { Divider, Input, Select, Space, Button } from 'antd';
+import type { InputRef } from 'antd';
 
 let index = 0;
 

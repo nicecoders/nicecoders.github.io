@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Progress, Space } from '@nicecode/meta';
+import { ConfigProvider, Progress, Space } from 'antd';
 
 const App: React.FC = () => (
   <ConfigProvider

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfigProvider, Divider } from '@nicecode/meta';
+import { ConfigProvider, Divider } from 'antd';
 
 const App: React.FC = () => (
   <ConfigProvider

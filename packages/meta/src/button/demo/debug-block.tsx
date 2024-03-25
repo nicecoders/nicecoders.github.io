@@ -1,6 +1,6 @@
 import React from 'react';
 import { DownloadOutlined } from '@ant-design/icons';
-import { Form, Button } from '@nicecode/meta';
+import { Form, Button } from 'antd';
 
 const App: React.FC = () => (
   <Form>

@@ -19,6 +19,7 @@ export interface TimeRangePickerProps extends Omit<RangePickerTimeProps<Dayjs>, 
 }
 
 const RangePicker = React.forwardRef<any, TimeRangePickerProps>((props, ref) => (
+  // @ts-ignore
   <InternalRangePicker {...props} picker="time" mode={undefined} ref={ref} />
 ));
 

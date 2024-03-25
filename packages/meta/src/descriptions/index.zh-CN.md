@@ -2,6 +2,7 @@
 category: Components
 subtitle: 描述列表
 group: 数据展示
+toc: content
 title: Descriptions 描述列表
 ---
 
@@ -11,7 +12,7 @@ title: Descriptions 描述列表
 
 常见于详情页的信息展示。
 
-```ts | pure
+```tsx | pure
 // >= 5.8.0 可用，推荐的写法 ✅
 
 const items: DescriptionsProps['items'] = [

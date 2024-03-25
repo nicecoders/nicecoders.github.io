@@ -27,7 +27,7 @@ export interface ComponentToken {
    */
   contentPadding: CSSProperties['padding'];
 }
-
+// @ts-ignore
 interface MessageToken extends FullToken<'Message'> {
   // Custom token here
   height: number;
@@ -49,9 +49,12 @@ const genMessageStyle: GenerateStyle<MessageToken> = (token) => {
     marginXS,
     paddingXS,
     borderRadiusLG,
+    // @ts-ignore
     zIndexPopup,
     // Custom token
+    // @ts-ignore
     contentPadding,
+    // @ts-ignore
     contentBg,
   } = token;
 
@@ -185,7 +188,7 @@ const genMessageStyle: GenerateStyle<MessageToken> = (token) => {
     },
   ];
 };
-
+// @ts-ignore
 export const prepareComponentToken: GetDefaultToken<'Message'> = (token) => ({
   zIndexPopup: token.zIndexPopupBase + CONTAINER_MAX_OFFSET + 10,
   contentBg: token.colorBgElevated,
@@ -195,7 +198,9 @@ export const prepareComponentToken: GetDefaultToken<'Message'> = (token) => ({
 });
 
 // ============================== Export ==============================
+// @ts-ignore
 export default genStyleHooks(
+  // @ts-ignore
   'Message',
   (token) => {
     // Gen-style functions here

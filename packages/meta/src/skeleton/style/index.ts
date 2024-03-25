@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CSSObject } from '@ant-design/cssinjs';
 import { Keyframes, unit } from '@ant-design/cssinjs';
 import type { FullToken, GenerateStyle, GetDefaultToken } from '../../theme/internal';

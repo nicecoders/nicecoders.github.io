@@ -1,7 +1,7 @@
 ---
 category: Components
 subtitle: 头像
-title: Avatar
+title: Avatar 头像
 demo:
   cols: 2
 group:

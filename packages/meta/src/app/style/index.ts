@@ -2,7 +2,7 @@ import type { FullToken, GenerateStyle, GetDefaultToken } from '../../theme/inte
 import { genStyleHooks } from '../../theme/internal';
 
 export type ComponentToken = {};
-
+// @ts-ignore
 interface AppToken extends FullToken<'App'> {}
 
 // =============================== Base ===============================
@@ -17,8 +17,9 @@ const genBaseStyle: GenerateStyle<AppToken> = (token) => {
     },
   };
 };
-
+// @ts-ignore
 export const prepareComponentToken: GetDefaultToken<'App'> = () => ({});
 
 // ============================== Export ==============================
+// @ts-ignore
 export default genStyleHooks('App', genBaseStyle, prepareComponentToken);

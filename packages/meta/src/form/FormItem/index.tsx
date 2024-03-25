@@ -271,6 +271,7 @@ function InternalFormItem<Values = any>(props: FormItemProps<Values>): React.Rea
         errors={mergedErrors}
         warnings={mergedWarnings}
         meta={meta}
+        // @ts-ignore
         onSubItemMetaChange={onSubItemMetaChange}
       >
         {baseChildren}
@@ -301,6 +302,7 @@ function InternalFormItem<Values = any>(props: FormItemProps<Values>): React.Rea
       validateTrigger={mergedValidateTrigger}
       onMetaChange={onMetaChange}
     >
+    {/* @ts-ignore */}
       {(control, renderMeta, context: FormInstance<Values>) => {
         const mergedName = toArray(name).length && renderMeta ? renderMeta.name : [];
         const fieldId = getFieldId(mergedName, formName);

@@ -2,6 +2,7 @@
 category: Components
 subtitle: 输入框
 group: 数据录入
+toc: content
 title: Input 输入框
 demo:
   cols: 2
@@ -76,7 +77,7 @@ Input 的其他属性和 React 自带的 [input](https://reactjs.org/docs/dom-el
 
 #### CountConfig
 
-```ts
+```tsx
 interface CountConfig {
   // 最大字符数，不同于原生 `maxLength`，超出后标红但不会截断
   max?: number;

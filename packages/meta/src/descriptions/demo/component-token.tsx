@@ -98,11 +98,14 @@ const App: React.FC = () => {
   return (
     <ConfigProvider
       theme={{
+        token: {
+          colorTextSecondary: 'rgba(0,0,0,0.45)'
+        },
         components: {
           Descriptions: {
-            labelBg: '#f6f6f6',
-            titleColor: 'rgba(0,0,0,0.88)',
-            colorTextLabel: 'rgba(0,0,0,0.88)',
+            viewBg: '#f6f6f6',
+            titleColor: 'rgba(0,0,0,0.45)',
+            colorTextLabel: 'rgba(0,0,0,0.45)',
             titleMarginBottom: 2,
             itemPaddingBottom: 8,
             colonMarginRight: 10,

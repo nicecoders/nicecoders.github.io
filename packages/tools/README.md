@@ -19,7 +19,7 @@ npm i babel-plugin-import --save-dev
   plugins: [
     [
       "import", {
-        "libraryName": "@nicecode/tools",
+        "libraryName": "@nicecode/func",
         "camel2DashComponentName": false
       }
     ]
@@ -33,7 +33,7 @@ npm i babel-plugin-import --save-dev
 > 本文以 mathUtil 通用模块为例
 
 ```js
-import { mathUtil } from '@nicecode/tools';
+import { mathUtil } from '@nicecode/func';
 
 mathUtil.castArray(1);
 // => [1]

@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { debounce } from '@nicecode/func';
-import { Select, Spin } from '@nicecode/meta';
+import debounce from 'lodash/debounce';
+import { Select, Spin } from 'antd';
 import type { SelectProps } from 'antd/es/select';
 
 export interface DebounceSelectProps<ValueType = any>

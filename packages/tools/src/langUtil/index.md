@@ -26,7 +26,7 @@ group:
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.castArray(1);
 // => [1]
@@ -64,7 +64,7 @@ console.log(langUtil.castArray(array) === array);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 var objects = [{ 'a': 1 }, { 'b': 2 }];
  
@@ -86,7 +86,7 @@ console.log(shallow[0] === objects[0]);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 var objects = [{ 'a': 1 }, { 'b': 2 }];
  
@@ -111,7 +111,7 @@ console.log(deep[0] === objects[0]);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 var object = { 'a': 1, 'b': 2 };
  
@@ -136,7 +136,7 @@ langUtil.conformsTo(object, { 'b': function(n) { return n > 2; } });
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 var object = { 'a': 1 };
 var other = { 'a': 1 };
@@ -170,7 +170,7 @@ langUtil.eq(NaN, NaN);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isArray([1, 2, 3]);
 // => true
@@ -198,7 +198,7 @@ langUtil.isArray(langUtil.noop);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isArrayLike([1, 2, 3]);
 // => true
@@ -226,7 +226,7 @@ langUtil.isArrayLike(langUtil.noop);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isArrayLikeObject([1, 2, 3]);
 // => true
@@ -254,7 +254,7 @@ langUtil.isArrayLikeObject(langUtil.noop);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isBoolean(false);
 // => true
@@ -276,7 +276,7 @@ langUtil.isBoolean(null);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isDate(new Date); 
 // => true
@@ -298,7 +298,7 @@ langUtil.isDate('Mon April 23 2012');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isBuffer(new Buffer(2));
 // => true
@@ -320,7 +320,7 @@ langUtil.isBuffer(new Uint8Array(2));
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isElement(document.body);
 // => true
@@ -344,7 +344,7 @@ langUtil.isElement('<body>');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isEmpty(null);
 // => true
@@ -381,7 +381,7 @@ langUtil.isEmpty({ 'a': 1 });
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 function isGreeting(value) {
   return /^h(?:i|ello)$/.test(value);
@@ -415,7 +415,7 @@ langUtil.isEqualWith(array, other, customizer);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isError(new Error);
 // => true
@@ -437,7 +437,7 @@ langUtil.isError(Error);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isFinite(3);
 // => true
@@ -465,7 +465,7 @@ langUtil.isFinite('3');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isFunction(_);
 // => true
@@ -487,7 +487,7 @@ langUtil.isFunction(/abc/);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isInteger(3);
 // => true
@@ -515,7 +515,7 @@ langUtil.isInteger('3');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isMap(new Map);
 // => true
@@ -540,7 +540,7 @@ langUtil.isMap(new WeakMap);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 var object = { 'a': 1, 'b': 2 };
  
@@ -566,7 +566,7 @@ langUtil.isMatch(object, { 'b': 1 });
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isNaN(NaN);
 // => true
@@ -596,7 +596,7 @@ langUtil.isNaN(undefined);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isNil(null);
 // => true
@@ -623,7 +623,7 @@ langUtil.isNil(NaN);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isNumber(3);
 // => true
@@ -651,7 +651,7 @@ langUtil.isNumber('3');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isObject({});
 // => true
@@ -681,7 +681,7 @@ langUtil.isObject(null);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isObjectLike({});
 // => true
@@ -711,7 +711,7 @@ langUtil.isObjectLike(null);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 function Foo() {
   this.a = 1;
@@ -745,7 +745,7 @@ langUtil.isPlainObject(Object.create(null));
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isRegExp(/abc/);
 // => true
@@ -769,7 +769,7 @@ langUtil.isRegExp('/abc/');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isSafeInteger(3);
 // => true
@@ -797,7 +797,7 @@ langUtil.isSafeInteger('3');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isSet(new Set);
 // => true
@@ -819,7 +819,7 @@ langUtil.isSet(new WeakSet);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.isString('abc');
 // => true
@@ -841,7 +841,7 @@ langUtil.isString(1);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.toArray({ 'a': 1, 'b': 2 });
 // => [1, 2]
@@ -870,7 +870,7 @@ langUtil.toArray(null);
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.toFinite(3.2);
 // => 3.2
@@ -898,7 +898,7 @@ langUtil.toFinite('3.2');
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 function Foo() {
   this.b = 2;
@@ -926,7 +926,7 @@ langUtil.assign({ 'a': 1 }, langUtil.toPlainObject(new Foo));
 #### 🌰 例子
 
 ```js
-import { langUtil } from '@nicecode/tools';
+import { langUtil } from '@nicecode/func';
 
 langUtil.toString(null);
 // => ''

@@ -112,6 +112,7 @@ export default function confirm(config: ModalFuncProps) {
           config.afterClose();
         }
 
+        // @ts-ignore
         destroy.apply(this, args);
       },
     };

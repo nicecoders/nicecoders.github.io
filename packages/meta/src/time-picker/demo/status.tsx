@@ -1,5 +1,5 @@
 import React from 'react';
-import { Space, TimePicker } from '@nicecode/meta';
+import { Space, TimePicker } from 'antd';
 
 const App: React.FC = () => (
   <Space direction="vertical">

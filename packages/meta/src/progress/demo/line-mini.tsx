@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress } from '@nicecode/meta';
+import { Progress } from 'antd';
 
 const App: React.FC = () => (
   <div style={{ width: 170 }}>

@@ -1,0 +1,149 @@
+.nicecode-image__compater-view {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &>div:first-child {
+    margin-right: 25px;
+  }
+
+  &>div:last-child {
+    margin-left: 25px;
+  }
+
+  &__container {
+    font-size: 0;
+    position: relative;
+    box-sizing: content-box;
+    border: 1px solid #f0f0f0;
+  }
+
+  &__view {
+    min-width: 345px;
+    min-height: 450px;
+  }
+
+  &__label {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    display: flex;
+    font-size: 16px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+
+    // width: 48px;
+    padding: 0 6px;
+    background: #09f;
+    color: #fff;
+  }
+
+  &__tool {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+
+    i,
+    span {
+      color: #333 !important;
+    }
+
+    i {
+      margin-right: 4px;
+    }
+
+    &>*:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__scale {
+      display: inline-block;
+      width: 38px;
+      height: 16px;
+
+      // margin-left: 15px;
+      box-sizing: content-box;
+      border: 1px solid rgb(77 77 77 / 100%);
+      background: rgb(255 255 255 / 100%);
+      border-radius: 2px;
+      color: #4d4d4d;
+      cursor: default;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    &__line {
+      width: 1px;
+      height: 14px;
+      background: #e6e6e6;
+    }
+  }
+
+  &__empty {
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    transform: translateY(-100%);
+
+    &>img {
+      margin-bottom: 12px;
+      width: 140px;
+      height: 80px;
+    }
+
+    &--text {
+      color: #999;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__scoll-module {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+    pointer-events: none;
+
+    &__btn {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      bottom: 45px;
+      align-items: center;
+      justify-content: center;
+      margin: 6px;
+      border-radius: 50%;
+      opacity: 0.5;
+      pointer-events: all;
+
+      &>span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__btn:hover {
+      background-color: #09f !important;
+      color: #fff !important;
+    }
+  }
+}

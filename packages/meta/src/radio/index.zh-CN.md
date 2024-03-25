@@ -3,6 +3,7 @@ category: Components
 subtitle: 单选框
 group: 数据录入
 title: Radio 单选框
+toc: content
 demo:
   cols: 2
 ---

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Empty } from '@nicecode/meta';
+import { Button, Empty } from 'antd';
 
 const App: React.FC = () => (
   <Empty

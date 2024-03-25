@@ -1,6 +1,6 @@
 import React from 'react';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-import { Button, Form, Input } from '@nicecode/meta';
+import { Button, Form, Input } from 'antd';
 
 const formItemLayout = {
   labelCol: {

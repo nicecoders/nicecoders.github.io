@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, ConfigProvider, Input, Typography } from '@nicecode/meta';
+import { Alert, ConfigProvider, Input, Typography } from 'antd';
 
 const App: React.FC = () => (
   <>

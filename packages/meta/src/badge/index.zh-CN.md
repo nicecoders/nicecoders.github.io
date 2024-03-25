@@ -1,7 +1,7 @@
 ---
 category: Components
 subtitle: 徽标数
-title: Badge
+title: Badge 徽标数
 demo:
   cols: 2
 group: 数据展示

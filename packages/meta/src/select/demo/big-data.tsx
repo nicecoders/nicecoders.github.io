@@ -1,6 +1,6 @@
 import React from 'react';
-import type { SelectProps } from '@nicecode/meta';
-import { Select, Typography } from '@nicecode/meta';
+import type { SelectProps } from 'antd';
+import { Select, Typography } from 'antd';
 
 const { Title } = Typography;
 

@@ -89,6 +89,7 @@ const InternalRadio: React.ForwardRefRenderFunction<RadioRef, RadioProps> = (pro
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}
       >
+        {/* @ts-ignore */}
         <RcCheckbox
           {...radioProps}
           className={classNames(radioProps.className, !isButtonType && TARGET_CLS)}

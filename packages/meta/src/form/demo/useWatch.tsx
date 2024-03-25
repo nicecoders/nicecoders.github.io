@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, InputNumber, Typography } from '@nicecode/meta';
+import { Form, Input, InputNumber, Typography } from 'antd';
 
 const Demo: React.FC = () => {
   const [form] = Form.useForm<{ name: string; age: number }>();

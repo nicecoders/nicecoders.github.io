@@ -12,7 +12,7 @@ import {
   TimePicker,
   TreeSelect,
   Typography,
-} from '@nicecode/meta';
+} from 'antd';
 
 const { Text } = Typography;
 const { RangePicker } = DatePicker;

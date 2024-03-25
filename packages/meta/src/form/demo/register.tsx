@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import type { CascaderProps } from '@nicecode/meta';
 import {
-  AutoComplete,
   Button,
-  Cascader,
   Checkbox,
   Col,
   Form,
@@ -194,16 +192,6 @@ const App: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        name="residence"
-        label="Habitual Residence"
-        rules={[
-          { type: 'array', required: true, message: 'Please select your habitual residence!' },
-        ]}
-      >
-        <Cascader options={residences} />
-      </Form.Item>
-
-      <Form.Item
         name="phone"
         label="Phone Number"
         rules={[{ required: true, message: 'Please input your phone number!' }]}
@@ -218,17 +206,6 @@ const App: React.FC = () => {
       >
         <InputNumber addonAfter={suffixSelector} style={{ width: '100%' }} />
       </Form.Item>
-
-      <Form.Item
-        name="website"
-        label="Website"
-        rules={[{ required: true, message: 'Please input website!' }]}
-      >
-        <AutoComplete options={websiteOptions} onChange={onWebsiteChange} placeholder="website">
-          <Input />
-        </AutoComplete>
-      </Form.Item>
-
       <Form.Item
         name="intro"
         label="Intro"

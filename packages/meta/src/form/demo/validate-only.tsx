@@ -1,6 +1,6 @@
 import React from 'react';
-import type { FormInstance } from '@nicecode/meta';
-import { Button, Form, Input, Space } from '@nicecode/meta';
+import type { FormInstance } from 'antd';
+import { Button, Form, Input, Space } from 'antd';
 
 const SubmitButton = ({ form }: { form: FormInstance }) => {
   const [submittable, setSubmittable] = React.useState(false);

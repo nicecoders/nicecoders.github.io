@@ -2,7 +2,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { DatePicker, Space } from '@nicecode/meta';
-import type { RangePickerProps } from 'antd/es/date-picker';
+import type { RangePickerProps } from '@nicecode/meta';
 
 dayjs.extend(customParseFormat);
 

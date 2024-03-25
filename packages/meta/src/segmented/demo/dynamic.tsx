@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Flex, Segmented } from '@nicecode/meta';
+import { Button, Flex, Segmented } from 'antd';
 
 const Demo: React.FC = () => {
   const [options, setOptions] = useState(['Daily', 'Weekly', 'Monthly']);

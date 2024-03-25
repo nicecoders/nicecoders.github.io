@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppstoreOutlined, BarsOutlined } from '@ant-design/icons';
-import { Segmented } from '@nicecode/meta';
+import { Segmented } from 'antd';
 
 const Demo: React.FC = () => (
   <Segmented

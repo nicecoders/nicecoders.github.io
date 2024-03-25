@@ -51,7 +51,7 @@ export interface ComponentToken {
    */
   extraColor: string;
 }
-
+// @ts-ignore
 interface CardToken extends FullToken<'Card'> {
   cardShadow: string;
   cardHeadPadding: number;
@@ -64,6 +64,7 @@ interface CardToken extends FullToken<'Card'> {
 
 // ============================== Head ==============================
 const genCardHeadStyle: GenerateStyle<CardToken> = (token): CSSObject => {
+  // @ts-ignore
   const { antCls, componentCls, headerHeight, cardPaddingBase, tabsMarginBottom } = token;
 
   return {
@@ -75,7 +76,9 @@ const genCardHeadStyle: GenerateStyle<CardToken> = (token): CSSObject => {
     padding: `0 ${unit(cardPaddingBase)}`,
     color: token.colorTextHeading,
     fontWeight: token.fontWeightStrong,
+    // @ts-ignore
     fontSize: token.headerFontSize,
+    // @ts-ignore
     background: token.headerBg,
     borderBottom: `${unit(token.lineWidth)} ${token.lineType} ${token.colorBorderSecondary}`,
     borderRadius: `${unit(token.borderRadiusLG)} ${unit(token.borderRadiusLG)} 0 0`,
@@ -147,9 +150,11 @@ const genCardActionsStyle: GenerateStyle<CardToken> = (token): CSSObject => {
   const {
     componentCls,
     iconCls,
+  // @ts-ignore
     actionsLiMargin,
     cardActionsIconSize,
     colorBorderSecondary,
+    // @ts-ignore
     actionsBg,
   } = token;
   return {
@@ -279,6 +284,7 @@ const genCardStyle: GenerateStyle<CardToken> = (token): CSSObject => {
     colorBorderSecondary,
     boxShadowTertiary,
     cardPaddingBase,
+    // @ts-ignore
     extraColor,
   } = token;
 
@@ -383,6 +389,7 @@ const genCardStyle: GenerateStyle<CardToken> = (token): CSSObject => {
 
 // ============================== Size ==============================
 const genCardSizeStyle: GenerateStyle<CardToken> = (token): CSSObject => {
+  // @ts-ignore
   const { componentCls, cardPaddingSM, headerHeightSM, headerFontSizeSM } = token;
 
   return {
@@ -414,7 +421,7 @@ const genCardSizeStyle: GenerateStyle<CardToken> = (token): CSSObject => {
     },
   };
 };
-
+// @ts-ignore
 export const prepareComponentToken: GetDefaultToken<'Card'> = (token) => ({
   headerBg: 'transparent',
   headerFontSize: token.fontSizeLG,
@@ -429,8 +436,10 @@ export const prepareComponentToken: GetDefaultToken<'Card'> = (token) => ({
 
 // ============================== Export ==============================
 export default genStyleHooks(
+  // @ts-ignore
   'Card',
   (token) => {
+  // @ts-ignore
     const cardToken = mergeToken<CardToken>(token, {
       cardShadow: token.boxShadowCard,
       cardHeadPadding: token.padding,

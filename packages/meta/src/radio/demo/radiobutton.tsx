@@ -1,6 +1,6 @@
 import React from 'react';
-import type { RadioChangeEvent } from '@nicecode/meta';
-import { Radio } from '@nicecode/meta';
+import type { RadioChangeEvent } from 'antd';
+import { Radio } from 'antd';
 
 const onChange = (e: RadioChangeEvent) => {
   console.log(`radio checked:${e.target.value}`);

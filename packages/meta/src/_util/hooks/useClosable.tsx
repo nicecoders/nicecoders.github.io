@@ -1,8 +1,12 @@
+import CloseOutlined from '@ant-design/icons/CloseOutlined';
 import type { ReactNode } from 'react';
 import React from 'react';
-import CloseOutlined from '@ant-design/icons/CloseOutlined';
 
-function useInnerClosable(closable?: boolean, closeIcon?: ReactNode, defaultClosable?: boolean) {
+function useInnerClosable(
+  closable?: boolean,
+  closeIcon?: boolean | ReactNode,
+  defaultClosable?: boolean,
+): boolean {
   if (typeof closable === 'boolean') {
     return closable;
   }
@@ -14,15 +18,15 @@ function useInnerClosable(closable?: boolean, closeIcon?: ReactNode, defaultClos
 
 export type UseClosableParams = {
   closable?: boolean;
-  closeIcon?: ReactNode;
+  closeIcon?: boolean | ReactNode;
   defaultClosable?: boolean;
   defaultCloseIcon?: ReactNode;
   customCloseIconRender?: (closeIcon: ReactNode) => ReactNode;
 };
 
-function useClosable(
+export default function useClosable(
   closable?: boolean,
-  closeIcon?: ReactNode,
+  closeIcon?: boolean | ReactNode,
   customCloseIconRender?: (closeIcon: ReactNode) => ReactNode,
   defaultCloseIcon: ReactNode = <CloseOutlined />,
   defaultClosable = false,
@@ -37,5 +41,3 @@ function useClosable(
       : closeIcon;
   return [true, customCloseIconRender ? customCloseIconRender(mergedCloseIcon) : mergedCloseIcon];
 }
-
-export default useClosable;

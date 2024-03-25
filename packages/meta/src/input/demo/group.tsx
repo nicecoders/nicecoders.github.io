@@ -11,7 +11,7 @@ import {
   Row,
   Select,
   Tooltip,
-} from '@nicecode/meta';
+} from 'antd';
 
 const { Option } = Select;
 

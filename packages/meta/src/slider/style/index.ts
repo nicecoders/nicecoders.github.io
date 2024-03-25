@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type * as React from 'react';
 import type { CSSObject } from '@ant-design/cssinjs';
 import { TinyColor } from '@ctrl/tinycolor';

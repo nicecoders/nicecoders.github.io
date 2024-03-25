@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Input, Select } from '@nicecode/meta';
+import { Button, Form, Input, Select } from 'antd';
 
 const { Option } = Select;
 

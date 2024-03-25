@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Checkbox, ConfigProvider, Divider, Form, Input, Radio, Space } from '@nicecode/meta';
+import { Checkbox, ConfigProvider, Divider, Form, Input, Radio, Space } from 'antd';
 import type { SizeType } from 'antd/es/config-provider/SizeContext';
 
 const ConfigDisplay = () => {
