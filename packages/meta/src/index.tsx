@@ -1,6 +1,4 @@
 export { default as Icon } from './iconfont';
-export { default as CompareImage } from './CompareImage'
-export type { CompareImageProps } from './CompareImage'
 export { default as Tabs } from './tabs'
 export type { TabPaneProps, TabsProps } from './tabs';
 export { default as Button } from './button'
