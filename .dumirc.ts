@@ -83,6 +83,5 @@ export default defineConfig({
     statsFilename: 'stats.json',
     logLevel: 'info',
     defaultSizes: 'parsed', // stat  // gzip
-  },
-  sitemap: { hostname: 'https://nicecoders.github.io' },
+  }
 });
