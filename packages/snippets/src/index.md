@@ -8,4 +8,4 @@ title: 代码片段
 toc: content
 ---
 
-<embed src="../readme.md"></embed>
+<embed src="../README.md"></embed>
