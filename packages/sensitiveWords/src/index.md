@@ -8,7 +8,7 @@ title: 敏感词库
 toc: content
 ---
 
-<embed src="../readme.md"></embed>
+<embed src="../README.md"></embed>
 
 :::info
   <strong>欢迎提交补充: <a>https://github.com/nicecoders/nicecoders.github.io</a></strong>
