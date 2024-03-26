@@ -10,4 +10,4 @@ toc: content
 title: 视频播放器
 ---
 
-<embed src="../readme.md"></embed>
+<embed src="../README.md"></embed>
