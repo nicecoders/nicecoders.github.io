@@ -31,6 +31,12 @@ export default defineConfig({
     <!-- End GrowingIO Analytics code version: 2.1 -->
     `
   ],
+  scripts: [
+    {
+      src: 'https://umami.jiangzhixiong.com/script.js',
+      'data-website-id': '8b5e3f5f-0922-43d3-9e20-b5b3b87a1f9e'
+    }
+  ],
   alias: {
     '@nicecode/hooks': path.join(__dirname, 'packages/hooks/src'),
     '@nicecode/func': path.join(__dirname, 'packages/func/src'),
