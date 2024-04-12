@@ -34,7 +34,7 @@ export default defineConfig({
   scripts: [
     {
       src: 'https://umami.jiangzhixiong.com/script.js',
-      'data-website-id': '8b5e3f5f-0922-43d3-9e20-b5b3b87a1f9e'
+      'data-website-id': '711d1ded-2a17-48c5-8d8f-5efb02778ec1'
     }
   ],
   alias: {
