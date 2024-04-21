@@ -3,8 +3,8 @@ import path from 'path';
 
 export default defineConfig({
   title: 'nicecode',
-  logo: 'https://i.niupic.com/images/2021/06/07/9krN.png',
-  favicons: ['https://i.niupic.com/images/2021/06/07/9krN.png'],
+  logo: 'http://jzx-drive.oss-cn-hangzhou.aliyuncs.com/note/2024/04/21/141401-logo.png',
+  favicons: ['http://jzx-drive.oss-cn-hangzhou.aliyuncs.com/note/2024/04/21/141401-logo.png'],
   outputPath: 'docs-dist',
   history: { type: 'hash' },
   themeConfig: {
