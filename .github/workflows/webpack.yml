@@ -24,20 +24,13 @@ jobs:
             version: 8 
       - run: pnpm install
       - run: pnpm run npm:build
+      - name: npm publish
       - run: pnpm run pub
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - name: Build
+      - name: docs-build
         run: pnpm run docs:build
-
-      - name: Deploy
+      - name: docs-deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACTION_SECRET }}
