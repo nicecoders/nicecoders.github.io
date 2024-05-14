@@ -23,7 +23,7 @@ jobs:
         with:
             version: 8 
       - run: pnpm install
-      - run: pnpm run build
+      - run: pnpm run npm:build
       - run: pnpm run pub
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
