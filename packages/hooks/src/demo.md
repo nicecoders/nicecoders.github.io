@@ -56,7 +56,7 @@ import { useIMEComposition } from '@nicecode/hooks'
 
 ## useSocket
 
-```jsx
+```js
 import React, { useRef, useMemo } from 'react';
 import { useWebSocket } from 'ahooks';
 
