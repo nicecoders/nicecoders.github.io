@@ -1,5 +1,11 @@
 # @nicecode/player
 
+## 0.3.0
+
+### Minor Changes
+
+- fix: 修改版本
+
 ## 0.2.1
 
 ### Patch Changes

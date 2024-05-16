@@ -1,5 +1,16 @@
 # @nicecode/cli
 
+## 0.3.0
+
+### Minor Changes
+
+- fix: 修改版本
+
+### Patch Changes
+
+- Updated dependencies
+  - @nicecode/func@0.5.0
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @nicecode/meta
 
+## 0.6.0
+
+### Minor Changes
+
+- fix: 修改版本
+
+### Patch Changes
+
+- Updated dependencies
+  - @nicecode/func@0.5.0
+  - @nicecode/hooks@0.5.0
+  - @nicecode/meta@0.6.0
+
 ## 0.5.1
 
 ### Patch Changes
