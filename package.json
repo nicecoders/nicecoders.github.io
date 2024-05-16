@@ -56,7 +56,6 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@nicecode/commit-lint": "workspace:^",
-    "@nicecode/mofish": "workspace:^",
     "@types/jest": "^25.1.2",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^18.0.0",
