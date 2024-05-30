@@ -1,4 +1,4 @@
-name: deploy to github-pages
+name: nicecode flow
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
-            version: 8 
+          version: 8
       - run: pnpm install
       - run: pnpm run npm:build
       - run: pnpm run pub
